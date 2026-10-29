@@ -10,6 +10,7 @@
       "type": "hero",
       "data": {
         "align": "left",
+        "backgroundImageAi": false,
         "button": {
           "href": "#kontakt",
           "label": "Jetzt anfragen",
@@ -24,7 +25,8 @@
       "type": "text",
       "data": {
         "body": "<p>Hier stellen Sie Ihr Unternehmen vor. Erzählen Sie in wenigen Sätzen, was Sie auszeichnet und wofür Ihre Kundinnen und Kunden Sie schätzen.</p>",
-        "heading": "Willkommen"
+        "heading": "Willkommen",
+        "tone": "auto"
       }
     },
     {
@@ -45,7 +47,8 @@
             "text": "Auch nach dem Auftrag sind wir für Sie erreichbar.",
             "title": "Service"
           }
-        ]
+        ],
+        "tone": "auto"
       }
     },
     {
@@ -58,7 +61,8 @@
           "newTab": false
         },
         "heading": "Haben Sie Fragen?",
-        "text": "Rufen Sie uns an oder schreiben Sie uns, wir melden uns zeitnah."
+        "text": "Rufen Sie uns an oder schreiben Sie uns, wir melden uns zeitnah.",
+        "tone": "auto"
       }
     },
     {
@@ -66,10 +70,12 @@
       "type": "contact",
       "data": {
         "heading": "Kontakt",
+        "mapNote": "pokpok",
         "showAddress": true,
         "showEmail": true,
         "showPhone": true,
-        "text": "<p>Wir freuen uns auf Ihre Nachricht.</p>"
+        "text": "<p>Wir freuen uns auf Ihre Nachricht.</p>",
+        "tone": "auto"
       }
     }
   ]
