@@ -1,0 +1,43 @@
+{
+  "baseURL": "https://can-dy.de/",
+  "title": "Test-System",
+  "languageCode": "de-DE",
+  "theme": [
+    "grundlage"
+  ],
+  "disableKinds": [
+    "taxonomy",
+    "term",
+    "RSS"
+  ],
+  "menus": {
+    "main": [
+      {
+        "name": "Startseite",
+        "pageRef": "/",
+        "weight": 1
+      }
+    ]
+  },
+  "params": {
+    "werkbank": {
+      "colors": [
+        {
+          "name": "primaryColor",
+          "value": "#1f5f8b"
+        },
+        {
+          "name": "accentColor",
+          "value": "#c2410c"
+        }
+      ],
+      "settings": {
+        "accentColor": "#c2410c",
+        "companyName": "TEst GmbH",
+        "email": "test@example.com",
+        "phone": "012348",
+        "primaryColor": "#1f5f8b"
+      }
+    }
+  }
+}
