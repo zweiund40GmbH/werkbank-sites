@@ -11,6 +11,7 @@
       "data": {
         "align": "left",
         "backgroundImageAi": false,
+        "badge": "",
         "button": {
           "href": "#kontakt",
           "label": "Jetzt anfragen",
@@ -76,6 +77,31 @@
         "showPhone": true,
         "text": "<p>Wir freuen uns auf Ihre Nachricht.</p>",
         "tone": "auto"
+      }
+    },
+    {
+      "id": "b-0140530a-9483-4cc6-aae4-955a40e5e13c",
+      "type": "form",
+      "data": {
+        "fields": [
+          {
+            "label": "Hallo?",
+            "name": "hallo",
+            "required": false,
+            "type": "checkbox",
+            "width": "full"
+          },
+          {
+            "label": "Freitext",
+            "name": "freitext",
+            "required": false,
+            "type": "textarea",
+            "width": "full"
+          }
+        ],
+        "heading": "Du hast Fragen",
+        "intro": "Hier kannst du deine Fragen stellen",
+        "privacyConsent": true
       }
     }
   ]

@@ -38,6 +38,12 @@
           "value": "#c2410c"
         }
       ],
+      "forms": {
+        "captcha": {
+          "provider": "none"
+        },
+        "endpoint": "https://werkbank.zweiund40.com/p/01a187ef-e812-764f-87b8-5f15e68235d0/forms"
+      },
       "legal": {
         "ageGate": {
           "confirmLabel": "",
@@ -68,7 +74,7 @@
         "brand": "bigcash",
         "claim": "Hier spielt das Leben.",
         "companyName": "TEst GmbH",
-        "email": "test@example.com",
+        "email": "krass@example.com",
         "noticeLink": {
           "href": "https://www.bioeg.de",
           "label": "bioeg.de",
