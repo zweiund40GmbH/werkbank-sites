@@ -18,6 +18,11 @@
         "name": "Startseite",
         "pageRef": "/",
         "weight": 1
+      },
+      {
+        "name": "Sonstiges",
+        "pageRef": "/sonstiges",
+        "weight": 2
       }
     ]
   },
