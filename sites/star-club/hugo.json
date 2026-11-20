@@ -32,7 +32,7 @@
           "confirmLabel": "",
           "denyLabel": "",
           "denyUrl": "",
-          "enabled": false,
+          "enabled": true,
           "minAge": 18,
           "text": "",
           "title": ""
@@ -44,7 +44,7 @@
             "matomoUrl": "",
             "provider": "none"
           },
-          "externalMedia": true,
+          "externalMedia": false,
           "text": "",
           "title": ""
         },
