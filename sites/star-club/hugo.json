@@ -1,0 +1,80 @@
+{
+  "baseURL": "https://star-club.net/",
+  "title": "star-club",
+  "languageCode": "de-DE",
+  "defaultContentLanguage": "de",
+  "theme": [
+    "starclub",
+    "grundlage"
+  ],
+  "disableKinds": [
+    "taxonomy",
+    "term",
+    "RSS"
+  ],
+  "menus": {
+    "main": []
+  },
+  "params": {
+    "werkbank": {
+      "colors": [
+        {
+          "name": "primaryColor",
+          "value": "#0c71c3"
+        },
+        {
+          "name": "accentColor",
+          "value": "#2ea3f2"
+        }
+      ],
+      "legal": {
+        "ageGate": {
+          "confirmLabel": "",
+          "denyLabel": "",
+          "denyUrl": "",
+          "enabled": false,
+          "minAge": 18,
+          "text": "",
+          "title": ""
+        },
+        "consent": {
+          "analytics": {
+            "ga4Id": "",
+            "matomoSiteId": "",
+            "matomoUrl": "",
+            "provider": "none"
+          },
+          "externalMedia": true,
+          "text": "",
+          "title": ""
+        },
+        "imprintPath": "/impressum",
+        "privacyPath": "/datenschutz"
+      },
+      "settings": {
+        "accentColor": "#2ea3f2",
+        "address": "Annenheider Str. 257\n27755 Delmenhorst",
+        "companyName": "zwei&40 GmbH",
+        "email": "info@zweiund40.com",
+        "footerLinks": [
+          {
+            "link": {
+              "href": "/datenschutz-sms",
+              "label": "Datenschutz SMS",
+              "newTab": false
+            }
+          },
+          {
+            "link": {
+              "href": "/abmelden",
+              "label": "Abmelden",
+              "newTab": false
+            }
+          }
+        ],
+        "phone": "04221998950",
+        "primaryColor": "#0c71c3"
+      }
+    }
+  }
+}
