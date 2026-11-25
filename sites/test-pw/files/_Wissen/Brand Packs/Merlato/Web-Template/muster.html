@@ -1,0 +1,3203 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Musterseite – Web-Template Merlato</title>
+  <!--
+    Musterseite Web-Template Merlato · Version 1.3.0 · Stand 04.11.2026
+    Erzeugt mit werkzeuge/musterseite-bauen.py aus werkzeuge/readme-vorlage.md. Nicht von Hand bearbeiten.
+    Bindet nur css/mer.css ein. Kein JavaScript, keine externen Abrufe, läuft per Doppelklick.
+    Die Widgets von ProvenExpert stehen nur als Code da und werden nicht geladen (klassen-check.py, Prüfung l).
+    Sektionsfolge: Kopf (Weiß) → Logo und Siegel → Hellgrau und Weiß im Wechsel → Footer (Hellgrau).
+    Jeder Baustein steht auf Weiß und Hellgrau, darunter sein HTML-Schnipsel. Die Schnipsel sind
+    zeichengleich mit README.md (geprüft von werkzeuge/klassen-check.py). Die Beispieltexte sind Platzhalter bzw. allgemeine Merlato-Abläufe ohne echte Daten.
+  -->
+  <link rel="stylesheet" href="css/mer.css">
+</head>
+
+<body class="mer">
+
+  <a class="mer-skip-link" href="#inhalt">Zum Inhalt springen</a>
+
+  <header class="mer-hero">
+    <div class="mer-container">
+      <div class="mer-hero__bar">
+        <div class="mer-brand">
+          <img class="mer-brand__web" src="assets/logo/merlato-web-logo-2026-dekra.png" alt="Merlato GmbH – Zertifizierte Schulungseinrichtung. DEKRA-Siegel: Zertifiziert, Qualitätsmanagement ISO 9001" width="3000" height="390">
+          <div class="mer-brand__split">
+            <img class="mer-logo" src="assets/logo/merlato-logo-2026.png" alt="Merlato GmbH – Zertifizierte Schulungseinrichtung" width="2480" height="543">
+            <div class="mer-seal">
+              <img src="assets/siegel/dekra-siegel-iso-9001.png" alt="DEKRA-Siegel: Zertifiziert, Qualitätsmanagement ISO 9001" width="4134" height="1772">
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="mer-eyebrow">Merlato · Web-Template 1.3.0</p>
+      <h1 class="mer-hero__title">Musterseite</h1>
+      <p class="mer-hero__lead">Jeder Baustein aus css/mer.css mit seinem HTML-Schnipsel, auf weißem und hellgrauem Grund.</p>
+      <div class="mer-hero__actions">
+        <nav aria-label="Bereiche der Musterseite">
+          <ul class="mer-nav">
+            <li><a class="mer-btn mer-btn--sm" href="#logos">Logo und Siegel</a></li>
+            <li><a class="mer-btn mer-btn--sm" href="#grundlagen">Grundlagen</a></li>
+            <li><a class="mer-btn mer-btn--sm" href="#typografie">Sektionen und Typografie</a></li>
+            <li><a class="mer-btn mer-btn--sm" href="#kopf">Kopf</a></li>
+            <li><a class="mer-btn mer-btn--sm" href="#bedienelemente">Bedienelemente</a></li>
+            <li><a class="mer-btn mer-btn--sm" href="#inhalte">Inhalte</a></li>
+            <li><a class="mer-btn mer-btn--sm" href="#formulare">Formulare</a></li>
+            <li><a class="mer-btn mer-btn--sm" href="#abschluss">Seitenabschluss</a></li>
+            <li><a class="mer-btn mer-btn--sm" href="#app">App-Bausteine</a></li>
+            <li><a class="mer-btn mer-btn--sm" href="#chat">Chat</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="inhalt">
+
+    <!-- ================= Logo und Siegel ================= -->
+    <section class="mer-section mer-section--light" id="logos" aria-labelledby="t-logos">
+      <div class="mer-container">
+        <div class="mer-section-head">
+          <h2 class="mer-section-head__title" id="t-logos">Logo und Siegel</h2>
+          <p class="mer-section-head__subtitle">Logo, DEKRA-Siegel und ProvenExpert-Bewertungssiegel mit Dateien, Maßen, Einsatz und Kernregeln.</p>
+        </div>
+        <div class="mer-grid">
+<article class="mer-stack" id="b-logos" aria-labelledby="b-logos-t">
+  <h3 class="mer-h3" id="b-logos-t">Übersicht</h3>
+  <p>Logo und DEKRA-Siegel in Originalgröße der Bausteine. Regeln im Detail: README 6 und 7.7; ProvenExpert-Bewertungssiegel: README 7.8 und Schnipsel unten.</p>
+<div class="mer-grid mer-grid--2">
+<div class="mer-section mer-section--white mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Weiß</p>
+    <div>
+<div class="mer-stack">
+<img class="mer-logo mer-logo--lg" src="assets/logo/merlato-logo-2026.png" alt="Merlato GmbH – Zertifizierte Schulungseinrichtung" width="2480" height="543">
+    <p class="mer-h4">Logo auf Weiß</p>
+    <ul class="mer-list">
+      <li>Datei: <code class="mer-code">assets/logo/merlato-logo-2026.png</code></li>
+      <li>Maße: 2480 × 543 px, PNG, transparent, knapp freigestellt; mit Claimzeile „ZERTIFIZIERTE SCHULUNGSEINRICHTUNG.“</li>
+      <li>Einsatz: Footer und Handy-Fassung der Markenzeile; Höhe 50 px, 56 px oder 64 px, nie unter 50 px (Claim lesbar). Hier 56 px</li>
+    </ul>
+</div>
+    </div>
+  </div>
+</div>
+<div class="mer-section mer-section--light mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Hellgrau</p>
+    <div>
+<div class="mer-stack">
+<img class="mer-logo mer-logo--lg" src="assets/logo/merlato-logo-2026.png" alt="Merlato GmbH – Zertifizierte Schulungseinrichtung" width="2480" height="543">
+    <p class="mer-h4">Logo auf Hellgrau</p>
+    <ul class="mer-list">
+      <li>Dieselbe Datei; nur auf Weiß oder Hellgrau</li>
+      <li>Eine Variante für dunkle Flächen gibt es nicht</li>
+      <li>Nie verzerren, umfärben, beschneiden oder nachbauen</li>
+    </ul>
+</div>
+    </div>
+  </div>
+</div>
+<div class="mer-section mer-section--white mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Weiß</p>
+    <div>
+<div class="mer-stack">
+<div class="mer-seal mer-seal--lg">
+  <img src="assets/siegel/dekra-siegel-iso-9001.png" alt="DEKRA-Siegel: Zertifiziert, Qualitätsmanagement ISO 9001" width="4134" height="1772">
+</div>
+    <p class="mer-h4">DEKRA-Siegel, farbig, auf Weiß</p>
+    <ul class="mer-list">
+      <li>Datei: <code class="mer-code">assets/siegel/dekra-siegel-iso-9001.png</code></li>
+      <li>Maße: 4134 × 1772 px, PNG, transparent</li>
+      <li>Einsatz: Standard am Bildschirm; im Kopf und im Footer, mindestens ca. 176 px breit</li>
+    </ul>
+</div>
+    </div>
+  </div>
+</div>
+<div class="mer-section mer-section--light mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Hellgrau</p>
+    <div>
+<div class="mer-stack">
+<div class="mer-seal mer-seal--lg">
+  <img src="assets/siegel/dekra-siegel-iso-9001.png" alt="DEKRA-Siegel: Zertifiziert, Qualitätsmanagement ISO 9001" width="4134" height="1772">
+</div>
+    <p class="mer-h4">DEKRA-Siegel, farbig, auf Hellgrau</p>
+    <ul class="mer-list">
+      <li>Dieselbe Datei; Markenzeile, Footer, Vertrauens-Zone</li>
+      <li>Hier 240 px breit (<code class="mer-code">mer-seal--lg</code>)</li>
+      <li>Nur vollständig und unverändert, nur proportional skalieren</li>
+    </ul>
+</div>
+    </div>
+  </div>
+</div>
+<div class="mer-section mer-section--white mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Weiß</p>
+    <div>
+<div class="mer-stack">
+<div class="mer-seal mer-seal--lg">
+  <img src="assets/siegel/dekra-siegel-iso-9001-schwarz.png" alt="DEKRA-Siegel: Zertifiziert, Qualitätsmanagement ISO 9001" width="4134" height="1772">
+</div>
+    <p class="mer-h4">DEKRA-Siegel, schwarz-weiß</p>
+    <ul class="mer-list">
+      <li>Datei: <code class="mer-code">assets/siegel/dekra-siegel-iso-9001-schwarz.png</code></li>
+      <li>Maße: 4134 × 1772 px, PNG, transparent</li>
+      <li>Einsatz: nur, wo einfarbig gearbeitet werden muss (z. B. Druckansicht in Schwarz-Weiß)</li>
+    </ul>
+</div>
+    </div>
+  </div>
+</div>
+<div class="mer-note">
+  <p class="mer-note__title">Kernregeln</p>
+  <ul class="mer-list">
+    <li>Das DEKRA-Siegel gehört bei jeder Gestaltung gut sichtbar dazu: Webseiten, Apps, Portale und auch interne Werkzeuge.</li>
+    <li>Das Siegel steht immer im ersten sichtbaren Bereich nahe dem Logo: Logo links, Siegel rechts (Kopfleiste bzw. Markenzeile <code class="mer-code">mer-brand</code>), auf dem Handy direkt unter dem Logo. Footer und Vertrauens-Zone kommen zusätzlich dazu.</li>
+    <li>Es steht für die Merlato GmbH als zertifiziertes Unternehmen: nur als Organisationskennung, nie neben Ergebnissen, Unterschriften oder Zertifikatstiteln, nie in Karten, Tabellen oder im Chat.</li>
+    <li>Ab 600 px Breite zeigt die Markenzeile das Web-Logo mit Siegel (<code class="mer-code">assets/logo/merlato-web-logo-2026-dekra.png</code>, offizielles Merlato-Asset) als ein Bild; darunter Logo und Siegel als zwei Bilder. Beispiel: Schnipsel „Markenzeile“ unten.</li>
+    <li>Siegel mindestens ca. 176 px breit (Hausregel), Web-Logo mindestens 580 px breit, Logo mindestens 50 px hoch. Passt beides nicht nebeneinander, steht das Siegel unter dem Logo; es entfällt nie.</li>
+    <li>Nur in Projekten für Merlato, nicht für andere Unternehmen oder Marken, und nur, solange das Zertifikat gültig ist.</li>
+    <li>Logo, Web-Logo und Siegel nie verändern; keine eigenen Kombi-Logos bauen; nur auf Weiß oder Hellgrau.</li>
+    <li>ProvenExpert-Bewertungssiegel sind ein Kann-Element: selbst gehostet, 200 × 200 px, als Link auf das Profil. Sie ersetzen das DEKRA-Siegel nie, stehen nie in Kopfleiste oder Markenzeile und sind daneben nie größer (<code class="mer-code">mer-rating-group</code>). Widgets von ProvenExpert nur mit Einwilligung; diese Seite zeigt sie nur als Code. Beispiele: Schnipsel unten, Regeln: README 7.8.</li>
+  </ul>
+</div>
+</div>
+</article>
+<article class="mer-stack" id="b-logo" aria-labelledby="b-logo-t">
+  <h3 class="mer-h3" id="b-logo-t">Logo-Schnipsel</h3>
+  <p>Logo 50 px und groß (56 px). Darstellung siehe Übersicht oben. Nur als Code gezeigt.</p>
+  <pre class="mer-codeblock" data-snippet="logo"><code>&lt;div class="mer-stack"&gt;
+  &lt;img class="mer-logo" src="assets/logo/merlato-logo-2026.png" alt="Merlato GmbH – Zertifizierte Schulungseinrichtung" width="2480" height="543"&gt;
+  &lt;img class="mer-logo mer-logo--lg" src="assets/logo/merlato-logo-2026.png" alt="Merlato GmbH – Zertifizierte Schulungseinrichtung" width="2480" height="543"&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-seal" aria-labelledby="b-seal-t">
+  <h3 class="mer-h3" id="b-seal-t">DEKRA-Siegel</h3>
+  <p>Standard: farbig, 192 px breit. Darstellung siehe Übersicht oben. Nur als Code gezeigt.</p>
+  <pre class="mer-codeblock" data-snippet="seal"><code>&lt;div class="mer-seal"&gt;
+  &lt;img src="assets/siegel/dekra-siegel-iso-9001.png" alt="DEKRA-Siegel: Zertifiziert, Qualitätsmanagement ISO 9001" width="4134" height="1772"&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-seal-schwarz" aria-labelledby="b-seal-schwarz-t">
+  <h3 class="mer-h3" id="b-seal-schwarz-t">DEKRA-Siegel schwarz-weiß</h3>
+  <p>Nur für einfarbige Einsätze. Darstellung siehe Übersicht oben. Nur als Code gezeigt.</p>
+  <pre class="mer-codeblock" data-snippet="seal-schwarz"><code>&lt;div class="mer-seal"&gt;
+  &lt;img src="assets/siegel/dekra-siegel-iso-9001-schwarz.png" alt="DEKRA-Siegel: Zertifiziert, Qualitätsmanagement ISO 9001" width="4134" height="1772"&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-brand" aria-labelledby="b-brand-t">
+  <h3 class="mer-h3" id="b-brand-t">Markenzeile</h3>
+  <p>Ab 600 px Breite das Web-Logo mit Siegel (600 px) als ein Bild; schmaler Logo (50 px) und Siegel (192 px) als zwei Bilder, Siegel darunter. Fenster schmaler ziehen, um umzuschalten.</p>
+<div class="mer-section mer-section--white mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Weiß</p>
+    <div>
+<div class="mer-brand">
+  <img class="mer-brand__web" src="assets/logo/merlato-web-logo-2026-dekra.png" alt="Merlato GmbH – Zertifizierte Schulungseinrichtung. DEKRA-Siegel: Zertifiziert, Qualitätsmanagement ISO 9001" width="3000" height="390">
+  <div class="mer-brand__split">
+    <img class="mer-logo" src="assets/logo/merlato-logo-2026.png" alt="Merlato GmbH – Zertifizierte Schulungseinrichtung" width="2480" height="543">
+    <div class="mer-seal">
+      <img src="assets/siegel/dekra-siegel-iso-9001.png" alt="DEKRA-Siegel: Zertifiziert, Qualitätsmanagement ISO 9001" width="4134" height="1772">
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+  <pre class="mer-codeblock" data-snippet="brand"><code>&lt;div class="mer-brand"&gt;
+  &lt;img class="mer-brand__web" src="assets/logo/merlato-web-logo-2026-dekra.png" alt="Merlato GmbH – Zertifizierte Schulungseinrichtung. DEKRA-Siegel: Zertifiziert, Qualitätsmanagement ISO 9001" width="3000" height="390"&gt;
+  &lt;div class="mer-brand__split"&gt;
+    &lt;img class="mer-logo" src="assets/logo/merlato-logo-2026.png" alt="Merlato GmbH – Zertifizierte Schulungseinrichtung" width="2480" height="543"&gt;
+    &lt;div class="mer-seal"&gt;
+      &lt;img src="assets/siegel/dekra-siegel-iso-9001.png" alt="DEKRA-Siegel: Zertifiziert, Qualitätsmanagement ISO 9001" width="4134" height="1772"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-trust" aria-labelledby="b-trust-t">
+  <h3 class="mer-h3" id="b-trust-t">Vertrauens-Zone</h3>
+  <p>Großes Siegel (240 px) mit Absenderzeile. Die Zeile nennt die Organisation, nicht ein einzelnes Produkt.</p>
+<div class="mer-grid mer-grid--2">
+<div class="mer-section mer-section--white mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Weiß</p>
+    <div>
+<div class="mer-trust">
+  <div class="mer-seal mer-seal--lg">
+    <img src="assets/siegel/dekra-siegel-iso-9001.png" alt="DEKRA-Siegel: Zertifiziert, Qualitätsmanagement ISO 9001" width="4134" height="1772">
+  </div>
+  <div class="mer-trust__text">
+    <p class="mer-h4">Merlato GmbH</p>
+    <p>DEKRA-zertifiziertes Qualitätsmanagement nach ISO 9001.</p>
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+<div class="mer-section mer-section--light mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Hellgrau</p>
+    <div>
+<div class="mer-trust">
+  <div class="mer-seal mer-seal--lg">
+    <img src="assets/siegel/dekra-siegel-iso-9001.png" alt="DEKRA-Siegel: Zertifiziert, Qualitätsmanagement ISO 9001" width="4134" height="1772">
+  </div>
+  <div class="mer-trust__text">
+    <p class="mer-h4">Merlato GmbH</p>
+    <p>DEKRA-zertifiziertes Qualitätsmanagement nach ISO 9001.</p>
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="mer-codeblock" data-snippet="trust"><code>&lt;div class="mer-trust"&gt;
+  &lt;div class="mer-seal mer-seal--lg"&gt;
+    &lt;img src="assets/siegel/dekra-siegel-iso-9001.png" alt="DEKRA-Siegel: Zertifiziert, Qualitätsmanagement ISO 9001" width="4134" height="1772"&gt;
+  &lt;/div&gt;
+  &lt;div class="mer-trust__text"&gt;
+    &lt;p class="mer-h4"&gt;Merlato GmbH&lt;/p&gt;
+    &lt;p&gt;DEKRA-zertifiziertes Qualitätsmanagement nach ISO 9001.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-rating" aria-labelledby="b-rating-t">
+  <h3 class="mer-h3" id="b-rating-t">ProvenExpert-Siegel</h3>
+  <p>Kann-Element: Siegelbild 200 × 200 px als Link auf das Profil der Merlato GmbH, selbst gehostet. Der Fokusrahmen liegt um das ganze Siegel.</p>
+<div class="mer-grid mer-grid--2">
+<div class="mer-section mer-section--white mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Weiß</p>
+    <div>
+<a class="mer-rating" href="https://www.provenexpert.com/de-de/merlato-gmbh2/" target="_blank" rel="noopener">
+  <img src="assets/provenexpert/provenexpert-top-dienstleister-2026.png" alt="ProvenExpert-Siegel Top Dienstleister 2026 – Kundenmeinungen der letzten 12 Monate" width="720" height="720">
+  <span class="mer-sr-only">(öffnet in neuem Fenster)</span>
+</a>
+    </div>
+  </div>
+</div>
+<div class="mer-section mer-section--light mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Hellgrau</p>
+    <div>
+<a class="mer-rating" href="https://www.provenexpert.com/de-de/merlato-gmbh2/" target="_blank" rel="noopener">
+  <img src="assets/provenexpert/provenexpert-top-dienstleister-2026.png" alt="ProvenExpert-Siegel Top Dienstleister 2026 – Kundenmeinungen der letzten 12 Monate" width="720" height="720">
+  <span class="mer-sr-only">(öffnet in neuem Fenster)</span>
+</a>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="mer-codeblock" data-snippet="rating"><code>&lt;a class="mer-rating" href="https://www.provenexpert.com/de-de/merlato-gmbh2/" target="_blank" rel="noopener"&gt;
+  &lt;img src="assets/provenexpert/provenexpert-top-dienstleister-2026.png" alt="ProvenExpert-Siegel Top Dienstleister 2026 – Kundenmeinungen der letzten 12 Monate" width="720" height="720"&gt;
+  &lt;span class="mer-sr-only"&gt;(öffnet in neuem Fenster)&lt;/span&gt;
+&lt;/a&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-rating-group" aria-labelledby="b-rating-group-t">
+  <h3 class="mer-h3" id="b-rating-group-t">Zwei ProvenExpert-Siegel</h3>
+  <p>Reihe aus beiden Siegeln des aktuellen Jahrgangs (je 200 px). Auf schmalen Bildschirmen untereinander.</p>
+<div class="mer-grid mer-grid--2">
+<div class="mer-section mer-section--white mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Weiß</p>
+    <div>
+<div class="mer-rating-group">
+  <a class="mer-rating" href="https://www.provenexpert.com/de-de/merlato-gmbh2/" target="_blank" rel="noopener">
+    <img src="assets/provenexpert/provenexpert-top-dienstleister-2026.png" alt="ProvenExpert-Siegel Top Dienstleister 2026 – Kundenmeinungen der letzten 12 Monate" width="720" height="720">
+    <span class="mer-sr-only">(öffnet in neuem Fenster)</span>
+  </a>
+  <a class="mer-rating" href="https://www.provenexpert.com/de-de/merlato-gmbh2/" target="_blank" rel="noopener">
+    <img src="assets/provenexpert/provenexpert-top-empfehlung-2026.png" alt="ProvenExpert-Siegel Top Empfehlung 2026 – Kundenmeinungen der letzten 12 Monate" width="720" height="720">
+    <span class="mer-sr-only">(öffnet in neuem Fenster)</span>
+  </a>
+</div>
+    </div>
+  </div>
+</div>
+<div class="mer-section mer-section--light mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Hellgrau</p>
+    <div>
+<div class="mer-rating-group">
+  <a class="mer-rating" href="https://www.provenexpert.com/de-de/merlato-gmbh2/" target="_blank" rel="noopener">
+    <img src="assets/provenexpert/provenexpert-top-dienstleister-2026.png" alt="ProvenExpert-Siegel Top Dienstleister 2026 – Kundenmeinungen der letzten 12 Monate" width="720" height="720">
+    <span class="mer-sr-only">(öffnet in neuem Fenster)</span>
+  </a>
+  <a class="mer-rating" href="https://www.provenexpert.com/de-de/merlato-gmbh2/" target="_blank" rel="noopener">
+    <img src="assets/provenexpert/provenexpert-top-empfehlung-2026.png" alt="ProvenExpert-Siegel Top Empfehlung 2026 – Kundenmeinungen der letzten 12 Monate" width="720" height="720">
+    <span class="mer-sr-only">(öffnet in neuem Fenster)</span>
+  </a>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="mer-codeblock" data-snippet="rating-group"><code>&lt;div class="mer-rating-group"&gt;
+  &lt;a class="mer-rating" href="https://www.provenexpert.com/de-de/merlato-gmbh2/" target="_blank" rel="noopener"&gt;
+    &lt;img src="assets/provenexpert/provenexpert-top-dienstleister-2026.png" alt="ProvenExpert-Siegel Top Dienstleister 2026 – Kundenmeinungen der letzten 12 Monate" width="720" height="720"&gt;
+    &lt;span class="mer-sr-only"&gt;(öffnet in neuem Fenster)&lt;/span&gt;
+  &lt;/a&gt;
+  &lt;a class="mer-rating" href="https://www.provenexpert.com/de-de/merlato-gmbh2/" target="_blank" rel="noopener"&gt;
+    &lt;img src="assets/provenexpert/provenexpert-top-empfehlung-2026.png" alt="ProvenExpert-Siegel Top Empfehlung 2026 – Kundenmeinungen der letzten 12 Monate" width="720" height="720"&gt;
+    &lt;span class="mer-sr-only"&gt;(öffnet in neuem Fenster)&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-quality" aria-labelledby="b-quality-t">
+  <h3 class="mer-h3" id="b-quality-t">Qualitäts-Block</h3>
+  <p>DEKRA-Siegel (240 px) zuerst, danach die beiden ProvenExpert-Siegel (je 200 px). Fenster schmaler ziehen: Die Siegel brechen untereinander um.</p>
+<div class="mer-section mer-section--white mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Weiß</p>
+    <div>
+<div class="mer-rating-group">
+  <div class="mer-seal">
+    <img src="assets/siegel/dekra-siegel-iso-9001.png" alt="DEKRA-Siegel: Zertifiziert, Qualitätsmanagement ISO 9001" width="4134" height="1772">
+  </div>
+  <a class="mer-rating" href="https://www.provenexpert.com/de-de/merlato-gmbh2/" target="_blank" rel="noopener">
+    <img src="assets/provenexpert/provenexpert-top-dienstleister-2026.png" alt="ProvenExpert-Siegel Top Dienstleister 2026 – Kundenmeinungen der letzten 12 Monate" width="720" height="720">
+    <span class="mer-sr-only">(öffnet in neuem Fenster)</span>
+  </a>
+  <a class="mer-rating" href="https://www.provenexpert.com/de-de/merlato-gmbh2/" target="_blank" rel="noopener">
+    <img src="assets/provenexpert/provenexpert-top-empfehlung-2026.png" alt="ProvenExpert-Siegel Top Empfehlung 2026 – Kundenmeinungen der letzten 12 Monate" width="720" height="720">
+    <span class="mer-sr-only">(öffnet in neuem Fenster)</span>
+  </a>
+</div>
+    </div>
+  </div>
+</div>
+  <pre class="mer-codeblock" data-snippet="quality"><code>&lt;div class="mer-rating-group"&gt;
+  &lt;div class="mer-seal"&gt;
+    &lt;img src="assets/siegel/dekra-siegel-iso-9001.png" alt="DEKRA-Siegel: Zertifiziert, Qualitätsmanagement ISO 9001" width="4134" height="1772"&gt;
+  &lt;/div&gt;
+  &lt;a class="mer-rating" href="https://www.provenexpert.com/de-de/merlato-gmbh2/" target="_blank" rel="noopener"&gt;
+    &lt;img src="assets/provenexpert/provenexpert-top-dienstleister-2026.png" alt="ProvenExpert-Siegel Top Dienstleister 2026 – Kundenmeinungen der letzten 12 Monate" width="720" height="720"&gt;
+    &lt;span class="mer-sr-only"&gt;(öffnet in neuem Fenster)&lt;/span&gt;
+  &lt;/a&gt;
+  &lt;a class="mer-rating" href="https://www.provenexpert.com/de-de/merlato-gmbh2/" target="_blank" rel="noopener"&gt;
+    &lt;img src="assets/provenexpert/provenexpert-top-empfehlung-2026.png" alt="ProvenExpert-Siegel Top Empfehlung 2026 – Kundenmeinungen der letzten 12 Monate" width="720" height="720"&gt;
+    &lt;span class="mer-sr-only"&gt;(öffnet in neuem Fenster)&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-pe-widget-landing" aria-labelledby="b-pe-widget-landing-t">
+  <h3 class="mer-h3" id="b-pe-widget-landing-t">Widget: großes Bewertungssiegel</h3>
+  <p>Referenz-Code von ProvenExpert, Stand 04.11.2026. Lädt Skript und CSS von provenexpert.com: nur mit Einwilligung, nicht in Web-Apps. Hier nur als Code gezeigt, nicht geladen.</p>
+  <pre class="mer-codeblock" data-snippet="pe-widget-landing"><code>&lt;!-- ProvenExpert Bewertungssiegel --&gt;
+&lt;div id="pewl"&gt;&lt;/div&gt;
+&lt;script type="text/javascript" src="https://www.provenexpert.com/widget/landing_merlato-gmbh2.js?feedback=1&amp;avatar=1&amp;competence=1&amp;language=de-de&amp;style=white" async&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" type="text/css" href="https://www.provenexpert.com/css/widget_landing.css" media="screen,print"&gt;
+&lt;!-- ProvenExpert Bewertungssiegel Ende --&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-pe-widget-sticky" aria-labelledby="b-pe-widget-sticky-t">
+  <h3 class="mer-h3" id="b-pe-widget-sticky-t">Widget: Sticky-Siegel</h3>
+  <p>Referenz-Code von ProvenExpert, Stand 04.11.2026. Festes Bild von images.provenexpert.com: nur mit Einwilligung, nicht in Web-Apps. Empfehlung: stattdessen mer-rating im Seitenablauf. Hier nur als Code gezeigt, nicht geladen.</p>
+  <pre class="mer-codeblock" data-snippet="pe-widget-sticky"><code>&lt;!-- ProvenExpert Bewertungssiegel --&gt;
+&lt;style type="text/css"&gt;body {-ms-overflow-style: scrollbar;} @media(max-width:991px){.ProvenExpert_widget_container {display:none !important;}}&lt;/style&gt;
+&lt;a class="ProvenExpert_widget_container" href="https://www.provenexpert.com/merlato-gmbh2/?utm_source=Widget&amp;amp;utm_medium=Widget&amp;amp;utm_campaign=Widget" title="Kundenbewertungen &amp;amp; Erfahrungen zu Merlato GmbH. Mehr Infos anzeigen." target="_blank" style="text-decoration:none;transition:none;z-index:9999;position:fixed;float:left;line-height:0;right:0;top:100px;" rel="noopener noreferrer"&gt;&lt;img src="https://images.provenexpert.com/39/41/b87140e821d44e4587045f4dc888/widget_square_200_de_0.png" alt="Erfahrungen &amp;amp; Bewertungen zu Merlato GmbH" width="200" height="200" style="border:0" /&gt;&lt;/a&gt;
+&lt;!-- ProvenExpert Bewertungssiegel --&gt;</code></pre>
+</article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Grundlagen ================= -->
+    <section class="mer-section mer-section--white" id="grundlagen" aria-labelledby="t-grundlagen">
+      <div class="mer-container">
+        <div class="mer-section-head">
+          <h2 class="mer-section-head__title" id="t-grundlagen">Grundlagen</h2>
+          <p class="mer-section-head__subtitle">Minimalseite, Kontexte, Raster.</p>
+        </div>
+        <div class="mer-grid">
+<article class="mer-stack" id="b-quickstart" aria-labelledby="b-quickstart-t">
+  <h3 class="mer-h3" id="b-quickstart-t">Minimalseite</h3>
+  <p>Kleinste vollständige Seite: Kopf und Footer jeweils mit Logo und DEKRA-Siegel. Nur als Code gezeigt.</p>
+  <pre class="mer-codeblock" data-snippet="quickstart"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="de"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+  &lt;title&gt;Seitentitel – Merlato&lt;/title&gt;
+  &lt;link rel="stylesheet" href="css/mer.css"&gt;
+&lt;/head&gt;
+&lt;body class="mer"&gt;
+  &lt;a class="mer-skip-link" href="#inhalt"&gt;Zum Inhalt springen&lt;/a&gt;
+  &lt;header class="mer-hero"&gt;
+    &lt;div class="mer-container"&gt;
+      &lt;div class="mer-hero__bar"&gt;
+        &lt;div class="mer-brand"&gt;
+          &lt;img class="mer-brand__web" src="assets/logo/merlato-web-logo-2026-dekra.png" alt="Merlato GmbH – Zertifizierte Schulungseinrichtung. DEKRA-Siegel: Zertifiziert, Qualitätsmanagement ISO 9001" width="3000" height="390"&gt;
+          &lt;div class="mer-brand__split"&gt;
+            &lt;img class="mer-logo" src="assets/logo/merlato-logo-2026.png" alt="Merlato GmbH – Zertifizierte Schulungseinrichtung" width="2480" height="543"&gt;
+            &lt;div class="mer-seal"&gt;
+              &lt;img src="assets/siegel/dekra-siegel-iso-9001.png" alt="DEKRA-Siegel: Zertifiziert, Qualitätsmanagement ISO 9001" width="4134" height="1772"&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;h1 class="mer-hero__title"&gt;Seitentitel&lt;/h1&gt;
+    &lt;/div&gt;
+  &lt;/header&gt;
+  &lt;main id="inhalt"&gt;
+    &lt;section class="mer-section mer-section--light" aria-labelledby="s1"&gt;
+      &lt;div class="mer-container"&gt;
+        &lt;div class="mer-section-head"&gt;
+          &lt;h2 class="mer-section-head__title" id="s1"&gt;Erste Sektion&lt;/h2&gt;
+        &lt;/div&gt;
+        &lt;a class="mer-btn mer-btn--primary" href="#"&gt;Aktion&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+  &lt;/main&gt;
+  &lt;footer class="mer-footer"&gt;
+    &lt;div class="mer-container"&gt;
+      &lt;div class="mer-footer__main"&gt;
+        &lt;div class="mer-stack"&gt;
+          &lt;img class="mer-logo" src="assets/logo/merlato-logo-2026.png" alt="Merlato GmbH – Zertifizierte Schulungseinrichtung" width="2480" height="543"&gt;
+          &lt;p&gt;Merlato GmbH · Annenheider Str. 257 · 27755 Delmenhorst&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="mer-seal"&gt;
+          &lt;img src="assets/siegel/dekra-siegel-iso-9001.png" alt="DEKRA-Siegel: Zertifiziert, Qualitätsmanagement ISO 9001" width="4134" height="1772"&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-ctx-dark" aria-labelledby="b-ctx-dark-t">
+  <h3 class="mer-h3" id="b-ctx-dark-t">Kontext ohne Sektion: dunkel</h3>
+  <p>Setzt die Tokens des dunklen Bands, malt aber keine Fläche. Für Graphit-Flächen, die von außen kommen (z. B. Divi-Sektion in #444444).</p>
+<div class="mer-section mer-section--dark mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Dunkel (Graphit)</p>
+    <div>
+<div class="mer-on-dark">
+  <a class="mer-btn" href="#">Button auf fremder dunkler Fläche</a>
+</div>
+    </div>
+  </div>
+</div>
+  <pre class="mer-codeblock" data-snippet="ctx-dark"><code>&lt;div class="mer-on-dark"&gt;
+  &lt;a class="mer-btn" href="#"&gt;Button auf fremder dunkler Fläche&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-ctx-light" aria-labelledby="b-ctx-light-t">
+  <h3 class="mer-h3" id="b-ctx-light-t">Kontext ohne Sektion: hell</h3>
+  <p>Gegenstück für helle Flächen von außen (Weiß oder Hellgrau).</p>
+<div class="mer-section mer-section--light mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Hellgrau</p>
+    <div>
+<div class="mer-on-light">
+  <a class="mer-btn" href="#">Button auf fremder heller Fläche</a>
+</div>
+    </div>
+  </div>
+</div>
+  <pre class="mer-codeblock" data-snippet="ctx-light"><code>&lt;div class="mer-on-light"&gt;
+  &lt;a class="mer-btn" href="#"&gt;Button auf fremder heller Fläche&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-container" aria-labelledby="b-container-t">
+  <h3 class="mer-h3" id="b-container-t">Inhaltsbreite</h3>
+  <p>Schmale Inhaltsbreite für Text und Formulare.</p>
+<div class="mer-grid mer-grid--2">
+<div class="mer-section mer-section--white mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Weiß</p>
+    <div>
+<div class="mer-container mer-container--narrow">
+  <p class="mer-note">Schmale Inhaltsbreite für Text und Formulare.</p>
+</div>
+    </div>
+  </div>
+</div>
+<div class="mer-section mer-section--light mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Hellgrau</p>
+    <div>
+<div class="mer-container mer-container--narrow">
+  <p class="mer-note">Schmale Inhaltsbreite für Text und Formulare.</p>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="mer-codeblock" data-snippet="container"><code>&lt;div class="mer-container mer-container--narrow"&gt;
+  &lt;p class="mer-note"&gt;Schmale Inhaltsbreite für Text und Formulare.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-grid" aria-labelledby="b-grid-t">
+  <h3 class="mer-h3" id="b-grid-t">Raster</h3>
+  <p>Zwei, drei und vier Spalten; schmal; letztes Element über die volle Breite.</p>
+<div class="mer-section mer-section--white mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Weiß</p>
+    <div>
+<div class="mer-stack">
+  <ul class="mer-grid mer-grid--2">
+    <li class="mer-card mer-card--static">1 von 2</li>
+    <li class="mer-card mer-card--static">2 von 2</li>
+  </ul>
+  <ul class="mer-grid mer-grid--3">
+    <li class="mer-card mer-card--static">1 von 3</li>
+    <li class="mer-card mer-card--static">2 von 3</li>
+    <li class="mer-card mer-card--static">3 von 3</li>
+  </ul>
+  <ul class="mer-grid mer-grid--4">
+    <li class="mer-card mer-card--static">1 von 4</li>
+    <li class="mer-card mer-card--static">2 von 4</li>
+    <li class="mer-card mer-card--static">3 von 4</li>
+    <li class="mer-card mer-card--static">4 von 4</li>
+  </ul>
+  <ul class="mer-grid mer-grid--3 mer-grid--span-last">
+    <li class="mer-card mer-card--static">1 von 3</li>
+    <li class="mer-card mer-card--static">2 von 3</li>
+    <li class="mer-card mer-card--static">3 von 3, bei zwei Spalten volle Breite</li>
+  </ul>
+  <ul class="mer-grid mer-grid--2 mer-grid--narrow">
+    <li class="mer-card mer-card--static">schmal 1 von 2</li>
+    <li class="mer-card mer-card--static">schmal 2 von 2</li>
+  </ul>
+</div>
+    </div>
+  </div>
+</div>
+  <pre class="mer-codeblock" data-snippet="grid"><code>&lt;div class="mer-stack"&gt;
+  &lt;ul class="mer-grid mer-grid--2"&gt;
+    &lt;li class="mer-card mer-card--static"&gt;1 von 2&lt;/li&gt;
+    &lt;li class="mer-card mer-card--static"&gt;2 von 2&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;ul class="mer-grid mer-grid--3"&gt;
+    &lt;li class="mer-card mer-card--static"&gt;1 von 3&lt;/li&gt;
+    &lt;li class="mer-card mer-card--static"&gt;2 von 3&lt;/li&gt;
+    &lt;li class="mer-card mer-card--static"&gt;3 von 3&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;ul class="mer-grid mer-grid--4"&gt;
+    &lt;li class="mer-card mer-card--static"&gt;1 von 4&lt;/li&gt;
+    &lt;li class="mer-card mer-card--static"&gt;2 von 4&lt;/li&gt;
+    &lt;li class="mer-card mer-card--static"&gt;3 von 4&lt;/li&gt;
+    &lt;li class="mer-card mer-card--static"&gt;4 von 4&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;ul class="mer-grid mer-grid--3 mer-grid--span-last"&gt;
+    &lt;li class="mer-card mer-card--static"&gt;1 von 3&lt;/li&gt;
+    &lt;li class="mer-card mer-card--static"&gt;2 von 3&lt;/li&gt;
+    &lt;li class="mer-card mer-card--static"&gt;3 von 3, bei zwei Spalten volle Breite&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;ul class="mer-grid mer-grid--2 mer-grid--narrow"&gt;
+    &lt;li class="mer-card mer-card--static"&gt;schmal 1 von 2&lt;/li&gt;
+    &lt;li class="mer-card mer-card--static"&gt;schmal 2 von 2&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+</article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Sektionen und Typografie ================= -->
+    <section class="mer-section mer-section--light" id="typografie" aria-labelledby="t-typografie">
+      <div class="mer-container">
+        <div class="mer-section-head">
+          <h2 class="mer-section-head__title" id="t-typografie">Sektionen und Typografie</h2>
+          <p class="mer-section-head__subtitle">Flächen, Überschriften, Fließtext, Code, Links, Icons.</p>
+        </div>
+        <div class="mer-grid">
+<article class="mer-stack" id="b-sections" aria-labelledby="b-sections-t">
+  <h3 class="mer-h3" id="b-sections-t">Sektionen</h3>
+  <p>Weiß, Hellgrau und das optionale dunkle Band; kompakt; Kasten. Nie zwei gleiche Sektionen hintereinander.</p>
+<div>
+<section class="mer-section mer-section--white">
+  <div class="mer-container"><p>Weiß: Grundfläche, Kopf und Karten.</p></div>
+</section>
+<section class="mer-section mer-section--light">
+  <div class="mer-container"><p>Hellgrau: ruhige Wechselfläche, Footer, App-Rahmen.</p></div>
+</section>
+<section class="mer-section mer-section--dark">
+  <div class="mer-container"><p>Dunkel: Graphit mit weißer Schrift. Höchstens ein Band pro Seite, ohne Logo, Siegel und App-Bausteine.</p></div>
+</section>
+<section class="mer-section mer-section--white mer-section--compact">
+  <div class="mer-container"><p>Modifier: kompakt.</p></div>
+</section>
+<div class="mer-section mer-section--white mer-section--compact mer-section--boxed">
+  <div class="mer-container"><p>Kasten: verschachtelte Fläche mit Rahmenlinie.</p></div>
+</div>
+</div>
+  <pre class="mer-codeblock" data-snippet="sections"><code>&lt;section class="mer-section mer-section--white"&gt;
+  &lt;div class="mer-container"&gt;&lt;p&gt;Weiß: Grundfläche, Kopf und Karten.&lt;/p&gt;&lt;/div&gt;
+&lt;/section&gt;
+&lt;section class="mer-section mer-section--light"&gt;
+  &lt;div class="mer-container"&gt;&lt;p&gt;Hellgrau: ruhige Wechselfläche, Footer, App-Rahmen.&lt;/p&gt;&lt;/div&gt;
+&lt;/section&gt;
+&lt;section class="mer-section mer-section--dark"&gt;
+  &lt;div class="mer-container"&gt;&lt;p&gt;Dunkel: Graphit mit weißer Schrift. Höchstens ein Band pro Seite, ohne Logo, Siegel und App-Bausteine.&lt;/p&gt;&lt;/div&gt;
+&lt;/section&gt;
+&lt;section class="mer-section mer-section--white mer-section--compact"&gt;
+  &lt;div class="mer-container"&gt;&lt;p&gt;Modifier: kompakt.&lt;/p&gt;&lt;/div&gt;
+&lt;/section&gt;
+&lt;div class="mer-section mer-section--white mer-section--compact mer-section--boxed"&gt;
+  &lt;div class="mer-container"&gt;&lt;p&gt;Kasten: verschachtelte Fläche mit Rahmenlinie.&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-dark-band" aria-labelledby="b-dark-band-t">
+  <h3 class="mer-h3" id="b-dark-band-t">Dunkles Band</h3>
+  <p>Optional, höchstens eines pro Seite: Graphit-Fläche mit weißer Schrift; gefüllte Buttons mit weißem Rand. Ohne Logo, Siegel und App-Bausteine.</p>
+<div>
+<section class="mer-section mer-section--dark" aria-labelledby="beispiel-band-titel">
+  <div class="mer-container">
+    <div class="mer-section-head">
+      <h2 class="mer-section-head__title" id="beispiel-band-titel">Abschlussaussage</h2>
+      <p class="mer-section-head__subtitle">Ein bis zwei ruhige Sätze.</p>
+    </div>
+    <p>Fließtext im dunklen Band mit einem <a href="#">Link im Text</a>.</p>
+    <div class="mer-hero__actions">
+      <a class="mer-btn mer-btn--primary" href="#">Hauptaktion</a>
+      <a class="mer-btn" href="#">Weitere Aktion</a>
+    </div>
+  </div>
+</section>
+</div>
+  <pre class="mer-codeblock" data-snippet="dark-band"><code>&lt;section class="mer-section mer-section--dark" aria-labelledby="beispiel-band-titel"&gt;
+  &lt;div class="mer-container"&gt;
+    &lt;div class="mer-section-head"&gt;
+      &lt;h2 class="mer-section-head__title" id="beispiel-band-titel"&gt;Abschlussaussage&lt;/h2&gt;
+      &lt;p class="mer-section-head__subtitle"&gt;Ein bis zwei ruhige Sätze.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;p&gt;Fließtext im dunklen Band mit einem &lt;a href="#"&gt;Link im Text&lt;/a&gt;.&lt;/p&gt;
+    &lt;div class="mer-hero__actions"&gt;
+      &lt;a class="mer-btn mer-btn--primary" href="#"&gt;Hauptaktion&lt;/a&gt;
+      &lt;a class="mer-btn" href="#"&gt;Weitere Aktion&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-typo" aria-labelledby="b-typo-t">
+  <h3 class="mer-h3" id="b-typo-t">Typografie</h3>
+  <p>Echte Überschriften (h1–h6) bekommen die Optik automatisch. mer-h1 bis mer-h4 übertragen sie auf andere Elemente.</p>
+<div class="mer-grid mer-grid--2">
+<div class="mer-section mer-section--white mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Weiß</p>
+    <div>
+<div class="mer-stack">
+  <p class="mer-eyebrow">Dachzeile</p>
+  <p class="mer-h1">Überschrift 1</p>
+  <p class="mer-h2">Überschrift 2</p>
+  <p class="mer-h3">Überschrift 3</p>
+  <p class="mer-h4">Überschrift 4</p>
+  <p class="mer-lead">Einleitung: etwas größer als der Fließtext.</p>
+  <p>Fließtext in Inter, Stärke 400, Zeilenhöhe 1,6, mindestens 16 px.</p>
+  <p class="mer-small">Kleintext für kurze Zusatzangaben.</p>
+  <p class="mer-muted">Gedimmter Text für Nebensächliches.</p>
+</div>
+    </div>
+  </div>
+</div>
+<div class="mer-section mer-section--light mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Hellgrau</p>
+    <div>
+<div class="mer-stack">
+  <p class="mer-eyebrow">Dachzeile</p>
+  <p class="mer-h1">Überschrift 1</p>
+  <p class="mer-h2">Überschrift 2</p>
+  <p class="mer-h3">Überschrift 3</p>
+  <p class="mer-h4">Überschrift 4</p>
+  <p class="mer-lead">Einleitung: etwas größer als der Fließtext.</p>
+  <p>Fließtext in Inter, Stärke 400, Zeilenhöhe 1,6, mindestens 16 px.</p>
+  <p class="mer-small">Kleintext für kurze Zusatzangaben.</p>
+  <p class="mer-muted">Gedimmter Text für Nebensächliches.</p>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="mer-codeblock" data-snippet="typo"><code>&lt;div class="mer-stack"&gt;
+  &lt;p class="mer-eyebrow"&gt;Dachzeile&lt;/p&gt;
+  &lt;p class="mer-h1"&gt;Überschrift 1&lt;/p&gt;
+  &lt;p class="mer-h2"&gt;Überschrift 2&lt;/p&gt;
+  &lt;p class="mer-h3"&gt;Überschrift 3&lt;/p&gt;
+  &lt;p class="mer-h4"&gt;Überschrift 4&lt;/p&gt;
+  &lt;p class="mer-lead"&gt;Einleitung: etwas größer als der Fließtext.&lt;/p&gt;
+  &lt;p&gt;Fließtext in Inter, Stärke 400, Zeilenhöhe 1,6, mindestens 16 px.&lt;/p&gt;
+  &lt;p class="mer-small"&gt;Kleintext für kurze Zusatzangaben.&lt;/p&gt;
+  &lt;p class="mer-muted"&gt;Gedimmter Text für Nebensächliches.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-prose" aria-labelledby="b-prose-t">
+  <h3 class="mer-h3" id="b-prose-t">Fließtext-Bereich</h3>
+  <p>Für redaktionelle Inhalte, z. B. aus einem CMS: Abstände, Listen und Links ohne eigene Klassen.</p>
+<div class="mer-grid mer-grid--2">
+<div class="mer-section mer-section--white mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Weiß</p>
+    <div>
+<div class="mer-prose">
+  <h3>Zwischenüberschrift</h3>
+  <p>Absätze bekommen automatisch Abstand. Ein <a href="#">Link im Text</a> ist immer unterstrichen.</p>
+  <ul>
+    <li>Aufzählung mit Punkt-Marker</li>
+    <li>Zweiter Punkt</li>
+  </ul>
+  <ol>
+    <li>Nummerierte Liste</li>
+    <li>Zweiter Schritt</li>
+  </ol>
+</div>
+    </div>
+  </div>
+</div>
+<div class="mer-section mer-section--light mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Hellgrau</p>
+    <div>
+<div class="mer-prose">
+  <h3>Zwischenüberschrift</h3>
+  <p>Absätze bekommen automatisch Abstand. Ein <a href="#">Link im Text</a> ist immer unterstrichen.</p>
+  <ul>
+    <li>Aufzählung mit Punkt-Marker</li>
+    <li>Zweiter Punkt</li>
+  </ul>
+  <ol>
+    <li>Nummerierte Liste</li>
+    <li>Zweiter Schritt</li>
+  </ol>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="mer-codeblock" data-snippet="prose"><code>&lt;div class="mer-prose"&gt;
+  &lt;h3&gt;Zwischenüberschrift&lt;/h3&gt;
+  &lt;p&gt;Absätze bekommen automatisch Abstand. Ein &lt;a href="#"&gt;Link im Text&lt;/a&gt; ist immer unterstrichen.&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Aufzählung mit Punkt-Marker&lt;/li&gt;
+    &lt;li&gt;Zweiter Punkt&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;ol&gt;
+    &lt;li&gt;Nummerierte Liste&lt;/li&gt;
+    &lt;li&gt;Zweiter Schritt&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-code" aria-labelledby="b-code-t">
+  <h3 class="mer-h3" id="b-code-t">Code</h3>
+  <p>Inline-Code als Chip, Codeblock auf hellgrauer Fläche mit grauem Rand. Lange Zeilen brechen um.</p>
+<div class="mer-grid mer-grid--2">
+<div class="mer-section mer-section--white mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Weiß</p>
+    <div>
+<p>Klasse <code class="mer-code">mer-btn</code> im Fließtext.</p>
+<pre class="mer-codeblock"><code>&lt;a class="mer-btn" href="#"&gt;Button&lt;/a&gt;</code></pre>
+    </div>
+  </div>
+</div>
+<div class="mer-section mer-section--light mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Hellgrau</p>
+    <div>
+<p>Klasse <code class="mer-code">mer-btn</code> im Fließtext.</p>
+<pre class="mer-codeblock"><code>&lt;a class="mer-btn" href="#"&gt;Button&lt;/a&gt;</code></pre>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="mer-codeblock" data-snippet="code"><code>&lt;p&gt;Klasse &lt;code class="mer-code"&gt;mer-btn&lt;/code&gt; im Fließtext.&lt;/p&gt;
+&lt;pre class="mer-codeblock"&gt;&lt;code&gt;&amp;lt;a class="mer-btn" href="#"&amp;gt;Button&amp;lt;/a&amp;gt;&lt;/code&gt;&lt;/pre&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-link" aria-labelledby="b-link-t">
+  <h3 class="mer-h3" id="b-link-t">Links</h3>
+  <p>Links sind immer unterstrichen, nie nur farbig markiert.</p>
+<div class="mer-grid mer-grid--2">
+<div class="mer-section mer-section--white mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Weiß</p>
+    <div>
+<p>Ein <a href="#">Link im Fließtext</a> und ein <a class="mer-link" href="#">Link mit Klasse</a>.</p>
+    </div>
+  </div>
+</div>
+<div class="mer-section mer-section--light mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Hellgrau</p>
+    <div>
+<p>Ein <a href="#">Link im Fließtext</a> und ein <a class="mer-link" href="#">Link mit Klasse</a>.</p>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="mer-codeblock" data-snippet="link"><code>&lt;p&gt;Ein &lt;a href="#"&gt;Link im Fließtext&lt;/a&gt; und ein &lt;a class="mer-link" href="#"&gt;Link mit Klasse&lt;/a&gt;.&lt;/p&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-icon" aria-labelledby="b-icon-t">
+  <h3 class="mer-h3" id="b-icon-t">Icons</h3>
+  <p>Größe folgt der Schriftgröße, Farbe der Schriftfarbe.</p>
+<div class="mer-grid mer-grid--2">
+<div class="mer-section mer-section--white mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Weiß</p>
+    <div>
+<ul class="mer-cluster">
+  <li><span class="mer-icon mer-icon--play" aria-hidden="true"></span> play</li>
+  <li><span class="mer-icon mer-icon--pause" aria-hidden="true"></span> pause</li>
+  <li><span class="mer-icon mer-icon--circle" aria-hidden="true"></span> circle</li>
+  <li><span class="mer-icon mer-icon--question" aria-hidden="true"></span> question</li>
+  <li><span class="mer-icon mer-icon--warning" aria-hidden="true"></span> warning</li>
+  <li><span class="mer-icon mer-icon--cross" aria-hidden="true"></span> cross</li>
+  <li><span class="mer-icon mer-icon--check" aria-hidden="true"></span> check</li>
+  <li><span class="mer-icon mer-icon--send" aria-hidden="true"></span> send</li>
+  <li><span class="mer-icon mer-icon--attach" aria-hidden="true"></span> attach</li>
+  <li><span class="mer-icon mer-icon--chevron" aria-hidden="true"></span> chevron</li>
+  <li><span class="mer-icon mer-icon--return" aria-hidden="true"></span> return</li>
+</ul>
+    </div>
+  </div>
+</div>
+<div class="mer-section mer-section--light mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Hellgrau</p>
+    <div>
+<ul class="mer-cluster">
+  <li><span class="mer-icon mer-icon--play" aria-hidden="true"></span> play</li>
+  <li><span class="mer-icon mer-icon--pause" aria-hidden="true"></span> pause</li>
+  <li><span class="mer-icon mer-icon--circle" aria-hidden="true"></span> circle</li>
+  <li><span class="mer-icon mer-icon--question" aria-hidden="true"></span> question</li>
+  <li><span class="mer-icon mer-icon--warning" aria-hidden="true"></span> warning</li>
+  <li><span class="mer-icon mer-icon--cross" aria-hidden="true"></span> cross</li>
+  <li><span class="mer-icon mer-icon--check" aria-hidden="true"></span> check</li>
+  <li><span class="mer-icon mer-icon--send" aria-hidden="true"></span> send</li>
+  <li><span class="mer-icon mer-icon--attach" aria-hidden="true"></span> attach</li>
+  <li><span class="mer-icon mer-icon--chevron" aria-hidden="true"></span> chevron</li>
+  <li><span class="mer-icon mer-icon--return" aria-hidden="true"></span> return</li>
+</ul>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="mer-codeblock" data-snippet="icon"><code>&lt;ul class="mer-cluster"&gt;
+  &lt;li&gt;&lt;span class="mer-icon mer-icon--play" aria-hidden="true"&gt;&lt;/span&gt; play&lt;/li&gt;
+  &lt;li&gt;&lt;span class="mer-icon mer-icon--pause" aria-hidden="true"&gt;&lt;/span&gt; pause&lt;/li&gt;
+  &lt;li&gt;&lt;span class="mer-icon mer-icon--circle" aria-hidden="true"&gt;&lt;/span&gt; circle&lt;/li&gt;
+  &lt;li&gt;&lt;span class="mer-icon mer-icon--question" aria-hidden="true"&gt;&lt;/span&gt; question&lt;/li&gt;
+  &lt;li&gt;&lt;span class="mer-icon mer-icon--warning" aria-hidden="true"&gt;&lt;/span&gt; warning&lt;/li&gt;
+  &lt;li&gt;&lt;span class="mer-icon mer-icon--cross" aria-hidden="true"&gt;&lt;/span&gt; cross&lt;/li&gt;
+  &lt;li&gt;&lt;span class="mer-icon mer-icon--check" aria-hidden="true"&gt;&lt;/span&gt; check&lt;/li&gt;
+  &lt;li&gt;&lt;span class="mer-icon mer-icon--send" aria-hidden="true"&gt;&lt;/span&gt; send&lt;/li&gt;
+  &lt;li&gt;&lt;span class="mer-icon mer-icon--attach" aria-hidden="true"&gt;&lt;/span&gt; attach&lt;/li&gt;
+  &lt;li&gt;&lt;span class="mer-icon mer-icon--chevron" aria-hidden="true"&gt;&lt;/span&gt; chevron&lt;/li&gt;
+  &lt;li&gt;&lt;span class="mer-icon mer-icon--return" aria-hidden="true"&gt;&lt;/span&gt; return&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+</article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Kopf ================= -->
+    <section class="mer-section mer-section--white" id="kopf" aria-labelledby="t-kopf">
+      <div class="mer-container">
+        <div class="mer-section-head">
+          <h2 class="mer-section-head__title" id="t-kopf">Kopf</h2>
+          <p class="mer-section-head__subtitle">Kopfbereich und Sektionskopf. Logo, DEKRA-Siegel, Markenzeile und Vertrauens-Zone: siehe „Logo und Siegel“ ganz oben.</p>
+        </div>
+        <div class="mer-grid">
+<article class="mer-stack" id="b-hero" aria-labelledby="b-hero-t">
+  <h3 class="mer-h3" id="b-hero-t">Kopfbereich</h3>
+  <p>Weißer Kopf: Kopfleiste mit dem Web-Logo mit Siegel (auf dem Handy Logo und Siegel als zwei Bilder, Siegel darunter), Dachzeile, H1, Einleitung, Aktionen.</p>
+<div>
+<header class="mer-hero">
+  <div class="mer-container">
+    <div class="mer-hero__bar">
+      <div class="mer-brand">
+        <img class="mer-brand__web" src="assets/logo/merlato-web-logo-2026-dekra.png" alt="Merlato GmbH – Zertifizierte Schulungseinrichtung. DEKRA-Siegel: Zertifiziert, Qualitätsmanagement ISO 9001" width="3000" height="390">
+        <div class="mer-brand__split">
+          <img class="mer-logo" src="assets/logo/merlato-logo-2026.png" alt="Merlato GmbH – Zertifizierte Schulungseinrichtung" width="2480" height="543">
+          <div class="mer-seal">
+            <img src="assets/siegel/dekra-siegel-iso-9001.png" alt="DEKRA-Siegel: Zertifiziert, Qualitätsmanagement ISO 9001" width="4134" height="1772">
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="mer-eyebrow">Merlato · Dachzeile</p>
+    <h1 class="mer-hero__title">Seitentitel</h1>
+    <p class="mer-hero__lead">Kurze Einleitung in ein bis zwei Sätzen.</p>
+    <div class="mer-hero__actions">
+      <a class="mer-btn mer-btn--primary" href="#">Hauptaktion</a>
+      <a class="mer-btn" href="#">Weitere Aktion</a>
+    </div>
+  </div>
+</header>
+</div>
+  <pre class="mer-codeblock" data-snippet="hero"><code>&lt;header class="mer-hero"&gt;
+  &lt;div class="mer-container"&gt;
+    &lt;div class="mer-hero__bar"&gt;
+      &lt;div class="mer-brand"&gt;
+        &lt;img class="mer-brand__web" src="assets/logo/merlato-web-logo-2026-dekra.png" alt="Merlato GmbH – Zertifizierte Schulungseinrichtung. DEKRA-Siegel: Zertifiziert, Qualitätsmanagement ISO 9001" width="3000" height="390"&gt;
+        &lt;div class="mer-brand__split"&gt;
+          &lt;img class="mer-logo" src="assets/logo/merlato-logo-2026.png" alt="Merlato GmbH – Zertifizierte Schulungseinrichtung" width="2480" height="543"&gt;
+          &lt;div class="mer-seal"&gt;
+            &lt;img src="assets/siegel/dekra-siegel-iso-9001.png" alt="DEKRA-Siegel: Zertifiziert, Qualitätsmanagement ISO 9001" width="4134" height="1772"&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;p class="mer-eyebrow"&gt;Merlato · Dachzeile&lt;/p&gt;
+    &lt;h1 class="mer-hero__title"&gt;Seitentitel&lt;/h1&gt;
+    &lt;p class="mer-hero__lead"&gt;Kurze Einleitung in ein bis zwei Sätzen.&lt;/p&gt;
+    &lt;div class="mer-hero__actions"&gt;
+      &lt;a class="mer-btn mer-btn--primary" href="#"&gt;Hauptaktion&lt;/a&gt;
+      &lt;a class="mer-btn" href="#"&gt;Weitere Aktion&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/header&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-section-head" aria-labelledby="b-section-head-t">
+  <h3 class="mer-h3" id="b-section-head-t">Sektionskopf</h3>
+  <p>Linksbündig mit roter Akzentlinie; zentriert als Modifier.</p>
+<div class="mer-grid mer-grid--2">
+<div class="mer-section mer-section--white mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Weiß</p>
+    <div>
+<div class="mer-section-head">
+  <h2 class="mer-section-head__title">Sektionstitel</h2>
+  <p class="mer-section-head__subtitle">Unterzeile in einem Satz.</p>
+</div>
+<div class="mer-section-head mer-section-head--center">
+  <h2 class="mer-section-head__title">Zentriert</h2>
+</div>
+    </div>
+  </div>
+</div>
+<div class="mer-section mer-section--light mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Hellgrau</p>
+    <div>
+<div class="mer-section-head">
+  <h2 class="mer-section-head__title">Sektionstitel</h2>
+  <p class="mer-section-head__subtitle">Unterzeile in einem Satz.</p>
+</div>
+<div class="mer-section-head mer-section-head--center">
+  <h2 class="mer-section-head__title">Zentriert</h2>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="mer-codeblock" data-snippet="section-head"><code>&lt;div class="mer-section-head"&gt;
+  &lt;h2 class="mer-section-head__title"&gt;Sektionstitel&lt;/h2&gt;
+  &lt;p class="mer-section-head__subtitle"&gt;Unterzeile in einem Satz.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="mer-section-head mer-section-head--center"&gt;
+  &lt;h2 class="mer-section-head__title"&gt;Zentriert&lt;/h2&gt;
+&lt;/div&gt;</code></pre>
+</article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Bedienelemente ================= -->
+    <section class="mer-section mer-section--light" id="bedienelemente" aria-labelledby="t-bedienelemente">
+      <div class="mer-container">
+        <div class="mer-section-head">
+          <h2 class="mer-section-head__title" id="t-bedienelemente">Bedienelemente</h2>
+          <p class="mer-section-head__subtitle">Buttons, Navigation, Badges, Listen.</p>
+        </div>
+        <div class="mer-grid">
+<article class="mer-stack" id="b-btn" aria-labelledby="b-btn-t">
+  <h3 class="mer-h3" id="b-btn-t">Buttons</h3>
+  <p>Kontur, Hauptaktion (Rot), kritische Aktion (Akzent dunkel), deaktiviert.</p>
+<div class="mer-grid mer-grid--2">
+<div class="mer-section mer-section--white mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Weiß</p>
+    <div>
+<div class="mer-cluster">
+  <a class="mer-btn mer-btn--primary" href="#">Hauptaktion</a>
+  <a class="mer-btn" href="#">Kontur</a>
+  <button class="mer-btn mer-btn--accent" type="button">Kritische Aktion</button>
+  <button class="mer-btn" type="button" disabled>Deaktiviert</button>
+</div>
+    </div>
+  </div>
+</div>
+<div class="mer-section mer-section--light mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Hellgrau</p>
+    <div>
+<div class="mer-cluster">
+  <a class="mer-btn mer-btn--primary" href="#">Hauptaktion</a>
+  <a class="mer-btn" href="#">Kontur</a>
+  <button class="mer-btn mer-btn--accent" type="button">Kritische Aktion</button>
+  <button class="mer-btn" type="button" disabled>Deaktiviert</button>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="mer-codeblock" data-snippet="btn"><code>&lt;div class="mer-cluster"&gt;
+  &lt;a class="mer-btn mer-btn--primary" href="#"&gt;Hauptaktion&lt;/a&gt;
+  &lt;a class="mer-btn" href="#"&gt;Kontur&lt;/a&gt;
+  &lt;button class="mer-btn mer-btn--accent" type="button"&gt;Kritische Aktion&lt;/button&gt;
+  &lt;button class="mer-btn" type="button" disabled&gt;Deaktiviert&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-btn-sizes" aria-labelledby="b-btn-sizes-t">
+  <h3 class="mer-h3" id="b-btn-sizes-t">Button-Größen</h3>
+  <p>Klein, Standard, groß, Icon-Button, volle Breite.</p>
+<div class="mer-grid mer-grid--2">
+<div class="mer-section mer-section--white mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Weiß</p>
+    <div>
+<div class="mer-stack">
+  <div class="mer-cluster">
+    <a class="mer-btn mer-btn--sm" href="#">Klein</a>
+    <a class="mer-btn" href="#">Standard</a>
+    <a class="mer-btn mer-btn--lg" href="#">Groß</a>
+    <button class="mer-btn mer-btn--icon" type="button">
+      <span class="mer-icon mer-icon--send" aria-hidden="true"></span>
+      <span class="mer-sr-only">Senden</span>
+    </button>
+  </div>
+  <a class="mer-btn mer-btn--primary mer-btn--block" href="#">Volle Breite</a>
+</div>
+    </div>
+  </div>
+</div>
+<div class="mer-section mer-section--light mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Hellgrau</p>
+    <div>
+<div class="mer-stack">
+  <div class="mer-cluster">
+    <a class="mer-btn mer-btn--sm" href="#">Klein</a>
+    <a class="mer-btn" href="#">Standard</a>
+    <a class="mer-btn mer-btn--lg" href="#">Groß</a>
+    <button class="mer-btn mer-btn--icon" type="button">
+      <span class="mer-icon mer-icon--send" aria-hidden="true"></span>
+      <span class="mer-sr-only">Senden</span>
+    </button>
+  </div>
+  <a class="mer-btn mer-btn--primary mer-btn--block" href="#">Volle Breite</a>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="mer-codeblock" data-snippet="btn-sizes"><code>&lt;div class="mer-stack"&gt;
+  &lt;div class="mer-cluster"&gt;
+    &lt;a class="mer-btn mer-btn--sm" href="#"&gt;Klein&lt;/a&gt;
+    &lt;a class="mer-btn" href="#"&gt;Standard&lt;/a&gt;
+    &lt;a class="mer-btn mer-btn--lg" href="#"&gt;Groß&lt;/a&gt;
+    &lt;button class="mer-btn mer-btn--icon" type="button"&gt;
+      &lt;span class="mer-icon mer-icon--send" aria-hidden="true"&gt;&lt;/span&gt;
+      &lt;span class="mer-sr-only"&gt;Senden&lt;/span&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+  &lt;a class="mer-btn mer-btn--primary mer-btn--block" href="#"&gt;Volle Breite&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-nav" aria-labelledby="b-nav-t">
+  <h3 class="mer-h3" id="b-nav-t">Navigation</h3>
+  <p>Sprungnavigation aus kleinen Kontur-Buttons; die aktuelle Seite ist fett und rot unterstrichen.</p>
+<div class="mer-grid mer-grid--2">
+<div class="mer-section mer-section--white mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Weiß</p>
+    <div>
+<nav aria-label="Seitenbereiche">
+  <ul class="mer-nav">
+    <li><a class="mer-btn mer-btn--sm" href="#" aria-current="page">Aktuelle Seite</a></li>
+    <li><a class="mer-btn mer-btn--sm" href="#">Bereich 2</a></li>
+    <li><a class="mer-btn mer-btn--sm" href="#">Bereich 3</a></li>
+  </ul>
+</nav>
+    </div>
+  </div>
+</div>
+<div class="mer-section mer-section--light mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Hellgrau</p>
+    <div>
+<nav aria-label="Seitenbereiche">
+  <ul class="mer-nav">
+    <li><a class="mer-btn mer-btn--sm" href="#" aria-current="page">Aktuelle Seite</a></li>
+    <li><a class="mer-btn mer-btn--sm" href="#">Bereich 2</a></li>
+    <li><a class="mer-btn mer-btn--sm" href="#">Bereich 3</a></li>
+  </ul>
+</nav>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="mer-codeblock" data-snippet="nav"><code>&lt;nav aria-label="Seitenbereiche"&gt;
+  &lt;ul class="mer-nav"&gt;
+    &lt;li&gt;&lt;a class="mer-btn mer-btn--sm" href="#" aria-current="page"&gt;Aktuelle Seite&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a class="mer-btn mer-btn--sm" href="#"&gt;Bereich 2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a class="mer-btn mer-btn--sm" href="#"&gt;Bereich 3&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-badge" aria-labelledby="b-badge-t">
+  <h3 class="mer-h3" id="b-badge-t">Badges</h3>
+  <p>Neutral, Kontur, Akzent, groß mit Icon.</p>
+<div class="mer-grid mer-grid--2">
+<div class="mer-section mer-section--white mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Weiß</p>
+    <div>
+<div class="mer-cluster">
+  <span class="mer-badge">Neutral</span>
+  <span class="mer-badge mer-badge--outline">Kontur</span>
+  <span class="mer-badge mer-badge--accent">Akzent</span>
+  <span class="mer-badge mer-badge--lg"><span class="mer-icon mer-icon--check" aria-hidden="true"></span>Groß mit Icon</span>
+</div>
+    </div>
+  </div>
+</div>
+<div class="mer-section mer-section--light mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Hellgrau</p>
+    <div>
+<div class="mer-cluster">
+  <span class="mer-badge">Neutral</span>
+  <span class="mer-badge mer-badge--outline">Kontur</span>
+  <span class="mer-badge mer-badge--accent">Akzent</span>
+  <span class="mer-badge mer-badge--lg"><span class="mer-icon mer-icon--check" aria-hidden="true"></span>Groß mit Icon</span>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="mer-codeblock" data-snippet="badge"><code>&lt;div class="mer-cluster"&gt;
+  &lt;span class="mer-badge"&gt;Neutral&lt;/span&gt;
+  &lt;span class="mer-badge mer-badge--outline"&gt;Kontur&lt;/span&gt;
+  &lt;span class="mer-badge mer-badge--accent"&gt;Akzent&lt;/span&gt;
+  &lt;span class="mer-badge mer-badge--lg"&gt;&lt;span class="mer-icon mer-icon--check" aria-hidden="true"&gt;&lt;/span&gt;Groß mit Icon&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-list" aria-labelledby="b-list-t">
+  <h3 class="mer-h3" id="b-list-t">Listen</h3>
+  <p>Punkt-Marker und Haken-Marker.</p>
+<div class="mer-grid mer-grid--2">
+<div class="mer-section mer-section--white mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Weiß</p>
+    <div>
+<div class="mer-grid mer-grid--2">
+  <ul class="mer-list">
+    <li>Punkt-Marker</li>
+    <li>Zweiter Punkt</li>
+  </ul>
+  <ul class="mer-list mer-list--check">
+    <li>Haken-Marker</li>
+    <li>Zweiter Punkt</li>
+  </ul>
+</div>
+    </div>
+  </div>
+</div>
+<div class="mer-section mer-section--light mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Hellgrau</p>
+    <div>
+<div class="mer-grid mer-grid--2">
+  <ul class="mer-list">
+    <li>Punkt-Marker</li>
+    <li>Zweiter Punkt</li>
+  </ul>
+  <ul class="mer-list mer-list--check">
+    <li>Haken-Marker</li>
+    <li>Zweiter Punkt</li>
+  </ul>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="mer-codeblock" data-snippet="list"><code>&lt;div class="mer-grid mer-grid--2"&gt;
+  &lt;ul class="mer-list"&gt;
+    &lt;li&gt;Punkt-Marker&lt;/li&gt;
+    &lt;li&gt;Zweiter Punkt&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;ul class="mer-list mer-list--check"&gt;
+    &lt;li&gt;Haken-Marker&lt;/li&gt;
+    &lt;li&gt;Zweiter Punkt&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+</article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Inhalte ================= -->
+    <section class="mer-section mer-section--white" id="inhalte" aria-labelledby="t-inhalte">
+      <div class="mer-container">
+        <div class="mer-section-head">
+          <h2 class="mer-section-head__title" id="t-inhalte">Inhalte</h2>
+          <p class="mer-section-head__subtitle">Karten, Bildflächen, Avatare, Schritte, Hinweise.</p>
+        </div>
+        <div class="mer-grid">
+<article class="mer-stack" id="b-card" aria-labelledby="b-card-t">
+  <h3 class="mer-h3" id="b-card-t">Karte</h3>
+  <p>Bildfläche, Titel, Themenzeile, Text, Liste, Hinweis am Kartenende.</p>
+<div class="mer-grid mer-grid--2">
+<div class="mer-section mer-section--white mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Weiß</p>
+    <div>
+<article class="mer-card" aria-labelledby="beispiel-karte-titel">
+  <div class="mer-media" aria-hidden="true"><span class="mer-media__initials">AB</span></div>
+  <div class="mer-card__body">
+    <h3 class="mer-card__title" id="beispiel-karte-titel">Kartentitel</h3>
+    <p class="mer-card__meta">Rollen- oder Themenzeile</p>
+    <p>Kurzer Beschreibungstext der Karte.</p>
+    <ul class="mer-list">
+      <li>Erster Punkt</li>
+      <li>Zweiter Punkt</li>
+    </ul>
+    <div class="mer-card__footer mer-note">
+      <p class="mer-note__title">Hinweis am Kartenende</p>
+      <p>Sitzt immer unten, auch bei unterschiedlich langen Karten.</p>
+    </div>
+  </div>
+</article>
+    </div>
+  </div>
+</div>
+<div class="mer-section mer-section--light mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Hellgrau</p>
+    <div>
+<article class="mer-card" aria-labelledby="beispiel-karte-titel-2">
+  <div class="mer-media" aria-hidden="true"><span class="mer-media__initials">AB</span></div>
+  <div class="mer-card__body">
+    <h3 class="mer-card__title" id="beispiel-karte-titel-2">Kartentitel</h3>
+    <p class="mer-card__meta">Rollen- oder Themenzeile</p>
+    <p>Kurzer Beschreibungstext der Karte.</p>
+    <ul class="mer-list">
+      <li>Erster Punkt</li>
+      <li>Zweiter Punkt</li>
+    </ul>
+    <div class="mer-card__footer mer-note">
+      <p class="mer-note__title">Hinweis am Kartenende</p>
+      <p>Sitzt immer unten, auch bei unterschiedlich langen Karten.</p>
+    </div>
+  </div>
+</article>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="mer-codeblock" data-snippet="card"><code>&lt;article class="mer-card" aria-labelledby="beispiel-karte-titel"&gt;
+  &lt;div class="mer-media" aria-hidden="true"&gt;&lt;span class="mer-media__initials"&gt;AB&lt;/span&gt;&lt;/div&gt;
+  &lt;div class="mer-card__body"&gt;
+    &lt;h3 class="mer-card__title" id="beispiel-karte-titel"&gt;Kartentitel&lt;/h3&gt;
+    &lt;p class="mer-card__meta"&gt;Rollen- oder Themenzeile&lt;/p&gt;
+    &lt;p&gt;Kurzer Beschreibungstext der Karte.&lt;/p&gt;
+    &lt;ul class="mer-list"&gt;
+      &lt;li&gt;Erster Punkt&lt;/li&gt;
+      &lt;li&gt;Zweiter Punkt&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;div class="mer-card__footer mer-note"&gt;
+      &lt;p class="mer-note__title"&gt;Hinweis am Kartenende&lt;/p&gt;
+      &lt;p&gt;Sitzt immer unten, auch bei unterschiedlich langen Karten.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-card-link" aria-labelledby="b-card-link-t">
+  <h3 class="mer-h3" id="b-card-link-t">Karte als Link</h3>
+  <p>Ein Klick irgendwo auf die Karte öffnet den Link im Titel.</p>
+<div class="mer-grid mer-grid--2">
+<div class="mer-section mer-section--white mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Weiß</p>
+    <div>
+<article class="mer-card">
+  <div class="mer-card__body">
+    <h3 class="mer-card__title"><a class="mer-card__link" href="#">Ganze Karte klickbar</a></h3>
+    <p>Kurzer Beschreibungstext. Ein Klick irgendwo auf die Karte öffnet den Link.</p>
+  </div>
+</article>
+    </div>
+  </div>
+</div>
+<div class="mer-section mer-section--light mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Hellgrau</p>
+    <div>
+<article class="mer-card">
+  <div class="mer-card__body">
+    <h3 class="mer-card__title"><a class="mer-card__link" href="#">Ganze Karte klickbar</a></h3>
+    <p>Kurzer Beschreibungstext. Ein Klick irgendwo auf die Karte öffnet den Link.</p>
+  </div>
+</article>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="mer-codeblock" data-snippet="card-link"><code>&lt;article class="mer-card"&gt;
+  &lt;div class="mer-card__body"&gt;
+    &lt;h3 class="mer-card__title"&gt;&lt;a class="mer-card__link" href="#"&gt;Ganze Karte klickbar&lt;/a&gt;&lt;/h3&gt;
+    &lt;p&gt;Kurzer Beschreibungstext. Ein Klick irgendwo auf die Karte öffnet den Link.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-card-horizontal" aria-labelledby="b-card-horizontal-t">
+  <h3 class="mer-h3" id="b-card-horizontal-t">Karte quer</h3>
+  <p>Bild links, Inhalt rechts (ab 44 rem). Ohne Hover-Effekt.</p>
+<div class="mer-grid mer-grid--2">
+<div class="mer-section mer-section--white mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Weiß</p>
+    <div>
+<article class="mer-card mer-card--horizontal mer-card--static">
+  <div class="mer-media" aria-hidden="true"><span class="mer-media__initials">CD</span></div>
+  <div class="mer-card__body">
+    <h3 class="mer-card__title">Querformat</h3>
+    <p>Bild links, Inhalt rechts. Ohne Hover-Effekt.</p>
+  </div>
+</article>
+    </div>
+  </div>
+</div>
+<div class="mer-section mer-section--light mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Hellgrau</p>
+    <div>
+<article class="mer-card mer-card--horizontal mer-card--static">
+  <div class="mer-media" aria-hidden="true"><span class="mer-media__initials">CD</span></div>
+  <div class="mer-card__body">
+    <h3 class="mer-card__title">Querformat</h3>
+    <p>Bild links, Inhalt rechts. Ohne Hover-Effekt.</p>
+  </div>
+</article>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="mer-codeblock" data-snippet="card-horizontal"><code>&lt;article class="mer-card mer-card--horizontal mer-card--static"&gt;
+  &lt;div class="mer-media" aria-hidden="true"&gt;&lt;span class="mer-media__initials"&gt;CD&lt;/span&gt;&lt;/div&gt;
+  &lt;div class="mer-card__body"&gt;
+    &lt;h3 class="mer-card__title"&gt;Querformat&lt;/h3&gt;
+    &lt;p&gt;Bild links, Inhalt rechts. Ohne Hover-Effekt.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-card-profile" aria-labelledby="b-card-profile-t">
+  <h3 class="mer-h3" id="b-card-profile-t">Personen-Karte</h3>
+  <p>Steckbrief mit Zusatz im Titel, Kennung, Aufgaben und Grenzen.</p>
+<div class="mer-grid mer-grid--2">
+<div class="mer-section mer-section--white mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Weiß</p>
+    <div>
+<article class="mer-card" aria-labelledby="beispiel-profil-titel">
+  <div class="mer-media" aria-hidden="true"><span class="mer-media__initials">EF</span></div>
+  <div class="mer-card__body">
+    <h3 class="mer-card__title" id="beispiel-profil-titel">Person E <span class="mer-card__suffix">„Zusatz“</span></h3>
+    <p class="mer-card__meta">Rollenzeile</p>
+    <p class="mer-card__facts"><span>Kennung:</span> <code class="mer-code">person-e</code></p>
+    <p>Kurzer Beschreibungstext der Person.</p>
+    <div>
+      <h4 class="mer-card__label">Aufgaben</h4>
+      <ul class="mer-list">
+        <li>Erster Punkt</li>
+        <li>Zweiter Punkt</li>
+      </ul>
+    </div>
+    <div class="mer-card__footer mer-note">
+      <h4 class="mer-note__title">Grenzen</h4>
+      <p>Was diese Person nicht übernimmt.</p>
+    </div>
+  </div>
+</article>
+    </div>
+  </div>
+</div>
+<div class="mer-section mer-section--light mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Hellgrau</p>
+    <div>
+<article class="mer-card" aria-labelledby="beispiel-profil-titel-2">
+  <div class="mer-media" aria-hidden="true"><span class="mer-media__initials">EF</span></div>
+  <div class="mer-card__body">
+    <h3 class="mer-card__title" id="beispiel-profil-titel-2">Person E <span class="mer-card__suffix">„Zusatz“</span></h3>
+    <p class="mer-card__meta">Rollenzeile</p>
+    <p class="mer-card__facts"><span>Kennung:</span> <code class="mer-code">person-e</code></p>
+    <p>Kurzer Beschreibungstext der Person.</p>
+    <div>
+      <h4 class="mer-card__label">Aufgaben</h4>
+      <ul class="mer-list">
+        <li>Erster Punkt</li>
+        <li>Zweiter Punkt</li>
+      </ul>
+    </div>
+    <div class="mer-card__footer mer-note">
+      <h4 class="mer-note__title">Grenzen</h4>
+      <p>Was diese Person nicht übernimmt.</p>
+    </div>
+  </div>
+</article>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="mer-codeblock" data-snippet="card-profile"><code>&lt;article class="mer-card" aria-labelledby="beispiel-profil-titel"&gt;
+  &lt;div class="mer-media" aria-hidden="true"&gt;&lt;span class="mer-media__initials"&gt;EF&lt;/span&gt;&lt;/div&gt;
+  &lt;div class="mer-card__body"&gt;
+    &lt;h3 class="mer-card__title" id="beispiel-profil-titel"&gt;Person E &lt;span class="mer-card__suffix"&gt;„Zusatz“&lt;/span&gt;&lt;/h3&gt;
+    &lt;p class="mer-card__meta"&gt;Rollenzeile&lt;/p&gt;
+    &lt;p class="mer-card__facts"&gt;&lt;span&gt;Kennung:&lt;/span&gt; &lt;code class="mer-code"&gt;person-e&lt;/code&gt;&lt;/p&gt;
+    &lt;p&gt;Kurzer Beschreibungstext der Person.&lt;/p&gt;
+    &lt;div&gt;
+      &lt;h4 class="mer-card__label"&gt;Aufgaben&lt;/h4&gt;
+      &lt;ul class="mer-list"&gt;
+        &lt;li&gt;Erster Punkt&lt;/li&gt;
+        &lt;li&gt;Zweiter Punkt&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;div class="mer-card__footer mer-note"&gt;
+      &lt;h4 class="mer-note__title"&gt;Grenzen&lt;/h4&gt;
+      &lt;p&gt;Was diese Person nicht übernimmt.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-media" aria-labelledby="b-media-t">
+  <h3 class="mer-h3" id="b-media-t">Bildflächen</h3>
+  <p>4 : 3, 16 : 9 und 1 : 1; ohne Foto als ruhige graue Fläche, wahlweise mit Initialen.</p>
+<div class="mer-grid mer-grid--2">
+<div class="mer-section mer-section--white mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Weiß</p>
+    <div>
+<div class="mer-grid mer-grid--2">
+  <div class="mer-media" aria-hidden="true"></div>
+  <div class="mer-media" aria-hidden="true"><span class="mer-media__initials">AB</span></div>
+  <div class="mer-media mer-media--wide" aria-hidden="true"></div>
+  <div class="mer-media mer-media--square" aria-hidden="true"></div>
+</div>
+    </div>
+  </div>
+</div>
+<div class="mer-section mer-section--light mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Hellgrau</p>
+    <div>
+<div class="mer-grid mer-grid--2">
+  <div class="mer-media" aria-hidden="true"></div>
+  <div class="mer-media" aria-hidden="true"><span class="mer-media__initials">AB</span></div>
+  <div class="mer-media mer-media--wide" aria-hidden="true"></div>
+  <div class="mer-media mer-media--square" aria-hidden="true"></div>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="mer-codeblock" data-snippet="media"><code>&lt;div class="mer-grid mer-grid--2"&gt;
+  &lt;div class="mer-media" aria-hidden="true"&gt;&lt;/div&gt;
+  &lt;div class="mer-media" aria-hidden="true"&gt;&lt;span class="mer-media__initials"&gt;AB&lt;/span&gt;&lt;/div&gt;
+  &lt;div class="mer-media mer-media--wide" aria-hidden="true"&gt;&lt;/div&gt;
+  &lt;div class="mer-media mer-media--square" aria-hidden="true"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-media-img" aria-labelledby="b-media-img-t">
+  <h3 class="mer-h3" id="b-media-img-t">Bildfläche mit Foto</h3>
+  <p>Das Foto füllt die Fläche. Nur als Code gezeigt.</p>
+  <pre class="mer-codeblock" data-snippet="media-img"><code>&lt;div class="mer-media"&gt;
+  &lt;img src="bilder/beispiel.webp" alt="[PLATZHALTER: Bildbeschreibung]" width="1536" height="1024" loading="lazy" decoding="async"&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-avatar" aria-labelledby="b-avatar-t">
+  <h3 class="mer-h3" id="b-avatar-t">Avatare</h3>
+  <p>Klein, Standard, groß.</p>
+<div class="mer-grid mer-grid--2">
+<div class="mer-section mer-section--white mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Weiß</p>
+    <div>
+<div class="mer-cluster">
+  <span class="mer-avatar mer-avatar--sm" aria-hidden="true">AB</span>
+  <span class="mer-avatar" aria-hidden="true">AB</span>
+  <span class="mer-avatar mer-avatar--lg" aria-hidden="true">AB</span>
+</div>
+    </div>
+  </div>
+</div>
+<div class="mer-section mer-section--light mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Hellgrau</p>
+    <div>
+<div class="mer-cluster">
+  <span class="mer-avatar mer-avatar--sm" aria-hidden="true">AB</span>
+  <span class="mer-avatar" aria-hidden="true">AB</span>
+  <span class="mer-avatar mer-avatar--lg" aria-hidden="true">AB</span>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="mer-codeblock" data-snippet="avatar"><code>&lt;div class="mer-cluster"&gt;
+  &lt;span class="mer-avatar mer-avatar--sm" aria-hidden="true"&gt;AB&lt;/span&gt;
+  &lt;span class="mer-avatar" aria-hidden="true"&gt;AB&lt;/span&gt;
+  &lt;span class="mer-avatar mer-avatar--lg" aria-hidden="true"&gt;AB&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-ring" aria-labelledby="b-ring-t">
+  <h3 class="mer-h3" id="b-ring-t">Ring</h3>
+  <p>Nummer oder Icon im roten Ring.</p>
+<div class="mer-grid mer-grid--2">
+<div class="mer-section mer-section--white mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Weiß</p>
+    <div>
+<div class="mer-cluster">
+  <span class="mer-ring" aria-hidden="true">1</span>
+  <span class="mer-ring mer-ring--sm" aria-hidden="true"><span class="mer-icon mer-icon--check"></span></span>
+</div>
+    </div>
+  </div>
+</div>
+<div class="mer-section mer-section--light mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Hellgrau</p>
+    <div>
+<div class="mer-cluster">
+  <span class="mer-ring" aria-hidden="true">1</span>
+  <span class="mer-ring mer-ring--sm" aria-hidden="true"><span class="mer-icon mer-icon--check"></span></span>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="mer-codeblock" data-snippet="ring"><code>&lt;div class="mer-cluster"&gt;
+  &lt;span class="mer-ring" aria-hidden="true"&gt;1&lt;/span&gt;
+  &lt;span class="mer-ring mer-ring--sm" aria-hidden="true"&gt;&lt;span class="mer-icon mer-icon--check"&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-steps" aria-labelledby="b-steps-t">
+  <h3 class="mer-h3" id="b-steps-t">Schritte</h3>
+  <p>Ablauf in drei Schritten: Ring links, Titel und Text rechts; ab 56 rem drei Spalten.</p>
+<div class="mer-grid mer-grid--2">
+<div class="mer-section mer-section--white mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Weiß</p>
+    <div>
+<ol class="mer-steps">
+  <li class="mer-steps__item">
+    <span class="mer-ring" aria-hidden="true">1</span>
+    <h3 class="mer-steps__title">Erster Schritt</h3>
+    <p class="mer-steps__text">Kurze Beschreibung des Schritts.</p>
+  </li>
+  <li class="mer-steps__item">
+    <span class="mer-ring" aria-hidden="true">2</span>
+    <h3 class="mer-steps__title">Zweiter Schritt</h3>
+    <p class="mer-steps__text">Kurze Beschreibung des Schritts.</p>
+  </li>
+  <li class="mer-steps__item">
+    <span class="mer-ring" aria-hidden="true">3</span>
+    <h3 class="mer-steps__title">Dritter Schritt</h3>
+    <p class="mer-steps__text">Kurze Beschreibung des Schritts.</p>
+  </li>
+</ol>
+    </div>
+  </div>
+</div>
+<div class="mer-section mer-section--light mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Hellgrau</p>
+    <div>
+<ol class="mer-steps">
+  <li class="mer-steps__item">
+    <span class="mer-ring" aria-hidden="true">1</span>
+    <h3 class="mer-steps__title">Erster Schritt</h3>
+    <p class="mer-steps__text">Kurze Beschreibung des Schritts.</p>
+  </li>
+  <li class="mer-steps__item">
+    <span class="mer-ring" aria-hidden="true">2</span>
+    <h3 class="mer-steps__title">Zweiter Schritt</h3>
+    <p class="mer-steps__text">Kurze Beschreibung des Schritts.</p>
+  </li>
+  <li class="mer-steps__item">
+    <span class="mer-ring" aria-hidden="true">3</span>
+    <h3 class="mer-steps__title">Dritter Schritt</h3>
+    <p class="mer-steps__text">Kurze Beschreibung des Schritts.</p>
+  </li>
+</ol>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="mer-codeblock" data-snippet="steps"><code>&lt;ol class="mer-steps"&gt;
+  &lt;li class="mer-steps__item"&gt;
+    &lt;span class="mer-ring" aria-hidden="true"&gt;1&lt;/span&gt;
+    &lt;h3 class="mer-steps__title"&gt;Erster Schritt&lt;/h3&gt;
+    &lt;p class="mer-steps__text"&gt;Kurze Beschreibung des Schritts.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li class="mer-steps__item"&gt;
+    &lt;span class="mer-ring" aria-hidden="true"&gt;2&lt;/span&gt;
+    &lt;h3 class="mer-steps__title"&gt;Zweiter Schritt&lt;/h3&gt;
+    &lt;p class="mer-steps__text"&gt;Kurze Beschreibung des Schritts.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li class="mer-steps__item"&gt;
+    &lt;span class="mer-ring" aria-hidden="true"&gt;3&lt;/span&gt;
+    &lt;h3 class="mer-steps__title"&gt;Dritter Schritt&lt;/h3&gt;
+    &lt;p class="mer-steps__text"&gt;Kurze Beschreibung des Schritts.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-note" aria-labelledby="b-note-t">
+  <h3 class="mer-h3" id="b-note-t">Hinweisbox</h3>
+  <p>Neutral mit Graphit-Rand für Webseiten; Warnung (Orange) und Info (Blau) nur in Apps und Formularen.</p>
+<div class="mer-grid mer-grid--2">
+<div class="mer-section mer-section--white mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Weiß</p>
+    <div>
+<div class="mer-stack">
+  <div class="mer-note">
+    <p class="mer-note__title">Hinweis</p>
+    <p>Neutraler Hinweis auf einer Webseite.</p>
+  </div>
+  <div class="mer-note mer-note--warning">
+    <p class="mer-note__title">Achtung</p>
+    <p>Hinweis in einer App oder einem Formular, der Aufmerksamkeit braucht.</p>
+  </div>
+  <div class="mer-note mer-note--info">
+    <p class="mer-note__title">Info</p>
+    <p>Neutraler Status-Hinweis in einer App.</p>
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+<div class="mer-section mer-section--light mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Hellgrau</p>
+    <div>
+<div class="mer-stack">
+  <div class="mer-note">
+    <p class="mer-note__title">Hinweis</p>
+    <p>Neutraler Hinweis auf einer Webseite.</p>
+  </div>
+  <div class="mer-note mer-note--warning">
+    <p class="mer-note__title">Achtung</p>
+    <p>Hinweis in einer App oder einem Formular, der Aufmerksamkeit braucht.</p>
+  </div>
+  <div class="mer-note mer-note--info">
+    <p class="mer-note__title">Info</p>
+    <p>Neutraler Status-Hinweis in einer App.</p>
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="mer-codeblock" data-snippet="note"><code>&lt;div class="mer-stack"&gt;
+  &lt;div class="mer-note"&gt;
+    &lt;p class="mer-note__title"&gt;Hinweis&lt;/p&gt;
+    &lt;p&gt;Neutraler Hinweis auf einer Webseite.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="mer-note mer-note--warning"&gt;
+    &lt;p class="mer-note__title"&gt;Achtung&lt;/p&gt;
+    &lt;p&gt;Hinweis in einer App oder einem Formular, der Aufmerksamkeit braucht.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="mer-note mer-note--info"&gt;
+    &lt;p class="mer-note__title"&gt;Info&lt;/p&gt;
+    &lt;p&gt;Neutraler Status-Hinweis in einer App.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Formulare ================= -->
+    <section class="mer-section mer-section--light" id="formulare" aria-labelledby="t-formulare">
+      <div class="mer-container">
+        <div class="mer-section-head">
+          <h2 class="mer-section-head__title" id="t-formulare">Formulare</h2>
+          <p class="mer-section-head__subtitle">Felder, Fehlerzustand, Auswahl, Formular.</p>
+        </div>
+        <div class="mer-grid">
+<article class="mer-stack" id="b-field" aria-labelledby="b-field-t">
+  <h3 class="mer-h3" id="b-field-t">Eingabefeld</h3>
+  <p>Sichtbares Label, Hilfetext per aria-describedby.</p>
+<div class="mer-grid mer-grid--2">
+<div class="mer-section mer-section--white mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Weiß</p>
+    <div>
+<div class="mer-field">
+  <label class="mer-label" for="beispiel-name">Name</label>
+  <input class="mer-input" id="beispiel-name" name="name" type="text" autocomplete="name" aria-describedby="beispiel-name-hilfe">
+  <p class="mer-field__hint" id="beispiel-name-hilfe">Vor- und Nachname.</p>
+</div>
+    </div>
+  </div>
+</div>
+<div class="mer-section mer-section--light mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Hellgrau</p>
+    <div>
+<div class="mer-field">
+  <label class="mer-label" for="beispiel-name-2">Name</label>
+  <input class="mer-input" id="beispiel-name-2" name="name-2" type="text" autocomplete="name" aria-describedby="beispiel-name-hilfe-2">
+  <p class="mer-field__hint" id="beispiel-name-hilfe-2">Vor- und Nachname.</p>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="mer-codeblock" data-snippet="field"><code>&lt;div class="mer-field"&gt;
+  &lt;label class="mer-label" for="beispiel-name"&gt;Name&lt;/label&gt;
+  &lt;input class="mer-input" id="beispiel-name" name="name" type="text" autocomplete="name" aria-describedby="beispiel-name-hilfe"&gt;
+  &lt;p class="mer-field__hint" id="beispiel-name-hilfe"&gt;Vor- und Nachname.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-field-error" aria-labelledby="b-field-error-t">
+  <h3 class="mer-h3" id="b-field-error-t">Fehlerzustand</h3>
+  <p>Dickerer Rand und Randlinie innen in Akzent dunkel, Warnzeichen und Text, der sagt, was zu tun ist.</p>
+<div class="mer-grid mer-grid--2">
+<div class="mer-section mer-section--white mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Weiß</p>
+    <div>
+<div class="mer-field">
+  <label class="mer-label" for="beispiel-mail">E-Mail (Pflichtfeld)</label>
+  <input class="mer-input" id="beispiel-mail" name="email" type="email" autocomplete="email" required aria-invalid="true" aria-describedby="beispiel-mail-fehler" value="name@beispiel">
+  <p class="mer-field__error" id="beispiel-mail-fehler">Bitte geben Sie eine vollständige E-Mail-Adresse ein, z. B. name@beispiel.de.</p>
+</div>
+    </div>
+  </div>
+</div>
+<div class="mer-section mer-section--light mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Hellgrau</p>
+    <div>
+<div class="mer-field">
+  <label class="mer-label" for="beispiel-mail-2">E-Mail (Pflichtfeld)</label>
+  <input class="mer-input" id="beispiel-mail-2" name="email-2" type="email" autocomplete="email" required aria-invalid="true" aria-describedby="beispiel-mail-fehler-2" value="name@beispiel">
+  <p class="mer-field__error" id="beispiel-mail-fehler-2">Bitte geben Sie eine vollständige E-Mail-Adresse ein, z. B. name@beispiel.de.</p>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="mer-codeblock" data-snippet="field-error"><code>&lt;div class="mer-field"&gt;
+  &lt;label class="mer-label" for="beispiel-mail"&gt;E-Mail (Pflichtfeld)&lt;/label&gt;
+  &lt;input class="mer-input" id="beispiel-mail" name="email" type="email" autocomplete="email" required aria-invalid="true" aria-describedby="beispiel-mail-fehler" value="name@beispiel"&gt;
+  &lt;p class="mer-field__error" id="beispiel-mail-fehler"&gt;Bitte geben Sie eine vollständige E-Mail-Adresse ein, z. B. name@beispiel.de.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-textarea" aria-labelledby="b-textarea-t">
+  <h3 class="mer-h3" id="b-textarea-t">Mehrzeilige Eingabe</h3>
+  <p>Textfeld mit Platzhalter (Grau auf Weiß, 4,60 : 1).</p>
+<div class="mer-grid mer-grid--2">
+<div class="mer-section mer-section--white mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Weiß</p>
+    <div>
+<div class="mer-field">
+  <label class="mer-label" for="beispiel-nachricht">Nachricht</label>
+  <textarea class="mer-input" id="beispiel-nachricht" name="nachricht" rows="4" placeholder="Worum geht es?"></textarea>
+</div>
+    </div>
+  </div>
+</div>
+<div class="mer-section mer-section--light mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Hellgrau</p>
+    <div>
+<div class="mer-field">
+  <label class="mer-label" for="beispiel-nachricht-2">Nachricht</label>
+  <textarea class="mer-input" id="beispiel-nachricht-2" name="nachricht-2" rows="4" placeholder="Worum geht es?"></textarea>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="mer-codeblock" data-snippet="textarea"><code>&lt;div class="mer-field"&gt;
+  &lt;label class="mer-label" for="beispiel-nachricht"&gt;Nachricht&lt;/label&gt;
+  &lt;textarea class="mer-input" id="beispiel-nachricht" name="nachricht" rows="4" placeholder="Worum geht es?"&gt;&lt;/textarea&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-select" aria-labelledby="b-select-t">
+  <h3 class="mer-h3" id="b-select-t">Auswahlliste</h3>
+  <p>select im Wrapper mer-select mit eigenem Pfeil.</p>
+<div class="mer-grid mer-grid--2">
+<div class="mer-section mer-section--white mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Weiß</p>
+    <div>
+<div class="mer-field">
+  <label class="mer-label" for="beispiel-thema">Thema</label>
+  <span class="mer-select">
+    <select class="mer-input" id="beispiel-thema" name="thema">
+      <option>Bitte wählen</option>
+      <option>Option A</option>
+      <option>Option B</option>
+    </select>
+  </span>
+</div>
+    </div>
+  </div>
+</div>
+<div class="mer-section mer-section--light mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Hellgrau</p>
+    <div>
+<div class="mer-field">
+  <label class="mer-label" for="beispiel-thema-2">Thema</label>
+  <span class="mer-select">
+    <select class="mer-input" id="beispiel-thema-2" name="thema-2">
+      <option>Bitte wählen</option>
+      <option>Option A</option>
+      <option>Option B</option>
+    </select>
+  </span>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="mer-codeblock" data-snippet="select"><code>&lt;div class="mer-field"&gt;
+  &lt;label class="mer-label" for="beispiel-thema"&gt;Thema&lt;/label&gt;
+  &lt;span class="mer-select"&gt;
+    &lt;select class="mer-input" id="beispiel-thema" name="thema"&gt;
+      &lt;option&gt;Bitte wählen&lt;/option&gt;
+      &lt;option&gt;Option A&lt;/option&gt;
+      &lt;option&gt;Option B&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/span&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-checks" aria-labelledby="b-checks-t">
+  <h3 class="mer-h3" id="b-checks-t">Checkboxen und Radios</h3>
+  <p>Gruppen in fieldset mit legend; das ganze Label ist Klickfläche.</p>
+<div class="mer-grid mer-grid--2">
+<div class="mer-section mer-section--white mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Weiß</p>
+    <div>
+<div class="mer-stack">
+  <fieldset class="mer-fieldset">
+    <legend>Mehrfachauswahl</legend>
+    <label class="mer-check"><input type="checkbox" name="auswahl" value="a" checked> Erste Option</label>
+    <label class="mer-check"><input type="checkbox" name="auswahl" value="b"> Zweite Option</label>
+  </fieldset>
+  <fieldset class="mer-fieldset">
+    <legend>Einfachauswahl</legend>
+    <label class="mer-check"><input type="radio" name="weg" value="mail" checked> Per E-Mail</label>
+    <label class="mer-check"><input type="radio" name="weg" value="telefon"> Per Telefon</label>
+  </fieldset>
+</div>
+    </div>
+  </div>
+</div>
+<div class="mer-section mer-section--light mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Hellgrau</p>
+    <div>
+<div class="mer-stack">
+  <fieldset class="mer-fieldset">
+    <legend>Mehrfachauswahl</legend>
+    <label class="mer-check"><input type="checkbox" name="auswahl-2" value="a" checked> Erste Option</label>
+    <label class="mer-check"><input type="checkbox" name="auswahl-2" value="b"> Zweite Option</label>
+  </fieldset>
+  <fieldset class="mer-fieldset">
+    <legend>Einfachauswahl</legend>
+    <label class="mer-check"><input type="radio" name="weg-2" value="mail" checked> Per E-Mail</label>
+    <label class="mer-check"><input type="radio" name="weg-2" value="telefon"> Per Telefon</label>
+  </fieldset>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="mer-codeblock" data-snippet="checks"><code>&lt;div class="mer-stack"&gt;
+  &lt;fieldset class="mer-fieldset"&gt;
+    &lt;legend&gt;Mehrfachauswahl&lt;/legend&gt;
+    &lt;label class="mer-check"&gt;&lt;input type="checkbox" name="auswahl" value="a" checked&gt; Erste Option&lt;/label&gt;
+    &lt;label class="mer-check"&gt;&lt;input type="checkbox" name="auswahl" value="b"&gt; Zweite Option&lt;/label&gt;
+  &lt;/fieldset&gt;
+  &lt;fieldset class="mer-fieldset"&gt;
+    &lt;legend&gt;Einfachauswahl&lt;/legend&gt;
+    &lt;label class="mer-check"&gt;&lt;input type="radio" name="weg" value="mail" checked&gt; Per E-Mail&lt;/label&gt;
+    &lt;label class="mer-check"&gt;&lt;input type="radio" name="weg" value="telefon"&gt; Per Telefon&lt;/label&gt;
+  &lt;/fieldset&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-form" aria-labelledby="b-form-t">
+  <h3 class="mer-h3" id="b-form-t">Formular</h3>
+  <p>Felder im Raster, Einwilligung als Pflicht-Checkbox (nicht vorausgewählt) mit dem freigegebenen Wortlaut, Absenden als Hauptaktion.</p>
+<div class="mer-grid mer-grid--2">
+<div class="mer-section mer-section--white mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Weiß</p>
+    <div>
+<form class="mer-form" action="#">
+  <div class="mer-field">
+    <label class="mer-label" for="beispiel-firma">Firma</label>
+    <input class="mer-input" id="beispiel-firma" name="firma" type="text" autocomplete="organization">
+  </div>
+  <label class="mer-check"><input type="checkbox" name="einwilligung" required> <span>Ich bin einverstanden, dass meine übermittelten Daten elektronisch weiterverarbeitet und innerhalb der zwei&amp;40 Unternehmensgruppe zur Kontaktaufnahme verwendet werden. Näheres unter „<a href="https://www.merlato.de/datenschutz">Datenschutz</a>“. (Pflichtfeld)</span></label>
+  <div class="mer-cluster">
+    <button class="mer-btn mer-btn--primary" type="submit">Absenden</button>
+    <button class="mer-btn" type="reset">Zurücksetzen</button>
+  </div>
+</form>
+    </div>
+  </div>
+</div>
+<div class="mer-section mer-section--light mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Hellgrau</p>
+    <div>
+<form class="mer-form" action="#">
+  <div class="mer-field">
+    <label class="mer-label" for="beispiel-firma-2">Firma</label>
+    <input class="mer-input" id="beispiel-firma-2" name="firma-2" type="text" autocomplete="organization">
+  </div>
+  <label class="mer-check"><input type="checkbox" name="einwilligung-2" required> <span>Ich bin einverstanden, dass meine übermittelten Daten elektronisch weiterverarbeitet und innerhalb der zwei&amp;40 Unternehmensgruppe zur Kontaktaufnahme verwendet werden. Näheres unter „<a href="https://www.merlato.de/datenschutz">Datenschutz</a>“. (Pflichtfeld)</span></label>
+  <div class="mer-cluster">
+    <button class="mer-btn mer-btn--primary" type="submit">Absenden</button>
+    <button class="mer-btn" type="reset">Zurücksetzen</button>
+  </div>
+</form>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="mer-codeblock" data-snippet="form"><code>&lt;form class="mer-form" action="#"&gt;
+  &lt;div class="mer-field"&gt;
+    &lt;label class="mer-label" for="beispiel-firma"&gt;Firma&lt;/label&gt;
+    &lt;input class="mer-input" id="beispiel-firma" name="firma" type="text" autocomplete="organization"&gt;
+  &lt;/div&gt;
+  &lt;label class="mer-check"&gt;&lt;input type="checkbox" name="einwilligung" required&gt; &lt;span&gt;Ich bin einverstanden, dass meine übermittelten Daten elektronisch weiterverarbeitet und innerhalb der zwei&amp;amp;40 Unternehmensgruppe zur Kontaktaufnahme verwendet werden. Näheres unter „&lt;a href="https://www.merlato.de/datenschutz"&gt;Datenschutz&lt;/a&gt;“. (Pflichtfeld)&lt;/span&gt;&lt;/label&gt;
+  &lt;div class="mer-cluster"&gt;
+    &lt;button class="mer-btn mer-btn--primary" type="submit"&gt;Absenden&lt;/button&gt;
+    &lt;button class="mer-btn" type="reset"&gt;Zurücksetzen&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+</article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Seitenabschluss ================= -->
+    <section class="mer-section mer-section--white" id="abschluss" aria-labelledby="t-abschluss">
+      <div class="mer-container">
+        <div class="mer-section-head">
+          <h2 class="mer-section-head__title" id="t-abschluss">Seitenabschluss</h2>
+          <p class="mer-section-head__subtitle">Footer mit Siegel, Sprunglink, Hilfsklassen, Divi-Code-Modul.</p>
+        </div>
+        <div class="mer-grid">
+<article class="mer-stack" id="b-footer" aria-labelledby="b-footer-t">
+  <h3 class="mer-h3" id="b-footer-t">Footer</h3>
+  <p>Hellgrau mit roter Linie oben: Logo, Kontakt, DEKRA-Siegel, Pflichtlinks.</p>
+<div>
+<footer class="mer-footer">
+  <div class="mer-container">
+    <div class="mer-footer__main">
+      <div class="mer-stack">
+        <img class="mer-logo" src="assets/logo/merlato-logo-2026.png" alt="Merlato GmbH – Zertifizierte Schulungseinrichtung" width="2480" height="543">
+        <p>Merlato GmbH · Annenheider Str. 257 · 27755 Delmenhorst</p>
+        <p>Telefon <a href="tel:+4942212890469">04221 289 0469</a> · <a href="mailto:info@merlato.de">info@merlato.de</a> · <a href="https://www.merlato.de/">merlato.de</a></p>
+      </div>
+      <div class="mer-seal">
+        <img src="assets/siegel/dekra-siegel-iso-9001.png" alt="DEKRA-Siegel: Zertifiziert, Qualitätsmanagement ISO 9001" width="4134" height="1772">
+      </div>
+    </div>
+    <ul class="mer-footer__links">
+      <li><a href="https://www.merlato.de/impressum">Impressum</a></li>
+      <li><a href="https://www.merlato.de/datenschutz">Datenschutz</a></li>
+    </ul>
+  </div>
+</footer>
+</div>
+  <pre class="mer-codeblock" data-snippet="footer"><code>&lt;footer class="mer-footer"&gt;
+  &lt;div class="mer-container"&gt;
+    &lt;div class="mer-footer__main"&gt;
+      &lt;div class="mer-stack"&gt;
+        &lt;img class="mer-logo" src="assets/logo/merlato-logo-2026.png" alt="Merlato GmbH – Zertifizierte Schulungseinrichtung" width="2480" height="543"&gt;
+        &lt;p&gt;Merlato GmbH · Annenheider Str. 257 · 27755 Delmenhorst&lt;/p&gt;
+        &lt;p&gt;Telefon &lt;a href="tel:+4942212890469"&gt;04221 289 0469&lt;/a&gt; · &lt;a href="mailto:info@merlato.de"&gt;info@merlato.de&lt;/a&gt; · &lt;a href="https://www.merlato.de/"&gt;merlato.de&lt;/a&gt;&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class="mer-seal"&gt;
+        &lt;img src="assets/siegel/dekra-siegel-iso-9001.png" alt="DEKRA-Siegel: Zertifiziert, Qualitätsmanagement ISO 9001" width="4134" height="1772"&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;ul class="mer-footer__links"&gt;
+      &lt;li&gt;&lt;a href="https://www.merlato.de/impressum"&gt;Impressum&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="https://www.merlato.de/datenschutz"&gt;Datenschutz&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/footer&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-skip" aria-labelledby="b-skip-t">
+  <h3 class="mer-h3" id="b-skip-t">Sprunglink</h3>
+  <p>Erstes Element im body, erscheint beim ersten Tab (auf dieser Seite oben links ausprobieren). Nur als Code gezeigt.</p>
+  <pre class="mer-codeblock" data-snippet="skip"><code>&lt;a class="mer-skip-link" href="#inhalt"&gt;Zum Inhalt springen&lt;/a&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-helpers" aria-labelledby="b-helpers-t">
+  <h3 class="mer-h3" id="b-helpers-t">Hilfsklassen</h3>
+  <p>Stapel, Reihe, zentriert, gedimmt, Ziffern, nur für Vorleseprogramme.</p>
+<div class="mer-grid mer-grid--2">
+<div class="mer-section mer-section--white mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Weiß</p>
+    <div>
+<div class="mer-stack">
+  <div class="mer-cluster">
+    <span class="mer-badge">Reihe</span>
+    <span class="mer-badge">mit</span>
+    <span class="mer-badge">Abstand</span>
+  </div>
+  <div class="mer-cluster mer-cluster--center">
+    <span class="mer-badge">zentriert</span>
+  </div>
+  <div class="mer-stack mer-stack--loose mer-stack--center">
+    <span class="mer-badge">Stapel zentriert</span>
+    <span class="mer-badge">mit großem Abstand</span>
+  </div>
+  <p class="mer-muted">Betrag <span class="mer-num">1.234,50&nbsp;€</span></p>
+  <p>Sichtbarer Text<span class="mer-sr-only"> mit Zusatz nur für Vorleseprogramme</span>.</p>
+</div>
+    </div>
+  </div>
+</div>
+<div class="mer-section mer-section--light mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Hellgrau</p>
+    <div>
+<div class="mer-stack">
+  <div class="mer-cluster">
+    <span class="mer-badge">Reihe</span>
+    <span class="mer-badge">mit</span>
+    <span class="mer-badge">Abstand</span>
+  </div>
+  <div class="mer-cluster mer-cluster--center">
+    <span class="mer-badge">zentriert</span>
+  </div>
+  <div class="mer-stack mer-stack--loose mer-stack--center">
+    <span class="mer-badge">Stapel zentriert</span>
+    <span class="mer-badge">mit großem Abstand</span>
+  </div>
+  <p class="mer-muted">Betrag <span class="mer-num">1.234,50&nbsp;€</span></p>
+  <p>Sichtbarer Text<span class="mer-sr-only"> mit Zusatz nur für Vorleseprogramme</span>.</p>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="mer-codeblock" data-snippet="helpers"><code>&lt;div class="mer-stack"&gt;
+  &lt;div class="mer-cluster"&gt;
+    &lt;span class="mer-badge"&gt;Reihe&lt;/span&gt;
+    &lt;span class="mer-badge"&gt;mit&lt;/span&gt;
+    &lt;span class="mer-badge"&gt;Abstand&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="mer-cluster mer-cluster--center"&gt;
+    &lt;span class="mer-badge"&gt;zentriert&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="mer-stack mer-stack--loose mer-stack--center"&gt;
+    &lt;span class="mer-badge"&gt;Stapel zentriert&lt;/span&gt;
+    &lt;span class="mer-badge"&gt;mit großem Abstand&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;p class="mer-muted"&gt;Betrag &lt;span class="mer-num"&gt;1.234,50&amp;nbsp;€&lt;/span&gt;&lt;/p&gt;
+  &lt;p&gt;Sichtbarer Text&lt;span class="mer-sr-only"&gt; mit Zusatz nur für Vorleseprogramme&lt;/span&gt;.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-login" aria-labelledby="b-login-t">
+  <h3 class="mer-h3" id="b-login-t">Anmeldung (Login)</h3>
+  <p>Rezept 9.3: Markenzeile mit Logo und DEKRA-Siegel über der Karte, darunter die Karte mit Formular. Das Siegel steht außerhalb der Karte.</p>
+<div class="mer-section mer-section--light mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Hellgrau</p>
+    <div>
+<div class="mer-container mer-container--narrow mer-stack">
+  <div class="mer-brand">
+    <img class="mer-brand__web" src="assets/logo/merlato-web-logo-2026-dekra.png" alt="Merlato GmbH – Zertifizierte Schulungseinrichtung. DEKRA-Siegel: Zertifiziert, Qualitätsmanagement ISO 9001" width="3000" height="390">
+    <div class="mer-brand__split">
+      <img class="mer-logo mer-logo--lg" src="assets/logo/merlato-logo-2026.png" alt="Merlato GmbH – Zertifizierte Schulungseinrichtung" width="2480" height="543">
+      <div class="mer-seal">
+        <img src="assets/siegel/dekra-siegel-iso-9001.png" alt="DEKRA-Siegel: Zertifiziert, Qualitätsmanagement ISO 9001" width="4134" height="1772">
+      </div>
+    </div>
+  </div>
+  <article class="mer-card mer-card--static" aria-labelledby="beispiel-login-titel">
+    <div class="mer-card__body">
+      <h2 class="mer-card__title" id="beispiel-login-titel">Anmelden</h2>
+      <form class="mer-form" action="#">
+        <div class="mer-field">
+          <label class="mer-label" for="beispiel-login-mail">E-Mail</label>
+          <input class="mer-input" id="beispiel-login-mail" name="email" type="email" autocomplete="username">
+        </div>
+        <div class="mer-field">
+          <label class="mer-label" for="beispiel-login-passwort">Passwort</label>
+          <input class="mer-input" id="beispiel-login-passwort" name="passwort" type="password" autocomplete="current-password">
+        </div>
+        <div class="mer-cluster">
+          <button class="mer-btn mer-btn--primary" type="submit">Anmelden</button>
+        </div>
+      </form>
+    </div>
+  </article>
+</div>
+    </div>
+  </div>
+</div>
+  <pre class="mer-codeblock" data-snippet="login"><code>&lt;div class="mer-container mer-container--narrow mer-stack"&gt;
+  &lt;div class="mer-brand"&gt;
+    &lt;img class="mer-brand__web" src="assets/logo/merlato-web-logo-2026-dekra.png" alt="Merlato GmbH – Zertifizierte Schulungseinrichtung. DEKRA-Siegel: Zertifiziert, Qualitätsmanagement ISO 9001" width="3000" height="390"&gt;
+    &lt;div class="mer-brand__split"&gt;
+      &lt;img class="mer-logo mer-logo--lg" src="assets/logo/merlato-logo-2026.png" alt="Merlato GmbH – Zertifizierte Schulungseinrichtung" width="2480" height="543"&gt;
+      &lt;div class="mer-seal"&gt;
+        &lt;img src="assets/siegel/dekra-siegel-iso-9001.png" alt="DEKRA-Siegel: Zertifiziert, Qualitätsmanagement ISO 9001" width="4134" height="1772"&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;article class="mer-card mer-card--static" aria-labelledby="beispiel-login-titel"&gt;
+    &lt;div class="mer-card__body"&gt;
+      &lt;h2 class="mer-card__title" id="beispiel-login-titel"&gt;Anmelden&lt;/h2&gt;
+      &lt;form class="mer-form" action="#"&gt;
+        &lt;div class="mer-field"&gt;
+          &lt;label class="mer-label" for="beispiel-login-mail"&gt;E-Mail&lt;/label&gt;
+          &lt;input class="mer-input" id="beispiel-login-mail" name="email" type="email" autocomplete="username"&gt;
+        &lt;/div&gt;
+        &lt;div class="mer-field"&gt;
+          &lt;label class="mer-label" for="beispiel-login-passwort"&gt;Passwort&lt;/label&gt;
+          &lt;input class="mer-input" id="beispiel-login-passwort" name="passwort" type="password" autocomplete="current-password"&gt;
+        &lt;/div&gt;
+        &lt;div class="mer-cluster"&gt;
+          &lt;button class="mer-btn mer-btn--primary" type="submit"&gt;Anmelden&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+  &lt;/article&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-divi" aria-labelledby="b-divi-t">
+  <h3 class="mer-h3" id="b-divi-t">Divi: Code-Modul</h3>
+  <p>Inhalt eines Divi-Code-Moduls. Der Wrapper .mer ist Pflicht. Nur als Code gezeigt.</p>
+  <pre class="mer-codeblock" data-snippet="divi"><code>&lt;div class="mer"&gt;
+  &lt;div class="mer-on-light"&gt;
+    &lt;a class="mer-btn mer-btn--primary" href="#"&gt;Aktion&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= App-Bausteine: diese Fläche ist selbst ein App-Rahmen ================= -->
+    <div class="mer-app" id="app">
+      <div class="mer-app__main">
+
+    <!-- ================= App-Bausteine ================= -->
+    <section class="mer-section mer-section--light" id="app" aria-labelledby="t-app">
+      <div class="mer-container">
+        <div class="mer-section-head">
+          <h2 class="mer-section-head__title" id="t-app">App-Bausteine</h2>
+          <p class="mer-section-head__subtitle">Merlato-Apps sind hell. Rahmen, Kopf, Kennzahlen, Status, Kacheln, Abläufe, Verlauf, Tabelle, Tabs.</p>
+        </div>
+        <div class="mer-grid">
+<article class="mer-stack" id="b-app-shell" aria-labelledby="b-app-shell-t">
+  <h3 class="mer-h3" id="b-app-shell-t">App-Rahmen</h3>
+  <p>Grundgerüst jeder Web-App: Hellgrau, volle Höhe, Footer unten. Nur als Code gezeigt; dieser Bereich der Musterseite ist selbst ein App-Rahmen.</p>
+  <pre class="mer-codeblock" data-snippet="app-shell"><code>&lt;body class="mer"&gt;
+  &lt;a class="mer-skip-link" href="#inhalt"&gt;Zum Inhalt springen&lt;/a&gt;
+  &lt;div class="mer-app"&gt;
+    &lt;header class="mer-app-header"&gt;…&lt;/header&gt;
+    &lt;main class="mer-app__main" id="inhalt"&gt;
+      &lt;section class="mer-section mer-section--white"&gt;…&lt;/section&gt;
+    &lt;/main&gt;
+    &lt;footer class="mer-footer"&gt;…&lt;/footer&gt;
+  &lt;/div&gt;
+&lt;/body&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-app-header" aria-labelledby="b-app-header-t">
+  <h3 class="mer-h3" id="b-app-header-t">App-Kopf</h3>
+  <p>Weiß und kompakt: oben die Markenzeile mit Logo und DEKRA-Siegel, darunter ab 56 rem Titel und Aktionen in einer Zeile, dann die Kennzahlen.</p>
+<div>
+<header class="mer-app-header">
+  <div class="mer-container">
+    <div class="mer-app-header__bar">
+      <div class="mer-brand">
+        <img class="mer-brand__web" src="assets/logo/merlato-web-logo-2026-dekra.png" alt="Merlato GmbH – Zertifizierte Schulungseinrichtung. DEKRA-Siegel: Zertifiziert, Qualitätsmanagement ISO 9001" width="3000" height="390">
+        <div class="mer-brand__split">
+          <img class="mer-logo" src="assets/logo/merlato-logo-2026.png" alt="Merlato GmbH – Zertifizierte Schulungseinrichtung" width="2480" height="543">
+          <div class="mer-seal">
+            <img src="assets/siegel/dekra-siegel-iso-9001.png" alt="DEKRA-Siegel: Zertifiziert, Qualitätsmanagement ISO 9001" width="4134" height="1772">
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="mer-eyebrow">Merlato · App</p>
+        <h1 class="mer-app-header__title">App-Titel</h1>
+        <p class="mer-app-header__lead">Ihre laufenden Schulungen und Vorgänge auf einen Blick.</p>
+      </div>
+      <div class="mer-app-header__aside">
+        <span class="mer-badge mer-badge--accent mer-badge--lg"><span class="mer-icon mer-icon--warning" aria-hidden="true"></span>Beispieldaten</span>
+        <a class="mer-btn mer-btn--sm" href="#">Zur Übersicht</a>
+        <p class="mer-app-header__updated">Zuletzt aktualisiert: <span class="mer-num">10:24</span></p>
+      </div>
+    </div>
+    <dl class="mer-kpis">
+      <div class="mer-kpi">
+        <dt class="mer-kpi__label">Laufende Schulungen</dt>
+        <dd class="mer-kpi__value">3</dd>
+      </div>
+      <div class="mer-kpi mer-kpi--attention">
+        <dt class="mer-kpi__label">Warten auf Ihre Rückmeldung</dt>
+        <dd class="mer-kpi__value">1</dd>
+      </div>
+    </dl>
+  </div>
+</header>
+</div>
+  <pre class="mer-codeblock" data-snippet="app-header"><code>&lt;header class="mer-app-header"&gt;
+  &lt;div class="mer-container"&gt;
+    &lt;div class="mer-app-header__bar"&gt;
+      &lt;div class="mer-brand"&gt;
+        &lt;img class="mer-brand__web" src="assets/logo/merlato-web-logo-2026-dekra.png" alt="Merlato GmbH – Zertifizierte Schulungseinrichtung. DEKRA-Siegel: Zertifiziert, Qualitätsmanagement ISO 9001" width="3000" height="390"&gt;
+        &lt;div class="mer-brand__split"&gt;
+          &lt;img class="mer-logo" src="assets/logo/merlato-logo-2026.png" alt="Merlato GmbH – Zertifizierte Schulungseinrichtung" width="2480" height="543"&gt;
+          &lt;div class="mer-seal"&gt;
+            &lt;img src="assets/siegel/dekra-siegel-iso-9001.png" alt="DEKRA-Siegel: Zertifiziert, Qualitätsmanagement ISO 9001" width="4134" height="1772"&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+        &lt;p class="mer-eyebrow"&gt;Merlato · App&lt;/p&gt;
+        &lt;h1 class="mer-app-header__title"&gt;App-Titel&lt;/h1&gt;
+        &lt;p class="mer-app-header__lead"&gt;Ihre laufenden Schulungen und Vorgänge auf einen Blick.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class="mer-app-header__aside"&gt;
+        &lt;span class="mer-badge mer-badge--accent mer-badge--lg"&gt;&lt;span class="mer-icon mer-icon--warning" aria-hidden="true"&gt;&lt;/span&gt;Beispieldaten&lt;/span&gt;
+        &lt;a class="mer-btn mer-btn--sm" href="#"&gt;Zur Übersicht&lt;/a&gt;
+        &lt;p class="mer-app-header__updated"&gt;Zuletzt aktualisiert: &lt;span class="mer-num"&gt;10:24&lt;/span&gt;&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;dl class="mer-kpis"&gt;
+      &lt;div class="mer-kpi"&gt;
+        &lt;dt class="mer-kpi__label"&gt;Laufende Schulungen&lt;/dt&gt;
+        &lt;dd class="mer-kpi__value"&gt;3&lt;/dd&gt;
+      &lt;/div&gt;
+      &lt;div class="mer-kpi mer-kpi--attention"&gt;
+        &lt;dt class="mer-kpi__label"&gt;Warten auf Ihre Rückmeldung&lt;/dt&gt;
+        &lt;dd class="mer-kpi__value"&gt;1&lt;/dd&gt;
+      &lt;/div&gt;
+    &lt;/dl&gt;
+  &lt;/div&gt;
+&lt;/header&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-kpi" aria-labelledby="b-kpi-t">
+  <h3 class="mer-h3" id="b-kpi-t">Kennzahl-Kacheln</h3>
+  <p>Wert oben in League Spartan, Bezeichnung darunter; Kante Rot bzw. Warnung.</p>
+<div class="mer-grid mer-grid--2">
+<div class="mer-section mer-section--white mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Weiß</p>
+    <div>
+<dl class="mer-kpis">
+  <div class="mer-kpi">
+    <dt class="mer-kpi__label">Laufende Schulungen</dt>
+    <dd class="mer-kpi__value">3</dd>
+  </div>
+  <div class="mer-kpi mer-kpi--attention">
+    <dt class="mer-kpi__label">Warten auf Ihre Rückmeldung</dt>
+    <dd class="mer-kpi__value">1</dd>
+  </div>
+  <div class="mer-kpi">
+    <dt class="mer-kpi__label">Abgeschlossen in diesem Monat (Beispiel)</dt>
+    <dd class="mer-kpi__value">12</dd>
+  </div>
+  <div class="mer-kpi">
+    <dt class="mer-kpi__label">Betrag (Beispiel)</dt>
+    <dd class="mer-kpi__value">1.234&nbsp;€</dd>
+  </div>
+</dl>
+    </div>
+  </div>
+</div>
+<div class="mer-section mer-section--light mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Hellgrau</p>
+    <div>
+<dl class="mer-kpis">
+  <div class="mer-kpi">
+    <dt class="mer-kpi__label">Laufende Schulungen</dt>
+    <dd class="mer-kpi__value">3</dd>
+  </div>
+  <div class="mer-kpi mer-kpi--attention">
+    <dt class="mer-kpi__label">Warten auf Ihre Rückmeldung</dt>
+    <dd class="mer-kpi__value">1</dd>
+  </div>
+  <div class="mer-kpi">
+    <dt class="mer-kpi__label">Abgeschlossen in diesem Monat (Beispiel)</dt>
+    <dd class="mer-kpi__value">12</dd>
+  </div>
+  <div class="mer-kpi">
+    <dt class="mer-kpi__label">Betrag (Beispiel)</dt>
+    <dd class="mer-kpi__value">1.234&nbsp;€</dd>
+  </div>
+</dl>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="mer-codeblock" data-snippet="kpi"><code>&lt;dl class="mer-kpis"&gt;
+  &lt;div class="mer-kpi"&gt;
+    &lt;dt class="mer-kpi__label"&gt;Laufende Schulungen&lt;/dt&gt;
+    &lt;dd class="mer-kpi__value"&gt;3&lt;/dd&gt;
+  &lt;/div&gt;
+  &lt;div class="mer-kpi mer-kpi--attention"&gt;
+    &lt;dt class="mer-kpi__label"&gt;Warten auf Ihre Rückmeldung&lt;/dt&gt;
+    &lt;dd class="mer-kpi__value"&gt;1&lt;/dd&gt;
+  &lt;/div&gt;
+  &lt;div class="mer-kpi"&gt;
+    &lt;dt class="mer-kpi__label"&gt;Abgeschlossen in diesem Monat (Beispiel)&lt;/dt&gt;
+    &lt;dd class="mer-kpi__value"&gt;12&lt;/dd&gt;
+  &lt;/div&gt;
+  &lt;div class="mer-kpi"&gt;
+    &lt;dt class="mer-kpi__label"&gt;Betrag (Beispiel)&lt;/dt&gt;
+    &lt;dd class="mer-kpi__value"&gt;1.234&amp;nbsp;€&lt;/dd&gt;
+  &lt;/div&gt;
+&lt;/dl&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-status" aria-labelledby="b-status-t">
+  <h3 class="mer-h3" id="b-status-t">Status-Pills</h3>
+  <p>Acht feste Zustände, jeder mit eigenem Icon und Text.</p>
+<div class="mer-grid mer-grid--2">
+<div class="mer-section mer-section--white mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Weiß</p>
+    <div>
+<ul class="mer-cluster" aria-label="Zustände">
+  <li><span class="mer-status mer-status--active">Aktiv</span></li>
+  <li><span class="mer-status mer-status--free">Frei</span></li>
+  <li><span class="mer-status mer-status--waiting">Wartet</span></li>
+  <li><span class="mer-status mer-status--unclear">Unklar</span></li>
+  <li><span class="mer-status mer-status--error">Fehler</span></li>
+  <li><span class="mer-status mer-status--cancelled">Abgebrochen</span></li>
+  <li><span class="mer-status mer-status--done">Erledigt</span></li>
+  <li><span class="mer-status mer-status--returning">Liefert zurück</span></li>
+</ul>
+    </div>
+  </div>
+</div>
+<div class="mer-section mer-section--light mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Hellgrau</p>
+    <div>
+<ul class="mer-cluster" aria-label="Zustände">
+  <li><span class="mer-status mer-status--active">Aktiv</span></li>
+  <li><span class="mer-status mer-status--free">Frei</span></li>
+  <li><span class="mer-status mer-status--waiting">Wartet</span></li>
+  <li><span class="mer-status mer-status--unclear">Unklar</span></li>
+  <li><span class="mer-status mer-status--error">Fehler</span></li>
+  <li><span class="mer-status mer-status--cancelled">Abgebrochen</span></li>
+  <li><span class="mer-status mer-status--done">Erledigt</span></li>
+  <li><span class="mer-status mer-status--returning">Liefert zurück</span></li>
+</ul>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="mer-codeblock" data-snippet="status"><code>&lt;ul class="mer-cluster" aria-label="Zustände"&gt;
+  &lt;li&gt;&lt;span class="mer-status mer-status--active"&gt;Aktiv&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;span class="mer-status mer-status--free"&gt;Frei&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;span class="mer-status mer-status--waiting"&gt;Wartet&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;span class="mer-status mer-status--unclear"&gt;Unklar&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;span class="mer-status mer-status--error"&gt;Fehler&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;span class="mer-status mer-status--cancelled"&gt;Abgebrochen&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;span class="mer-status mer-status--done"&gt;Erledigt&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;span class="mer-status mer-status--returning"&gt;Liefert zurück&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-tile" aria-labelledby="b-tile-t">
+  <h3 class="mer-h3" id="b-tile-t">Kacheln</h3>
+  <p>Hervorgehoben, aktiv, wartet, frei, unklar; als Filter-Schalter mit aria-pressed. Auf Hellgrau, der Grundfläche des App-Rahmens.</p>
+<div class="mer-section mer-section--light mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Hellgrau</p>
+    <div>
+<ul class="mer-grid mer-grid--3">
+  <li>
+    <div class="mer-tile mer-tile--featured">
+      <span class="mer-avatar" aria-hidden="true">ÜB</span>
+      <div class="mer-tile__body">
+        <p class="mer-tile__name">Übersicht</p>
+        <p class="mer-tile__role">Präventionsschulung</p>
+        <span class="mer-status mer-status--active">Aktiv</span>
+        <p class="mer-tile__task">2 Module laufen</p>
+      </div>
+    </div>
+  </li>
+  <li>
+    <button class="mer-tile mer-tile--active" type="button" aria-pressed="true">
+      <span class="mer-avatar" aria-hidden="true">AB</span>
+      <span class="mer-tile__body">
+        <span class="mer-tile__name">Person A</span>
+        <span class="mer-status mer-status--active">Aktiv</span>
+        <span class="mer-tile__task">Online-Schulung, Modul 2</span>
+        <span class="mer-tile__time">läuft seit 4 Min.</span>
+      </span>
+    </button>
+  </li>
+  <li>
+    <button class="mer-tile mer-tile--attention" type="button" aria-pressed="false">
+      <span class="mer-avatar" aria-hidden="true">CD</span>
+      <span class="mer-tile__body">
+        <span class="mer-tile__name">Person B</span>
+        <span class="mer-status mer-status--waiting">Wartet</span>
+        <span class="mer-tile__task">Sozialkonzept wartet auf Rückmeldung</span>
+      </span>
+    </button>
+  </li>
+  <li>
+    <button class="mer-tile mer-tile--muted" type="button" aria-pressed="false">
+      <span class="mer-avatar" aria-hidden="true">EF</span>
+      <span class="mer-tile__body">
+        <span class="mer-tile__name">Person C</span>
+        <span class="mer-status mer-status--free">Frei</span>
+        <span class="mer-tile__task">Kein offener Vorgang</span>
+      </span>
+    </button>
+  </li>
+  <li>
+    <button class="mer-tile mer-tile--unclear" type="button" aria-pressed="false">
+      <span class="mer-avatar" aria-hidden="true">GH</span>
+      <span class="mer-tile__body">
+        <span class="mer-tile__name">Person D</span>
+        <span class="mer-status mer-status--unclear">Unklar</span>
+        <span class="mer-tile__time">Keine Aktivität seit 12 Min.</span>
+      </span>
+    </button>
+  </li>
+</ul>
+    </div>
+  </div>
+</div>
+  <pre class="mer-codeblock" data-snippet="tile"><code>&lt;ul class="mer-grid mer-grid--3"&gt;
+  &lt;li&gt;
+    &lt;div class="mer-tile mer-tile--featured"&gt;
+      &lt;span class="mer-avatar" aria-hidden="true"&gt;ÜB&lt;/span&gt;
+      &lt;div class="mer-tile__body"&gt;
+        &lt;p class="mer-tile__name"&gt;Übersicht&lt;/p&gt;
+        &lt;p class="mer-tile__role"&gt;Präventionsschulung&lt;/p&gt;
+        &lt;span class="mer-status mer-status--active"&gt;Aktiv&lt;/span&gt;
+        &lt;p class="mer-tile__task"&gt;2 Module laufen&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;button class="mer-tile mer-tile--active" type="button" aria-pressed="true"&gt;
+      &lt;span class="mer-avatar" aria-hidden="true"&gt;AB&lt;/span&gt;
+      &lt;span class="mer-tile__body"&gt;
+        &lt;span class="mer-tile__name"&gt;Person A&lt;/span&gt;
+        &lt;span class="mer-status mer-status--active"&gt;Aktiv&lt;/span&gt;
+        &lt;span class="mer-tile__task"&gt;Online-Schulung, Modul 2&lt;/span&gt;
+        &lt;span class="mer-tile__time"&gt;läuft seit 4 Min.&lt;/span&gt;
+      &lt;/span&gt;
+    &lt;/button&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;button class="mer-tile mer-tile--attention" type="button" aria-pressed="false"&gt;
+      &lt;span class="mer-avatar" aria-hidden="true"&gt;CD&lt;/span&gt;
+      &lt;span class="mer-tile__body"&gt;
+        &lt;span class="mer-tile__name"&gt;Person B&lt;/span&gt;
+        &lt;span class="mer-status mer-status--waiting"&gt;Wartet&lt;/span&gt;
+        &lt;span class="mer-tile__task"&gt;Sozialkonzept wartet auf Rückmeldung&lt;/span&gt;
+      &lt;/span&gt;
+    &lt;/button&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;button class="mer-tile mer-tile--muted" type="button" aria-pressed="false"&gt;
+      &lt;span class="mer-avatar" aria-hidden="true"&gt;EF&lt;/span&gt;
+      &lt;span class="mer-tile__body"&gt;
+        &lt;span class="mer-tile__name"&gt;Person C&lt;/span&gt;
+        &lt;span class="mer-status mer-status--free"&gt;Frei&lt;/span&gt;
+        &lt;span class="mer-tile__task"&gt;Kein offener Vorgang&lt;/span&gt;
+      &lt;/span&gt;
+    &lt;/button&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;button class="mer-tile mer-tile--unclear" type="button" aria-pressed="false"&gt;
+      &lt;span class="mer-avatar" aria-hidden="true"&gt;GH&lt;/span&gt;
+      &lt;span class="mer-tile__body"&gt;
+        &lt;span class="mer-tile__name"&gt;Person D&lt;/span&gt;
+        &lt;span class="mer-status mer-status--unclear"&gt;Unklar&lt;/span&gt;
+        &lt;span class="mer-tile__time"&gt;Keine Aktivität seit 12 Min.&lt;/span&gt;
+      &lt;/span&gt;
+    &lt;/button&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-chain" aria-labelledby="b-chain-t">
+  <h3 class="mer-h3" id="b-chain-t">Ablauf-Kette</h3>
+  <p>Erledigt, aktuell (blauer Rand), ausstehend (gestrichelt). Senkrecht auf dem Handy, ab 56 rem waagerecht.</p>
+<div class="mer-grid mer-grid--2">
+<div class="mer-section mer-section--white mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Weiß</p>
+    <div>
+<ol class="mer-chain" aria-label="Ablauf">
+  <li class="mer-chain__step">
+    <span class="mer-status mer-status--done">Erledigt</span>
+    <span class="mer-chain__who"><span class="mer-avatar mer-avatar--sm" aria-hidden="true">AB</span><span class="mer-chain__name">Person A</span></span>
+    <span class="mer-chain__text">Entwurf des Sozialkonzepts erstellt</span>
+    <span class="mer-chain__time">6 Min.</span>
+  </li>
+  <li class="mer-chain__step mer-chain__step--current" aria-current="step">
+    <span class="mer-status mer-status--active">Läuft</span>
+    <span class="mer-chain__who"><span class="mer-avatar mer-avatar--sm" aria-hidden="true">CD</span><span class="mer-chain__name">Person B</span></span>
+    <span class="mer-chain__text">Fachliche Durchsicht</span>
+    <span class="mer-chain__time">läuft seit 2 Min.</span>
+  </li>
+  <li class="mer-chain__step mer-chain__step--pending">
+    <span class="mer-status mer-status--free">Offen</span>
+    <span class="mer-chain__who"><span class="mer-avatar mer-avatar--sm" aria-hidden="true">EF</span><span class="mer-chain__name">Person C</span></span>
+    <span class="mer-chain__text">Abstimmung mit dem Betrieb</span>
+  </li>
+</ol>
+    </div>
+  </div>
+</div>
+<div class="mer-section mer-section--light mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Hellgrau</p>
+    <div>
+<ol class="mer-chain" aria-label="Ablauf">
+  <li class="mer-chain__step">
+    <span class="mer-status mer-status--done">Erledigt</span>
+    <span class="mer-chain__who"><span class="mer-avatar mer-avatar--sm" aria-hidden="true">AB</span><span class="mer-chain__name">Person A</span></span>
+    <span class="mer-chain__text">Entwurf des Sozialkonzepts erstellt</span>
+    <span class="mer-chain__time">6 Min.</span>
+  </li>
+  <li class="mer-chain__step mer-chain__step--current" aria-current="step">
+    <span class="mer-status mer-status--active">Läuft</span>
+    <span class="mer-chain__who"><span class="mer-avatar mer-avatar--sm" aria-hidden="true">CD</span><span class="mer-chain__name">Person B</span></span>
+    <span class="mer-chain__text">Fachliche Durchsicht</span>
+    <span class="mer-chain__time">läuft seit 2 Min.</span>
+  </li>
+  <li class="mer-chain__step mer-chain__step--pending">
+    <span class="mer-status mer-status--free">Offen</span>
+    <span class="mer-chain__who"><span class="mer-avatar mer-avatar--sm" aria-hidden="true">EF</span><span class="mer-chain__name">Person C</span></span>
+    <span class="mer-chain__text">Abstimmung mit dem Betrieb</span>
+  </li>
+</ol>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="mer-codeblock" data-snippet="chain"><code>&lt;ol class="mer-chain" aria-label="Ablauf"&gt;
+  &lt;li class="mer-chain__step"&gt;
+    &lt;span class="mer-status mer-status--done"&gt;Erledigt&lt;/span&gt;
+    &lt;span class="mer-chain__who"&gt;&lt;span class="mer-avatar mer-avatar--sm" aria-hidden="true"&gt;AB&lt;/span&gt;&lt;span class="mer-chain__name"&gt;Person A&lt;/span&gt;&lt;/span&gt;
+    &lt;span class="mer-chain__text"&gt;Entwurf des Sozialkonzepts erstellt&lt;/span&gt;
+    &lt;span class="mer-chain__time"&gt;6 Min.&lt;/span&gt;
+  &lt;/li&gt;
+  &lt;li class="mer-chain__step mer-chain__step--current" aria-current="step"&gt;
+    &lt;span class="mer-status mer-status--active"&gt;Läuft&lt;/span&gt;
+    &lt;span class="mer-chain__who"&gt;&lt;span class="mer-avatar mer-avatar--sm" aria-hidden="true"&gt;CD&lt;/span&gt;&lt;span class="mer-chain__name"&gt;Person B&lt;/span&gt;&lt;/span&gt;
+    &lt;span class="mer-chain__text"&gt;Fachliche Durchsicht&lt;/span&gt;
+    &lt;span class="mer-chain__time"&gt;läuft seit 2 Min.&lt;/span&gt;
+  &lt;/li&gt;
+  &lt;li class="mer-chain__step mer-chain__step--pending"&gt;
+    &lt;span class="mer-status mer-status--free"&gt;Offen&lt;/span&gt;
+    &lt;span class="mer-chain__who"&gt;&lt;span class="mer-avatar mer-avatar--sm" aria-hidden="true"&gt;EF&lt;/span&gt;&lt;span class="mer-chain__name"&gt;Person C&lt;/span&gt;&lt;/span&gt;
+    &lt;span class="mer-chain__text"&gt;Abstimmung mit dem Betrieb&lt;/span&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-timeline" aria-labelledby="b-timeline-t">
+  <h3 class="mer-h3" id="b-timeline-t">Zeitleiste</h3>
+  <p>Neueste oben; Punkt Blau = läuft, Orange = wartet, Akzent dunkel = Fehler, gestrichelt = unklar; Hervorhebung mit rotem Rand.</p>
+<div class="mer-grid mer-grid--2">
+<div class="mer-section mer-section--white mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Weiß</p>
+    <div>
+<ol class="mer-timeline">
+  <li class="mer-timeline__item mer-timeline__item--active">
+    <div class="mer-timeline__card">
+      <time class="mer-timeline__time" datetime="2026-10-26T10:24">10:24</time>
+      <p class="mer-timeline__title">Person A <span class="mer-timeline__arrow" aria-hidden="true">→</span><span class="mer-sr-only">an</span> Person B</p>
+      <p class="mer-timeline__text">Dokumentationsbericht in Bearbeitung</p>
+      <p class="mer-timeline__meta"><span class="mer-status mer-status--active">Läuft</span></p>
+    </div>
+  </li>
+  <li class="mer-timeline__item mer-timeline__item--attention">
+    <div class="mer-timeline__card">
+      <time class="mer-timeline__time" datetime="2026-10-26T10:18">10:18</time>
+      <p class="mer-timeline__title">Person C <span class="mer-timeline__arrow" aria-hidden="true">→</span><span class="mer-sr-only">an</span> Person A</p>
+      <p class="mer-timeline__text">Sozialkonzept wartet auf Rückmeldung</p>
+      <p class="mer-timeline__meta"><span class="mer-status mer-status--waiting">Wartet</span></p>
+    </div>
+  </li>
+  <li class="mer-timeline__item mer-timeline__item--error">
+    <div class="mer-timeline__card">
+      <time class="mer-timeline__time" datetime="2026-10-26T10:12">10:12</time>
+      <p class="mer-timeline__title">Person A <span class="mer-timeline__arrow" aria-hidden="true">→</span><span class="mer-sr-only">an</span> Person C</p>
+      <p class="mer-timeline__text">Hochladen der Anlage fehlgeschlagen</p>
+      <p class="mer-timeline__meta"><span class="mer-status mer-status--error">Fehler</span></p>
+    </div>
+  </li>
+  <li class="mer-timeline__item mer-timeline__item--unclear">
+    <div class="mer-timeline__card">
+      <time class="mer-timeline__time" datetime="2026-10-26T10:05">10:05</time>
+      <p class="mer-timeline__title">Person A <span class="mer-timeline__arrow" aria-hidden="true">→</span><span class="mer-sr-only">an</span> Person D</p>
+      <p class="mer-timeline__text">Einladung zur Schulung ohne Rückmeldung</p>
+      <p class="mer-timeline__meta"><span class="mer-status mer-status--unclear">Unklar</span></p>
+    </div>
+  </li>
+  <li class="mer-timeline__item mer-timeline__item--highlight">
+    <div class="mer-timeline__card">
+      <time class="mer-timeline__time" datetime="2026-10-26T09:58">09:58</time>
+      <p class="mer-timeline__title">Person B <span class="mer-timeline__arrow" aria-hidden="true">→</span><span class="mer-sr-only">an</span> Person A</p>
+      <p class="mer-timeline__text">Schulungsmodul abgeschlossen</p>
+      <p class="mer-timeline__meta"><span class="mer-status mer-status--done">Erledigt</span> <span>12 Min.</span></p>
+    </div>
+  </li>
+</ol>
+    </div>
+  </div>
+</div>
+<div class="mer-section mer-section--light mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Hellgrau</p>
+    <div>
+<ol class="mer-timeline">
+  <li class="mer-timeline__item mer-timeline__item--active">
+    <div class="mer-timeline__card">
+      <time class="mer-timeline__time" datetime="2026-10-26T10:24">10:24</time>
+      <p class="mer-timeline__title">Person A <span class="mer-timeline__arrow" aria-hidden="true">→</span><span class="mer-sr-only">an</span> Person B</p>
+      <p class="mer-timeline__text">Dokumentationsbericht in Bearbeitung</p>
+      <p class="mer-timeline__meta"><span class="mer-status mer-status--active">Läuft</span></p>
+    </div>
+  </li>
+  <li class="mer-timeline__item mer-timeline__item--attention">
+    <div class="mer-timeline__card">
+      <time class="mer-timeline__time" datetime="2026-10-26T10:18">10:18</time>
+      <p class="mer-timeline__title">Person C <span class="mer-timeline__arrow" aria-hidden="true">→</span><span class="mer-sr-only">an</span> Person A</p>
+      <p class="mer-timeline__text">Sozialkonzept wartet auf Rückmeldung</p>
+      <p class="mer-timeline__meta"><span class="mer-status mer-status--waiting">Wartet</span></p>
+    </div>
+  </li>
+  <li class="mer-timeline__item mer-timeline__item--error">
+    <div class="mer-timeline__card">
+      <time class="mer-timeline__time" datetime="2026-10-26T10:12">10:12</time>
+      <p class="mer-timeline__title">Person A <span class="mer-timeline__arrow" aria-hidden="true">→</span><span class="mer-sr-only">an</span> Person C</p>
+      <p class="mer-timeline__text">Hochladen der Anlage fehlgeschlagen</p>
+      <p class="mer-timeline__meta"><span class="mer-status mer-status--error">Fehler</span></p>
+    </div>
+  </li>
+  <li class="mer-timeline__item mer-timeline__item--unclear">
+    <div class="mer-timeline__card">
+      <time class="mer-timeline__time" datetime="2026-10-26T10:05">10:05</time>
+      <p class="mer-timeline__title">Person A <span class="mer-timeline__arrow" aria-hidden="true">→</span><span class="mer-sr-only">an</span> Person D</p>
+      <p class="mer-timeline__text">Einladung zur Schulung ohne Rückmeldung</p>
+      <p class="mer-timeline__meta"><span class="mer-status mer-status--unclear">Unklar</span></p>
+    </div>
+  </li>
+  <li class="mer-timeline__item mer-timeline__item--highlight">
+    <div class="mer-timeline__card">
+      <time class="mer-timeline__time" datetime="2026-10-26T09:58">09:58</time>
+      <p class="mer-timeline__title">Person B <span class="mer-timeline__arrow" aria-hidden="true">→</span><span class="mer-sr-only">an</span> Person A</p>
+      <p class="mer-timeline__text">Schulungsmodul abgeschlossen</p>
+      <p class="mer-timeline__meta"><span class="mer-status mer-status--done">Erledigt</span> <span>12 Min.</span></p>
+    </div>
+  </li>
+</ol>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="mer-codeblock" data-snippet="timeline"><code>&lt;ol class="mer-timeline"&gt;
+  &lt;li class="mer-timeline__item mer-timeline__item--active"&gt;
+    &lt;div class="mer-timeline__card"&gt;
+      &lt;time class="mer-timeline__time" datetime="2026-10-26T10:24"&gt;10:24&lt;/time&gt;
+      &lt;p class="mer-timeline__title"&gt;Person A &lt;span class="mer-timeline__arrow" aria-hidden="true"&gt;→&lt;/span&gt;&lt;span class="mer-sr-only"&gt;an&lt;/span&gt; Person B&lt;/p&gt;
+      &lt;p class="mer-timeline__text"&gt;Dokumentationsbericht in Bearbeitung&lt;/p&gt;
+      &lt;p class="mer-timeline__meta"&gt;&lt;span class="mer-status mer-status--active"&gt;Läuft&lt;/span&gt;&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class="mer-timeline__item mer-timeline__item--attention"&gt;
+    &lt;div class="mer-timeline__card"&gt;
+      &lt;time class="mer-timeline__time" datetime="2026-10-26T10:18"&gt;10:18&lt;/time&gt;
+      &lt;p class="mer-timeline__title"&gt;Person C &lt;span class="mer-timeline__arrow" aria-hidden="true"&gt;→&lt;/span&gt;&lt;span class="mer-sr-only"&gt;an&lt;/span&gt; Person A&lt;/p&gt;
+      &lt;p class="mer-timeline__text"&gt;Sozialkonzept wartet auf Rückmeldung&lt;/p&gt;
+      &lt;p class="mer-timeline__meta"&gt;&lt;span class="mer-status mer-status--waiting"&gt;Wartet&lt;/span&gt;&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class="mer-timeline__item mer-timeline__item--error"&gt;
+    &lt;div class="mer-timeline__card"&gt;
+      &lt;time class="mer-timeline__time" datetime="2026-10-26T10:12"&gt;10:12&lt;/time&gt;
+      &lt;p class="mer-timeline__title"&gt;Person A &lt;span class="mer-timeline__arrow" aria-hidden="true"&gt;→&lt;/span&gt;&lt;span class="mer-sr-only"&gt;an&lt;/span&gt; Person C&lt;/p&gt;
+      &lt;p class="mer-timeline__text"&gt;Hochladen der Anlage fehlgeschlagen&lt;/p&gt;
+      &lt;p class="mer-timeline__meta"&gt;&lt;span class="mer-status mer-status--error"&gt;Fehler&lt;/span&gt;&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class="mer-timeline__item mer-timeline__item--unclear"&gt;
+    &lt;div class="mer-timeline__card"&gt;
+      &lt;time class="mer-timeline__time" datetime="2026-10-26T10:05"&gt;10:05&lt;/time&gt;
+      &lt;p class="mer-timeline__title"&gt;Person A &lt;span class="mer-timeline__arrow" aria-hidden="true"&gt;→&lt;/span&gt;&lt;span class="mer-sr-only"&gt;an&lt;/span&gt; Person D&lt;/p&gt;
+      &lt;p class="mer-timeline__text"&gt;Einladung zur Schulung ohne Rückmeldung&lt;/p&gt;
+      &lt;p class="mer-timeline__meta"&gt;&lt;span class="mer-status mer-status--unclear"&gt;Unklar&lt;/span&gt;&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class="mer-timeline__item mer-timeline__item--highlight"&gt;
+    &lt;div class="mer-timeline__card"&gt;
+      &lt;time class="mer-timeline__time" datetime="2026-10-26T09:58"&gt;09:58&lt;/time&gt;
+      &lt;p class="mer-timeline__title"&gt;Person B &lt;span class="mer-timeline__arrow" aria-hidden="true"&gt;→&lt;/span&gt;&lt;span class="mer-sr-only"&gt;an&lt;/span&gt; Person A&lt;/p&gt;
+      &lt;p class="mer-timeline__text"&gt;Schulungsmodul abgeschlossen&lt;/p&gt;
+      &lt;p class="mer-timeline__meta"&gt;&lt;span class="mer-status mer-status--done"&gt;Erledigt&lt;/span&gt; &lt;span&gt;12 Min.&lt;/span&gt;&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-empty" aria-labelledby="b-empty-t">
+  <h3 class="mer-h3" id="b-empty-t">Leerzustand</h3>
+  <p>Ein Satz, was fehlt, ein Satz, was als Nächstes passiert.</p>
+<div class="mer-grid mer-grid--2">
+<div class="mer-section mer-section--white mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Weiß</p>
+    <div>
+<p class="mer-empty" role="status">Noch keine Einträge. Sobald etwas passiert, erscheint es hier.</p>
+    </div>
+  </div>
+</div>
+<div class="mer-section mer-section--light mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Hellgrau</p>
+    <div>
+<p class="mer-empty" role="status">Noch keine Einträge. Sobald etwas passiert, erscheint es hier.</p>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="mer-codeblock" data-snippet="empty"><code>&lt;p class="mer-empty" role="status"&gt;Noch keine Einträge. Sobald etwas passiert, erscheint es hier.&lt;/p&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-filterbar" aria-labelledby="b-filterbar-t">
+  <h3 class="mer-h3" id="b-filterbar-t">Filterzeile</h3>
+  <p>Nur sichtbar, solange ein Filter aktiv ist.</p>
+<div class="mer-grid mer-grid--2">
+<div class="mer-section mer-section--white mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Weiß</p>
+    <div>
+<div class="mer-stack mer-stack--center">
+  <div class="mer-filterbar">
+    <p role="status">Im Verlauf hervorgehoben: Sozialkonzept (2 Einträge)</p>
+    <div class="mer-cluster mer-cluster--center">
+      <a class="mer-btn mer-btn--sm" href="#">Zum Verlauf</a>
+      <button class="mer-btn mer-btn--sm" type="button">Filter aufheben</button>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+<div class="mer-section mer-section--light mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Hellgrau</p>
+    <div>
+<div class="mer-stack mer-stack--center">
+  <div class="mer-filterbar">
+    <p role="status">Im Verlauf hervorgehoben: Sozialkonzept (2 Einträge)</p>
+    <div class="mer-cluster mer-cluster--center">
+      <a class="mer-btn mer-btn--sm" href="#">Zum Verlauf</a>
+      <button class="mer-btn mer-btn--sm" type="button">Filter aufheben</button>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="mer-codeblock" data-snippet="filterbar"><code>&lt;div class="mer-stack mer-stack--center"&gt;
+  &lt;div class="mer-filterbar"&gt;
+    &lt;p role="status"&gt;Im Verlauf hervorgehoben: Sozialkonzept (2 Einträge)&lt;/p&gt;
+    &lt;div class="mer-cluster mer-cluster--center"&gt;
+      &lt;a class="mer-btn mer-btn--sm" href="#"&gt;Zum Verlauf&lt;/a&gt;
+      &lt;button class="mer-btn mer-btn--sm" type="button"&gt;Filter aufheben&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-table" aria-labelledby="b-table-t">
+  <h3 class="mer-h3" id="b-table-t">Tabelle</h3>
+  <p>Kopf in Hellgrau, Zahlen rechtsbündig, Status als Pill; Schrift 16 px.</p>
+<div class="mer-grid mer-grid--2">
+<div class="mer-section mer-section--white mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Weiß</p>
+    <div>
+<div class="mer-table-wrap" role="region" aria-labelledby="beispiel-tabelle-titel" tabindex="0">
+  <table class="mer-table">
+    <caption id="beispiel-tabelle-titel">Schulungen (Beispieldaten)</caption>
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Status</th>
+        <th scope="col" class="mer-table__num">Betrag</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Präsenzschulung</td>
+        <td><span class="mer-status mer-status--done">Erledigt</span></td>
+        <td class="mer-table__num">1.234,50&nbsp;€</td>
+      </tr>
+      <tr>
+        <td>Online-Schulung</td>
+        <td><span class="mer-status mer-status--waiting">Wartet</span></td>
+        <td class="mer-table__num">89,00&nbsp;€</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+    </div>
+  </div>
+</div>
+<div class="mer-section mer-section--light mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Hellgrau</p>
+    <div>
+<div class="mer-table-wrap" role="region" aria-labelledby="beispiel-tabelle-titel-2" tabindex="0">
+  <table class="mer-table">
+    <caption id="beispiel-tabelle-titel-2">Schulungen (Beispieldaten)</caption>
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Status</th>
+        <th scope="col" class="mer-table__num">Betrag</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Präsenzschulung</td>
+        <td><span class="mer-status mer-status--done">Erledigt</span></td>
+        <td class="mer-table__num">1.234,50&nbsp;€</td>
+      </tr>
+      <tr>
+        <td>Online-Schulung</td>
+        <td><span class="mer-status mer-status--waiting">Wartet</span></td>
+        <td class="mer-table__num">89,00&nbsp;€</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="mer-codeblock" data-snippet="table"><code>&lt;div class="mer-table-wrap" role="region" aria-labelledby="beispiel-tabelle-titel" tabindex="0"&gt;
+  &lt;table class="mer-table"&gt;
+    &lt;caption id="beispiel-tabelle-titel"&gt;Schulungen (Beispieldaten)&lt;/caption&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th scope="col"&gt;Name&lt;/th&gt;
+        &lt;th scope="col"&gt;Status&lt;/th&gt;
+        &lt;th scope="col" class="mer-table__num"&gt;Betrag&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Präsenzschulung&lt;/td&gt;
+        &lt;td&gt;&lt;span class="mer-status mer-status--done"&gt;Erledigt&lt;/span&gt;&lt;/td&gt;
+        &lt;td class="mer-table__num"&gt;1.234,50&amp;nbsp;€&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Online-Schulung&lt;/td&gt;
+        &lt;td&gt;&lt;span class="mer-status mer-status--waiting"&gt;Wartet&lt;/span&gt;&lt;/td&gt;
+        &lt;td class="mer-table__num"&gt;89,00&amp;nbsp;€&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-tabs" aria-labelledby="b-tabs-t">
+  <h3 class="mer-h3" id="b-tabs-t">Tabs</h3>
+  <p>Ansichten-Wechsel als Links (ohne JavaScript). Gewählt = fette Schrift und roter Balken, nicht nur Farbe.</p>
+<div class="mer-grid mer-grid--2">
+<div class="mer-section mer-section--white mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Weiß</p>
+    <div>
+<nav class="mer-tabs" aria-label="Ansichten">
+  <a class="mer-tabs__tab" href="#" aria-current="page">Übersicht</a>
+  <a class="mer-tabs__tab" href="#">Verlauf</a>
+  <a class="mer-tabs__tab" href="#">Einstellungen</a>
+</nav>
+<div class="mer-tabs__panel">
+  <p>Inhalt der gewählten Ansicht.</p>
+</div>
+    </div>
+  </div>
+</div>
+<div class="mer-section mer-section--light mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Hellgrau</p>
+    <div>
+<nav class="mer-tabs" aria-label="Ansichten">
+  <a class="mer-tabs__tab" href="#" aria-current="page">Übersicht</a>
+  <a class="mer-tabs__tab" href="#">Verlauf</a>
+  <a class="mer-tabs__tab" href="#">Einstellungen</a>
+</nav>
+<div class="mer-tabs__panel">
+  <p>Inhalt der gewählten Ansicht.</p>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="mer-codeblock" data-snippet="tabs"><code>&lt;nav class="mer-tabs" aria-label="Ansichten"&gt;
+  &lt;a class="mer-tabs__tab" href="#" aria-current="page"&gt;Übersicht&lt;/a&gt;
+  &lt;a class="mer-tabs__tab" href="#"&gt;Verlauf&lt;/a&gt;
+  &lt;a class="mer-tabs__tab" href="#"&gt;Einstellungen&lt;/a&gt;
+&lt;/nav&gt;
+&lt;div class="mer-tabs__panel"&gt;
+  &lt;p&gt;Inhalt der gewählten Ansicht.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-tabs-aria" aria-labelledby="b-tabs-aria-t">
+  <h3 class="mer-h3" id="b-tabs-aria-t">Tabs mit JavaScript</h3>
+  <p>Variante nach dem ARIA-Tabs-Muster (Pfeiltasten wechseln den Tab). Die Logik liefert das Projekt; das CSS reagiert auf aria-selected. Nur als Code gezeigt.</p>
+  <pre class="mer-codeblock" data-snippet="tabs-aria"><code>&lt;div class="mer-tabs" role="tablist" aria-label="Ansichten"&gt;
+  &lt;button class="mer-tabs__tab" type="button" role="tab" id="tab-1" aria-selected="true" aria-controls="panel-1"&gt;Übersicht&lt;/button&gt;
+  &lt;button class="mer-tabs__tab" type="button" role="tab" id="tab-2" aria-selected="false" aria-controls="panel-2" tabindex="-1"&gt;Verlauf&lt;/button&gt;
+&lt;/div&gt;
+&lt;div class="mer-tabs__panel" role="tabpanel" id="panel-1" aria-labelledby="tab-1" tabindex="0"&gt;…&lt;/div&gt;
+&lt;div class="mer-tabs__panel" role="tabpanel" id="panel-2" aria-labelledby="tab-2" tabindex="0" hidden&gt;…&lt;/div&gt;</code></pre>
+</article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Chat ================= -->
+    <section class="mer-section mer-section--white" id="chat" aria-labelledby="t-chat">
+      <div class="mer-container">
+        <div class="mer-section-head">
+          <h2 class="mer-section-head__title" id="t-chat">Chat</h2>
+          <p class="mer-section-head__subtitle">Nachrichten, Zustimmungs-Abfrage, Eingabeleiste.</p>
+        </div>
+        <div class="mer-grid">
+<article class="mer-stack" id="b-chat" aria-labelledby="b-chat-t">
+  <h3 class="mer-h3" id="b-chat-t">Chat</h3>
+  <p>Nachricht der Person rechts hellgrau mit Graphit-Rand, Assistent links weiß mit grauem Rand, Systemhinweise mittig. Zustimmungs-Abfragen nutzen die Hinweisbox (Warnung).</p>
+<div class="mer-grid mer-grid--2">
+<div class="mer-section mer-section--white mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Weiß</p>
+    <div>
+<section class="mer-chat" aria-label="Chat">
+  <ol class="mer-chat__log" role="log">
+    <li class="mer-chat__msg mer-chat__msg--system">
+      <p>Heute · <time datetime="2026-10-26T10:20">10:20</time></p>
+    </li>
+    <li class="mer-chat__msg mer-chat__msg--user">
+      <div class="mer-chat__bubble">
+        <p class="mer-chat__author">Sie</p>
+        <p>Welche Unterlagen brauche ich für den Dokumentationsbericht?</p>
+        <p class="mer-chat__meta"><time datetime="2026-10-26T10:21">10:21</time></p>
+      </div>
+    </li>
+    <li class="mer-chat__msg mer-chat__msg--assistant">
+      <span class="mer-avatar mer-avatar--sm" aria-hidden="true">KI</span>
+      <div class="mer-chat__bubble">
+        <p class="mer-chat__author">Assistent</p>
+        <p>Antwort des Assistenten. Längere Antworten brechen sauber um.</p>
+        <p class="mer-chat__meta"><time datetime="2026-10-26T10:21">10:21</time></p>
+      </div>
+    </li>
+    <li class="mer-chat__msg mer-chat__msg--system">
+      <div class="mer-note mer-note--warning">
+        <p class="mer-note__title">Zustimmung erforderlich</p>
+        <p>Der Assistent möchte den Entwurf des Dokumentationsberichts speichern. Dafür braucht er Ihre Zustimmung.</p>
+        <div class="mer-cluster">
+          <button class="mer-btn mer-btn--accent mer-btn--sm" type="button">Freigeben</button>
+          <button class="mer-btn mer-btn--sm" type="button">Ablehnen</button>
+        </div>
+      </div>
+    </li>
+    <li class="mer-chat__msg mer-chat__msg--assistant">
+      <p class="mer-chat__typing">Assistent schreibt</p>
+    </li>
+  </ol>
+</section>
+    </div>
+  </div>
+</div>
+<div class="mer-section mer-section--light mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Hellgrau</p>
+    <div>
+<section class="mer-chat" aria-label="Chat">
+  <ol class="mer-chat__log" role="log">
+    <li class="mer-chat__msg mer-chat__msg--system">
+      <p>Heute · <time datetime="2026-10-26T10:20">10:20</time></p>
+    </li>
+    <li class="mer-chat__msg mer-chat__msg--user">
+      <div class="mer-chat__bubble">
+        <p class="mer-chat__author">Sie</p>
+        <p>Welche Unterlagen brauche ich für den Dokumentationsbericht?</p>
+        <p class="mer-chat__meta"><time datetime="2026-10-26T10:21">10:21</time></p>
+      </div>
+    </li>
+    <li class="mer-chat__msg mer-chat__msg--assistant">
+      <span class="mer-avatar mer-avatar--sm" aria-hidden="true">KI</span>
+      <div class="mer-chat__bubble">
+        <p class="mer-chat__author">Assistent</p>
+        <p>Antwort des Assistenten. Längere Antworten brechen sauber um.</p>
+        <p class="mer-chat__meta"><time datetime="2026-10-26T10:21">10:21</time></p>
+      </div>
+    </li>
+    <li class="mer-chat__msg mer-chat__msg--system">
+      <div class="mer-note mer-note--warning">
+        <p class="mer-note__title">Zustimmung erforderlich</p>
+        <p>Der Assistent möchte den Entwurf des Dokumentationsberichts speichern. Dafür braucht er Ihre Zustimmung.</p>
+        <div class="mer-cluster">
+          <button class="mer-btn mer-btn--accent mer-btn--sm" type="button">Freigeben</button>
+          <button class="mer-btn mer-btn--sm" type="button">Ablehnen</button>
+        </div>
+      </div>
+    </li>
+    <li class="mer-chat__msg mer-chat__msg--assistant">
+      <p class="mer-chat__typing">Assistent schreibt</p>
+    </li>
+  </ol>
+</section>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="mer-codeblock" data-snippet="chat"><code>&lt;section class="mer-chat" aria-label="Chat"&gt;
+  &lt;ol class="mer-chat__log" role="log"&gt;
+    &lt;li class="mer-chat__msg mer-chat__msg--system"&gt;
+      &lt;p&gt;Heute · &lt;time datetime="2026-10-26T10:20"&gt;10:20&lt;/time&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li class="mer-chat__msg mer-chat__msg--user"&gt;
+      &lt;div class="mer-chat__bubble"&gt;
+        &lt;p class="mer-chat__author"&gt;Sie&lt;/p&gt;
+        &lt;p&gt;Welche Unterlagen brauche ich für den Dokumentationsbericht?&lt;/p&gt;
+        &lt;p class="mer-chat__meta"&gt;&lt;time datetime="2026-10-26T10:21"&gt;10:21&lt;/time&gt;&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li class="mer-chat__msg mer-chat__msg--assistant"&gt;
+      &lt;span class="mer-avatar mer-avatar--sm" aria-hidden="true"&gt;KI&lt;/span&gt;
+      &lt;div class="mer-chat__bubble"&gt;
+        &lt;p class="mer-chat__author"&gt;Assistent&lt;/p&gt;
+        &lt;p&gt;Antwort des Assistenten. Längere Antworten brechen sauber um.&lt;/p&gt;
+        &lt;p class="mer-chat__meta"&gt;&lt;time datetime="2026-10-26T10:21"&gt;10:21&lt;/time&gt;&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li class="mer-chat__msg mer-chat__msg--system"&gt;
+      &lt;div class="mer-note mer-note--warning"&gt;
+        &lt;p class="mer-note__title"&gt;Zustimmung erforderlich&lt;/p&gt;
+        &lt;p&gt;Der Assistent möchte den Entwurf des Dokumentationsberichts speichern. Dafür braucht er Ihre Zustimmung.&lt;/p&gt;
+        &lt;div class="mer-cluster"&gt;
+          &lt;button class="mer-btn mer-btn--accent mer-btn--sm" type="button"&gt;Freigeben&lt;/button&gt;
+          &lt;button class="mer-btn mer-btn--sm" type="button"&gt;Ablehnen&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li class="mer-chat__msg mer-chat__msg--assistant"&gt;
+      &lt;p class="mer-chat__typing"&gt;Assistent schreibt&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/section&gt;</code></pre>
+</article>
+<article class="mer-stack" id="b-composer" aria-labelledby="b-composer-t">
+  <h3 class="mer-h3" id="b-composer-t">Eingabeleiste</h3>
+  <p>Anhang, mitwachsendes Textfeld, Senden als Hauptaktion.</p>
+<div class="mer-grid mer-grid--2">
+<div class="mer-section mer-section--white mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Weiß</p>
+    <div>
+<form class="mer-composer" action="#">
+  <button class="mer-btn mer-btn--icon" type="button">
+    <span class="mer-icon mer-icon--attach" aria-hidden="true"></span>
+    <span class="mer-sr-only">Datei anhängen</span>
+  </button>
+  <label class="mer-sr-only" for="beispiel-chat-eingabe">Nachricht</label>
+  <textarea class="mer-composer__input" id="beispiel-chat-eingabe" name="nachricht" rows="1" placeholder="Nachricht schreiben …"></textarea>
+  <button class="mer-btn mer-btn--primary mer-btn--icon" type="submit">
+    <span class="mer-icon mer-icon--send" aria-hidden="true"></span>
+    <span class="mer-sr-only">Senden</span>
+  </button>
+</form>
+    </div>
+  </div>
+</div>
+<div class="mer-section mer-section--light mer-section--compact mer-section--boxed">
+  <div class="mer-container mer-stack">
+    <p class="mer-eyebrow">Auf Hellgrau</p>
+    <div>
+<form class="mer-composer" action="#">
+  <button class="mer-btn mer-btn--icon" type="button">
+    <span class="mer-icon mer-icon--attach" aria-hidden="true"></span>
+    <span class="mer-sr-only">Datei anhängen</span>
+  </button>
+  <label class="mer-sr-only" for="beispiel-chat-eingabe-2">Nachricht</label>
+  <textarea class="mer-composer__input" id="beispiel-chat-eingabe-2" name="nachricht-2" rows="1" placeholder="Nachricht schreiben …"></textarea>
+  <button class="mer-btn mer-btn--primary mer-btn--icon" type="submit">
+    <span class="mer-icon mer-icon--send" aria-hidden="true"></span>
+    <span class="mer-sr-only">Senden</span>
+  </button>
+</form>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="mer-codeblock" data-snippet="composer"><code>&lt;form class="mer-composer" action="#"&gt;
+  &lt;button class="mer-btn mer-btn--icon" type="button"&gt;
+    &lt;span class="mer-icon mer-icon--attach" aria-hidden="true"&gt;&lt;/span&gt;
+    &lt;span class="mer-sr-only"&gt;Datei anhängen&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;label class="mer-sr-only" for="beispiel-chat-eingabe"&gt;Nachricht&lt;/label&gt;
+  &lt;textarea class="mer-composer__input" id="beispiel-chat-eingabe" name="nachricht" rows="1" placeholder="Nachricht schreiben …"&gt;&lt;/textarea&gt;
+  &lt;button class="mer-btn mer-btn--primary mer-btn--icon" type="submit"&gt;
+    &lt;span class="mer-icon mer-icon--send" aria-hidden="true"&gt;&lt;/span&gt;
+    &lt;span class="mer-sr-only"&gt;Senden&lt;/span&gt;
+  &lt;/button&gt;
+&lt;/form&gt;</code></pre>
+</article>
+        </div>
+      </div>
+    </section>
+
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="mer-footer">
+    <div class="mer-container">
+      <div class="mer-footer__main">
+        <div class="mer-stack">
+          <img class="mer-logo" src="assets/logo/merlato-logo-2026.png" alt="Merlato GmbH – Zertifizierte Schulungseinrichtung" width="2480" height="543">
+          <p>Merlato GmbH · Web-Template 1.3.0 · Stand 04.11.2026</p>
+        </div>
+        <div class="mer-seal">
+          <img src="assets/siegel/dekra-siegel-iso-9001.png" alt="DEKRA-Siegel: Zertifiziert, Qualitätsmanagement ISO 9001" width="4134" height="1772">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

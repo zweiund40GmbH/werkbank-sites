@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Das Agenten-Team – zwei&amp;40</title>
+
+  <!--
+    Interne Teamseite Agenten-Team · Marke zwei&40 (Skill marke-zwei40, Abschnitte 7a und 7b)
+    Gestaltung kommt vollständig aus dem Web-Template zwei&40 (css/z40.css, relativ eingebunden):
+    Änderungen am Template wirken hier automatisch. Klassen und Regeln: Web-Template/README.md.
+    Vorführmodus (portal/vorfuehrung.js): Auf dieser Seite nur der Schalter, hier steht nichts Schützenswertes.
+    JavaScript nur für den Vorführmodus, keine externen Requests. Schrift: Nunito Sans aus dem Template (selbst gehostet).
+    Logo: Originaldatei aus dem Brand Pack per relativem Pfad (nicht kopiert, nicht nachgebaut).
+  -->
+
+  <link rel="stylesheet" href="../_Wissen/Brand%20Packs/zwei%2640/Web-Template/css/z40.css">
+
+  <!-- Vorführmodus: früh und ohne defer laden, damit geschützte Inhalte nicht aufblitzen (setzt eine Klasse auf <html>) -->
+  <script src="portal/vorfuehrung.js"></script>
+
+  <style>
+    /* Seitenregel (nur diese Seite): Bildausschnitt eines einzelnen Fotos. Marken Mareike im 4:3-Feld,
+       damit Farbfächer links und Gesicht beide im Bild bleiben. Inhaltsbezogen, kein Baustein. */
+    .z40 .foto--mareike { object-position: 22% 50%; }
+
+    /* Seitenblock Portal-Navigation (auf allen Portalseiten identisch): Abstand zwischen der
+       Navigation oben im Kopf und dem Inhalt darunter. Kandidat fürs Web-Template. */
+    .z40 .portal-nav { margin-bottom: var(--z40-space-6); }
+    /* Der App-Kopf (Kommandozentrale) hat oben weniger Innenabstand als der Seitenkopf:
+       ausgleichen, damit die Navigation auf allen Seiten an derselben Stelle steht. */
+    .z40 .z40-app-header .portal-nav { margin-top: calc(var(--z40-space-7) - var(--z40-space-6)); }
+    @media (min-width: 44rem) {
+      .z40 .z40-app-header .portal-nav { margin-top: calc(var(--z40-space-8) - var(--z40-space-6)); }
+    }
+
+    /* Seitenblock Vorführmodus (auf allen Portalseiten identisch, Logik in portal/vorfuehrung.js):
+       Anzeige „Vorführmodus an“ in der Navigation senkrecht mittig zu den Pills. Geschützte Bereiche
+       (data-vorfuehrung="entfernen") bleiben bis zu ihrem Entfernen aus dem DOM unsichtbar, damit
+       nichts aufblitzt. Kandidat fürs Web-Template (Zustandsanzeige neben z40-nav). */
+    .z40 .portal-nav__anzeige { display: flex; align-items: center; }
+    .portal-vorfuehrung-an [data-vorfuehrung="entfernen"] { display: none !important; }
+  </style>
+</head>
+
+<body class="z40">
+
+  <a class="z40-skip-link" href="#inhalt">Zum Inhalt springen</a>
+
+  <header class="z40-hero">
+    <div class="z40-container">
+      <!-- Portal-Navigation: auf allen Seiten identisch, nur aria-current wechselt -->
+      <nav class="portal-nav" aria-label="Portal">
+        <ul class="z40-nav">
+          <li><a class="z40-btn z40-btn--sm" href="index.html">Start</a></li>
+          <li><a class="z40-btn z40-btn--sm" href="agenten-team.html" aria-current="page">Team</a></li>
+          <li><a class="z40-btn z40-btn--sm" href="leitstand.html">Kommandozentrale</a></li>
+          <li><a class="z40-btn z40-btn--sm" href="brands.html">Brands</a></li>
+          <li><a class="z40-btn z40-btn--sm" href="design-generator.html">Design-Generator</a></li>
+          <li><button class="z40-btn z40-btn--sm" type="button" aria-pressed="false" data-vorfuehrung-schalter><span class="z40-icon z40-icon--circle" aria-hidden="true"></span>Vorführmodus</button></li>
+          <li class="portal-nav__anzeige" data-vorfuehrung-anzeige hidden><span class="z40-badge z40-badge--outline">Vorführmodus an</span></li>
+        </ul>
+      </nav>
+
+      <!-- Logo: Weiß-Variante für dunklen Hintergrund, Original aus dem Brand Pack (relativer Pfad, URL-kodiert) -->
+      <img class="z40-logo"
+           src="../_Wissen/Brand%20Packs/zwei%2640/Logo/zweiund40_Logo_wei%C3%9F_500x500.png"
+           alt="Logo zwei&amp;40" width="496" height="496">
+      <p class="z40-eyebrow">zwei&amp;40 · intern</p>
+      <h1 class="z40-hero__title">Das Agenten-Team.</h1>
+      <p class="z40-hero__lead">Moin! Hier siehst Du, wer aktuell im Agenten-Team von zwei&amp;40 arbeitet – und wer wofür zuständig ist.</p>
+
+      <div class="z40-hero__actions">
+        <nav aria-label="Abteilungen">
+          <ul class="z40-nav">
+            <li><a class="z40-btn" href="#team-leitung">Team-Leitung</a></li>
+            <li><a class="z40-btn" href="#it-development">IT &amp; Development</a></li>
+            <li><a class="z40-btn" href="#marketing">Marketing</a></li>
+            <li><a class="z40-btn" href="#recht-compliance">Recht &amp; Compliance</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="inhalt">
+
+    <!-- ================= Abteilung 1: Team-Leitung ================= -->
+    <section class="z40-section z40-section--dark" id="team-leitung" aria-labelledby="titel-team-leitung">
+      <div class="z40-container">
+        <div class="z40-section-head">
+          <h2 class="z40-section-head__title" id="titel-team-leitung">Team-Leitung.</h2>
+          <p class="z40-section-head__subtitle">Hier laufen alle Fäden zusammen.</p>
+        </div>
+
+        <ul class="z40-grid z40-grid--2 z40-grid--narrow">
+
+          <!-- ===== Claude ===== -->
+          <li>
+            <article class="z40-card" aria-labelledby="name-claude">
+              <div class="z40-media">
+                <img src="bilder/team/der-chef-claude.webp"
+                     alt="Illustriertes Porträt von Claude, dem Chef: Mann Mitte 40 mit dunklem, leicht gewelltem Haar und Dreitagebart, dunkelblaues Sakko, Notizbuch in der Hand."
+                     width="1536" height="1024" decoding="async">
+              </div>
+              <div class="z40-card__body">
+                <h3 class="z40-card__title" id="name-claude">Claude</h3>
+                <p class="z40-card__meta">Der Chef</p>
+                <p class="z40-card__facts"><span>Technischer Name:</span> <code class="z40-code">Claude</code></p>
+                <p>Dein erster Ansprechpartner. Nimmt Deine Aufträge an, entscheidet, was er selbst erledigt und was ans Team geht, und prüft jedes Ergebnis, bevor es bei Dir landet.</p>
+                <div>
+                  <h4 class="z40-card__label">Aufgaben</h4>
+                  <ul class="z40-list">
+                    <li>Aufträge annehmen und verteilen</li>
+                    <li>Ergebnisse der Agenten prüfen</li>
+                    <li>Wichtiges gegenprüfen lassen</li>
+                    <li>Offene Punkte und Annahmen sichtbar machen</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+          </li>
+
+          <!-- ===== Assistenz Anja ===== -->
+          <li>
+            <article class="z40-card" aria-labelledby="name-anja">
+              <div class="z40-media">
+                <img src="bilder/team/assistenz-anja.webp"
+                     alt="Illustriertes Porträt von Assistenz Anja: Frau mit schulterlangem blondem Haar und heller Strickjacke, zwei Ordner im Arm."
+                     width="1536" height="1024" loading="lazy" decoding="async">
+              </div>
+              <div class="z40-card__body">
+                <h3 class="z40-card__title" id="name-anja">Assistenz Anja</h3>
+                <p class="z40-card__meta">Daten, Listen, Ablage &amp; Wissen</p>
+                <p class="z40-card__facts"><span>Technischer Name:</span> <code class="z40-code">assistenz-anja</code></p>
+                <p>Erledigt Fleißarbeit sorgfältig und hält Daten sauber. Sie verwaltet den Gesamtordner „Dev PW“ und die Bibliothek „_Wissen“ – bei Anja weißt Du jederzeit, was wo liegt.</p>
+                <div>
+                  <h4 class="z40-card__label">Aufgaben</h4>
+                  <ul class="z40-list">
+                    <li>Excel- und CSV-Listen pflegen, bereinigen, abgleichen und auswerten</li>
+                    <li>Diagramme für interne Präsentationen</li>
+                    <li>Wiederkehrende Abläufe als Checklisten dokumentieren</li>
+                    <li>Dateien und Ordner sortieren, Übersicht aktuell halten</li>
+                  </ul>
+                </div>
+                <div class="z40-card__footer z40-note">
+                  <h4 class="z40-note__title">Macht sie nicht</h4>
+                  <p>Öffentliche Texte, Rechtsfragen, App-Entwicklung</p>
+                </div>
+              </div>
+            </article>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= Abteilung 2: IT & Development ================= -->
+    <section class="z40-section z40-section--light" id="it-development" aria-labelledby="titel-it-development">
+      <div class="z40-container">
+        <div class="z40-section-head">
+          <h2 class="z40-section-head__title" id="titel-it-development">IT &amp; Development.</h2>
+          <p class="z40-section-head__subtitle">Bauen, gestalten, prüfen.</p>
+        </div>
+
+        <ul class="z40-grid z40-grid--2 z40-grid--narrow">
+
+          <!-- ===== Software Sven ===== -->
+          <li>
+            <article class="z40-card" aria-labelledby="name-sven">
+              <div class="z40-media">
+                <img src="bilder/team/software-sven.webp"
+                     alt="Illustriertes Porträt von Software Sven: junger Mann mit kurzem dunkelblondem Haar, Kopfhörer um den Hals, Arme verschränkt."
+                     width="1536" height="1024" loading="lazy" decoding="async">
+              </div>
+              <div class="z40-card__body">
+                <h3 class="z40-card__title" id="name-sven">Software Sven</h3>
+                <p class="z40-card__meta">Software-Entwickler</p>
+                <p class="z40-card__facts"><span>Technischer Name:</span> <code class="z40-code">software-sven</code></p>
+                <p>Baut das, was unter der Oberfläche liegt: Projektgerüst, Datenbank, Schnittstellen und Logik für Web-Apps, Apps und Tools. Mobile Apps baut er komplett.</p>
+                <div>
+                  <h4 class="z40-card__label">Aufgaben</h4>
+                  <ul class="z40-list">
+                    <li>Neue Projekte aufsetzen</li>
+                    <li>Datenmodell, Datenbank und Migrationen</li>
+                    <li>Anmeldung, Rechte, Im- und Export, Anbindung fremder Dienste</li>
+                    <li>Fehler suchen, Tests ergänzen</li>
+                  </ul>
+                </div>
+                <div class="z40-card__footer z40-note">
+                  <h4 class="z40-note__title">Macht er nicht</h4>
+                  <p>Webseiten-Gestaltung und WordPress, Texte, Deploy ohne Freigabe</p>
+                </div>
+              </div>
+            </article>
+          </li>
+
+          <!-- ===== Webseiten Wolfgang ===== -->
+          <li>
+            <article class="z40-card" aria-labelledby="name-wolfgang">
+              <div class="z40-media">
+                <img src="bilder/team/webseiten-wolfgang.webp"
+                     alt="Illustriertes Porträt von Webseiten Wolfgang: Mann Mitte 50 mit grauem Vollbart und dunkelblauem Strickpullover, hebt lächelnd einen Kaffeebecher."
+                     width="1536" height="1024" loading="lazy" decoding="async">
+              </div>
+              <div class="z40-card__body">
+                <h3 class="z40-card__title" id="name-wolfgang">Webseiten Wolfgang <span class="z40-card__suffix">„Wolle“</span></h3>
+                <p class="z40-card__meta">Webentwickler</p>
+                <p class="z40-card__facts"><span>Technischer Name:</span> <code class="z40-code">webseiten-wolfgang</code></p>
+                <p>Baut und überarbeitet Webseiten in HTML, CSS und JavaScript, gestaltet die Oberflächen von Web-Apps und hält die WordPress-Seiten technisch in Schuss.</p>
+                <div>
+                  <h4 class="z40-card__label">Aufgaben</h4>
+                  <ul class="z40-list">
+                    <li>Landingpages, Seitenabschnitte, Mockups und Formulare</li>
+                    <li>Oberflächen von Web-Apps gestalten</li>
+                    <li>Fehler beheben, responsive Anpassungen, Ladezeit</li>
+                    <li>Inhalte in WordPress einpflegen, Blog-Beiträge als Entwurf anlegen</li>
+                  </ul>
+                </div>
+                <div class="z40-card__footer z40-note">
+                  <h4 class="z40-note__title">Macht er nicht</h4>
+                  <p>Eigene Texte, Veröffentlichen ohne Freigabe, Server und DNS</p>
+                </div>
+              </div>
+            </article>
+          </li>
+
+          <!-- ===== SEO Simon ===== -->
+          <li>
+            <article class="z40-card" aria-labelledby="name-simon">
+              <div class="z40-media">
+                <img src="bilder/team/seo-simon.webp"
+                     alt="Illustriertes Porträt von SEO Simon: Mann Ende 30 mit wilden dunkelbraunen Locken, Brille auf der Stirn und dunkelblauem Kapuzenpullover, hält grinsend eine orange Lupe vors Auge und hebt den Zeigefinger."
+                     width="1536" height="1024" loading="lazy" decoding="async">
+              </div>
+              <div class="z40-card__body">
+                <h3 class="z40-card__title" id="name-simon">SEO Simon</h3>
+                <p class="z40-card__meta">SEO-, GEO- und SEA-Analyst</p>
+                <p class="z40-card__facts"><span>Technischer Name:</span> <code class="z40-code">seo-simon</code></p>
+                <p>Prüft, ob eine Webseite gefunden wird – in Google, in KI-Antworten und über Anzeigen – und ob sie technisch auf Stand ist. Seine Auswertung liegt Angeboten an Kunden bei.</p>
+                <div>
+                  <h4 class="z40-card__label">Aufgaben</h4>
+                  <ul class="z40-list">
+                    <li>Kurz-Check als Angebotsbeilage, Tiefen-Audit als eigene Leistung</li>
+                    <li>SEO, lokale Sichtbarkeit und GEO prüfen</li>
+                    <li>Landingpages und Tracking auf Eignung für Google und Meta Ads prüfen</li>
+                    <li>Wettbewerbervergleich und priorisierte Empfehlungen</li>
+                  </ul>
+                </div>
+                <div class="z40-card__footer z40-note">
+                  <h4 class="z40-note__title">Macht er nicht</h4>
+                  <p>Webseiten ändern, fertige Texte schreiben, erfundene Suchvolumina, Rechts- oder Designprüfung</p>
+                </div>
+              </div>
+            </article>
+          </li>
+
+          <!-- ===== Review Rieke ===== -->
+          <li>
+            <article class="z40-card" aria-labelledby="name-rieke">
+              <div class="z40-media">
+                <img src="bilder/team/review-rieke.webp"
+                     alt="Illustriertes Porträt von Review Rieke: Frau mit rotbraunem, zurückgebundenem Haar und Brille, grauer Blazer, hakt eine Checkliste auf einem Klemmbrett ab."
+                     width="1536" height="1024" loading="lazy" decoding="async">
+              </div>
+              <div class="z40-card__body">
+                <h3 class="z40-card__title" id="name-rieke">Review Rieke</h3>
+                <p class="z40-card__meta">Technische Prüferin</p>
+                <p class="z40-card__facts"><span>Technischer Name:</span> <code class="z40-code">review-rieke</code></p>
+                <p>Die letzte technische Instanz, bevor etwas live geht oder an einen Kunden geliefert wird. Sie prüft gründlich und unabhängig – und nur, wenn Du es ausdrücklich anweist.</p>
+                <div>
+                  <h4 class="z40-card__label">Aufgaben</h4>
+                  <ul class="z40-list">
+                    <li>Sicherheit prüfen</li>
+                    <li>Datenschutz in der Technik prüfen</li>
+                    <li>Barrierefreiheit prüfen</li>
+                    <li>Technische Sauberkeit und Technik-Regeln prüfen</li>
+                  </ul>
+                </div>
+                <div class="z40-card__footer z40-note">
+                  <h4 class="z40-note__title">Macht sie nicht</h4>
+                  <p>Dateien ändern oder Fehler selbst beheben, Rechtsfreigabe, WCAG-Abnahme, Penetrationstest</p>
+                </div>
+              </div>
+            </article>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= Abteilung 3: Marketing ================= -->
+    <section class="z40-section z40-section--petrol" id="marketing" aria-labelledby="titel-marketing">
+      <div class="z40-container">
+        <div class="z40-section-head">
+          <h2 class="z40-section-head__title" id="titel-marketing">Marketing.</h2>
+          <p class="z40-section-head__subtitle">Damit alles aus einem Guss ist.</p>
+        </div>
+
+        <ul class="z40-grid z40-grid--3 z40-grid--span-last">
+
+          <!-- ===== Marken Mareike ===== -->
+          <li>
+            <article class="z40-card" aria-labelledby="name-mareike">
+              <div class="z40-media">
+                <img class="foto--mareike" src="bilder/team/marken-mareike.webp"
+                     alt="Illustriertes Porträt von Marken Mareike: Frau mit dunklem Bob und schwarzem Rollkragenpullover, blickt über die Schulter und hält einen Farbfächer."
+                     width="1536" height="1024" loading="lazy" decoding="async">
+              </div>
+              <div class="z40-card__body">
+                <h3 class="z40-card__title" id="name-mareike">Marken Mareike</h3>
+                <p class="z40-card__meta">Brand Managerin</p>
+                <p class="z40-card__facts"><span>Technischer Name:</span> <code class="z40-code">marken-mareike</code></p>
+                <p>Die letzte Instanz, bevor etwas im Namen einer Marke rausgeht. Sie prüft, ob alles aus einem Guss ist – und sagt klar, was passt und was nicht.</p>
+                <div>
+                  <h4 class="z40-card__label">Aufgaben</h4>
+                  <ul class="z40-list">
+                    <li>Tonalität und Anrede (Du/Sie) prüfen</li>
+                    <li>Schreibweisen, Farben und Logo-Einsatz prüfen</li>
+                    <li>Pflichthinweise wie KI-Kennzeichnung und 18+ prüfen</li>
+                    <li>Für BIG CASH, Merlato, zwei&amp;40 und Spielhallen-Jobs.de</li>
+                  </ul>
+                </div>
+                <div class="z40-card__footer z40-note">
+                  <h4 class="z40-note__title">Macht sie nicht</h4>
+                  <p>Inhalte erstellen oder Dateien ändern</p>
+                </div>
+              </div>
+            </article>
+          </li>
+
+          <!-- ===== Texterin Tabea ===== -->
+          <li>
+            <article class="z40-card" aria-labelledby="name-tabea">
+              <div class="z40-media">
+                <img src="bilder/team/texterin-tabea.webp"
+                     alt="Illustriertes Porträt von Texterin Tabea: Frau mit hochgesteckten dunkelblonden Locken und senfgelbem Pullover, Stift am Kinn, aufgeschlagenes Notizbuch in der Hand."
+                     width="1536" height="1024" loading="lazy" decoding="async">
+              </div>
+              <div class="z40-card__body">
+                <h3 class="z40-card__title" id="name-tabea">Texterin Tabea</h3>
+                <p class="z40-card__meta">Copywriterin</p>
+                <p class="z40-card__facts"><span>Technischer Name:</span> <code class="z40-code">texterin-tabea</code></p>
+                <p>Schreibt Texte, die nach der Marke klingen und gefunden werden. Jeder Webtext ist für Suchmaschinen und KI-Suche gebaut – und liest sich trotzdem wie von einem Menschen.</p>
+                <div>
+                  <h4 class="z40-card__label">Aufgaben</h4>
+                  <ul class="z40-list">
+                    <li>Webseiten, Landingpages und Blog-Beiträge</li>
+                    <li>Social-Posts, Meta-Anzeigen und Newsletter</li>
+                    <li>SEO und GEO: Suchmaschinen und KI-Suche</li>
+                    <li>Im Ton jeder Marke, auch in Patricks Stimme</li>
+                  </ul>
+                </div>
+                <div class="z40-card__footer z40-note">
+                  <h4 class="z40-note__title">Macht sie nicht</h4>
+                  <p>Fakten oder Zahlen erfinden, veröffentlichen, in Webseiten einbauen, Rechtsfreigabe</p>
+                </div>
+              </div>
+            </article>
+          </li>
+
+          <!-- ===== Design Diana ===== -->
+          <li>
+            <article class="z40-card" aria-labelledby="name-diana">
+              <div class="z40-media">
+                <img src="bilder/team/design-diana.webp"
+                     alt="Illustriertes Porträt von Design Diana: Frau mit schulterlangem schwarzem Haar und Pony, olivgrüne Hemdjacke, Stift hinter dem Ohr, hält ein orangefarbenes Tablet."
+                     width="1536" height="1024" loading="lazy" decoding="async">
+              </div>
+              <div class="z40-card__body">
+                <h3 class="z40-card__title" id="name-diana">Design Diana</h3>
+                <p class="z40-card__meta">Grafik- und Motion-Designerin</p>
+                <p class="z40-card__facts"><span>Technischer Name:</span> <code class="z40-code">design-diana</code></p>
+                <p>Gestaltet alles, was man sieht: Grafiken, Illustrationen, Banner und kurze Clips. Jedes Ergebnis sieht aus, als käme es direkt aus der Marke.</p>
+                <div>
+                  <h4 class="z40-card__label">Aufgaben</h4>
+                  <ul class="z40-list">
+                    <li>Social-Media-Grafiken und Bilder fürs Web</li>
+                    <li>Banner für Newsletter und WhatsApp-Kanal</li>
+                    <li>Illustrationen, Kurzclips und Videos</li>
+                    <li>Arbeitet mit Claude Design, Canva und ElevenLabs</li>
+                  </ul>
+                </div>
+                <div class="z40-card__footer z40-note">
+                  <h4 class="z40-note__title">Macht sie nicht</h4>
+                  <p>Posten und Plattformen bespielen, eigene Texte, in Canva überschreiben oder veröffentlichen</p>
+                </div>
+              </div>
+            </article>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= Abteilung 4: Recht & Compliance ================= -->
+    <section class="z40-section z40-section--light" id="recht-compliance" aria-labelledby="titel-recht-compliance">
+      <div class="z40-container">
+        <div class="z40-section-head">
+          <h2 class="z40-section-head__title" id="titel-recht-compliance">Recht &amp; Compliance.</h2>
+          <p class="z40-section-head__subtitle">Damit alles seine Ordnung hat.</p>
+        </div>
+
+        <ul class="z40-grid z40-grid--narrow">
+
+          <!-- ===== Compliance Carl ===== -->
+          <li>
+            <article class="z40-card z40-card--horizontal" aria-labelledby="name-carl">
+              <div class="z40-media">
+                <img src="bilder/team/compliance-carl.webp"
+                     alt="Illustriertes Porträt von Compliance Carl: Mann Anfang 50 mit silbergrauem Haar und dunkler Hornbrille, graue Weste über hellblauem Hemd, rückt die Brille zurecht und hält ein dickes Buch."
+                     width="1536" height="1024" loading="lazy" decoding="async">
+              </div>
+              <div class="z40-card__body">
+                <h3 class="z40-card__title" id="name-carl">Compliance Carl</h3>
+                <p class="z40-card__meta">Recht &amp; Compliance</p>
+                <p class="z40-card__facts"><span>Technischer Name:</span> <code class="z40-code">compliance-carl</code></p>
+                <p>Beantwortet Rechtsfragen und prüft Webseiten, Apps und Kampagnen rechtlich. Jede Aussage hat eine Fundstelle – und er sagt offen, was ungeklärt ist.</p>
+                <div>
+                  <h4 class="z40-card__label">Aufgaben</h4>
+                  <ul class="z40-list">
+                    <li>Glücksspielrecht in Bund und Ländern</li>
+                    <li>Online-Recht: Impressum, Datenschutz, Barrierefreiheit, KI-Kennzeichnung</li>
+                    <li>Werbe-Compliance für Glücksspielwerbung</li>
+                    <li>Arbeitsrecht für die eigenen Firmen</li>
+                  </ul>
+                </div>
+                <div class="z40-card__footer z40-note">
+                  <h4 class="z40-note__title">Macht er nicht</h4>
+                  <p>Juristische Freigabe, Rechtsberatung für Dritte, Dateien ändern – er ist kein Anwalt</p>
+                </div>
+              </div>
+            </article>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= So arbeiten wir ================= -->
+    <section class="z40-section z40-section--dark" aria-labelledby="titel-arbeitsweise">
+      <div class="z40-container">
+        <div class="z40-section-head">
+          <h2 class="z40-section-head__title" id="titel-arbeitsweise">So arbeiten wir.</h2>
+        </div>
+
+        <ol class="z40-steps">
+          <li class="z40-steps__item">
+            <span class="z40-ring" aria-hidden="true">1</span>
+            <h3 class="z40-steps__title">Alles läuft über den Chef.</h3>
+            <p class="z40-steps__text">Er vergibt den Auftrag, der Agent liefert an ihn zurück. Agenten beauftragen sich nie gegenseitig.</p>
+          </li>
+          <li class="z40-steps__item">
+            <span class="z40-ring" aria-hidden="true">2</span>
+            <h3 class="z40-steps__title">Geprüft wird, wo es sich lohnt.</h3>
+            <p class="z40-steps__text">Rechtsaussagen, Zahlen, Veröffentlichungen und Kundenlieferungen gehen durch die Prüfkette – höchstens zwei Runden.</p>
+          </li>
+          <li class="z40-steps__item">
+            <span class="z40-ring" aria-hidden="true">3</span>
+            <h3 class="z40-steps__title">Raus geht nur mit Freigabe.</h3>
+            <p class="z40-steps__text">Veröffentlicht, versendet oder gelöscht wird nichts ohne Patricks ausdrückliches Okay.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="z40-footer">
+    <div class="z40-container">
+      <p>zwei&amp;40 GmbH · Agenten-Team · Stand 08.10.2026 · Interne Übersicht</p>
+    </div>
+  </footer>
+
+</body>
+</html>

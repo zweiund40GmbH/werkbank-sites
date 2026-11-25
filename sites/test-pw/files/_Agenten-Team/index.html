@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Start – Agenten-Team – zwei&amp;40</title>
+
+  <!--
+    Startseite des Portals Agenten-Team · Marke zwei&40 (Skill marke-zwei40, Abschnitte 7a und 7b)
+    Vorläufige Startseite: Das echte Dashboard entsteht im Projekt zwei&40/PW 42 Dashboard (Software Sven).
+    Bis dahin ein sichtbar markierter Platzhalter, keine Kennzahlen.
+    Gestaltung: Web-Template zwei&40 (css/z40.css, relativ eingebunden). Klassen: Web-Template/README.md.
+    Vorführmodus (portal/vorfuehrung.js): Der Dashboard-Bereich (data-vorfuehrung="entfernen") wird aus dem
+    DOM entfernt, die Kacheln bleiben. Das spätere Dashboard bitte nur per Skript laden und rendern, wenn
+    window.PortalVorfuehrung.an nicht true ist – statisches HTML bleibt im Seitenquelltext sichtbar.
+    JavaScript nur für den Vorführmodus, keine externen Requests. Schrift: Nunito Sans aus dem Template (selbst gehostet).
+  -->
+
+  <link rel="stylesheet" href="../_Wissen/Brand%20Packs/zwei%2640/Web-Template/css/z40.css">
+
+  <!-- Vorführmodus: früh und ohne defer laden, damit geschützte Inhalte nicht aufblitzen (setzt eine Klasse auf <html>) -->
+  <script src="portal/vorfuehrung.js"></script>
+
+  <style>
+    /* Seitenblock Portal-Navigation (auf allen Portalseiten identisch): Abstand zwischen der
+       Navigation oben im Kopf und dem Inhalt darunter. Kandidat fürs Web-Template. */
+    .z40 .portal-nav { margin-bottom: var(--z40-space-6); }
+    /* Der App-Kopf (Kommandozentrale) hat oben weniger Innenabstand als der Seitenkopf:
+       ausgleichen, damit die Navigation auf allen Seiten an derselben Stelle steht. */
+    .z40 .z40-app-header .portal-nav { margin-top: calc(var(--z40-space-7) - var(--z40-space-6)); }
+    @media (min-width: 44rem) {
+      .z40 .z40-app-header .portal-nav { margin-top: calc(var(--z40-space-8) - var(--z40-space-6)); }
+    }
+
+    /* Seitenblock Vorführmodus (auf allen Portalseiten identisch, Logik in portal/vorfuehrung.js):
+       Anzeige „Vorführmodus an“ in der Navigation senkrecht mittig zu den Pills. Geschützte Bereiche
+       (data-vorfuehrung="entfernen") bleiben bis zu ihrem Entfernen aus dem DOM unsichtbar, damit
+       nichts aufblitzt. Kandidat fürs Web-Template (Zustandsanzeige neben z40-nav). */
+    .z40 .portal-nav__anzeige { display: flex; align-items: center; }
+    .portal-vorfuehrung-an [data-vorfuehrung="entfernen"] { display: none !important; }
+  </style>
+</head>
+
+<body class="z40">
+
+  <a class="z40-skip-link" href="#inhalt">Zum Inhalt springen</a>
+
+  <header class="z40-hero">
+    <div class="z40-container">
+      <!-- Portal-Navigation: auf allen Seiten identisch, nur aria-current wechselt -->
+      <nav class="portal-nav" aria-label="Portal">
+        <ul class="z40-nav">
+          <li><a class="z40-btn z40-btn--sm" href="index.html" aria-current="page">Start</a></li>
+          <li><a class="z40-btn z40-btn--sm" href="agenten-team.html">Team</a></li>
+          <li><a class="z40-btn z40-btn--sm" href="leitstand.html">Kommandozentrale</a></li>
+          <li><a class="z40-btn z40-btn--sm" href="brands.html">Brands</a></li>
+          <li><a class="z40-btn z40-btn--sm" href="design-generator.html">Design-Generator</a></li>
+          <li><button class="z40-btn z40-btn--sm" type="button" aria-pressed="false" data-vorfuehrung-schalter><span class="z40-icon z40-icon--circle" aria-hidden="true"></span>Vorführmodus</button></li>
+          <li class="portal-nav__anzeige" data-vorfuehrung-anzeige hidden><span class="z40-badge z40-badge--outline">Vorführmodus an</span></li>
+        </ul>
+      </nav>
+
+      <!-- Logo: Weiß-Variante für dunklen Hintergrund, Original aus dem Brand Pack (relativer Pfad, URL-kodiert) -->
+      <img class="z40-logo"
+           src="../_Wissen/Brand%20Packs/zwei%2640/Logo/zweiund40_Logo_wei%C3%9F_500x500.png"
+           alt="Logo zwei&amp;40" width="496" height="496">
+      <p class="z40-eyebrow">zwei&amp;40 · intern</p>
+      <h1 class="z40-hero__title">Start.</h1>
+      <p class="z40-hero__lead">Hier kommt Dein Dashboard hin. Software Sven prüft gerade, welche Quellen sich anbinden lassen.</p>
+    </div>
+  </header>
+
+  <main id="inhalt">
+
+    <!-- ================= Platzhalter Dashboard (entfällt im Vorführmodus) ================= -->
+    <section class="z40-section z40-section--dark" data-vorfuehrung="entfernen">
+      <div class="z40-container">
+        <div class="z40-empty">
+          <p>[PLATZHALTER: Dashboard aus dem Projekt „PW 42 Dashboard“]</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Kacheln zu den Portalseiten ================= -->
+    <section class="z40-section z40-section--light">
+      <div class="z40-container">
+        <ul class="z40-grid z40-grid--3">
+          <li>
+            <article class="z40-card">
+              <div class="z40-card__body">
+                <h2 class="z40-card__title"><a class="z40-card__link" href="agenten-team.html">Team</a></h2>
+                <p>Wer im Agenten-Team was macht.</p>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="z40-card">
+              <div class="z40-card__body">
+                <h2 class="z40-card__title"><a class="z40-card__link" href="leitstand.html">Kommandozentrale</a></h2>
+                <p>Was die Agenten gerade tun.</p>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="z40-card">
+              <div class="z40-card__body">
+                <h2 class="z40-card__title"><a class="z40-card__link" href="brands.html">Brands</a></h2>
+                <p>Marken, Logos und Musterseiten.</p>
+              </div>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="z40-footer">
+    <div class="z40-container">
+      <p>zwei&amp;40 GmbH · Agenten-Team · Interne Übersicht</p>
+    </div>
+  </footer>
+
+</body>
+</html>

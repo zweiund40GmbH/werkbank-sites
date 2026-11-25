@@ -1,0 +1,1644 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Die Kommandozentrale – Agenten-Team – zwei&amp;40</title>
+
+  <!--
+    Kommandozentrale (Leitstand) des Agenten-Teams · Marke zwei&40 (Skill marke-zwei40, Abschnitte 7a und 7b)
+    ECHTBETRIEB (Standard): Die Seite lädt alle 5 Sekunden die Stand-Datei leitstand/daten/leitstand-daten.js
+    über ein neues Script-Element (läuft per Doppelklick über file://, kein Server, kein fetch).
+    Format und Regeln der Stand-Datei: zwei&40/Agenten-Portal/Uebergabe-Oberflaeche.md (Software Sven).
+    BEISPIELMODUS: leitstand.html?demo zeigt die Beispieldaten aus BEISPIEL_DATEN (mit Orange-Badge).
+    VORFÜHRMODUS (portal/vorfuehrung.js, freigegeben von Patrick am 28.10.2026): Gerendert wird nur eine
+    bereinigte Kopie der Stand-Datei (fuerVorfuehrung): Zustände, Zeiten, Dauern, Zähler bleiben, alle
+    Freitexte und Pfade werden ersetzt. Gilt für jedes Nachladen. Der Beispielmodus bleibt unverändert.
+    Abteilungen, Agentenliste, Namen und Fotos stehen fest in der Seite (ABTEILUNGEN, TEAM); aus der Stand-Datei kommen Status,
+    Auftragstitel, Zeiten und Verlauf.
+    Gestaltung: Web-Template zwei&40 (css/z40.css, relativ eingebunden), als Web-App durchgehend dunkel.
+    Änderungen am Template wirken hier automatisch. Klassen und Regeln: Web-Template/README.md.
+    Seiteneigenes CSS nur für das Organigramm, seine Linien und „Weitere Helfer“ (siehe Kommentar im style-Block).
+    ORGANIGRAMM: Chef (Claude) oben, darunter die Abteilungen (ABTEILUNGEN), unter jeder Abteilung ihre Agenten
+    (TEAM, Feld abteilung). Neuer Agent = ein Eintrag in TEAM, neue Abteilung = ein Eintrag in ABTEILUNGEN;
+    feste Plätze im CSS gibt es nicht. Handy: eingerückte Liste, ab 44rem Organigramm mit SVG-Linien.
+    Keine externen Requests, kein Framework. Schrift: Nunito Sans aus dem Template (selbst gehostet).
+    Logo und Fotos: Originaldateien per relativem Pfad (nicht kopiert, nicht nachgebaut).
+  -->
+
+  <link rel="stylesheet" href="../_Wissen/Brand%20Packs/zwei%2640/Web-Template/css/z40.css">
+
+  <!-- Vorführmodus: früh und ohne defer laden, damit geschützte Inhalte nicht aufblitzen (setzt eine Klasse auf <html>) -->
+  <script src="portal/vorfuehrung.js"></script>
+
+  <style>
+    /* =====================================================================================
+       Seitenregeln Kommandozentrale: nur das Organigramm, seine Linien und „Weitere Helfer“.
+       Begründung: Diese Geometrie (Chef oben, Abteilungen darunter, Agenten unter ihrer Abteilung,
+       Linien als SVG bzw. Strang mit Draht in der Listenansicht) gibt es nur auf dieser Seite.
+       Kacheln, Status, Abstände und Farben kommen aus dem Template; hier stehen nur Template-Tokens,
+       keine Farbwerte. Feste Plätze gibt es nicht: Abteilungen und Agenten kommen aus ABTEILUNGEN
+       und TEAM im Skript, ein neuer Eintrag braucht kein neues CSS.
+       Breiten (Template-Breakpoints, JS nutzt dieselbe Schwelle 44rem für die Linien):
+         bis 44rem   eingerückte Liste: Chef → Abteilung → Agenten, Strang mit Draht (nur CSS)
+         ab 44rem    Organigramm mit SVG-Linien; so viele Abteilungen nebeneinander, wie bei mindestens
+                     17.25rem Spaltenbreite passen (1440 px: vier, 1100 px: drei, 820 px: zwei), der Rest
+                     bricht in die nächste Reihe um. 17.25rem = Platz für die längste Status-Pill.
+       ===================================================================================== */
+
+    /* Seitenblock Portal-Navigation (auf allen Portalseiten identisch): Abstand zwischen der
+       Navigation oben im Kopf und dem Inhalt darunter. Kandidat fürs Web-Template. */
+    .z40 .portal-nav { margin-bottom: var(--z40-space-6); }
+    /* Der App-Kopf (Kommandozentrale) hat oben weniger Innenabstand als der Seitenkopf:
+       ausgleichen, damit die Navigation auf allen Seiten an derselben Stelle steht. */
+    .z40 .z40-app-header .portal-nav { margin-top: calc(var(--z40-space-7) - var(--z40-space-6)); }
+    @media (min-width: 44rem) {
+      .z40 .z40-app-header .portal-nav { margin-top: calc(var(--z40-space-8) - var(--z40-space-6)); }
+    }
+
+    /* Seitenblock Vorführmodus (auf allen Portalseiten identisch, Logik in portal/vorfuehrung.js):
+       Anzeige „Vorführmodus an“ in der Navigation senkrecht mittig zu den Pills. Geschützte Bereiche
+       (data-vorfuehrung="entfernen") bleiben bis zu ihrem Entfernen aus dem DOM unsichtbar, damit
+       nichts aufblitzt. Kandidat fürs Web-Template (Zustandsanzeige neben z40-nav). */
+    .z40 .portal-nav__anzeige { display: flex; align-items: center; }
+    .portal-vorfuehrung-an [data-vorfuehrung="entfernen"] { display: none !important; }
+
+    /* ---------- Organigramm: Grundform (Listenansicht, Handy) ---------- */
+    .z40 .org {
+      --org-einzug: 1.75rem;            /* Einrückung je Ebene */
+      --org-strang: 1.125rem;           /* Abstand Strang → Kachel (Länge des Drahts) */
+      --org-abstand-abteilung: var(--z40-space-5);
+      --org-abstand-agent: var(--z40-space-4);
+      position: relative;
+      width: 100%;
+      max-width: 40rem;
+      margin-inline: auto;
+    }
+
+    .z40 .org__linien {
+      display: none;
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+      pointer-events: none;
+    }
+
+    .z40 .org__baum { position: relative; }
+
+    .z40 .org__abteilungen {
+      display: grid;
+      gap: var(--org-abstand-abteilung);
+      margin: var(--org-abstand-abteilung) 0 0 var(--org-einzug);
+    }
+
+    .z40 .org__abteilung,
+    .z40 .org__platz,
+    .z40 .org__kopf {
+      position: relative;
+      min-width: 0;
+    }
+
+    /* Abteilungskopf: schlichte Pill mit Template-Tokens, der Name ist eine h3 */
+    .z40 .org__kopf {
+      display: flex;
+      align-items: center;
+      width: fit-content;
+      max-width: 100%;
+      min-height: 2.75rem;
+      padding: var(--z40-space-2) var(--z40-space-4);
+      background: var(--z40-card-bg);
+      border: 1px solid var(--z40-line);
+      border-radius: var(--z40-radius-pill);
+    }
+
+    .z40 .org__titel {
+      margin: 0;
+      font-size: var(--z40-fs-base);
+      line-height: 1.3;
+    }
+
+    .z40 .org__agenten {
+      display: grid;
+      gap: var(--org-abstand-agent);
+      margin: var(--org-abstand-agent) 0 0 var(--org-einzug);
+    }
+
+    /* Strang der Abteilungen (vom Chef nach unten) und der Agenten (vom Abteilungskopf nach unten).
+       Die letzte Abteilung bzw. der letzte Agent beendet den Strang auf Höhe seines Drahts. */
+    .z40 .org__abteilung::before,
+    .z40 .org__abteilung:last-child > .org__kopf::before,
+    .z40 .org__platz::before {
+      content: "";
+      position: absolute;
+      left: calc(var(--org-strang) * -1);
+      bottom: 0;
+      width: 2px;
+      background: var(--z40-white-32);
+    }
+
+    .z40 .org__abteilung::before { top: calc(var(--org-abstand-abteilung) * -1); }
+    .z40 .org__abteilung:last-child::before { display: none; }
+    .z40 .org__abteilung:last-child > .org__kopf::before { top: calc(var(--org-abstand-abteilung) * -1); bottom: 50%; }
+
+    .z40 .org__platz::before { top: calc(var(--org-abstand-agent) * -1); }
+    .z40 .org__platz:last-child::before { bottom: 50%; }
+
+    /* Draht: kurze Verbindung vom Strang zum Kopf bzw. zur Kachel, Farbe nach Zustand */
+    .z40 .draht {
+      position: absolute;
+      left: calc(var(--org-strang) * -1);
+      top: 50%;
+      width: var(--org-strang);
+      height: var(--draht-staerke, 1px);
+      margin-top: calc(var(--draht-staerke, 1px) / -2);
+      background: var(--draht-farbe, var(--z40-white-32));
+      box-shadow: var(--draht-glow, none);
+    }
+
+    .z40 .draht::after {   /* Lichtpunkt, nur bei Bewegung sichtbar */
+      content: "";
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 0.5rem;
+      height: 0.5rem;
+      margin: -0.25rem 0 0 -0.25rem;
+      border-radius: var(--z40-radius-round);
+      background: var(--z40-white);
+      box-shadow: var(--z40-glow-spark);
+    }
+
+    .z40 :is([data-status="arbeitet"], [data-status="liefert"]) > .draht {
+      --draht-staerke: 3px;
+      --draht-farbe: var(--z40-turquoise);
+      --draht-glow: var(--z40-glow-dot);
+    }
+
+    .z40 [data-status="wartet"] > .draht {
+      --draht-staerke: 3px;
+      --draht-farbe: var(--z40-orange);
+    }
+
+    /* Weitere Helfer: Kacheln so breit wie in der Listenansicht (Handy volle Breite bis 40rem) */
+    .z40 .helfer__liste {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--z40-space-4);
+      width: 100%;
+      max-width: 40rem;
+    }
+
+    .z40 .helfer__platz {
+      flex: 1 1 100%;
+      min-width: 0;
+    }
+
+    /* ---------- Organigramm ab Tablet: Chef oben, Abteilungen nebeneinander, Linien als SVG ---------- */
+    @media (min-width: 44rem) {
+      .z40 .org {
+        --org-einzug: 1rem;
+        --org-strang: 0.5rem;             /* x-Lage des Agenten-Strangs unter dem Abteilungskopf */
+        --org-abstand-abteilung: var(--z40-space-8);
+        max-width: none;
+      }
+
+      .z40 .org__linien { display: block; }
+
+      /* Chef mittig, nicht über die volle Breite */
+      .z40 .org__spitze {
+        width: min(100%, 24rem);
+        margin-inline: auto;
+      }
+
+      /* Platz zwischen Chef und Abteilungen für die waagerechte Verteilerlinie;
+         Spaltenzahl ergibt sich aus der Breite (auto-fit), nicht aus festen Plätzen */
+      .z40 .org__abteilungen {
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 17.25rem), 1fr));
+        column-gap: var(--z40-space-5);
+        row-gap: var(--org-abstand-abteilung);
+        align-items: start;
+        margin-left: 0;
+      }
+
+      /* Abteilungskopf über die ganze Spalte, Name mittig */
+      .z40 .org__kopf {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+      }
+
+      /* Strang und Draht übernimmt hier das SVG */
+      .z40 :is(.org__abteilung, .org__platz)::before,
+      .z40 .org__abteilung:last-child > .org__kopf::before,
+      .z40 .org .draht { display: none; }
+
+      /* SVG-Linien Chef → Abteilung → Agent, Zustand zusätzlich als Text in jeder Kachel */
+      .z40 .org__linien .linie {
+        fill: none;
+        stroke: var(--z40-white-50);
+        stroke-width: 1;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .z40 .org__linien :is(.linie--arbeitet, .linie--liefert) {
+        stroke: var(--z40-turquoise);
+        stroke-width: 3;
+        filter: var(--z40-glow-connector);
+      }
+
+      .z40 .org__linien .linie--wartet {
+        stroke: var(--z40-orange);
+        stroke-width: 3;
+        stroke-dasharray: 2 9;
+      }
+
+      .z40 .org__linien .linie--unklar {
+        stroke: var(--z40-white-82);
+        stroke-dasharray: 5 7;
+      }
+
+      .z40 .org__linien .anschluss {
+        fill: var(--z40-graphite);
+        stroke: var(--z40-white-50);
+        stroke-width: 1;
+      }
+
+      .z40 .org__linien :is(.anschluss--arbeitet, .anschluss--liefert) {
+        fill: var(--z40-turquoise);
+        stroke: var(--z40-turquoise);
+        filter: var(--z40-glow-connector);
+      }
+
+      .z40 .org__linien .anschluss--wartet {
+        fill: var(--z40-orange);
+        stroke: var(--z40-orange);
+      }
+
+      .z40 .org__linien .lichtpunkt { display: none; }
+    }
+
+    /* Desktop: weitere Helfer nebeneinander */
+    @media (min-width: 68rem) {
+      .z40 .helfer__liste { max-width: none; }
+      .z40 .helfer__platz { flex: 0 1 22rem; }
+    }
+
+    /* Bewegung nur ohne reduzierte Bewegung: Lichtpunkt auf dem Draht (Liste) bzw. auf der Linie (Organigramm) */
+    @media (prefers-reduced-motion: no-preference) {
+      .z40 :is([data-status="arbeitet"], [data-status="liefert"]) > .draht::after {
+        display: block;
+        animation: kz-draht-lauf 1.6s linear infinite;
+      }
+
+      .z40 [data-status="liefert"] > .draht::after { animation-direction: reverse; }
+
+      @keyframes kz-draht-lauf {
+        from { left: 0; opacity: 0; }
+        15% { opacity: 1; }
+        85% { opacity: 1; }
+        to { left: 100%; opacity: 0; }
+      }
+    }
+
+    @media (prefers-reduced-motion: no-preference) and (min-width: 44rem) {
+      /* Ein „Strich der Länge null“ mit runden Enden wandert die Linie entlang (pathLength = 100) */
+      .z40 .org__linien .lichtpunkt {
+        display: block;
+        fill: none;
+        stroke: var(--z40-white);
+        stroke-width: 9;
+        stroke-linecap: round;
+        stroke-dasharray: 0.01 100;
+        filter: var(--z40-glow-connector);
+        animation: kz-org-lauf 2.2s linear infinite;
+      }
+
+      .z40 .org__linien .lichtpunkt--liefert { animation-direction: reverse; }
+
+      @keyframes kz-org-lauf {
+        from { stroke-dashoffset: 0; }
+        to { stroke-dashoffset: -100; }
+      }
+    }
+
+    /* Zweiter und weitere parallele Aufträge eines Agenten in seiner Kachel */
+    .z40 .z40-tile__task--weitere { margin-top: var(--z40-space-2); }
+  </style>
+</head>
+
+<body class="z40">
+
+  <a class="z40-skip-link" href="#inhalt">Zum Inhalt springen</a>
+
+  <div class="z40-app">
+
+    <header class="z40-app-header">
+      <div class="z40-container">
+        <!-- Portal-Navigation: auf allen Seiten identisch, nur aria-current wechselt -->
+        <nav class="portal-nav" aria-label="Portal">
+          <ul class="z40-nav">
+            <li><a class="z40-btn z40-btn--sm" href="index.html">Start</a></li>
+            <li><a class="z40-btn z40-btn--sm" href="agenten-team.html">Team</a></li>
+            <li><a class="z40-btn z40-btn--sm" href="leitstand.html" aria-current="page">Kommandozentrale</a></li>
+            <li><a class="z40-btn z40-btn--sm" href="brands.html">Brands</a></li>
+            <li><a class="z40-btn z40-btn--sm" href="design-generator.html">Design-Generator</a></li>
+            <li><button class="z40-btn z40-btn--sm" type="button" aria-pressed="false" data-vorfuehrung-schalter><span class="z40-icon z40-icon--circle" aria-hidden="true"></span>Vorführmodus</button></li>
+            <li class="portal-nav__anzeige" data-vorfuehrung-anzeige hidden><span class="z40-badge z40-badge--outline">Vorführmodus an</span></li>
+          </ul>
+        </nav>
+
+        <div class="z40-app-header__bar">
+          <!-- Logo: Weiß-Variante für dunklen Hintergrund, Original aus dem Brand Pack (relativer Pfad, URL-kodiert) -->
+          <img class="z40-logo"
+               src="../_Wissen/Brand%20Packs/zwei%2640/Logo/zweiund40_Logo_wei%C3%9F_500x500.png"
+               alt="Logo zwei&amp;40" width="496" height="496">
+
+          <div>
+            <p class="z40-eyebrow">zwei&amp;40 · intern</p>
+            <h1 class="z40-app-header__title">Die Kommandozentrale.</h1>
+            <p class="z40-app-header__lead">Hier siehst Du, wer im Agenten-Team gerade woran arbeitet.</p>
+          </div>
+
+          <div class="z40-app-header__aside">
+            <p class="z40-badge z40-badge--accent z40-badge--lg" hidden>
+              <span class="z40-icon z40-icon--warning" aria-hidden="true"></span>
+              <span id="mockup-hinweis"></span>
+            </p>
+            <p class="z40-app-header__updated" id="aktualisiert-zeile" hidden>Zuletzt aktualisiert: <span class="z40-num" id="aktualisiert"></span></p>
+          </div>
+        </div>
+
+        <!-- Kennzahlen: nur die Werte, zu denen es Daten gibt -->
+        <dl class="z40-kpis" id="kennzahlen" hidden></dl>
+      </div>
+    </header>
+
+    <main class="z40-app__main" id="inhalt">
+
+      <!-- ================= Organigramm ================= -->
+      <section class="z40-section z40-section--dark" aria-labelledby="titel-org">
+        <div class="z40-container">
+          <div class="z40-section-head">
+            <h2 class="z40-section-head__title" id="titel-org">Wer arbeitet gerade.</h2>
+          </div>
+
+          <div class="z40-stack z40-stack--loose">
+            <noscript>
+              <p class="z40-empty">Die Kommandozentrale braucht JavaScript, um die Daten anzuzeigen.</p>
+            </noscript>
+
+            <!-- Leerhinweis: Text wird nur gesetzt, wenn er sich ändert (wird dann einmal vorgelesen) -->
+            <p class="z40-empty" id="org-hinweis" role="status" hidden></p>
+
+            <!-- Organigramm als verschachtelte Liste: Chef → Abteilungen → Agenten (Aufbau im Skript) -->
+            <div class="org" id="org">
+              <!-- Verbindungslinien: rein dekorativ, der Zustand steht als Text in jeder Kachel -->
+              <svg class="org__linien" id="org-linien" aria-hidden="true" focusable="false"></svg>
+              <ul class="org__baum" id="org-baum" aria-label="Organigramm des Agenten-Teams"></ul>
+            </div>
+
+            <!-- Agententypen außerhalb des Teams (z. B. Explore); nur sichtbar, wenn es welche gibt -->
+            <div class="z40-stack z40-stack--center" id="helfer" hidden>
+              <h3>Weitere Helfer</h3>
+              <ul class="helfer__liste" id="helfer-liste"></ul>
+            </div>
+
+            <div class="z40-stack z40-stack--center">
+              <ul class="z40-cluster z40-cluster--center" id="legende" aria-label="Zustände"></ul>
+              <!-- UI-Hinweistext von Wolle (Bedienkonzept), nicht von Tabea geliefert – bitte freigeben oder ersetzen -->
+              <p class="z40-small">Klick auf eine Kachel hebt die Aufträge dieser Person im Verlauf hervor.</p>
+              <div class="z40-filterbar" id="filterzeile" hidden>
+                <p id="filter-text" role="status"></p>
+                <div class="z40-cluster z40-cluster--center">
+                  <a class="z40-btn z40-btn--sm" href="#verlauf" id="zum-verlauf">Zum Verlauf</a>
+                  <button class="z40-btn z40-btn--sm" type="button" data-filter-aus>Filter aufheben</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= Ablauf-Leisten ================= -->
+      <!-- Im Echtbetrieb ausgeblendet, solange die Stand-Datei keine Abläufe kennt (Stufe 1) -->
+      <section class="z40-section z40-section--petrol" id="sektion-ablauf" aria-labelledby="titel-ablauf" hidden>
+        <div class="z40-container">
+          <div class="z40-section-head">
+            <h2 class="z40-section-head__title" id="titel-ablauf">Wo der Auftrag steckt.</h2>
+          </div>
+          <ul class="z40-grid" id="ablaeufe"></ul>
+        </div>
+      </section>
+
+      <!-- ================= Wartet auf Dich ================= -->
+      <!-- Im Echtbetrieb ausgeblendet, solange „wartet“ leer ist (Stufe 1) -->
+      <section class="z40-section z40-section--anthracite" id="sektion-wartet" aria-labelledby="titel-wartet" hidden>
+        <div class="z40-container">
+          <div class="z40-section-head">
+            <h2 class="z40-section-head__title" id="titel-wartet">Wartet auf Dich.</h2>
+          </div>
+          <ul class="z40-grid z40-grid--2 z40-grid--narrow" id="wartet"></ul>
+        </div>
+      </section>
+
+      <!-- ================= Verlauf ================= -->
+      <section class="z40-section z40-section--dark" id="verlauf" aria-labelledby="titel-verlauf" tabindex="-1">
+        <div class="z40-container">
+          <div class="z40-section-head">
+            <h2 class="z40-section-head__title" id="titel-verlauf">Heute im Verlauf.</h2>
+          </div>
+          <div class="z40-grid z40-grid--narrow">
+            <div class="z40-filterbar" id="verlauf-filter" hidden>
+              <p id="verlauf-filter-text"></p>
+              <div class="z40-cluster z40-cluster--center">
+                <button class="z40-btn z40-btn--sm" type="button" data-filter-aus>Filter aufheben</button>
+              </div>
+            </div>
+            <ol class="z40-timeline" id="verlauf-liste"></ol>
+            <p class="z40-empty" id="verlauf-leer" hidden></p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="z40-footer">
+      <div class="z40-container">
+        <p id="fusszeile"></p>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+  "use strict";
+
+  /* =====================================================================================
+     Datenquelle
+     -----------
+     Echtbetrieb:   window.LEITSTAND_DATEN aus der Stand-Datei (DATEI), alle ABSTAND_MS neu geladen.
+                    Format: zwei&40/Agenten-Portal/Uebergabe-Oberflaeche.md (formatVersion 1).
+     Beispielmodus: leitstand.html?demo → BEISPIEL_DATEN weiter unten, nichts wird nachgeladen.
+
+     Beide Quellen laufen durch anreichern() und werden zu einer „Sicht“: nur das, was die Seite
+     anzeigt, mit Zeitpunkten in Millisekunden. Gerendert wird je Bereich nur, wenn sich dessen
+     Sicht geändert hat – Fokus, Filter und Scrollposition bleiben so beim Nachladen erhalten.
+     Titel und Texte aus den Daten werden ausschließlich als Text eingesetzt (textContent).
+     ===================================================================================== */
+  const DATEI = "leitstand/daten/leitstand-daten.js";
+  const ABSTAND_MS = 5000;
+  const DEMO = new URLSearchParams(window.location.search).has("demo");
+  /* Vorführmodus: Zustand aus portal/vorfuehrung.js. Im Beispielmodus nicht nötig (erfundene Daten,
+     die ohnehin im Quelltext stehen), deshalb bleibt ?demo unverändert. */
+  const VORFUEHRUNG = !DEMO && Boolean(window.PortalVorfuehrung && window.PortalVorfuehrung.an);
+  const LADEZEIT = Date.now();
+
+  /* ---------- feste Angaben der Seite: Team, Namen, Fotos (Zuordnung über den technischen Namen) ---------- */
+  const ZENTRALE = { id: "claude", name: "Claude", rolle: "Der Chef", foto: "bilder/team/der-chef-claude.webp", fotoPosition: "50% 30%" };
+
+  /* Abteilungen in der Reihenfolge der Teamseite (agenten-team.html). Der Chef steht darüber, nicht in einer Abteilung. */
+  const ABTEILUNGEN = [
+    { id: "team-leitung", name: "Team-Leitung" },
+    { id: "it-development", name: "IT & Development" },
+    { id: "marketing", name: "Marketing" },
+    { id: "recht-compliance", name: "Recht & Compliance" }
+  ];
+
+  /* Agenten: Reihenfolge innerhalb der Abteilung wie hier. Neuer Agent = ein Eintrag mit abteilung (id aus ABTEILUNGEN),
+     kein CSS nötig. fotoPosition = Bildausschnitt im runden Avatar (object-position). */
+  const TEAM = [
+    { id: "assistenz-anja", abteilung: "team-leitung", name: "Assistenz Anja", foto: "bilder/team/assistenz-anja.webp", fotoPosition: "50% 30%" },
+    { id: "software-sven", abteilung: "it-development", name: "Software Sven", foto: "bilder/team/software-sven.webp", fotoPosition: "50% 30%" },
+    { id: "webseiten-wolfgang", abteilung: "it-development", name: "Webseiten Wolfgang", foto: "bilder/team/webseiten-wolfgang.webp", fotoPosition: "50% 30%" },
+    { id: "seo-simon", abteilung: "it-development", name: "SEO Simon", foto: "bilder/team/seo-simon.webp", fotoPosition: "40% 30%" },
+    { id: "review-rieke", abteilung: "it-development", name: "Review Rieke", foto: "bilder/team/review-rieke.webp", fotoPosition: "50% 30%" },
+    { id: "marken-mareike", abteilung: "marketing", name: "Marken Mareike", foto: "bilder/team/marken-mareike.webp", fotoPosition: "72% 30%" },
+    { id: "texterin-tabea", abteilung: "marketing", name: "Texterin Tabea", foto: "bilder/team/texterin-tabea.webp", fotoPosition: "50% 30%" },
+    { id: "design-diana", abteilung: "marketing", name: "Design Diana", foto: "bilder/team/design-diana.webp", fotoPosition: "50% 30%" },
+    { id: "compliance-carl", abteilung: "recht-compliance", name: "Compliance Carl", foto: "bilder/team/compliance-carl.webp", fotoPosition: "50% 30%" }
+  ];
+
+  /* Rückfall, falls ein TEAM-Eintrag eine unbekannte Abteilung nennt (erscheint dann als letzte Spalte).
+     UI-Hinweistext von Wolle, nicht von Tabea geliefert – bitte freigeben oder ersetzen. */
+  const OHNE_ABTEILUNG = { id: "ohne-abteilung", name: "Ohne Abteilung" };
+
+  /* Leerer Stand: gilt, solange es keine (lesbare) Stand-Datei gibt */
+  const LEER = { hinweis: "", stand: {}, zentrale: {}, personen: [], agenten: [], andereAgenten: [], auftraege: [], wartet: [], verlauf: [], kennzahlen: {} };
+
+  /* =====================================================================================
+     BEISPIEL_DATEN – nur für den Beispielmodus (leitstand.html?demo)
+     [PLATZHALTER: Beispieldaten – frei erfunden, zeigen die volle Ansicht inklusive der Bereiche,
+     die es im Echtbetrieb in Stufe 1 noch nicht gibt (Abläufe, „Wartet auf Dich“, Prüfrunden)]
+
+     Abweichend von der Stand-Datei stehen hier Dauern statt Zeitpunkten:
+     schritte[].seitSek und wartet[].seitSek = Laufzeit beim Laden der Seite (zählt ab dann hoch).
+     Agentenstatus hier zusätzlich: "liefert" | "wartet"; Schrittstatus zusätzlich: "offen".
+     ===================================================================================== */
+  const BEISPIEL_DATEN = {
+    hinweis: "Beispieldaten",
+    stand: { datum: "09.10.2026", aktualisiertVorSek: 3 },
+
+    zentrale: { id: "claude", name: "Claude", text: "Verteilt und prüft" },
+
+    personen: [
+      { id: "patrick", name: "Patrick", initialen: "P" }
+    ],
+
+    agenten: [
+      { id: "assistenz-anja", status: "arbeitet", hinweis: "" },
+      { id: "software-sven", status: "frei", hinweis: "Heute noch kein Auftrag" },
+      { id: "webseiten-wolfgang", status: "arbeitet", hinweis: "" },
+      { id: "seo-simon", status: "liefert", hinweis: "" },
+      { id: "review-rieke", status: "frei", hinweis: "Arbeitet nur auf Patricks Anweisung" },
+      { id: "marken-mareike", status: "arbeitet", hinweis: "" },
+      { id: "texterin-tabea", status: "frei", hinweis: "Text für Social-Grafik geliefert" },
+      { id: "design-diana", status: "wartet", hinweis: "Vorschau liegt bei Mareike" },
+      { id: "compliance-carl", status: "frei", hinweis: "Heute noch kein Auftrag" }
+    ],
+
+    andereAgenten: [],
+
+    auftraege: [
+      {
+        id: "landingpage-seminar",
+        titel: "Landingpage Seminar Spielhallen-Marketing",
+        ablauf: "Webseite oder WordPress-Inhalt",
+        schritte: [
+          { wer: "texterin-tabea", status: "erledigt", dauerSek: 360 },
+          { wer: "webseiten-wolfgang", status: "laeuft", seitSek: 240, text: "Baut die Seite im Landingpage-Look" },
+          { wer: "marken-mareike", status: "offen" },
+          { wer: "patrick", status: "offen", text: "Freigabe" }
+        ]
+      },
+      {
+        id: "social-grafik-podcast",
+        titel: "Social-Grafik Podcast-Folge",
+        ablauf: "Grafik, Banner oder Clip",
+        schritte: [
+          { wer: "texterin-tabea", status: "erledigt", dauerSek: 120 },
+          { wer: "design-diana", status: "erledigt", dauerSek: 300 },
+          { wer: "marken-mareike", status: "laeuft", seitSek: 60, text: "Prüft die Grafik, Prüfrunde 1 von 2" },
+          { wer: "patrick", status: "offen", text: "Freigabe" }
+        ]
+      },
+      {
+        id: "kurz-check-webseite",
+        titel: "Kurz-Check Webseite Beispielbetrieb",
+        ablauf: "Webseiten-Auswertung",
+        schritte: [
+          { wer: "seo-simon", status: "laeuft", seitSek: 600, text: "Liefert PDF und Arbeitsnotizen" },
+          { wer: "claude", status: "offen", text: "Befunde prüfen" },
+          { wer: "marken-mareike", status: "offen" },
+          { wer: "patrick", status: "offen", text: "Freigabe" }
+        ]
+      },
+      {
+        id: "kundenliste-bereinigen",
+        titel: "Kundenliste bereinigen",
+        ablauf: null,
+        schritte: [
+          { wer: "assistenz-anja", status: "laeuft", seitSek: 540, text: "Gleicht zwei CSV-Listen ab" },
+          { wer: "claude", status: "offen", text: "Ergebnis prüfen" }
+        ]
+      }
+    ],
+
+    wartet: [
+      { art: "Freigabe", text: "Teamseite: Block ‚Macht er nicht‘ für Claude ergänzen?", von: "claude", seitSek: 7200 },
+      { art: "Push", text: "Zwei Commits im Agenten-Team liegen lokal", von: "claude", seitSek: 2100 }
+    ],
+
+    verlauf: [
+      { zeit: "10:42", von: "claude", an: "marken-mareike", text: "Social-Grafik Podcast-Folge prüfen", status: "laeuft", pruefrunde: { nr: 1, von: 2 } },
+      { zeit: "10:38", von: "claude", an: "webseiten-wolfgang", text: "Landingpage Seminar bauen", status: "laeuft" },
+      { zeit: "10:37", von: "design-diana", an: "claude", text: "Social-Grafik als Vorschau geliefert", status: "erledigt", dauerSek: 300 },
+      { zeit: "10:34", von: "claude", an: "seo-simon", text: "Kurz-Check Webseite Beispielbetrieb", status: "laeuft" },
+      { zeit: "10:33", von: "claude", an: "assistenz-anja", text: "Kundenliste bereinigen", status: "laeuft" },
+      { zeit: "10:32", von: "texterin-tabea", an: "claude", text: "Texte Landingpage Seminar geliefert", status: "erledigt", dauerSek: 360 },
+      { zeit: "10:30", von: "texterin-tabea", an: "claude", text: "Text für Social-Grafik geliefert", status: "erledigt", dauerSek: 120 },
+      { zeit: "10:24", von: "patrick", an: "claude", text: "Landingpage für das Seminar und eine Grafik zur Podcast-Folge", status: null }
+    ]
+  };
+
+  /* ---------- feste Beschriftungen der Oberfläche ---------- */
+  const STATUS_AGENT = {
+    arbeitet: "Arbeitet",
+    liefert: "Liefert zurück",
+    frei: "Frei",
+    wartet: "Wartet auf Freigabe",
+    unklar: "Unklar"
+  };
+
+  /* Legende: nur die Zustände, die im jeweiligen Betrieb im Organigramm vorkommen */
+  const LEGENDE = DEMO ? ["arbeitet", "liefert", "frei", "wartet"] : ["arbeitet", "frei", "unklar"];
+
+  const STATUS_SCHRITT = {
+    erledigt: "Erledigt", laeuft: "Läuft", offen: "Offen",
+    unklar: "Unklar", fehler: "Fehler", abgebrochen: "Abgebrochen"
+  };
+
+  const STATUS_VERLAUF = {
+    laeuft: "Läuft", unklar: "Unklar", erledigt: "Erledigt", fehler: "Fehler", abgebrochen: "Abgebrochen"
+  };
+
+  const KEIN_ABLAUF = "ohne festen Ablauf";
+
+  const TEXT = {
+    keineDaten: "Noch keine Daten. Sobald ein Agent einen Auftrag bekommt, erscheint er hier.",
+    niemand: "Gerade arbeitet niemand.",
+    keinVerlauf: "Heute gab es noch keinen Auftrag."
+  };
+
+  /* Zustand der Daten → Template-Klassen (z40.css). Icon und Farbe kommen aus dem Template,
+     der Zustand steht immer zusätzlich als Text in der Pill. */
+  const STATUS_KLASSE = {
+    arbeitet: "active", laeuft: "active", liefert: "returning",
+    frei: "free", offen: "free", wartet: "waiting",
+    unklar: "unclear", fehler: "error", abgebrochen: "cancelled", erledigt: "done"
+  };
+
+  /* Kachel je Agentenzustand */
+  const KACHEL_KLASSE = { arbeitet: "z40-tile--active", liefert: "z40-tile--active", wartet: "z40-tile--attention", frei: "z40-tile--muted", unklar: "z40-tile--unclear" };
+
+  /* Schritt in der Ablauf-Kette und Eintrag im Verlauf je Zustand */
+  const SCHRITT_KLASSE = { laeuft: "z40-chain__step--current", offen: "z40-chain__step--pending" };
+  const EINTRAG_KLASSE = { laeuft: "z40-timeline__item--active", fehler: "z40-timeline__item--attention", abgebrochen: "z40-timeline__item--attention", unklar: "z40-timeline__item--unclear" };
+
+  const SVG_NS = "http://www.w3.org/2000/svg";
+  const orgBreite = window.matchMedia("(min-width: 44rem)");     /* Template-Breakpoint, ab hier Organigramm mit SVG-Linien (wie im style-Block) */
+
+  /* ---------- kleine Helfer ---------- */
+  function el(tag, attribute, kinder) {
+    const knoten = document.createElement(tag);
+    Object.entries(attribute || {}).forEach(([name, wert]) => {
+      if (wert === null || wert === undefined || wert === false) return;
+      if (name === "class") knoten.className = wert;
+      else if (name === "text") knoten.textContent = wert;
+      else knoten.setAttribute(name, wert);
+    });
+    [].concat(kinder || []).forEach((kind) => { if (kind) knoten.append(kind); });
+    return knoten;
+  }
+
+  function svgEl(tag, attribute) {
+    const knoten = document.createElementNS(SVG_NS, tag);
+    Object.entries(attribute || {}).forEach(([name, wert]) => knoten.setAttribute(name, wert));
+    return knoten;
+  }
+
+  function klasse(tabelle, art) {
+    return Object.prototype.hasOwnProperty.call(tabelle, art) ? tabelle[art] : "";
+  }
+
+  function statusPill(art, text) {
+    return el("span", { class: "z40-status z40-status--" + (klasse(STATUS_KLASSE, art) || "free"), text: text });
+  }
+
+  /* Text nur anfassen, wenn er sich ändert: schont Screenreader (role="status") und den Browser */
+  function setzeText(knoten, text) {
+    if (knoten.textContent !== text) knoten.textContent = text;
+  }
+
+  function person(sicht, id) {
+    if (sicht.zentrale.id === id) return sicht.zentrale;
+    return sicht.agenten.find((a) => a.id === id)
+      || sicht.helfer.find((a) => a.id === id)
+      || sicht.personen.find((p) => p.id === id)
+      || { id: id, name: String(id), hinweis: "" };      /* Rückfall für fremde Agententypen */
+  }
+
+  function initialen(p) {
+    return p.initialen
+      || String(p.name).split(/[\s-]+/).map((teil) => teil.charAt(0)).join("").slice(0, 2).toUpperCase()
+      || "?";
+  }
+
+  /* Rundes Foto; ohne Foto ein Initialen-Platzhalter. Dekorativ, der Name steht immer daneben. */
+  function avatar(p, zusatzKlasse) {
+    const huelle = el("span", { class: "z40-avatar" + (zusatzKlasse ? " " + zusatzKlasse : ""), "aria-hidden": "true" });
+    if (p.foto) {
+      const bild = el("img", { src: p.foto, alt: "", width: "96", height: "96", decoding: "async" });
+      if (p.fotoPosition) bild.style.objectPosition = p.fotoPosition;   /* Bildausschnitt je Foto (Daten aus TEAM) */
+      huelle.append(bild);
+    } else {
+      huelle.textContent = initialen(p);
+    }
+    return huelle;
+  }
+
+  /* ---------- Zeiten ---------- */
+  function ms(iso) {                 /* ISO-Zeitpunkt → Millisekunden, sonst null */
+    if (!iso) return null;
+    const t = new Date(iso).getTime();
+    return Number.isFinite(t) ? t : null;
+  }
+
+  function seitSek(zeitpunkt) {      /* Sekunden seit einem Zeitpunkt (nie negativ) */
+    return zeitpunkt === null ? null : Math.max(0, Math.floor((Date.now() - zeitpunkt) / 1000));
+  }
+
+  function zahl(wert, ersatz) {
+    return typeof wert === "number" && Number.isFinite(wert) ? wert : ersatz;
+  }
+
+  function istHeute(zeitpunkt) {
+    return zeitpunkt !== null && new Date(zeitpunkt).toDateString() === new Date().toDateString();
+  }
+
+  /* Anzeige de-DE */
+  function laufzeit(sek) {           /* wie dauer(): 247 → „4 Min.“, 3727 → „1 Std. 2 Min.“ – „13:09 Min.“ las sich missverständlich */
+    return dauer(sek);
+  }
+
+  function dauer(sek) {              /* 45 → „45 Sek.“, 360 → „6 Min.“, 7200 → „2 Std.“, 5400 → „1 Std. 30 Min.“ */
+    const s = Math.max(0, Math.floor(sek || 0));
+    if (s < 60) return s + " Sek.";
+    const min = Math.floor(s / 60);
+    if (min < 60) return min + " Min.";
+    return Math.floor(min / 60) + " Std." + (min % 60 ? " " + (min % 60) + " Min." : "");
+  }
+
+  function sekunden(n) { return "vor " + n + (n === 1 ? " Sekunde" : " Sekunden"); }
+
+  function uhrzeit(zeitpunkt) {
+    const d = new Date(zeitpunkt);
+    const zeit = d.toLocaleTimeString("de-DE", { hour: "2-digit", minute: "2-digit" }) + " Uhr";
+    if (istHeute(zeitpunkt)) return zeit;
+    return d.toLocaleDateString("de-DE", { day: "2-digit", month: "2-digit", year: "numeric" }) + ", " + zeit;
+  }
+
+  /* ---------- Unklar-Regel (wie im Hook-Skript und auf Svens Prüfseite) ----------
+     Die Stand-Datei wird nur bei einem Ereignis neu geschrieben. Stürzt eine Sitzung ab, steht dort
+     weiter „laeuft“. Deshalb wendet die Seite die Regel beim Anzeigen selbst an.
+     laufend: "laeuft" (Schritt) oder "arbeitet" (Sitzung des Chefs) */
+  function wirksam(status, lebenszeichen, grenzen, laufend, wartet) {
+    const stille = seitSek(lebenszeichen);
+    /* Agent wartet auf einen eigenen Hintergrundprozess (z. B. Testlauf): keine Lebenszeichen, aber nicht „unklar“ – nur die lange Frist gilt */
+    if (wartet && status === "laeuft") return stille !== null && stille > grenzen.abgebrochenSek ? "abgebrochen" : status;
+    /* Schon in der Datei „unklar“ und seither nicht mehr angefasst: nach der langen Frist gilt auch das als abgebrochen */
+    if (status === "unklar" && laufend === "laeuft" && stille !== null && stille > grenzen.abgebrochenSek) return "abgebrochen";
+    if (status !== laufend) return status;
+    if (stille === null || stille > grenzen.abgebrochenSek) return laufend === "laeuft" ? "abgebrochen" : "unklar";
+    if (stille > grenzen.unklarSek) return "unklar";
+    return status;
+  }
+
+  /* =====================================================================================
+     Vorführmodus: bereinigte Kopie der Stand-Datei (Whitelist)
+     Übernommen werden nur Zustände aus festen Listen, Zeitpunkte, Dauern und Zähler. Ersetzt oder
+     weggelassen wird alles, was Kunden- oder Projektnamen enthalten kann:
+       auftraege[]: titel, projekt, sitzung, id, ablauf, schritte[].text (Auftrags-, Ergebnis- und
+                    Fehlertexte), schritte[].tokens, schritte[].werkzeugaufrufe
+       verlauf[]:   text, auftrag (ID)          wartet[]: text, art
+       zentrale:    text, sitzungen[].projekt (Ordner bzw. Pfad), sitzungen[].id
+       agenten[] und andereAgenten[]: hinweis (außer den festen Sätzen des Hook-Skripts),
+                    id und name fremder Agententypen (→ „Weiterer Helfer 1“ …)
+       personen[]:  alles außer Patrick         hinweis (oberste Ebene), unbekannte Felder
+     Fremde Agententypen werden stabil umbenannt (helfer-1 …), damit Kacheln, Verlauf und Filter
+     zusammenpassen. Zeitangaben werden nur übernommen, wenn sie wie ein Zeitpunkt aussehen.
+     Ersatztexte: UI-Hinweistexte von Wolle, nicht von Tabea geliefert – bitte freigeben oder ersetzen.
+     ===================================================================================== */
+  const VORFUEHRUNG_TEXT = {
+    auftrag: "Auftrag (in der Vorführung ausgeblendet)",
+    eintrag: "Eintrag (in der Vorführung ausgeblendet)",
+    hinweis: "Hinweis (in der Vorführung ausgeblendet)",
+    ablauf: "Ablauf (in der Vorführung ausgeblendet)",
+    wartet: "Wartet",
+    helfer: "Weiterer Helfer",
+    person: "Person"
+  };
+
+  /* Eingebaute Agententypen von Claude Code und der Rückfall des Hook-Skripts: keine Projektnamen */
+  const EINGEBAUTE_HELFER = ["general-purpose", "Explore", "Plan", "statusline-setup", "output-style-setup", "claude-code-guide", "unbekannt"];
+  const BEKANNTE_PERSONEN = { patrick: { id: "patrick", name: "Patrick", initialen: "P" } };
+
+  /* Feste Sätze aus leitstand-hook.py (agent_eintrag), sie enthalten nur eine Uhrzeit */
+  const FESTE_HINWEISE = /^(Heute noch kein Auftrag|Zuletzt fertig um \d{1,2}:\d{2} Uhr|Kein Lebenszeichen seit \d{1,2}:\d{2} Uhr|Wartet seit \d{1,2}:\d{2} Uhr auf einen Hintergrundprozess)$/;
+
+  const ZUSTAENDE = {
+    agent: ["arbeitet", "liefert", "frei", "wartet", "unklar"],
+    schritt: ["erledigt", "laeuft", "offen", "unklar", "fehler", "abgebrochen"],
+    verlauf: ["laeuft", "unklar", "erledigt", "fehler", "abgebrochen"],
+    sitzung: ["arbeitet", "frei", "unklar", "fehler"]
+  };
+
+  const helferKennung = new Map();   /* fremder Agententyp → "helfer-1" …, gleich über alle Nachladungen */
+  const personKennung = new Map();   /* fremde Person → "person-1" … */
+
+  function fuerVorfuehrung(roh) {
+    const liste = (wert) => (Array.isArray(wert) ? wert.filter((x) => x && typeof x === "object") : []);
+    const nurZahl = (wert) => zahl(wert, null);
+    const zeitpunkt = (wert) => (typeof wert === "string" && /^[0-9T:.+\-Z ]+$/.test(wert) && ms(wert) !== null ? wert : null);
+    const zustand = (art, wert, ersatz) => (ZUSTAENDE[art].indexOf(wert) >= 0 ? wert : ersatz);
+    const ersetzt = (wert, ersatz) => (wert ? ersatz : "");
+    const hat = (objekt, schluessel) => Object.prototype.hasOwnProperty.call(objekt, schluessel);
+    const feste = new Set([ZENTRALE.id].concat(TEAM.map((a) => a.id), EINGEBAUTE_HELFER, Object.keys(BEKANNTE_PERSONEN)));
+
+    function kennung(id) {
+      const wert = String(id);
+      if (feste.has(wert)) return wert;
+      if (personKennung.has(wert)) return personKennung.get(wert);
+      if (!helferKennung.has(wert)) helferKennung.set(wert, "helfer-" + (helferKennung.size + 1));
+      return helferKennung.get(wert);
+    }
+
+    function agent(a) {
+      const id = kennung(a.id);
+      const fremd = id.indexOf("helfer-") === 0 && !feste.has(id);
+      return {
+        id: id,
+        name: fremd ? VORFUEHRUNG_TEXT.helfer + " " + id.slice("helfer-".length) : id,
+        status: zustand("agent", a.status, "unklar"),
+        wartetAufProzess: a.wartetAufProzess === true,
+        hinweis: typeof a.hinweis === "string" && FESTE_HINWEISE.test(a.hinweis) ? a.hinweis : ersetzt(a.hinweis, VORFUEHRUNG_TEXT.hinweis),
+        laeuftSeit: zeitpunkt(a.laeuftSeit),
+        letztesEnde: zeitpunkt(a.letztesEnde),
+        auftraegeHeute: nurZahl(a.auftraegeHeute),
+        dauerHeuteSek: nurZahl(a.dauerHeuteSek)
+      };
+    }
+
+    const st = roh.stand && typeof roh.stand === "object" ? roh.stand : {};
+    const stand = {
+      datum: typeof st.datum === "string" && /^\d{2}\.\d{2}\.\d{4}$/.test(st.datum) ? st.datum : "",
+      erzeugt: zeitpunkt(st.erzeugt),
+      grenzeUnklarSek: nurZahl(st.grenzeUnklarSek),
+      grenzeAbgebrochenSek: nurZahl(st.grenzeAbgebrochenSek)
+    };
+
+    const z = roh.zentrale && typeof roh.zentrale === "object" ? roh.zentrale : {};
+    const zentrale = { id: ZENTRALE.id, name: ZENTRALE.name, status: zustand("sitzung", z.status, "frei"), text: "" };
+    if (Array.isArray(z.sitzungen)) {
+      zentrale.sitzungen = liste(z.sitzungen).map((s, nr) => ({
+        id: "sitzung-" + (nr + 1),
+        status: zustand("sitzung", s.status, "unklar"),
+        start: zeitpunkt(s.start),
+        arbeitetSeit: zeitpunkt(s.arbeitetSeit),
+        letztesLebenszeichen: zeitpunkt(s.letztesLebenszeichen)
+      }));
+    }
+
+    const personen = liste(roh.personen).filter((p) => p.id !== undefined && p.id !== null).map((p) => {
+      const id = String(p.id);
+      if (hat(BEKANNTE_PERSONEN, id)) return Object.assign({}, BEKANNTE_PERSONEN[id]);
+      if (!personKennung.has(id) && !helferKennung.has(id)) personKennung.set(id, "person-" + (personKennung.size + 1));
+      return { id: kennung(id), name: VORFUEHRUNG_TEXT.person, initialen: "?" };
+    });
+
+    const mitId = (a) => a.id !== undefined && a.id !== null;
+    const agenten = liste(roh.agenten).filter(mitId).map(agent);
+    const andereAgenten = liste(roh.andereAgenten).filter(mitId).map(agent);
+
+    const auftragsKennung = new Map();
+    const auftraege = liste(roh.auftraege).map((a, nr) => {
+      const id = "auftrag-" + (nr + 1);
+      if (a.id !== undefined && a.id !== null) auftragsKennung.set(String(a.id), id);
+      return {
+        id: id,
+        titel: VORFUEHRUNG_TEXT.auftrag,
+        ablauf: a.ablauf ? VORFUEHRUNG_TEXT.ablauf : null,
+        schritte: liste(a.schritte).map((s) => ({
+          wer: kennung(s.wer),
+          status: zustand("schritt", s.status, "unklar"),
+          text: ersetzt(s.text, VORFUEHRUNG_TEXT.auftrag),
+          start: zeitpunkt(s.start),
+          ende: zeitpunkt(s.ende),
+          dauerSek: nurZahl(s.dauerSek),
+          letztesLebenszeichen: zeitpunkt(s.letztesLebenszeichen),
+          wartetAufProzess: s.wartetAufProzess === true,
+          wartetSeit: zeitpunkt(s.wartetSeit)
+        }))
+      };
+    });
+
+    const verlauf = liste(roh.verlauf).map((e) => {
+      const runde = e.pruefrunde && typeof e.pruefrunde === "object" ? { nr: nurZahl(e.pruefrunde.nr), von: nurZahl(e.pruefrunde.von) } : null;
+      return {
+        zeit: typeof e.zeit === "string" && /^\d{1,2}:\d{2}$/.test(e.zeit) ? e.zeit : "",
+        zeitpunkt: zeitpunkt(e.zeitpunkt),
+        von: kennung(e.von),
+        an: kennung(e.an),
+        text: ersetzt(e.text, VORFUEHRUNG_TEXT.auftrag),
+        status: zustand("verlauf", e.status, null),
+        auftrag: e.auftrag !== undefined && e.auftrag !== null ? (auftragsKennung.get(String(e.auftrag)) || null) : null,
+        dauerSek: nurZahl(e.dauerSek),
+        pruefrunde: runde && runde.nr !== null && runde.von !== null ? runde : null
+      };
+    });
+
+    const wartet = liste(roh.wartet).map((w) => ({
+      art: VORFUEHRUNG_TEXT.wartet,
+      text: VORFUEHRUNG_TEXT.eintrag,
+      von: kennung(w.von),
+      seit: zeitpunkt(w.seit)
+    }));
+
+    const kennzahlen = {};
+    const k = roh.kennzahlen && typeof roh.kennzahlen === "object" ? roh.kennzahlen : {};
+    ["arbeitenGerade", "auftraegeHeute", "laufend", "erledigtHeute", "fehlerHeute", "abgebrochenHeute", "unklar", "wartetAufDich", "pruefrundenHeute"]
+      .forEach((name) => { kennzahlen[name] = nurZahl(k[name]); });
+
+    return {
+      formatVersion: nurZahl(roh.formatVersion),
+      hinweis: "",
+      stand: stand,
+      zentrale: zentrale,
+      personen: personen,
+      agenten: agenten,
+      andereAgenten: andereAgenten,
+      auftraege: auftraege,
+      wartet: wartet,
+      verlauf: verlauf,
+      kennzahlen: kennzahlen
+    };
+  }
+
+  /* ---------- Rohdaten → Sicht ---------- */
+  function anreichern(roh, demo) {
+    const stand = roh.stand || {};
+    const grenzen = { unklarSek: zahl(stand.grenzeUnklarSek, 900), abgebrochenSek: zahl(stand.grenzeAbgebrochenSek, 21600) };
+    const erzeugt = demo ? null : ms(stand.erzeugt);
+    const vonHeute = demo || istHeute(erzeugt);          /* Stand-Datei von einem früheren Tag: „heute“ gilt nicht mehr */
+    const liste = (wert) => (Array.isArray(wert) ? wert : []);
+
+    const auftraege = liste(roh.auftraege).map((a) => ({
+      id: String(a.id),
+      titel: String(a.titel || ""),
+      ablauf: a.ablauf || null,
+      schritte: liste(a.schritte).map((s) => {
+        const start = demo ? (typeof s.seitSek === "number" ? LADEZEIT - s.seitSek * 1000 : null) : ms(s.start);
+        const lebenszeichen = ms(s.letztesLebenszeichen) || start;
+        return {
+          wer: String(s.wer),
+          status: demo ? s.status : wirksam(s.status, lebenszeichen, grenzen, "laeuft", s.wartetAufProzess === true),
+          wartet: s.wartetAufProzess === true,
+          wartetSeit: ms(s.wartetSeit) || (s.wartetAufProzess === true ? lebenszeichen : null),
+          text: String(s.text || ""),
+          start: start,
+          lebenszeichen: lebenszeichen,
+          dauerSek: zahl(s.dauerSek, null)
+        };
+      })
+    }));
+
+    /* Je Agent der maßgebliche offene Schritt: „laeuft“ geht vor „unklar“, sonst der zuletzt gestartete */
+    const aktiv = new Map();
+    const offen = new Map();          /* je Agent alle offenen Schritte – ein Agent kann mehrere Aufträge parallel haben */
+    auftraege.forEach((a) => a.schritte.forEach((s) => {
+      if (s.status !== "laeuft" && s.status !== "unklar") return;
+      const schritt = { status: s.status, titel: a.titel, start: s.start, lebenszeichen: s.lebenszeichen, wartet: s.wartet, wartetSeit: s.wartetSeit };
+      if (!offen.has(s.wer)) offen.set(s.wer, []);
+      offen.get(s.wer).push(schritt);
+      const bisher = aktiv.get(s.wer);
+      const besser = !bisher
+        || (s.status === "laeuft" && bisher.status !== "laeuft")
+        || (s.status === bisher.status && (s.start || 0) > (bisher.start || 0));
+      if (besser) aktiv.set(s.wer, schritt);
+    }));
+
+    const ausDatei = new Map();
+    liste(roh.agenten).concat(liste(roh.andereAgenten)).forEach((a) => { if (a && a.id) ausDatei.set(String(a.id), a); });
+
+    function agentSicht(id, fest) {
+      const datei = ausDatei.get(id) || {};
+      const lauf = aktiv.get(id) || null;
+      let status;
+      let hinweis;
+      if (demo) {
+        status = datei.status || "frei";
+        hinweis = datei.hinweis || "";
+      } else {
+        /* Status aus den Schritten abgeleitet, nicht aus der Datei (siehe Unklar-Regel) */
+        status = lauf ? (lauf.status === "laeuft" ? "arbeitet" : "unklar") : "frei";
+        /* Der fertige Satz aus der Datei passt nur, solange er zum Status und zum heutigen Tag gehört */
+        hinweis = status === "frei" && datei.status === "frei" && vonHeute ? String(datei.hinweis || "") : "";
+      }
+      return {
+        id: id,
+        name: (fest && fest.name) || String(datei.name || id),
+        foto: fest ? fest.foto : null,
+        fotoPosition: fest ? fest.fotoPosition : null,
+        status: status,
+        hinweis: hinweis,
+        aktuell: lauf,
+        /* Weitere offene Aufträge desselben Agenten, jüngster zuerst */
+        weitere: (offen.get(id) || []).filter((s) => s !== lauf).sort((x, y) => (y.start || 0) - (x.start || 0))
+      };
+    }
+
+    const teamIds = new Set(TEAM.map((a) => a.id));
+    const personen = liste(roh.personen).map((p) => ({ id: String(p.id), name: String(p.name || p.id), initialen: p.initialen || null, hinweis: "" }));
+    const keinHelfer = new Set([ZENTRALE.id].concat(personen.map((p) => p.id)));
+    const helferIds = [];
+    Array.from(ausDatei.keys()).concat(Array.from(aktiv.keys())).forEach((id) => {
+      if (!teamIds.has(id) && !keinHelfer.has(id) && helferIds.indexOf(id) < 0) helferIds.push(id);
+    });
+
+    const agenten = TEAM.map((fest) => agentSicht(fest.id, fest));
+    const helfer = helferIds.map((id) => agentSicht(id, null));
+
+    /* Chef: Status aus seinen Sitzungen, mit derselben Regel */
+    const z = roh.zentrale || {};
+    let chefStatus = null;
+    if (!demo) {
+      const sitzungen = liste(z.sitzungen).map((s) => wirksam(s.status, ms(s.letztesLebenszeichen), grenzen, "arbeitet"));
+      if (Array.isArray(z.sitzungen)) {
+        chefStatus = sitzungen.indexOf("arbeitet") >= 0 ? "arbeitet" : (sitzungen.indexOf("unklar") >= 0 ? "unklar" : "frei");
+      } else {
+        chefStatus = "frei";
+      }
+    }
+
+    const jeAuftrag = new Map(auftraege.map((a) => [a.id, a]));
+    const verlauf = [];
+    liste(roh.verlauf).forEach((e) => {
+      let status = e.status || null;
+      const zeitpunkt = ms(e.zeitpunkt);
+      if (!demo && (status === "laeuft" || status === "unklar")) {
+        /* Vergabe eines noch offenen Auftrags: wirksamen Status des Schritts übernehmen */
+        const auftrag = e.auftrag !== undefined && e.auftrag !== null ? jeAuftrag.get(String(e.auftrag)) : null;
+        const schritt = auftrag && (auftrag.schritte.find((s) => s.wer === String(e.an)) || auftrag.schritte[0]);
+        if (schritt) status = ["laeuft", "unklar", "abgebrochen"].indexOf(schritt.status) >= 0 ? schritt.status : null;
+      }
+      /* Stand-Datei von gestern: nur zeigen, was heute war oder noch offen ist */
+      if (!demo && !vonHeute && !istHeute(zeitpunkt) && status !== "laeuft" && status !== "unklar") return;
+      verlauf.push({
+        zeit: String(e.zeit || ""),
+        datetime: e.zeitpunkt ? String(e.zeitpunkt) : String(e.zeit || ""),
+        von: String(e.von),
+        an: String(e.an),
+        text: String(e.text || ""),
+        status: status,
+        dauerSek: zahl(e.dauerSek, null),
+        pruefrunde: e.pruefrunde ? { nr: e.pruefrunde.nr, von: e.pruefrunde.von } : null
+      });
+    });
+
+    const wartet = liste(roh.wartet).map((w) => ({
+      art: String(w.art || ""),
+      text: String(w.text || ""),
+      von: String(w.von),
+      seit: demo ? LADEZEIT - zahl(w.seitSek, 0) * 1000 : ms(w.seit)
+    }));
+
+    /* Kennzahlen: Werte ohne Daten (null) entfallen ganz, statt als 0 zu erscheinen */
+    const k = roh.kennzahlen || {};
+    const alle = agenten.concat(helfer);
+    const heute = auftraege.filter((a) => a.schritte.some((s) => istHeute(s.start))).length;
+    const kennzahlen = [
+      { name: "Agenten aktiv", wert: alle.filter((a) => a.status === "arbeitet").length },
+      { name: "Aufträge heute", wert: demo ? auftraege.length : (vonHeute ? zahl(k.auftraegeHeute, heute) : heute) }
+    ];
+    const wartetAufDich = demo ? wartet.length : zahl(k.wartetAufDich, null);
+    const pruefrunden = demo ? verlauf.filter((e) => e.pruefrunde).length : zahl(k.pruefrundenHeute, null);
+    if (wartetAufDich !== null) kennzahlen.push({ name: "Wartet auf Dich", wert: wartetAufDich, art: "wartet" });
+    if (pruefrunden !== null) kennzahlen.push({ name: "Prüfrunden heute", wert: pruefrunden });
+
+    const unfertig = auftraege.filter((a) => a.schritte.some((s) => ["laeuft", "offen", "unklar"].indexOf(s.status) >= 0));
+    const beschaeftigt = alle.some((a) => a.status !== "frei") || (chefStatus !== null && chefStatus !== "frei");
+
+    return {
+      demo: demo,
+      keineDaten: false,
+      hinweis: demo ? String(roh.hinweis || "") : "",
+      datum: stand.datum ? String(stand.datum) : "",
+      erzeugt: erzeugt,
+      demoVorSek: zahl(stand.aktualisiertVorSek, 1),
+      zentrale: {
+        id: ZENTRALE.id, name: ZENTRALE.name, rolle: ZENTRALE.rolle, foto: ZENTRALE.foto, fotoPosition: ZENTRALE.fotoPosition,
+        status: chefStatus, text: demo ? String(z.text || "") : "", hinweis: ""
+      },
+      personen: personen,
+      agenten: agenten,
+      helfer: helfer,
+      laufend: auftraege.filter((a) => a.schritte.some((s) => s.status === "laeuft")).length,
+      niemand: !beschaeftigt,
+      /* Abläufe: im Echtbetrieb erst, wenn die Stand-Datei feste Abläufe kennt (Stufe 1: ablauf ist immer null) */
+      ablaeufe: demo || unfertig.some((a) => a.ablauf) ? unfertig : [],
+      wartet: wartet,
+      verlauf: verlauf,
+      kennzahlen: kennzahlen
+    };
+  }
+
+  /* ---------- Rendern je Bereich, nur bei Änderung ---------- */
+  const signaturen = {};
+  const ticker = {};                 /* je Bereich: Funktionen, die jede Sekunde die sichtbaren Zeiten nachziehen */
+
+  function beiAenderung(bereich, teilsicht, rendere) {
+    const signatur = JSON.stringify(teilsicht);
+    if (signaturen[bereich] === signatur) return false;
+    signaturen[bereich] = signatur;
+    ticker[bereich] = [];
+    rendere();
+    return true;
+  }
+
+  function tickend(bereich, knoten, text) {
+    const setze = () => setzeText(knoten, text());
+    setze();
+    ticker[bereich].push(setze);
+    return knoten;
+  }
+
+  function ticke() {
+    Object.keys(ticker).forEach((bereich) => ticker[bereich].forEach((setze) => setze()));
+  }
+
+  function aktualisiertText(sicht) {
+    if (sicht.demo) {                /* Beispielmodus: zählt hoch und springt alle 5 Sekunden zurück (simulierter Abruf) */
+      const t = Math.floor((Date.now() - LADEZEIT) / 1000);
+      return sekunden(((sicht.demoVorSek - 1 + t) % 5) + 1);
+    }
+    const sek = seitSek(sicht.erzeugt);
+    if (sek === null) return "";
+    return sek < 60 ? sekunden(sek) : uhrzeit(sicht.erzeugt);
+  }
+
+  function rendereKopf(sicht) {
+    beiAenderung("kopf", [sicht.hinweis, sicht.datum, sicht.keineDaten, sicht.kennzahlen], () => {
+      const badge = document.getElementById("mockup-hinweis");
+      badge.textContent = sicht.hinweis;
+      badge.parentElement.hidden = !sicht.hinweis;
+
+      /* Spalten ergeben sich aus dem Template-Raster (so viele Kacheln, wie es Werte gibt) */
+      const liste = document.getElementById("kennzahlen");
+      liste.hidden = sicht.keineDaten;
+      liste.replaceChildren(...sicht.kennzahlen.map((k) =>
+        el("div", { class: "z40-kpi" + (k.art === "wartet" ? " z40-kpi--attention" : "") }, [
+          el("dt", { class: "z40-kpi__label", text: k.name }),
+          el("dd", { class: "z40-kpi__value", text: String(k.wert) })
+        ])
+      ));
+
+      document.getElementById("fusszeile").textContent =
+        ["zwei&40 GmbH", "Agenten-Team", "Kommandozentrale", sicht.hinweis, sicht.datum ? "Stand " + sicht.datum : ""].filter(Boolean).join(" · ");
+    });
+
+    beiAenderung("aktualisiert", [sicht.demo, sicht.erzeugt, sicht.demoVorSek], () => {
+      document.getElementById("aktualisiert-zeile").hidden = !sicht.demo && sicht.erzeugt === null;
+      tickend("aktualisiert", document.getElementById("aktualisiert"), () => aktualisiertText(sicht));
+    });
+  }
+
+  /* Zeitzeile unter einem offenen Auftrag in der Kachel */
+  function zeitzeile(inhalt, lauf) {
+    const zeit = el("span", { class: "z40-tile__time" });
+    if (lauf.status === "unklar") {
+      inhalt.append(tickend("org", zeit, () => "Kein Lebenszeichen seit " + Math.floor((seitSek(lauf.lebenszeichen) || 0) / 60) + " Min."));
+    } else if (lauf.wartet) {
+      inhalt.append(tickend("org", zeit, () => "wartet seit " + laufzeit(seitSek(lauf.wartetSeit)) + " auf eigenen Prüflauf"));
+    } else if (lauf.start !== null) {
+      inhalt.append(tickend("org", zeit, () => "läuft seit " + laufzeit(seitSek(lauf.start))));
+    }
+  }
+
+  /* Inhalt einer Kachel im Organigramm oder bei den weiteren Helfern */
+  function kachelInhalt(agent) {
+    const inhalt = el("span", { class: "z40-tile__body" }, [
+      el("span", { class: "z40-tile__name", text: agent.name }),
+      statusPill(agent.status, STATUS_AGENT[agent.status] || agent.status)
+    ]);
+    const lauf = agent.aktuell;
+
+    if (lauf) {
+      inhalt.append(el("span", { class: "z40-tile__task", text: lauf.titel }));
+      zeitzeile(inhalt, lauf);
+      (agent.weitere || []).forEach((w) => {
+        inhalt.append(el("span", { class: "z40-tile__task z40-tile__task--weitere", text: "Außerdem: " + w.titel }));
+        zeitzeile(inhalt, w);
+      });
+    } else if (agent.hinweis) {
+      inhalt.append(el("span", { class: "z40-tile__task", text: agent.hinweis }));
+    }
+    return inhalt;
+  }
+
+  /* Schalter-Kachel eines Agenten (Organigramm und weitere Helfer) */
+  function kachel(agent, avatarKlasse) {
+    const art = klasse(KACHEL_KLASSE, agent.status);
+    return el("button", { class: "z40-tile" + (art ? " " + art : ""), type: "button", "aria-pressed": "false", "data-agent": agent.id },
+      [avatar(agent, avatarKlasse), kachelInhalt(agent)]);
+  }
+
+  let beobachter = null;             /* ResizeObserver für die Linien im Organigramm */
+
+  /* Sammelzustand einer Abteilung für Draht und Linie Chef → Abteilung (rein dekorativ;
+     den Zustand jedes Agenten nennt die Pill in seiner Kachel). Stärkster Zustand gewinnt. */
+  const RANG = ["arbeitet", "liefert", "wartet", "unklar", "frei"];
+
+  function sammelStatus(agenten) {
+    return RANG.find((art) => agenten.some((a) => a.status === art)) || "frei";
+  }
+
+  /* Agenten nach Abteilung gruppieren: Reihenfolge aus ABTEILUNGEN, darin aus TEAM; leere Abteilungen entfallen */
+  function nachAbteilung(agenten) {
+    const zuordnung = new Map(TEAM.map((a) => [a.id, a.abteilung]));
+    const gruppen = ABTEILUNGEN.map((abt) => ({ id: abt.id, name: abt.name, agenten: [] }));
+    const sonst = { id: OHNE_ABTEILUNG.id, name: OHNE_ABTEILUNG.name, agenten: [] };
+    agenten.forEach((agent) => {
+      const gruppe = gruppen.find((g) => g.id === zuordnung.get(agent.id)) || sonst;
+      gruppe.agenten.push(agent);
+    });
+    return gruppen.concat(sonst).filter((g) => g.agenten.length > 0);
+  }
+
+  function rendereOrg(sicht) {
+    const hinweisText = sicht.keineDaten ? TEXT.keineDaten : (sicht.niemand ? TEXT.niemand : "");
+    const hinweis = document.getElementById("org-hinweis");
+    setzeText(hinweis, hinweisText);
+    hinweis.hidden = !hinweisText;
+
+    return beiAenderung("org", [sicht.zentrale, sicht.agenten, sicht.helfer, sicht.laufend], () => {
+      const bereich = document.getElementById("org").parentElement;
+      const aktiv = document.activeElement;
+      const fokusAgent = aktiv && bereich.contains(aktiv) && aktiv.matches("button.z40-tile") ? aktiv.dataset.agent : null;
+
+      const z = sicht.zentrale;
+      const auftraege = sicht.laufend > 0 ? sicht.laufend + (sicht.laufend === 1 ? " Auftrag läuft" : " Aufträge laufen") : "";
+      const zeile = [z.text, auftraege].filter(Boolean).join(" · ");
+
+      const chefKachel = el("div", { class: "org__spitze" }, el("div", { class: "z40-tile z40-tile--featured", id: "org-chef" }, [
+        avatar(z),
+        el("div", { class: "z40-tile__body" }, [
+          el("p", { class: "z40-tile__name", text: z.name }),
+          el("p", { class: "z40-tile__role", text: z.rolle }),
+          z.status ? statusPill(z.status, STATUS_AGENT[z.status] || z.status) : null,
+          zeile ? el("p", { class: "z40-tile__task", text: zeile }) : null
+        ])
+      ]));
+
+      /* id der Überschrift aus der laufenden Nummer, nicht aus Daten */
+      const abteilungen = nachAbteilung(sicht.agenten).map((abt, nr) =>
+        el("li", { class: "org__abteilung", "data-abteilung": abt.id }, [
+          el("div", { class: "org__kopf", "data-status": sammelStatus(abt.agenten) }, [
+            el("span", { class: "draht", "aria-hidden": "true" }),
+            el("h3", { class: "org__titel", id: "abteilung-" + nr, text: abt.name })
+          ]),
+          el("ul", { class: "org__agenten", "aria-labelledby": "abteilung-" + nr }, abt.agenten.map((agent) =>
+            el("li", { class: "org__platz", "data-status": agent.status, "data-agent": agent.id }, [
+              el("span", { class: "draht", "aria-hidden": "true" }),
+              kachel(agent)
+            ])))
+        ]));
+
+      document.getElementById("org-baum").replaceChildren(
+        el("li", { class: "org__chef" }, [chefKachel, el("ul", { class: "org__abteilungen" }, abteilungen)])
+      );
+
+      /* Weitere Helfer: Agententypen außerhalb des Teams, gleiche Bedienung wie die Kacheln im Organigramm */
+      document.getElementById("helfer").hidden = sicht.helfer.length === 0;
+      document.getElementById("helfer-liste").replaceChildren(...sicht.helfer.map((agent) =>
+        el("li", { class: "helfer__platz", "data-status": agent.status, "data-agent": agent.id }, kachel(agent, "z40-avatar--sm"))
+      ));
+
+      /* Fokus nach dem Neuaufbau wieder auf dieselbe Kachel setzen */
+      if (fokusAgent) {
+        const wieder = Array.from(bereich.querySelectorAll("button.z40-tile")).find((knopf) => knopf.dataset.agent === fokusAgent);
+        if (wieder) wieder.focus({ preventScroll: true });
+      }
+
+      if (beobachter) {
+        beobachter.disconnect();
+        beobachter.observe(document.getElementById("org"));
+        document.querySelectorAll("#org-baum :is(.z40-tile, .org__kopf)").forEach((knoten) => beobachter.observe(knoten));
+      }
+      zeichneLinien();
+    });
+  }
+
+  function rendereLegende() {
+    beiAenderung("legende", LEGENDE, () => {
+      document.getElementById("legende").replaceChildren(
+        ...LEGENDE.map((art) => el("li", {}, statusPill(art, STATUS_AGENT[art])))
+      );
+    });
+  }
+
+  function rendereAblaeufe(sicht) {
+    beiAenderung("ablaeufe", sicht.ablaeufe, () => {
+      document.getElementById("sektion-ablauf").hidden = sicht.ablaeufe.length === 0;
+
+      document.getElementById("ablaeufe").replaceChildren(...sicht.ablaeufe.map((auftrag, nr) => {
+        const kette = el("ol", { class: "z40-chain", "aria-label": "Ablauf" }, auftrag.schritte.map((schritt) => {
+          const p = person(sicht, schritt.wer);
+          const art = klasse(SCHRITT_KLASSE, schritt.status);
+          const knoten = el("li", { class: "z40-chain__step" + (art ? " " + art : ""), "data-status": schritt.status, "aria-current": schritt.status === "laeuft" ? "step" : null }, [
+            statusPill(schritt.status, STATUS_SCHRITT[schritt.status] || schritt.status),
+            el("span", { class: "z40-chain__who" }, [avatar(p, "z40-avatar--sm"), el("span", { class: "z40-chain__name", text: p.name })]),
+            schritt.text ? el("span", { class: "z40-chain__text", text: schritt.text }) : null
+          ]);
+
+          if (schritt.status === "laeuft" && schritt.wartet) {
+            knoten.append(tickend("ablaeufe", el("span", { class: "z40-chain__time" }), () => "wartet seit " + laufzeit(seitSek(schritt.wartetSeit)) + " auf eigenen Prüflauf"));
+          } else if (schritt.status === "laeuft" && schritt.start !== null) {
+            knoten.append(tickend("ablaeufe", el("span", { class: "z40-chain__time" }), () => "läuft seit " + laufzeit(seitSek(schritt.start))));
+          } else if (schritt.status === "erledigt" && schritt.dauerSek) {
+            knoten.append(el("span", { class: "z40-chain__time", text: dauer(schritt.dauerSek) }));
+          }
+          return knoten;
+        }));
+
+        /* id aus der laufenden Nummer, nicht aus den Daten (Auftrags-IDs sind fremde Zeichenketten) */
+        return el("li", {}, el("article", { class: "z40-card z40-card--static", "aria-labelledby": "auftrag-" + nr },
+          el("div", { class: "z40-card__body" }, [
+            el("p", {}, el("span", { class: "z40-badge", text: auftrag.ablauf || KEIN_ABLAUF })),
+            el("h3", { class: "z40-card__title", id: "auftrag-" + nr, text: auftrag.titel }),
+            kette
+          ])));
+      }));
+    });
+  }
+
+  function rendereWartet(sicht) {
+    beiAenderung("wartet", sicht.wartet, () => {
+      document.getElementById("sektion-wartet").hidden = sicht.wartet.length === 0;
+
+      document.getElementById("wartet").replaceChildren(...sicht.wartet.map((punkt) =>
+        el("li", {}, el("div", { class: "z40-tile z40-tile--attention" }, el("div", { class: "z40-tile__body" }, [
+          statusPill("wartet", punkt.art),
+          el("p", { class: "z40-tile__name", text: punkt.text }),
+          tickend("wartet", el("p", { class: "z40-tile__time" }), () =>
+            "von " + person(sicht, punkt.von).name + (punkt.seit !== null ? " · seit " + dauer(seitSek(punkt.seit)) : ""))
+        ])))
+      ));
+    });
+  }
+
+  function rendereVerlauf(sicht) {
+    /* Ohne die beiden mittleren Sektionen folgt der Verlauf direkt auf das Organigramm: dann in Petrol,
+       damit nie zwei gleiche Sektionen aufeinander folgen (Skill marke-zwei40, Abschnitt 7a) */
+    const mittelteil = sicht.ablaeufe.length > 0 || sicht.wartet.length > 0;
+    const sektion = document.getElementById("verlauf");
+    sektion.classList.toggle("z40-section--dark", mittelteil);
+    sektion.classList.toggle("z40-section--petrol", !mittelteil);
+    sektion.hidden = sicht.keineDaten;
+    document.getElementById("zum-verlauf").hidden = sicht.keineDaten;
+
+    return beiAenderung("verlauf", sicht.verlauf, () => {
+      document.getElementById("verlauf-liste").replaceChildren(...sicht.verlauf.map((eintrag) => {
+        const meta = el("p", { class: "z40-timeline__meta" });
+        if (eintrag.status && STATUS_VERLAUF[eintrag.status]) meta.append(statusPill(eintrag.status, STATUS_VERLAUF[eintrag.status]));
+        if (eintrag.dauerSek !== null && eintrag.status !== "laeuft") meta.append(el("span", { class: "z40-num", text: dauer(eintrag.dauerSek) }));
+        if (eintrag.pruefrunde) meta.append(statusPill("liefert", "Prüfrunde " + eintrag.pruefrunde.nr + "/" + eintrag.pruefrunde.von));
+
+        const art = klasse(EINTRAG_KLASSE, eintrag.status);
+        return el("li", { class: "z40-timeline__item" + (art ? " " + art : ""), "data-status": eintrag.status || "", "data-von": eintrag.von, "data-an": eintrag.an },
+          el("div", { class: "z40-timeline__card" }, [
+            el("time", { class: "z40-timeline__time", datetime: eintrag.datetime, text: eintrag.zeit }),
+            el("p", { class: "z40-timeline__title" }, [
+              el("span", { text: person(sicht, eintrag.von).name }),
+              el("span", { class: "z40-timeline__arrow", "aria-hidden": "true", text: " → " }),
+              el("span", { class: "z40-sr-only", text: " an " }),
+              el("span", { text: person(sicht, eintrag.an).name })
+            ]),
+            el("p", { class: "z40-timeline__text", text: eintrag.text }),
+            meta.childNodes.length ? meta : null
+          ]));
+      }));
+    });
+  }
+
+  /* ---------- Organigramm: Linien Chef → Abteilung → Agent (ab 44rem) ----------
+     Chef → Abteilung: senkrecht aus der Mitte unter dem Chef bis auf halbe Höhe des Abstands über der
+     ersten Reihe (Verteiler), waagerecht bis über die Abteilungsmitte, senkrecht in den Kopf.
+     Abteilungen in weiteren Reihen (Umbruch): vom Verteiler zur nächstgelegenen Spaltenlücke, darin
+     nach unten bis über die eigene Reihe, dann waagerecht und senkrecht in den Kopf. So kreuzt keine
+     Linie eine Kachel, egal wie viele Spalten und Reihen es gibt.
+     Abteilung → Agent: Strang links unter dem Kopf, waagerecht in die Kachel.
+     Gezeichnet wird in der Reihenfolge frei → unklar → wartet → aktiv, damit gemeinsame Teilstrecken
+     den stärksten Zustand zeigen. */
+  function zeichneLinien() {
+    const org = document.getElementById("org");
+    const svg = document.getElementById("org-linien");
+    const chefEl = document.getElementById("org-chef");
+    if (!orgBreite.matches || !chefEl) { svg.replaceChildren(); return; }
+
+    const basis = org.getBoundingClientRect();
+    const lage = (knoten) => {
+      const r = knoten.getBoundingClientRect();
+      return { x: r.left - basis.left, y: r.top - basis.top, b: r.width, h: r.height };
+    };
+    const runde = (n) => Math.round(n * 10) / 10;
+    const strang = parseFloat(getComputedStyle(org).getPropertyValue("--org-strang")) *
+      parseFloat(getComputedStyle(document.documentElement).fontSize) || 10;
+
+    svg.setAttribute("viewBox", "0 0 " + runde(basis.width) + " " + runde(basis.height));
+    const chef = lage(chefEl);
+    const cx = runde(chef.x + chef.b / 2);
+    const chefUnten = runde(chef.y + chef.h);
+    const liste = org.querySelector(".org__abteilungen");
+    const halberAbstand = liste ? (lage(liste).y - chefUnten) / 2 : 0;
+
+    /* Spalten und Spaltenlücken aus der tatsächlichen Lage der Abteilungen */
+    const abteilungen = Array.from(org.querySelectorAll(".org__abteilung"));
+    const spalten = [];
+    abteilungen.forEach((abt) => {
+      const r = lage(abt);
+      if (!spalten.some((sp) => Math.abs(sp.x - r.x) < 2)) spalten.push({ x: r.x, rechts: r.x + r.b });
+    });
+    spalten.sort((a, b) => a.x - b.x);
+    const luecken = spalten.slice(1).map((sp, i) => runde((spalten[i].rechts + sp.x) / 2));
+    const ersteReihe = abteilungen.length ? Math.min(...abteilungen.map((abt) => lage(abt.querySelector(".org__kopf")).y)) : 0;
+    const verteiler = runde(ersteReihe - halberAbstand);
+
+    const linien = [];          /* { d, status, punkte: [[x, y], …] } */
+    abteilungen.forEach((abt) => {
+      const kopfEl = abt.querySelector(".org__kopf");
+      const kopf = lage(kopfEl);
+      const kx = runde(kopf.x + kopf.b / 2);
+      const oben = runde(kopf.y);
+      let d = "M" + cx + " " + chefUnten + "V" + verteiler;
+      if (kopf.y - ersteReihe > 2 && luecken.length) {
+        /* weitere Reihe: durch die Spaltenlücke, die der Abteilung am nächsten liegt */
+        const gx = luecken.reduce((best, x) => (Math.abs(x - kx) < Math.abs(best - kx) ? x : best), luecken[0]);
+        d += "H" + gx + "V" + runde(kopf.y - halberAbstand);
+      }
+      d += "H" + kx + "V" + oben;
+      linien.push({
+        d: d,
+        status: kopfEl.dataset.status,
+        punkte: [[cx, chefUnten], [kx, oben]]
+      });
+
+      const sx = runde(kopf.x + strang);
+      const unten = runde(kopf.y + kopf.h);
+      abt.querySelectorAll(".org__platz").forEach((platz) => {
+        const feld = lage(platz.querySelector(".z40-tile"));
+        const my = runde(feld.y + feld.h / 2);
+        const links = runde(feld.x);
+        linien.push({
+          d: "M" + sx + " " + unten + "V" + my + "H" + links,
+          status: platz.dataset.status,
+          punkte: [[links, my]]
+        });
+      });
+    });
+
+    const reihenfolge = ["frei", "unklar", "wartet", "liefert", "arbeitet"];
+    linien.sort((a, b) => reihenfolge.indexOf(a.status) - reihenfolge.indexOf(b.status));
+
+    const teile = [];
+    linien.forEach((l) => {
+      teile.push(svgEl("path", { d: l.d, class: "linie linie--" + l.status }));
+      if (l.status === "arbeitet" || l.status === "liefert") {
+        teile.push(svgEl("path", { d: l.d, pathLength: "100", class: "lichtpunkt lichtpunkt--" + l.status }));
+      }
+    });
+    linien.forEach((l) => l.punkte.forEach(([x, y]) => {
+      teile.push(svgEl("circle", { cx: x, cy: y, r: "4", class: "anschluss anschluss--" + l.status }));
+    }));
+
+    svg.replaceChildren(...teile);
+  }
+
+  /* ---------- Filter: Kachel hebt die Aufträge der Person im Verlauf hervor ---------- */
+  let filterAgent = null;
+
+  function kacheln() {
+    return Array.from(document.querySelectorAll("#org-baum button.z40-tile, #helfer-liste button.z40-tile"));
+  }
+
+  function setzeFilter(sicht, agentId) {
+    filterAgent = agentId;
+    const agent = agentId ? person(sicht, agentId) : null;
+    let treffer = 0;
+
+    kacheln().forEach((knopf) => {
+      knopf.setAttribute("aria-pressed", String(knopf.dataset.agent === agentId));
+    });
+
+    document.querySelectorAll("#verlauf-liste .z40-timeline__item").forEach((eintrag) => {
+      const passt = !agentId || eintrag.dataset.von === agentId || eintrag.dataset.an === agentId;
+      eintrag.hidden = !passt;
+      eintrag.classList.toggle("z40-timeline__item--highlight", Boolean(agentId) && passt);
+      if (agentId && passt) treffer += 1;
+    });
+
+    const text = agent
+      ? "Im Verlauf hervorgehoben: " + agent.name + " (" + treffer + (treffer === 1 ? " Eintrag" : " Einträge") + ")"
+      : "";
+
+    document.getElementById("filterzeile").hidden = !agent;
+    setzeText(document.getElementById("filter-text"), text);
+    document.getElementById("verlauf-filter").hidden = !agent;
+    setzeText(document.getElementById("verlauf-filter-text"), text);
+
+    /* Leerhinweis anstelle der Liste: ohne Filter „kein Auftrag heute“, mit Filter der Hinweis der Person */
+    const leer = document.getElementById("verlauf-leer");
+    const ohneTreffer = Boolean(agent) && treffer === 0;
+    const ohneVerlauf = !agent && sicht.verlauf.length === 0;
+    leer.hidden = !(ohneTreffer || ohneVerlauf);
+    setzeText(leer, ohneTreffer ? agent.name + ": " + (agent.hinweis || TEXT.keinVerlauf) : (ohneVerlauf ? TEXT.keinVerlauf : ""));
+    document.getElementById("verlauf-liste").hidden = ohneTreffer || ohneVerlauf;
+  }
+
+  /* ---------- Alles zusammen ---------- */
+  let quelle = DEMO ? BEISPIEL_DATEN : null;   /* letzter lesbarer Stand */
+  let aktuelleSicht = null;
+
+  function rendereAlles(sicht) {
+    aktuelleSicht = sicht;
+    rendereKopf(sicht);
+    const orgNeu = rendereOrg(sicht);
+    rendereLegende();
+    rendereAblaeufe(sicht);
+    rendereWartet(sicht);
+    const verlaufNeu = rendereVerlauf(sicht);
+    /* Filter nur dann neu anwenden, wenn Kacheln oder Verlauf neu aufgebaut wurden – er bleibt dabei erhalten */
+    if (orgNeu || verlaufNeu) setzeFilter(sicht, filterAgent);
+  }
+
+  /* Sicht neu berechnen (die Unklar-Regel hängt an der Uhr) und nur geänderte Bereiche neu aufbauen */
+  function aktualisiere() {
+    let sicht;
+    if (quelle) {
+      /* Vorführmodus: nur die bereinigte Kopie rendern (greift bei jedem Nachladen) */
+      sicht = anreichern(VORFUEHRUNG ? fuerVorfuehrung(quelle) : quelle, DEMO);
+    } else {
+      sicht = anreichern(LEER, false);
+      sicht.keineDaten = true;
+    }
+    rendereAlles(sicht);
+  }
+
+  /* Stand-Datei laden: neues Script-Element mit Cache-Brecher (läuft über file://, fetch ginge dort nicht) */
+  let ersterAbrufFertig = DEMO;
+
+  function lade() {
+    if (document.hidden && ersterAbrufFertig) return;      /* Fenster im Hintergrund: nicht nachladen */
+    const alt = document.getElementById("leitstand-daten");
+    if (alt) alt.remove();
+    const skript = document.createElement("script");
+    skript.id = "leitstand-daten";
+    skript.src = DATEI + "?t=" + Date.now();
+    skript.onload = () => {
+      const daten = window.LEITSTAND_DATEN;
+      if (daten && typeof daten === "object") {
+        try {
+          anreichern(daten, false);                        /* Probe: nur ein lesbarer Stand ersetzt den bisherigen */
+          quelle = daten;
+        } catch (fehler) { /* unerwartetes Format: letzten lesbaren Stand stehen lassen */ }
+      }
+      ersterAbrufFertig = true;
+      aktualisiere();
+    };
+    skript.onerror = () => {                               /* Datei fehlt: letzten Stand stehen lassen bzw. Leerhinweis */
+      ersterAbrufFertig = true;
+      aktualisiere();
+    };
+    document.head.append(skript);
+  }
+
+  /* ---------- Start ---------- */
+  function klickAufKachel(ereignis) {
+    const knopf = ereignis.target.closest("button.z40-tile");
+    if (!knopf || !aktuelleSicht) return;
+    setzeFilter(aktuelleSicht, filterAgent === knopf.dataset.agent ? null : knopf.dataset.agent);
+  }
+
+  document.getElementById("org-baum").addEventListener("click", klickAufKachel);
+  document.getElementById("helfer-liste").addEventListener("click", klickAufKachel);
+
+  document.querySelectorAll("[data-filter-aus]").forEach((knopf) => {
+    knopf.addEventListener("click", () => {
+      const zuletzt = filterAgent;
+      if (!aktuelleSicht) return;
+      setzeFilter(aktuelleSicht, null);
+      /* Fokus zurück auf die Kachel, damit er nicht auf einem ausgeblendeten Schalter verloren geht */
+      const knopf = kacheln().find((k) => k.dataset.agent === zuletzt);
+      if (knopf) knopf.focus();
+    });
+  });
+
+  /* Linien neu setzen, sobald sich Größen ändern */
+  window.addEventListener("resize", zeichneLinien);
+  window.addEventListener("load", zeichneLinien);
+  orgBreite.addEventListener("change", zeichneLinien);
+  if ("ResizeObserver" in window) beobachter = new ResizeObserver(zeichneLinien);
+
+  if (DEMO) {
+    aktualisiere();
+  } else {
+    lade();
+    window.setInterval(lade, ABSTAND_MS);
+    document.addEventListener("visibilitychange", () => { if (!document.hidden) lade(); });
+  }
+
+  /* Sekundentakt: Zustände neu bewerten und sichtbare Zeiten nachziehen
+     (kein aria-live auf den Zeiten, damit nichts ständig vorgelesen wird) */
+  window.setInterval(() => {
+    if (!aktuelleSicht) return;
+    aktualisiere();
+    ticke();
+  }, 1000);
+  </script>
+
+</body>
+</html>

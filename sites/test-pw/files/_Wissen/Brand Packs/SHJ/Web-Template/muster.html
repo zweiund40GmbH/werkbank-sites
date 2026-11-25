@@ -1,0 +1,3758 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Musterseite – Web-Template Spielhallen-Jobs.de</title>
+  <!--
+    Musterseite Web-Template Spielhallen-Jobs.de · Version 1.1.0 · Stand 10.11.2026
+    Bindet nur css/shj.css ein. Kein JavaScript, keine externen Abrufe, läuft per Doppelklick.
+    Sektionsfolge: Kopf (Weiß) → Logos (Weiß mit Keyline) → Proof-Band (Petrol) → Dunkel → Weiß → Slate → Dunkel → Weiß → Portal-Stil Seitenaufbau (Dunkel) → Portal-Stil Inhalte (Weiß) → App (Weiß mit Keyline) → Chat (Weiß mit Keyline).
+    Bilder, die nicht im Paket liegen (Fotos, EU-KI-Icon), zeigen die Vorschauen als gestrichelte Platzhalter (Daten-URI).
+    Jeder Grundbaustein steht auf Near Black und auf Weiß (Kopf, Kontext und Logo auch auf Petrol),
+    App-Bausteine auf Weiß, darunter sein HTML-Schnipsel. Die Schnipsel sind zeichengleich mit README.md
+    (geprüft von werkzeuge/klassen-check.py). Beispieltexte nah an Spielhallen-Jobs.de, B2B, Sie, keine neuen Kennzahlen.
+  -->
+  <link rel="stylesheet" href="css/shj.css">
+</head>
+
+<body class="shj">
+
+  <a class="shj-skip-link" href="#inhalt">Zum Inhalt springen</a>
+
+  <header class="shj-hero">
+    <div class="shj-container">
+      <img class="shj-logo" src="assets/logo/spielhallen-jobs-logo-schwarz-petrol.png" alt="Logo Spielhallen-Jobs.de" width="1920" height="768">
+      <p class="shj-eyebrow">Spielhallen-Jobs.de · Web-Template 1.1.0</p>
+      <h1 class="shj-hero__title">Musterseite. <span class="shj-slant">Alle Bausteine.</span></h1>
+      <p class="shj-hero__lead">Jeder Baustein aus css/shj.css mit seinem HTML-Schnipsel, auf Near Black, Weiß und Petrol.</p>
+      <div class="shj-hero__actions">
+        <nav aria-label="Bereiche der Musterseite">
+          <ul class="shj-nav">
+            <li><a class="shj-btn" href="#logos">Logos</a></li>
+            <li><a class="shj-btn" href="#grundlagen">Grundlagen</a></li>
+            <li><a class="shj-btn" href="#seitenaufbau">Seitenaufbau</a></li>
+            <li><a class="shj-btn" href="#bedienelemente">Bedienelemente</a></li>
+            <li><a class="shj-btn" href="#inhalte">Inhalte</a></li>
+            <li><a class="shj-btn" href="#formulare">Formulare</a></li>
+            <li><a class="shj-btn" href="#portal-aufbau">Portal-Stil</a></li>
+            <li><a class="shj-btn shj-btn--arrow" href="#app">App-Bausteine</a></li>
+            <li><a class="shj-btn" href="#chat">Chat</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="shj-main" id="inhalt">
+
+    <!-- ================= Logos ================= -->
+    <section class="shj-section shj-section--white shj-section--keyline" id="logos" aria-labelledby="t-logos">
+      <div class="shj-container">
+        <div class="shj-section-head">
+          <h2 class="shj-section-head__title" id="t-logos">Logos.</h2>
+          <p class="shj-section-head__subtitle">Alle Logo-Varianten im Paket, jeweils auf ihrer Fläche.</p>
+        </div>
+        <div class="shj-grid">
+        <div class="shj-grid shj-grid--2">
+          <figure class="shj-stack">
+            <div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+              <div class="shj-container">
+                <img src="assets/logo/spielhallen-jobs-logo-schwarz-petrol.png" alt="Logo Spielhallen-Jobs.de, Variante Schwarz/Petrol" width="1920" height="768">
+              </div>
+            </div>
+            <figcaption class="shj-stack">
+              <p class="shj-h4">Schwarz/Petrol</p>
+              <p><code class="shj-code">assets/logo/spielhallen-jobs-logo-schwarz-petrol.png</code> · PNG, 1920 × 768 px, transparenter Rand</p>
+              <p>Standard für weiße Flächen: Kopf, Footer, App-Rahmen.</p>
+            </figcaption>
+          </figure>
+          <figure class="shj-stack">
+            <div class="shj-section shj-section--petrol shj-section--compact shj-section--keyline">
+              <div class="shj-container">
+                <img src="assets/logo/spielhallen-jobs-logo-schwarz-weiss.png" alt="Logo Spielhallen-Jobs.de, Variante Weiß/Schwarz" width="1920" height="768">
+              </div>
+            </div>
+            <figcaption class="shj-stack">
+              <p class="shj-h4">Weiß/Schwarz</p>
+              <p><code class="shj-code">assets/logo/spielhallen-jobs-logo-schwarz-weiss.png</code> · PNG, 1920 × 768 px, transparenter Rand</p>
+              <p>Für Petrol-Flächen: Kopf Petrol, App-Kopf, ruhige Fotoflächen.</p>
+            </figcaption>
+          </figure>
+        </div>
+          <div class="shj-note shj-note--info">
+            <p class="shj-note__title">Kernregeln</p>
+            <ul class="shj-list">
+              <li>Keine Variante für Near Black und Slate: Die Silbe „JOBS“ ist in beiden Dateien Near Black und verschwände dort. Auf diesen Flächen kein Logo setzen.</li>
+              <li>Nicht verzerren, umfärben, beschneiden, nachzeichnen oder neu erzeugen; nur diese Originaldateien verwenden.</li>
+              <li>Der transparente Rand der Dateien ist der Schutzraum: nicht wegschneiden, nichts hineinragen lassen.</li>
+              <li>Im Layout mit der Klasse <code class="shj-code">shj-logo</code> (15 rem Dateibreite, im Kopf ab 44 rem 18 rem). Alt-Text: „Logo Spielhallen-Jobs.de“.</li>
+            </ul>
+          </div>
+<article class="shj-stack" id="b-logo-light" aria-labelledby="b-logo-light-t">
+  <h3 class="shj-h3" id="b-logo-light-t">Schnipsel: Logo auf Weiß</h3>
+  <p>Variante Schwarz/Petrol mit Klasse und Alt-Text.</p>
+  <pre class="shj-codeblock" data-snippet="logo-light"><code>&lt;img class="shj-logo" src="assets/logo/spielhallen-jobs-logo-schwarz-petrol.png" alt="Logo Spielhallen-Jobs.de" width="1920" height="768"&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-logo-petrol" aria-labelledby="b-logo-petrol-t">
+  <h3 class="shj-h3" id="b-logo-petrol-t">Schnipsel: Logo auf Petrol</h3>
+  <p>Variante Weiß/Schwarz mit Klasse und Alt-Text.</p>
+  <pre class="shj-codeblock" data-snippet="logo-petrol"><code>&lt;img class="shj-logo" src="assets/logo/spielhallen-jobs-logo-schwarz-weiss.png" alt="Logo Spielhallen-Jobs.de" width="1920" height="768"&gt;</code></pre>
+</article>
+        </div>
+      </div>
+    </section>
+
+    <section class="shj-section shj-section--petrol shj-section--compact" aria-label="Kennzahlen">
+      <div class="shj-container">
+<div class="shj-proof">
+  <p class="shj-proof__title">Bisher für unsere Kunden</p>
+  <dl class="shj-proof__list">
+    <div class="shj-proof__item">
+      <dt class="shj-proof__label">Stellen besetzt</dt>
+      <dd class="shj-proof__value">4.200+</dd>
+    </div>
+    <div class="shj-proof__item">
+      <dt class="shj-proof__label">Bewerber gefunden</dt>
+      <dd class="shj-proof__value">38.500+</dd>
+    </div>
+  </dl>
+</div>
+      </div>
+    </section>
+
+    <!-- ================= Grundlagen ================= -->
+    <section class="shj-section shj-section--dark" id="grundlagen" aria-labelledby="t-grundlagen">
+      <div class="shj-container">
+        <div class="shj-section-head">
+          <h2 class="shj-section-head__title" id="t-grundlagen">Grundlagen.</h2>
+          <p class="shj-section-head__subtitle">Typografie, Störer-Balken, Code, Links, Icons, Listen.</p>
+        </div>
+        <div class="shj-grid">
+<article class="shj-stack" id="b-typo" aria-labelledby="b-typo-t">
+  <h3 class="shj-h3" id="b-typo-t">Typografie</h3>
+  <p>Echte Überschriften (h1–h6) bekommen die Optik automatisch. <code class="shj-code">shj-h1</code> bis <code class="shj-code">shj-h4</code> übertragen sie auf andere Elemente. H1 und H2 stehen in Versalien. <strong>Headlines im Web: Lato Black.</strong></p>
+<div class="shj-grid shj-grid--2">
+<div class="shj-section shj-section--dark shj-section--compact">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Near Black</p>
+    <div>
+<div class="shj-stack">
+  <p class="shj-eyebrow">Dachzeile</p>
+  <p class="shj-h1">Überschrift 1.</p>
+  <p class="shj-h2">Überschrift 2.</p>
+  <p class="shj-h3">Überschrift 3</p>
+  <p class="shj-h4">Überschrift 4</p>
+  <p class="shj-lead">Einleitung: etwas größer als der Fließtext.</p>
+  <p>Fließtext in Lato Regular, Zeilenhöhe 1,6.</p>
+  <p class="shj-small">Kleintext für Zusatzangaben.</p>
+  <p class="shj-muted">Gedimmter Text für Nebensächliches.</p>
+</div>
+    </div>
+  </div>
+</div>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<div class="shj-stack">
+  <p class="shj-eyebrow">Dachzeile</p>
+  <p class="shj-h1">Überschrift 1.</p>
+  <p class="shj-h2">Überschrift 2.</p>
+  <p class="shj-h3">Überschrift 3</p>
+  <p class="shj-h4">Überschrift 4</p>
+  <p class="shj-lead">Einleitung: etwas größer als der Fließtext.</p>
+  <p>Fließtext in Lato Regular, Zeilenhöhe 1,6.</p>
+  <p class="shj-small">Kleintext für Zusatzangaben.</p>
+  <p class="shj-muted">Gedimmter Text für Nebensächliches.</p>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="shj-codeblock" data-snippet="typo"><code>&lt;div class="shj-stack"&gt;
+  &lt;p class="shj-eyebrow"&gt;Dachzeile&lt;/p&gt;
+  &lt;p class="shj-h1"&gt;Überschrift 1.&lt;/p&gt;
+  &lt;p class="shj-h2"&gt;Überschrift 2.&lt;/p&gt;
+  &lt;p class="shj-h3"&gt;Überschrift 3&lt;/p&gt;
+  &lt;p class="shj-h4"&gt;Überschrift 4&lt;/p&gt;
+  &lt;p class="shj-lead"&gt;Einleitung: etwas größer als der Fließtext.&lt;/p&gt;
+  &lt;p&gt;Fließtext in Lato Regular, Zeilenhöhe 1,6.&lt;/p&gt;
+  &lt;p class="shj-small"&gt;Kleintext für Zusatzangaben.&lt;/p&gt;
+  &lt;p class="shj-muted"&gt;Gedimmter Text für Nebensächliches.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-slant" aria-labelledby="b-slant-t">
+  <h3 class="shj-h3" id="b-slant-t">Störer-Balken</h3>
+  <p>Schräger Orange-Balken hinter einer Headline-Zeile, Schrift immer Near Black. Auf Weiß und Near Black, nicht auf Petrol.</p>
+<div class="shj-grid shj-grid--2">
+<div class="shj-section shj-section--dark shj-section--compact">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Near Black</p>
+    <div>
+<p class="shj-h2">Erste Zeile. <span class="shj-slant">Zweite Zeile.</span></p>
+    </div>
+  </div>
+</div>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<p class="shj-h2">Erste Zeile. <span class="shj-slant">Zweite Zeile.</span></p>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="shj-codeblock" data-snippet="slant"><code>&lt;p class="shj-h2"&gt;Erste Zeile. &lt;span class="shj-slant"&gt;Zweite Zeile.&lt;/span&gt;&lt;/p&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-prose" aria-labelledby="b-prose-t">
+  <h3 class="shj-h3" id="b-prose-t">Fließtext-Bereich</h3>
+  <p>Für redaktionelle Inhalte, z. B. aus einem CMS: Abstände, Listen und Links ohne eigene Klassen.</p>
+<div class="shj-grid shj-grid--2">
+<div class="shj-section shj-section--dark shj-section--compact">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Near Black</p>
+    <div>
+<div class="shj-prose">
+  <h3>Zwischenüberschrift</h3>
+  <p>Absätze bekommen automatisch Abstand. Ein <a href="#">Link im Text</a> ist immer unterstrichen.</p>
+  <ul>
+    <li>Aufzählung mit Marker</li>
+    <li>Zweiter Punkt</li>
+  </ul>
+  <ol>
+    <li>Nummerierte Liste</li>
+    <li>Zweiter Schritt</li>
+  </ol>
+</div>
+    </div>
+  </div>
+</div>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<div class="shj-prose">
+  <h3>Zwischenüberschrift</h3>
+  <p>Absätze bekommen automatisch Abstand. Ein <a href="#">Link im Text</a> ist immer unterstrichen.</p>
+  <ul>
+    <li>Aufzählung mit Marker</li>
+    <li>Zweiter Punkt</li>
+  </ul>
+  <ol>
+    <li>Nummerierte Liste</li>
+    <li>Zweiter Schritt</li>
+  </ol>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="shj-codeblock" data-snippet="prose"><code>&lt;div class="shj-prose"&gt;
+  &lt;h3&gt;Zwischenüberschrift&lt;/h3&gt;
+  &lt;p&gt;Absätze bekommen automatisch Abstand. Ein &lt;a href="#"&gt;Link im Text&lt;/a&gt; ist immer unterstrichen.&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Aufzählung mit Marker&lt;/li&gt;
+    &lt;li&gt;Zweiter Punkt&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;ol&gt;
+    &lt;li&gt;Nummerierte Liste&lt;/li&gt;
+    &lt;li&gt;Zweiter Schritt&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-code" aria-labelledby="b-code-t">
+  <h3 class="shj-h3" id="b-code-t">Code</h3>
+  <p>Inline-Code und Codeblock.</p>
+<div class="shj-grid shj-grid--2">
+<div class="shj-section shj-section--dark shj-section--compact">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Near Black</p>
+    <div>
+<p>Klasse <code class="shj-code">shj-btn</code> im Fließtext.</p>
+<pre class="shj-codeblock"><code>&lt;a class="shj-btn" href="#"&gt;Button&lt;/a&gt;</code></pre>
+    </div>
+  </div>
+</div>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<p>Klasse <code class="shj-code">shj-btn</code> im Fließtext.</p>
+<pre class="shj-codeblock"><code>&lt;a class="shj-btn" href="#"&gt;Button&lt;/a&gt;</code></pre>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="shj-codeblock" data-snippet="code"><code>&lt;p&gt;Klasse &lt;code class="shj-code"&gt;shj-btn&lt;/code&gt; im Fließtext.&lt;/p&gt;
+&lt;pre class="shj-codeblock"&gt;&lt;code&gt;&amp;lt;a class="shj-btn" href="#"&amp;gt;Button&amp;lt;/a&amp;gt;&lt;/code&gt;&lt;/pre&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-nowrap" aria-labelledby="b-nowrap-t">
+  <h3 class="shj-h3" id="b-nowrap-t">Zusammenhalten</h3>
+  <p>Paare, die nicht umbrechen dürfen (<code class="shj-code">shj-nowrap</code>), und der Markenname in Überschriften (<code class="shj-code">shj-brand</code>): Die Überschrift wird bei schmalem Bildschirm so klein, dass „Spielhallen-Jobs.de“ in eine Zeile passt.</p>
+<div class="shj-grid shj-grid--2">
+<div class="shj-section shj-section--dark shj-section--compact">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Near Black</p>
+    <div>
+<p class="shj-h2">Recruiting mit <span class="shj-brand">Spielhallen-Jobs.de</span>.</p>
+<p>Gesucht: <span class="shj-nowrap">Servicekraft (m/w/d)</span> in Ihrer Filiale.</p>
+    </div>
+  </div>
+</div>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<p class="shj-h2">Recruiting mit <span class="shj-brand">Spielhallen-Jobs.de</span>.</p>
+<p>Gesucht: <span class="shj-nowrap">Servicekraft (m/w/d)</span> in Ihrer Filiale.</p>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="shj-codeblock" data-snippet="nowrap"><code>&lt;p class="shj-h2"&gt;Recruiting mit &lt;span class="shj-brand"&gt;Spielhallen-Jobs.de&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Gesucht: &lt;span class="shj-nowrap"&gt;Servicekraft (m/w/d)&lt;/span&gt; in Ihrer Filiale.&lt;/p&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-link" aria-labelledby="b-link-t">
+  <h3 class="shj-h3" id="b-link-t">Links</h3>
+  <p>Immer unterstrichen. Der Unterstrich trägt die Markenfarbe, die Schrift bleibt lesbar.</p>
+<div class="shj-grid shj-grid--2">
+<div class="shj-section shj-section--dark shj-section--compact">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Near Black</p>
+    <div>
+<p>Ein <a href="#">Link im Fließtext</a> und ein <a class="shj-link" href="#">Link mit Klasse</a>.</p>
+    </div>
+  </div>
+</div>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<p>Ein <a href="#">Link im Fließtext</a> und ein <a class="shj-link" href="#">Link mit Klasse</a>.</p>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="shj-codeblock" data-snippet="link"><code>&lt;p&gt;Ein &lt;a href="#"&gt;Link im Fließtext&lt;/a&gt; und ein &lt;a class="shj-link" href="#"&gt;Link mit Klasse&lt;/a&gt;.&lt;/p&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-icon" aria-labelledby="b-icon-t">
+  <h3 class="shj-h3" id="b-icon-t">Icons</h3>
+  <p>Fünfzehn Icons als Maske. Größe und Farbe folgen der Schrift.</p>
+<div class="shj-grid shj-grid--2">
+<div class="shj-section shj-section--dark shj-section--compact">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Near Black</p>
+    <div>
+<ul class="shj-cluster">
+  <li><span class="shj-icon shj-icon--play" aria-hidden="true"></span> play</li>
+  <li><span class="shj-icon shj-icon--pause" aria-hidden="true"></span> pause</li>
+  <li><span class="shj-icon shj-icon--circle" aria-hidden="true"></span> circle</li>
+  <li><span class="shj-icon shj-icon--question" aria-hidden="true"></span> question</li>
+  <li><span class="shj-icon shj-icon--warning" aria-hidden="true"></span> warning</li>
+  <li><span class="shj-icon shj-icon--cross" aria-hidden="true"></span> cross</li>
+  <li><span class="shj-icon shj-icon--check" aria-hidden="true"></span> check</li>
+  <li><span class="shj-icon shj-icon--send" aria-hidden="true"></span> send</li>
+  <li><span class="shj-icon shj-icon--attach" aria-hidden="true"></span> attach</li>
+  <li><span class="shj-icon shj-icon--chevron" aria-hidden="true"></span> chevron</li>
+  <li><span class="shj-icon shj-icon--return" aria-hidden="true"></span> return</li>
+  <li><span class="shj-icon shj-icon--people" aria-hidden="true"></span> people</li>
+  <li><span class="shj-icon shj-icon--pin" aria-hidden="true"></span> pin</li>
+  <li><span class="shj-icon shj-icon--clock" aria-hidden="true"></span> clock</li>
+  <li><span class="shj-icon shj-icon--briefcase" aria-hidden="true"></span> briefcase</li>
+</ul>
+    </div>
+  </div>
+</div>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<ul class="shj-cluster">
+  <li><span class="shj-icon shj-icon--play" aria-hidden="true"></span> play</li>
+  <li><span class="shj-icon shj-icon--pause" aria-hidden="true"></span> pause</li>
+  <li><span class="shj-icon shj-icon--circle" aria-hidden="true"></span> circle</li>
+  <li><span class="shj-icon shj-icon--question" aria-hidden="true"></span> question</li>
+  <li><span class="shj-icon shj-icon--warning" aria-hidden="true"></span> warning</li>
+  <li><span class="shj-icon shj-icon--cross" aria-hidden="true"></span> cross</li>
+  <li><span class="shj-icon shj-icon--check" aria-hidden="true"></span> check</li>
+  <li><span class="shj-icon shj-icon--send" aria-hidden="true"></span> send</li>
+  <li><span class="shj-icon shj-icon--attach" aria-hidden="true"></span> attach</li>
+  <li><span class="shj-icon shj-icon--chevron" aria-hidden="true"></span> chevron</li>
+  <li><span class="shj-icon shj-icon--return" aria-hidden="true"></span> return</li>
+  <li><span class="shj-icon shj-icon--people" aria-hidden="true"></span> people</li>
+  <li><span class="shj-icon shj-icon--pin" aria-hidden="true"></span> pin</li>
+  <li><span class="shj-icon shj-icon--clock" aria-hidden="true"></span> clock</li>
+  <li><span class="shj-icon shj-icon--briefcase" aria-hidden="true"></span> briefcase</li>
+</ul>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="shj-codeblock" data-snippet="icon"><code>&lt;ul class="shj-cluster"&gt;
+  &lt;li&gt;&lt;span class="shj-icon shj-icon--play" aria-hidden="true"&gt;&lt;/span&gt; play&lt;/li&gt;
+  &lt;li&gt;&lt;span class="shj-icon shj-icon--pause" aria-hidden="true"&gt;&lt;/span&gt; pause&lt;/li&gt;
+  &lt;li&gt;&lt;span class="shj-icon shj-icon--circle" aria-hidden="true"&gt;&lt;/span&gt; circle&lt;/li&gt;
+  &lt;li&gt;&lt;span class="shj-icon shj-icon--question" aria-hidden="true"&gt;&lt;/span&gt; question&lt;/li&gt;
+  &lt;li&gt;&lt;span class="shj-icon shj-icon--warning" aria-hidden="true"&gt;&lt;/span&gt; warning&lt;/li&gt;
+  &lt;li&gt;&lt;span class="shj-icon shj-icon--cross" aria-hidden="true"&gt;&lt;/span&gt; cross&lt;/li&gt;
+  &lt;li&gt;&lt;span class="shj-icon shj-icon--check" aria-hidden="true"&gt;&lt;/span&gt; check&lt;/li&gt;
+  &lt;li&gt;&lt;span class="shj-icon shj-icon--send" aria-hidden="true"&gt;&lt;/span&gt; send&lt;/li&gt;
+  &lt;li&gt;&lt;span class="shj-icon shj-icon--attach" aria-hidden="true"&gt;&lt;/span&gt; attach&lt;/li&gt;
+  &lt;li&gt;&lt;span class="shj-icon shj-icon--chevron" aria-hidden="true"&gt;&lt;/span&gt; chevron&lt;/li&gt;
+  &lt;li&gt;&lt;span class="shj-icon shj-icon--return" aria-hidden="true"&gt;&lt;/span&gt; return&lt;/li&gt;
+  &lt;li&gt;&lt;span class="shj-icon shj-icon--people" aria-hidden="true"&gt;&lt;/span&gt; people&lt;/li&gt;
+  &lt;li&gt;&lt;span class="shj-icon shj-icon--pin" aria-hidden="true"&gt;&lt;/span&gt; pin&lt;/li&gt;
+  &lt;li&gt;&lt;span class="shj-icon shj-icon--clock" aria-hidden="true"&gt;&lt;/span&gt; clock&lt;/li&gt;
+  &lt;li&gt;&lt;span class="shj-icon shj-icon--briefcase" aria-hidden="true"&gt;&lt;/span&gt; briefcase&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-list" aria-labelledby="b-list-t">
+  <h3 class="shj-h3" id="b-list-t">Listen</h3>
+  <p>Marker Orange (Quadrat), Haken Petrol (16 px, korrigiert in 1.1.0).</p>
+<div class="shj-grid shj-grid--2">
+<div class="shj-section shj-section--dark shj-section--compact">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Near Black</p>
+    <div>
+<div class="shj-grid shj-grid--2">
+  <ul class="shj-list">
+    <li>Quadrat-Marker</li>
+    <li>Zweiter Punkt</li>
+  </ul>
+  <ul class="shj-list shj-list--check">
+    <li>Haken-Marker</li>
+    <li>Zweiter Punkt</li>
+  </ul>
+</div>
+    </div>
+  </div>
+</div>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<div class="shj-grid shj-grid--2">
+  <ul class="shj-list">
+    <li>Quadrat-Marker</li>
+    <li>Zweiter Punkt</li>
+  </ul>
+  <ul class="shj-list shj-list--check">
+    <li>Haken-Marker</li>
+    <li>Zweiter Punkt</li>
+  </ul>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="shj-codeblock" data-snippet="list"><code>&lt;div class="shj-grid shj-grid--2"&gt;
+  &lt;ul class="shj-list"&gt;
+    &lt;li&gt;Quadrat-Marker&lt;/li&gt;
+    &lt;li&gt;Zweiter Punkt&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;ul class="shj-list shj-list--check"&gt;
+    &lt;li&gt;Haken-Marker&lt;/li&gt;
+    &lt;li&gt;Zweiter Punkt&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-quickstart" aria-labelledby="b-quickstart-t">
+  <h3 class="shj-h3" id="b-quickstart-t">Minimalseite</h3>
+  <p>Kleinste vollständige Seite. Nur als Code gezeigt.</p>
+  <pre class="shj-codeblock" data-snippet="quickstart"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="de"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+  &lt;title&gt;Seitentitel – Spielhallen-Jobs.de&lt;/title&gt;
+  &lt;link rel="stylesheet" href="css/shj.css"&gt;
+&lt;/head&gt;
+&lt;body class="shj"&gt;
+  &lt;a class="shj-skip-link" href="#inhalt"&gt;Zum Inhalt springen&lt;/a&gt;
+  &lt;header class="shj-hero"&gt;
+    &lt;div class="shj-container"&gt;
+      &lt;img class="shj-logo" src="assets/logo/spielhallen-jobs-logo-schwarz-petrol.png" alt="Logo Spielhallen-Jobs.de" width="1920" height="768"&gt;
+      &lt;h1 class="shj-hero__title"&gt;Seitentitel.&lt;/h1&gt;
+    &lt;/div&gt;
+  &lt;/header&gt;
+  &lt;main id="inhalt"&gt;
+    &lt;section class="shj-section shj-section--dark" aria-labelledby="s1"&gt;
+      &lt;div class="shj-container"&gt;
+        &lt;div class="shj-section-head"&gt;
+          &lt;h2 class="shj-section-head__title" id="s1"&gt;Erste Sektion.&lt;/h2&gt;
+        &lt;/div&gt;
+        &lt;a class="shj-btn" href="#"&gt;Aktion&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+  &lt;/main&gt;
+  &lt;footer class="shj-footer"&gt;
+    &lt;div class="shj-container"&gt;&lt;p&gt;zwei&amp;amp;40 GmbH&lt;/p&gt;&lt;/div&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Seitenaufbau ================= -->
+    <section class="shj-section shj-section--white" id="seitenaufbau" aria-labelledby="t-seitenaufbau">
+      <div class="shj-container">
+        <div class="shj-section-head">
+          <h2 class="shj-section-head__title" id="t-seitenaufbau">Seitenaufbau.</h2>
+          <p class="shj-section-head__subtitle">Kopf, Proof-Band, Sektionen, Raster, Footer. Logo-Varianten: siehe Abschnitt Logos.</p>
+        </div>
+        <div class="shj-grid">
+<article class="shj-stack" id="b-hero" aria-labelledby="b-hero-t">
+  <h3 class="shj-h3" id="b-hero-t">Kopfbereich</h3>
+  <p>Weißer Kopf wie im Anzeigen-System: Logo, Dachzeile, H1 in Versalien mit Störer-Balken, Einleitung, Haupt-CTA in Orange mit Pfeil.</p>
+<div class="shj-section shj-section--dark shj-section--compact">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Vorschau auf Near Black</p>
+    <div>
+<header class="shj-hero">
+  <div class="shj-container">
+    <img class="shj-logo" src="assets/logo/spielhallen-jobs-logo-schwarz-petrol.png" alt="Logo Spielhallen-Jobs.de" width="1920" height="768">
+    <p class="shj-eyebrow">Spielhallen-Jobs.de · Dachzeile</p>
+    <h1 class="shj-hero__title">Seitentitel mit Punkt. <span class="shj-slant">Zweite Zeile.</span></h1>
+    <p class="shj-hero__lead">Kurze Einleitung in ein bis zwei Sätzen.</p>
+    <div class="shj-hero__actions">
+      <a class="shj-btn shj-btn--accent shj-btn--arrow" href="https://spielhallen-jobs.de/">Recruiting starten</a>
+      <a class="shj-btn" href="#">Zweites Ziel</a>
+    </div>
+  </div>
+</header>
+    </div>
+  </div>
+</div>
+  <pre class="shj-codeblock" data-snippet="hero"><code>&lt;header class="shj-hero"&gt;
+  &lt;div class="shj-container"&gt;
+    &lt;img class="shj-logo" src="assets/logo/spielhallen-jobs-logo-schwarz-petrol.png" alt="Logo Spielhallen-Jobs.de" width="1920" height="768"&gt;
+    &lt;p class="shj-eyebrow"&gt;Spielhallen-Jobs.de · Dachzeile&lt;/p&gt;
+    &lt;h1 class="shj-hero__title"&gt;Seitentitel mit Punkt. &lt;span class="shj-slant"&gt;Zweite Zeile.&lt;/span&gt;&lt;/h1&gt;
+    &lt;p class="shj-hero__lead"&gt;Kurze Einleitung in ein bis zwei Sätzen.&lt;/p&gt;
+    &lt;div class="shj-hero__actions"&gt;
+      &lt;a class="shj-btn shj-btn--accent shj-btn--arrow" href="https://spielhallen-jobs.de/"&gt;Recruiting starten&lt;/a&gt;
+      &lt;a class="shj-btn" href="#"&gt;Zweites Ziel&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/header&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-hero-petrol" aria-labelledby="b-hero-petrol-t">
+  <h3 class="shj-h3" id="b-hero-petrol-t">Kopfbereich Petrol</h3>
+  <p>Variante auf Petrol mit dem Logo Weiß/Schwarz. Jede Schrift wird automatisch groß und fett. Haupt-CTA hier gefüllt in Near Black statt Orange.</p>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<header class="shj-hero shj-hero--petrol">
+  <div class="shj-container">
+    <img class="shj-logo" src="assets/logo/spielhallen-jobs-logo-schwarz-weiss.png" alt="Logo Spielhallen-Jobs.de" width="1920" height="768">
+    <p class="shj-eyebrow">Dachzeile</p>
+    <h1 class="shj-hero__title">Seitentitel auf Petrol.</h1>
+    <p class="shj-hero__lead">Auf Petrol steht jede Schrift groß und fett.</p>
+    <div class="shj-hero__actions">
+      <a class="shj-btn shj-btn--primary shj-btn--arrow" href="https://spielhallen-jobs.de/">Recruiting starten</a>
+      <a class="shj-btn" href="#">Zweites Ziel</a>
+    </div>
+  </div>
+</header>
+    </div>
+  </div>
+</div>
+  <pre class="shj-codeblock" data-snippet="hero-petrol"><code>&lt;header class="shj-hero shj-hero--petrol"&gt;
+  &lt;div class="shj-container"&gt;
+    &lt;img class="shj-logo" src="assets/logo/spielhallen-jobs-logo-schwarz-weiss.png" alt="Logo Spielhallen-Jobs.de" width="1920" height="768"&gt;
+    &lt;p class="shj-eyebrow"&gt;Dachzeile&lt;/p&gt;
+    &lt;h1 class="shj-hero__title"&gt;Seitentitel auf Petrol.&lt;/h1&gt;
+    &lt;p class="shj-hero__lead"&gt;Auf Petrol steht jede Schrift groß und fett.&lt;/p&gt;
+    &lt;div class="shj-hero__actions"&gt;
+      &lt;a class="shj-btn shj-btn--primary shj-btn--arrow" href="https://spielhallen-jobs.de/"&gt;Recruiting starten&lt;/a&gt;
+      &lt;a class="shj-btn" href="#"&gt;Zweites Ziel&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/header&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-proof" aria-labelledby="b-proof-t">
+  <h3 class="shj-h3" id="b-proof-t">Proof-Band</h3>
+  <p>Die freigegebenen Kennzahlen auf Petrol. Malt seine Fläche selbst, passt in jede Sektion.</p>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<div class="shj-proof">
+  <p class="shj-proof__title">Bisher für unsere Kunden</p>
+  <dl class="shj-proof__list">
+    <div class="shj-proof__item">
+      <dt class="shj-proof__label">Stellen besetzt</dt>
+      <dd class="shj-proof__value">4.200+</dd>
+    </div>
+    <div class="shj-proof__item">
+      <dt class="shj-proof__label">Bewerber gefunden</dt>
+      <dd class="shj-proof__value">38.500+</dd>
+    </div>
+  </dl>
+</div>
+    </div>
+  </div>
+</div>
+  <pre class="shj-codeblock" data-snippet="proof"><code>&lt;div class="shj-proof"&gt;
+  &lt;p class="shj-proof__title"&gt;Bisher für unsere Kunden&lt;/p&gt;
+  &lt;dl class="shj-proof__list"&gt;
+    &lt;div class="shj-proof__item"&gt;
+      &lt;dt class="shj-proof__label"&gt;Stellen besetzt&lt;/dt&gt;
+      &lt;dd class="shj-proof__value"&gt;4.200+&lt;/dd&gt;
+    &lt;/div&gt;
+    &lt;div class="shj-proof__item"&gt;
+      &lt;dt class="shj-proof__label"&gt;Bewerber gefunden&lt;/dt&gt;
+      &lt;dd class="shj-proof__value"&gt;38.500+&lt;/dd&gt;
+    &lt;/div&gt;
+  &lt;/dl&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-sections" aria-labelledby="b-sections-t">
+  <h3 class="shj-h3" id="b-sections-t">Sektionen</h3>
+  <p>Jede Sektion setzt Fläche und alle Kontext-Tokens. Flache Markenflächen, keine Verläufe. Nie zwei gleiche Sektionen hintereinander, außer Weiß nach Weiß mit Keyline.</p>
+<div>
+<section class="shj-section shj-section--white">
+  <div class="shj-container"><p>Weiß: Standard. Schrift und Überschriften Near Black.</p></div>
+</section>
+<section class="shj-section shj-section--dark">
+  <div class="shj-container"><p>Dunkel: Near Black, weiße Schrift.</p></div>
+</section>
+<section class="shj-section shj-section--petrol">
+  <div class="shj-container"><p>Petrol: weiße Schrift, immer groß und fett.</p></div>
+</section>
+<section class="shj-section shj-section--slate">
+  <div class="shj-container"><p>Slate: sekundäre dunkle Fläche, weiße Schrift.</p></div>
+</section>
+<section class="shj-section shj-section--white shj-section--keyline shj-section--compact">
+  <div class="shj-container"><p>Modifier: Keyline oben (Weiß nach Weiß), kompakt.</p></div>
+</section>
+</div>
+  <pre class="shj-codeblock" data-snippet="sections"><code>&lt;section class="shj-section shj-section--white"&gt;
+  &lt;div class="shj-container"&gt;&lt;p&gt;Weiß: Standard. Schrift und Überschriften Near Black.&lt;/p&gt;&lt;/div&gt;
+&lt;/section&gt;
+&lt;section class="shj-section shj-section--dark"&gt;
+  &lt;div class="shj-container"&gt;&lt;p&gt;Dunkel: Near Black, weiße Schrift.&lt;/p&gt;&lt;/div&gt;
+&lt;/section&gt;
+&lt;section class="shj-section shj-section--petrol"&gt;
+  &lt;div class="shj-container"&gt;&lt;p&gt;Petrol: weiße Schrift, immer groß und fett.&lt;/p&gt;&lt;/div&gt;
+&lt;/section&gt;
+&lt;section class="shj-section shj-section--slate"&gt;
+  &lt;div class="shj-container"&gt;&lt;p&gt;Slate: sekundäre dunkle Fläche, weiße Schrift.&lt;/p&gt;&lt;/div&gt;
+&lt;/section&gt;
+&lt;section class="shj-section shj-section--white shj-section--keyline shj-section--compact"&gt;
+  &lt;div class="shj-container"&gt;&lt;p&gt;Modifier: Keyline oben (Weiß nach Weiß), kompakt.&lt;/p&gt;&lt;/div&gt;
+&lt;/section&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-section-head" aria-labelledby="b-section-head-t">
+  <h3 class="shj-h3" id="b-section-head-t">Sektionskopf</h3>
+  <p>Titel in Versalien, schräger Balken darunter. Standard linksbündig, zentriert per Modifier.</p>
+<div class="shj-grid shj-grid--2">
+<div class="shj-section shj-section--dark shj-section--compact">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Near Black</p>
+    <div>
+<div class="shj-section-head">
+  <h2 class="shj-section-head__title">Sektionstitel.</h2>
+  <p class="shj-section-head__subtitle">Fette Unterzeile.</p>
+</div>
+<div class="shj-section-head shj-section-head--center">
+  <h2 class="shj-section-head__title">Zentriert.</h2>
+</div>
+    </div>
+  </div>
+</div>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<div class="shj-section-head">
+  <h2 class="shj-section-head__title">Sektionstitel.</h2>
+  <p class="shj-section-head__subtitle">Fette Unterzeile.</p>
+</div>
+<div class="shj-section-head shj-section-head--center">
+  <h2 class="shj-section-head__title">Zentriert.</h2>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="shj-codeblock" data-snippet="section-head"><code>&lt;div class="shj-section-head"&gt;
+  &lt;h2 class="shj-section-head__title"&gt;Sektionstitel.&lt;/h2&gt;
+  &lt;p class="shj-section-head__subtitle"&gt;Fette Unterzeile.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="shj-section-head shj-section-head--center"&gt;
+  &lt;h2 class="shj-section-head__title"&gt;Zentriert.&lt;/h2&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-container" aria-labelledby="b-container-t">
+  <h3 class="shj-h3" id="b-container-t">Inhaltsbreite</h3>
+  <p>Container mit schmaler Variante.</p>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<div class="shj-container shj-container--narrow">
+  <p class="shj-note shj-note--info">Schmale Inhaltsbreite für Text und Formulare.</p>
+</div>
+    </div>
+  </div>
+</div>
+  <pre class="shj-codeblock" data-snippet="container"><code>&lt;div class="shj-container shj-container--narrow"&gt;
+  &lt;p class="shj-note shj-note--info"&gt;Schmale Inhaltsbreite für Text und Formulare.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-grid" aria-labelledby="b-grid-t">
+  <h3 class="shj-h3" id="b-grid-t">Raster</h3>
+  <p>Zwei, drei oder vier Spalten, schmal und mit voller Breite für das letzte Element.</p>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<div class="shj-stack">
+  <ul class="shj-grid shj-grid--2">
+    <li class="shj-card shj-card--static">1 von 2</li>
+    <li class="shj-card shj-card--static">2 von 2</li>
+  </ul>
+  <ul class="shj-grid shj-grid--3">
+    <li class="shj-card shj-card--static">1 von 3</li>
+    <li class="shj-card shj-card--static">2 von 3</li>
+    <li class="shj-card shj-card--static">3 von 3</li>
+  </ul>
+  <ul class="shj-grid shj-grid--4">
+    <li class="shj-card shj-card--static">1 von 4</li>
+    <li class="shj-card shj-card--static">2 von 4</li>
+    <li class="shj-card shj-card--static">3 von 4</li>
+    <li class="shj-card shj-card--static">4 von 4</li>
+  </ul>
+  <ul class="shj-grid shj-grid--3 shj-grid--span-last">
+    <li class="shj-card shj-card--static">1 von 3</li>
+    <li class="shj-card shj-card--static">2 von 3</li>
+    <li class="shj-card shj-card--static">3 von 3, bei zwei Spalten volle Breite</li>
+  </ul>
+  <ul class="shj-grid shj-grid--2 shj-grid--narrow">
+    <li class="shj-card shj-card--static">schmal 1 von 2</li>
+    <li class="shj-card shj-card--static">schmal 2 von 2</li>
+  </ul>
+</div>
+    </div>
+  </div>
+</div>
+  <pre class="shj-codeblock" data-snippet="grid"><code>&lt;div class="shj-stack"&gt;
+  &lt;ul class="shj-grid shj-grid--2"&gt;
+    &lt;li class="shj-card shj-card--static"&gt;1 von 2&lt;/li&gt;
+    &lt;li class="shj-card shj-card--static"&gt;2 von 2&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;ul class="shj-grid shj-grid--3"&gt;
+    &lt;li class="shj-card shj-card--static"&gt;1 von 3&lt;/li&gt;
+    &lt;li class="shj-card shj-card--static"&gt;2 von 3&lt;/li&gt;
+    &lt;li class="shj-card shj-card--static"&gt;3 von 3&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;ul class="shj-grid shj-grid--4"&gt;
+    &lt;li class="shj-card shj-card--static"&gt;1 von 4&lt;/li&gt;
+    &lt;li class="shj-card shj-card--static"&gt;2 von 4&lt;/li&gt;
+    &lt;li class="shj-card shj-card--static"&gt;3 von 4&lt;/li&gt;
+    &lt;li class="shj-card shj-card--static"&gt;4 von 4&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;ul class="shj-grid shj-grid--3 shj-grid--span-last"&gt;
+    &lt;li class="shj-card shj-card--static"&gt;1 von 3&lt;/li&gt;
+    &lt;li class="shj-card shj-card--static"&gt;2 von 3&lt;/li&gt;
+    &lt;li class="shj-card shj-card--static"&gt;3 von 3, bei zwei Spalten volle Breite&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;ul class="shj-grid shj-grid--2 shj-grid--narrow"&gt;
+    &lt;li class="shj-card shj-card--static"&gt;schmal 1 von 2&lt;/li&gt;
+    &lt;li class="shj-card shj-card--static"&gt;schmal 2 von 2&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-ctx-dark" aria-labelledby="b-ctx-dark-t">
+  <h3 class="shj-h3" id="b-ctx-dark-t">Kontext ohne Sektion: dunkel</h3>
+  <p>Setzt die dunklen Kontext-Tokens, malt aber keine Fläche. Für Flächen, die von außen kommen (z. B. Divi-Sektion).</p>
+<div class="shj-section shj-section--dark shj-section--compact">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Near Black</p>
+    <div>
+<div class="shj-on-dark">
+  <a class="shj-btn" href="#">Button auf fremder dunkler Fläche</a>
+</div>
+    </div>
+  </div>
+</div>
+  <pre class="shj-codeblock" data-snippet="ctx-dark"><code>&lt;div class="shj-on-dark"&gt;
+  &lt;a class="shj-btn" href="#"&gt;Button auf fremder dunkler Fläche&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-ctx-light" aria-labelledby="b-ctx-light-t">
+  <h3 class="shj-h3" id="b-ctx-light-t">Kontext ohne Sektion: hell</h3>
+  <p>Gegenstück für weiße Flächen von außen.</p>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<div class="shj-on-light">
+  <a class="shj-btn" href="#">Button auf fremder heller Fläche</a>
+</div>
+    </div>
+  </div>
+</div>
+  <pre class="shj-codeblock" data-snippet="ctx-light"><code>&lt;div class="shj-on-light"&gt;
+  &lt;a class="shj-btn" href="#"&gt;Button auf fremder heller Fläche&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-ctx-petrol" aria-labelledby="b-ctx-petrol-t">
+  <h3 class="shj-h3" id="b-ctx-petrol-t">Kontext ohne Sektion: Petrol</h3>
+  <p>Für Petrol-Flächen von außen. Hebt die Schrift wie jede Petrol-Fläche auf 19 px fett.</p>
+<div class="shj-section shj-section--petrol shj-section--compact">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Petrol</p>
+    <div>
+<div class="shj-on-petrol">
+  <p>Text auf fremder Petrol-Fläche: automatisch 19 px fett.</p>
+  <a class="shj-btn" href="#">Button auf fremder Petrol-Fläche</a>
+</div>
+    </div>
+  </div>
+</div>
+  <pre class="shj-codeblock" data-snippet="ctx-petrol"><code>&lt;div class="shj-on-petrol"&gt;
+  &lt;p&gt;Text auf fremder Petrol-Fläche: automatisch 19 px fett.&lt;/p&gt;
+  &lt;a class="shj-btn" href="#"&gt;Button auf fremder Petrol-Fläche&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-helpers" aria-labelledby="b-helpers-t">
+  <h3 class="shj-h3" id="b-helpers-t">Hilfsklassen</h3>
+  <p>Stapel (auch mit großem Abstand und zentriert), Reihe, gedimmter Text, Ziffern gleicher Breite, nur für Vorleseprogramme.</p>
+<div class="shj-grid shj-grid--2">
+<div class="shj-section shj-section--dark shj-section--compact">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Near Black</p>
+    <div>
+<div class="shj-stack">
+  <div class="shj-cluster">
+    <span class="shj-badge">Reihe</span>
+    <span class="shj-badge">mit</span>
+    <span class="shj-badge">Abstand</span>
+  </div>
+  <div class="shj-cluster shj-cluster--center">
+    <span class="shj-badge">zentriert</span>
+  </div>
+  <div class="shj-stack shj-stack--loose shj-stack--center">
+    <span class="shj-badge">Stapel zentriert</span>
+    <span class="shj-badge">mit großem Abstand</span>
+  </div>
+  <p class="shj-muted">Betrag <span class="shj-num">1.234,50&nbsp;€</span></p>
+  <p>Sichtbarer Text<span class="shj-sr-only"> mit Zusatz nur für Vorleseprogramme</span>.</p>
+</div>
+    </div>
+  </div>
+</div>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<div class="shj-stack">
+  <div class="shj-cluster">
+    <span class="shj-badge">Reihe</span>
+    <span class="shj-badge">mit</span>
+    <span class="shj-badge">Abstand</span>
+  </div>
+  <div class="shj-cluster shj-cluster--center">
+    <span class="shj-badge">zentriert</span>
+  </div>
+  <div class="shj-stack shj-stack--loose shj-stack--center">
+    <span class="shj-badge">Stapel zentriert</span>
+    <span class="shj-badge">mit großem Abstand</span>
+  </div>
+  <p class="shj-muted">Betrag <span class="shj-num">1.234,50&nbsp;€</span></p>
+  <p>Sichtbarer Text<span class="shj-sr-only"> mit Zusatz nur für Vorleseprogramme</span>.</p>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="shj-codeblock" data-snippet="helpers"><code>&lt;div class="shj-stack"&gt;
+  &lt;div class="shj-cluster"&gt;
+    &lt;span class="shj-badge"&gt;Reihe&lt;/span&gt;
+    &lt;span class="shj-badge"&gt;mit&lt;/span&gt;
+    &lt;span class="shj-badge"&gt;Abstand&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="shj-cluster shj-cluster--center"&gt;
+    &lt;span class="shj-badge"&gt;zentriert&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="shj-stack shj-stack--loose shj-stack--center"&gt;
+    &lt;span class="shj-badge"&gt;Stapel zentriert&lt;/span&gt;
+    &lt;span class="shj-badge"&gt;mit großem Abstand&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;p class="shj-muted"&gt;Betrag &lt;span class="shj-num"&gt;1.234,50&amp;nbsp;€&lt;/span&gt;&lt;/p&gt;
+  &lt;p&gt;Sichtbarer Text&lt;span class="shj-sr-only"&gt; mit Zusatz nur für Vorleseprogramme&lt;/span&gt;.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-skip" aria-labelledby="b-skip-t">
+  <h3 class="shj-h3" id="b-skip-t">Sprunglink</h3>
+  <p>Erstes Element im body, erscheint beim ersten Tab. Nur als Code gezeigt; auf dieser Seite oben aktiv.</p>
+  <pre class="shj-codeblock" data-snippet="skip"><code>&lt;a class="shj-skip-link" href="#inhalt"&gt;Zum Inhalt springen&lt;/a&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-footer" aria-labelledby="b-footer-t">
+  <h3 class="shj-h3" id="b-footer-t">Footer weiß</h3>
+  <p>Schlichte Alternative zum Seitenfuß Petrol (Abschnitt Portal-Stil): Weiß mit Petrol-Keyline, Logo, Kontaktangaben und Pflichtlinks.</p>
+<div class="shj-section shj-section--dark shj-section--compact">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Vorschau auf Near Black</p>
+    <div>
+<footer class="shj-footer">
+  <div class="shj-container">
+    <img class="shj-logo" src="assets/logo/spielhallen-jobs-logo-schwarz-petrol.png" alt="Logo Spielhallen-Jobs.de" width="1920" height="768">
+    <p>zwei&amp;40 GmbH · Annenheider Str. 257 · 27755 Delmenhorst</p>
+    <p>Telefon <a href="tel:+494221998950">04221 99895-0</a> · <a href="mailto:info@zweiund40.com">info@zweiund40.com</a></p>
+    <ul class="shj-footer__links">
+      <li><a href="https://spielhallen-jobs.de/impressum">Impressum</a></li>
+      <li><a href="https://spielhallen-jobs.de/datenschutz/">Datenschutz</a></li>
+    </ul>
+  </div>
+</footer>
+    </div>
+  </div>
+</div>
+  <pre class="shj-codeblock" data-snippet="footer"><code>&lt;footer class="shj-footer"&gt;
+  &lt;div class="shj-container"&gt;
+    &lt;img class="shj-logo" src="assets/logo/spielhallen-jobs-logo-schwarz-petrol.png" alt="Logo Spielhallen-Jobs.de" width="1920" height="768"&gt;
+    &lt;p&gt;zwei&amp;amp;40 GmbH · Annenheider Str. 257 · 27755 Delmenhorst&lt;/p&gt;
+    &lt;p&gt;Telefon &lt;a href="tel:+494221998950"&gt;04221 99895-0&lt;/a&gt; · &lt;a href="mailto:info@zweiund40.com"&gt;info@zweiund40.com&lt;/a&gt;&lt;/p&gt;
+    &lt;ul class="shj-footer__links"&gt;
+      &lt;li&gt;&lt;a href="https://spielhallen-jobs.de/impressum"&gt;Impressum&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="https://spielhallen-jobs.de/datenschutz/"&gt;Datenschutz&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/footer&gt;</code></pre>
+</article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Bedienelemente ================= -->
+    <section class="shj-section shj-section--slate" id="bedienelemente" aria-labelledby="t-bedienelemente">
+      <div class="shj-container">
+        <div class="shj-section-head">
+          <h2 class="shj-section-head__title" id="t-bedienelemente">Bedienelemente.</h2>
+          <p class="shj-section-head__subtitle">Buttons, Navigation, Badges.</p>
+        </div>
+        <div class="shj-grid">
+<article class="shj-stack" id="b-btn" aria-labelledby="b-btn-t">
+  <h3 class="shj-h3" id="b-btn-t">Buttons</h3>
+  <p>Outline, gefüllt, Akzent Orange und Haupt-CTA mit Pfeil. Auf Petrol stehen Buttons automatisch 19 px fett, der Haupt-CTA dort gefüllt in Near Black: siehe Kopfbereich Petrol und README 7.8.</p>
+<div class="shj-grid shj-grid--2">
+<div class="shj-section shj-section--dark shj-section--compact">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Near Black</p>
+    <div>
+<div class="shj-cluster">
+  <a class="shj-btn" href="#">Outline</a>
+  <a class="shj-btn shj-btn--primary" href="#">Gefüllt</a>
+  <a class="shj-btn shj-btn--accent" href="#">Akzent Orange</a>
+  <a class="shj-btn shj-btn--accent shj-btn--arrow" href="#">Haupt-CTA</a>
+  <button class="shj-btn" type="button" disabled>Deaktiviert</button>
+</div>
+    </div>
+  </div>
+</div>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<div class="shj-cluster">
+  <a class="shj-btn" href="#">Outline</a>
+  <a class="shj-btn shj-btn--primary" href="#">Gefüllt</a>
+  <a class="shj-btn shj-btn--accent" href="#">Akzent Orange</a>
+  <a class="shj-btn shj-btn--accent shj-btn--arrow" href="#">Haupt-CTA</a>
+  <button class="shj-btn" type="button" disabled>Deaktiviert</button>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="shj-codeblock" data-snippet="btn"><code>&lt;div class="shj-cluster"&gt;
+  &lt;a class="shj-btn" href="#"&gt;Outline&lt;/a&gt;
+  &lt;a class="shj-btn shj-btn--primary" href="#"&gt;Gefüllt&lt;/a&gt;
+  &lt;a class="shj-btn shj-btn--accent" href="#"&gt;Akzent Orange&lt;/a&gt;
+  &lt;a class="shj-btn shj-btn--accent shj-btn--arrow" href="#"&gt;Haupt-CTA&lt;/a&gt;
+  &lt;button class="shj-btn" type="button" disabled&gt;Deaktiviert&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-btn-sizes" aria-labelledby="b-btn-sizes-t">
+  <h3 class="shj-h3" id="b-btn-sizes-t">Größen</h3>
+  <p>Klein, Standard, groß, Icon-Button, volle Breite.</p>
+<div class="shj-grid shj-grid--2">
+<div class="shj-section shj-section--dark shj-section--compact">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Near Black</p>
+    <div>
+<div class="shj-stack">
+  <div class="shj-cluster">
+    <a class="shj-btn shj-btn--sm" href="#">Klein</a>
+    <a class="shj-btn" href="#">Standard</a>
+    <a class="shj-btn shj-btn--lg" href="#">Groß</a>
+    <button class="shj-btn shj-btn--icon" type="button">
+      <span class="shj-icon shj-icon--send" aria-hidden="true"></span>
+      <span class="shj-sr-only">Senden</span>
+    </button>
+  </div>
+  <a class="shj-btn shj-btn--primary shj-btn--block" href="#">Volle Breite</a>
+</div>
+    </div>
+  </div>
+</div>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<div class="shj-stack">
+  <div class="shj-cluster">
+    <a class="shj-btn shj-btn--sm" href="#">Klein</a>
+    <a class="shj-btn" href="#">Standard</a>
+    <a class="shj-btn shj-btn--lg" href="#">Groß</a>
+    <button class="shj-btn shj-btn--icon" type="button">
+      <span class="shj-icon shj-icon--send" aria-hidden="true"></span>
+      <span class="shj-sr-only">Senden</span>
+    </button>
+  </div>
+  <a class="shj-btn shj-btn--primary shj-btn--block" href="#">Volle Breite</a>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="shj-codeblock" data-snippet="btn-sizes"><code>&lt;div class="shj-stack"&gt;
+  &lt;div class="shj-cluster"&gt;
+    &lt;a class="shj-btn shj-btn--sm" href="#"&gt;Klein&lt;/a&gt;
+    &lt;a class="shj-btn" href="#"&gt;Standard&lt;/a&gt;
+    &lt;a class="shj-btn shj-btn--lg" href="#"&gt;Groß&lt;/a&gt;
+    &lt;button class="shj-btn shj-btn--icon" type="button"&gt;
+      &lt;span class="shj-icon shj-icon--send" aria-hidden="true"&gt;&lt;/span&gt;
+      &lt;span class="shj-sr-only"&gt;Senden&lt;/span&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+  &lt;a class="shj-btn shj-btn--primary shj-btn--block" href="#"&gt;Volle Breite&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-nav" aria-labelledby="b-nav-t">
+  <h3 class="shj-h3" id="b-nav-t">Navigations-Pills</h3>
+  <p>Buttons in einer Liste. Die aktuelle Seite ist gefüllt.</p>
+<div class="shj-grid shj-grid--2">
+<div class="shj-section shj-section--dark shj-section--compact">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Near Black</p>
+    <div>
+<nav aria-label="Seitenbereiche">
+  <ul class="shj-nav">
+    <li><a class="shj-btn" href="#" aria-current="page">Aktuelle Seite</a></li>
+    <li><a class="shj-btn" href="#">Bereich 2</a></li>
+    <li><a class="shj-btn" href="#">Bereich 3</a></li>
+    <li><a class="shj-btn shj-btn--arrow" href="#">Zur App</a></li>
+  </ul>
+</nav>
+    </div>
+  </div>
+</div>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<nav aria-label="Seitenbereiche">
+  <ul class="shj-nav">
+    <li><a class="shj-btn" href="#" aria-current="page">Aktuelle Seite</a></li>
+    <li><a class="shj-btn" href="#">Bereich 2</a></li>
+    <li><a class="shj-btn" href="#">Bereich 3</a></li>
+    <li><a class="shj-btn shj-btn--arrow" href="#">Zur App</a></li>
+  </ul>
+</nav>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="shj-codeblock" data-snippet="nav"><code>&lt;nav aria-label="Seitenbereiche"&gt;
+  &lt;ul class="shj-nav"&gt;
+    &lt;li&gt;&lt;a class="shj-btn" href="#" aria-current="page"&gt;Aktuelle Seite&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a class="shj-btn" href="#"&gt;Bereich 2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a class="shj-btn" href="#"&gt;Bereich 3&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a class="shj-btn shj-btn--arrow" href="#"&gt;Zur App&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-badge" aria-labelledby="b-badge-t">
+  <h3 class="shj-h3" id="b-badge-t">Badges</h3>
+  <p>Kurze Auszeichnungen in Versalien. Orange als einzelner Störer. Nicht auf Petrol (siehe README 7.9).</p>
+<div class="shj-grid shj-grid--2">
+<div class="shj-section shj-section--dark shj-section--compact">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Near Black</p>
+    <div>
+<div class="shj-cluster">
+  <span class="shj-badge">Neutral</span>
+  <span class="shj-badge shj-badge--outline">Kontur</span>
+  <span class="shj-badge shj-badge--accent">Akzent</span>
+  <span class="shj-badge shj-badge--lg"><span class="shj-icon shj-icon--check" aria-hidden="true"></span>Groß mit Icon</span>
+</div>
+    </div>
+  </div>
+</div>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<div class="shj-cluster">
+  <span class="shj-badge">Neutral</span>
+  <span class="shj-badge shj-badge--outline">Kontur</span>
+  <span class="shj-badge shj-badge--accent">Akzent</span>
+  <span class="shj-badge shj-badge--lg"><span class="shj-icon shj-icon--check" aria-hidden="true"></span>Groß mit Icon</span>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="shj-codeblock" data-snippet="badge"><code>&lt;div class="shj-cluster"&gt;
+  &lt;span class="shj-badge"&gt;Neutral&lt;/span&gt;
+  &lt;span class="shj-badge shj-badge--outline"&gt;Kontur&lt;/span&gt;
+  &lt;span class="shj-badge shj-badge--accent"&gt;Akzent&lt;/span&gt;
+  &lt;span class="shj-badge shj-badge--lg"&gt;&lt;span class="shj-icon shj-icon--check" aria-hidden="true"&gt;&lt;/span&gt;Groß mit Icon&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+</article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Inhalte ================= -->
+    <section class="shj-section shj-section--dark" id="inhalte" aria-labelledby="t-inhalte">
+      <div class="shj-container">
+        <div class="shj-section-head">
+          <h2 class="shj-section-head__title" id="t-inhalte">Inhalte.</h2>
+          <p class="shj-section-head__subtitle">Karten, Bildflächen, Avatare, Ringe, Hinweise.</p>
+        </div>
+        <div class="shj-grid">
+<article class="shj-stack" id="b-card" aria-labelledby="b-card-t">
+  <h3 class="shj-h3" id="b-card-t">Karte</h3>
+  <p>Weiß auf Weiß, dunkle Glasfläche auf Near Black. Hover: Rand in Akzentfarbe und leichtes Anheben.</p>
+<div class="shj-grid shj-grid--2">
+<div class="shj-section shj-section--dark shj-section--compact">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Near Black</p>
+    <div>
+<article class="shj-card" aria-labelledby="beispiel-karte-titel">
+  <div class="shj-media" aria-hidden="true"><span class="shj-media__initials">AB</span></div>
+  <div class="shj-card__body">
+    <h3 class="shj-card__title" id="beispiel-karte-titel">Kartentitel</h3>
+    <p class="shj-card__meta">Rollen- oder Themenzeile</p>
+    <p>Kurzer Beschreibungstext der Karte.</p>
+    <ul class="shj-list">
+      <li>Erster Punkt</li>
+      <li>Zweiter Punkt</li>
+    </ul>
+    <div class="shj-card__footer shj-note">
+      <p class="shj-note__title">Hinweis am Kartenende</p>
+      <p>Sitzt immer unten, auch bei unterschiedlich langen Karten.</p>
+    </div>
+  </div>
+</article>
+    </div>
+  </div>
+</div>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<article class="shj-card" aria-labelledby="beispiel-karte-titel-hell">
+  <div class="shj-media" aria-hidden="true"><span class="shj-media__initials">AB</span></div>
+  <div class="shj-card__body">
+    <h3 class="shj-card__title" id="beispiel-karte-titel-hell">Kartentitel</h3>
+    <p class="shj-card__meta">Rollen- oder Themenzeile</p>
+    <p>Kurzer Beschreibungstext der Karte.</p>
+    <ul class="shj-list">
+      <li>Erster Punkt</li>
+      <li>Zweiter Punkt</li>
+    </ul>
+    <div class="shj-card__footer shj-note">
+      <p class="shj-note__title">Hinweis am Kartenende</p>
+      <p>Sitzt immer unten, auch bei unterschiedlich langen Karten.</p>
+    </div>
+  </div>
+</article>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="shj-codeblock" data-snippet="card"><code>&lt;article class="shj-card" aria-labelledby="beispiel-karte-titel"&gt;
+  &lt;div class="shj-media" aria-hidden="true"&gt;&lt;span class="shj-media__initials"&gt;AB&lt;/span&gt;&lt;/div&gt;
+  &lt;div class="shj-card__body"&gt;
+    &lt;h3 class="shj-card__title" id="beispiel-karte-titel"&gt;Kartentitel&lt;/h3&gt;
+    &lt;p class="shj-card__meta"&gt;Rollen- oder Themenzeile&lt;/p&gt;
+    &lt;p&gt;Kurzer Beschreibungstext der Karte.&lt;/p&gt;
+    &lt;ul class="shj-list"&gt;
+      &lt;li&gt;Erster Punkt&lt;/li&gt;
+      &lt;li&gt;Zweiter Punkt&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;div class="shj-card__footer shj-note"&gt;
+      &lt;p class="shj-note__title"&gt;Hinweis am Kartenende&lt;/p&gt;
+      &lt;p&gt;Sitzt immer unten, auch bei unterschiedlich langen Karten.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-card-link" aria-labelledby="b-card-link-t">
+  <h3 class="shj-h3" id="b-card-link-t">Karte als Link</h3>
+  <p>Die ganze Karte ist klickbar, der Fokusrahmen liegt an der Karte.</p>
+<div class="shj-grid shj-grid--2">
+<div class="shj-section shj-section--dark shj-section--compact">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Near Black</p>
+    <div>
+<article class="shj-card">
+  <div class="shj-card__body">
+    <h3 class="shj-card__title"><a class="shj-card__link" href="#">Ganze Karte klickbar</a></h3>
+    <p>Kurzer Beschreibungstext. Ein Klick irgendwo auf die Karte öffnet den Link.</p>
+  </div>
+</article>
+    </div>
+  </div>
+</div>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<article class="shj-card">
+  <div class="shj-card__body">
+    <h3 class="shj-card__title"><a class="shj-card__link" href="#">Ganze Karte klickbar</a></h3>
+    <p>Kurzer Beschreibungstext. Ein Klick irgendwo auf die Karte öffnet den Link.</p>
+  </div>
+</article>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="shj-codeblock" data-snippet="card-link"><code>&lt;article class="shj-card"&gt;
+  &lt;div class="shj-card__body"&gt;
+    &lt;h3 class="shj-card__title"&gt;&lt;a class="shj-card__link" href="#"&gt;Ganze Karte klickbar&lt;/a&gt;&lt;/h3&gt;
+    &lt;p&gt;Kurzer Beschreibungstext. Ein Klick irgendwo auf die Karte öffnet den Link.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-card-horizontal" aria-labelledby="b-card-horizontal-t">
+  <h3 class="shj-h3" id="b-card-horizontal-t">Karte quer</h3>
+  <p>Bild links, Inhalt rechts.</p>
+<div class="shj-grid shj-grid--2">
+<div class="shj-section shj-section--dark shj-section--compact">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Near Black</p>
+    <div>
+<article class="shj-card shj-card--horizontal shj-card--static">
+  <div class="shj-media" aria-hidden="true"><span class="shj-media__initials">CD</span></div>
+  <div class="shj-card__body">
+    <h3 class="shj-card__title">Querformat</h3>
+    <p>Bild links, Inhalt rechts. Ohne Hover-Effekt.</p>
+  </div>
+</article>
+    </div>
+  </div>
+</div>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<article class="shj-card shj-card--horizontal shj-card--static">
+  <div class="shj-media" aria-hidden="true"><span class="shj-media__initials">CD</span></div>
+  <div class="shj-card__body">
+    <h3 class="shj-card__title">Querformat</h3>
+    <p>Bild links, Inhalt rechts. Ohne Hover-Effekt.</p>
+  </div>
+</article>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="shj-codeblock" data-snippet="card-horizontal"><code>&lt;article class="shj-card shj-card--horizontal shj-card--static"&gt;
+  &lt;div class="shj-media" aria-hidden="true"&gt;&lt;span class="shj-media__initials"&gt;CD&lt;/span&gt;&lt;/div&gt;
+  &lt;div class="shj-card__body"&gt;
+    &lt;h3 class="shj-card__title"&gt;Querformat&lt;/h3&gt;
+    &lt;p&gt;Bild links, Inhalt rechts. Ohne Hover-Effekt.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-card-profile" aria-labelledby="b-card-profile-t">
+  <h3 class="shj-h3" id="b-card-profile-t">Steckbrief-Karte</h3>
+  <p>Steckbrief, z. B. einer Kampagne: Zusatz im Titel, Kennung, Leistungen und was beim Betrieb liegt.</p>
+<div class="shj-grid shj-grid--2">
+<div class="shj-section shj-section--dark shj-section--compact">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Near Black</p>
+    <div>
+<article class="shj-card" aria-labelledby="beispiel-profil-titel">
+  <div class="shj-media" aria-hidden="true"><span class="shj-media__initials">EF</span></div>
+  <div class="shj-card__body">
+    <h3 class="shj-card__title" id="beispiel-profil-titel">Filiale E <span class="shj-card__suffix">„Zusatz“</span></h3>
+    <p class="shj-card__meta">Kampagne Servicekraft (m/w/d)</p>
+    <p class="shj-card__facts"><span>Kennung:</span> <code class="shj-code">kampagne-e</code></p>
+    <p>[PLATZHALTER: Kurzbeschreibung der Kampagne]</p>
+    <div>
+      <h4 class="shj-card__label">Leistungen</h4>
+      <ul class="shj-list">
+        <li>Anzeigenproduktion</li>
+        <li>Aktive Social-Media-Ausspielung</li>
+        <li>Weiterleitung eingehender Bewerbungen per E-Mail</li>
+      </ul>
+    </div>
+    <div class="shj-card__footer shj-note">
+      <h4 class="shj-note__title">Bei Ihnen</h4>
+      <p>Gespräche und Einstellungen liegen bei Ihrem Betrieb.</p>
+    </div>
+  </div>
+</article>
+    </div>
+  </div>
+</div>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<article class="shj-card" aria-labelledby="beispiel-profil-titel-hell">
+  <div class="shj-media" aria-hidden="true"><span class="shj-media__initials">EF</span></div>
+  <div class="shj-card__body">
+    <h3 class="shj-card__title" id="beispiel-profil-titel-hell">Filiale E <span class="shj-card__suffix">„Zusatz“</span></h3>
+    <p class="shj-card__meta">Kampagne Servicekraft (m/w/d)</p>
+    <p class="shj-card__facts"><span>Kennung:</span> <code class="shj-code">kampagne-e</code></p>
+    <p>[PLATZHALTER: Kurzbeschreibung der Kampagne]</p>
+    <div>
+      <h4 class="shj-card__label">Leistungen</h4>
+      <ul class="shj-list">
+        <li>Anzeigenproduktion</li>
+        <li>Aktive Social-Media-Ausspielung</li>
+        <li>Weiterleitung eingehender Bewerbungen per E-Mail</li>
+      </ul>
+    </div>
+    <div class="shj-card__footer shj-note">
+      <h4 class="shj-note__title">Bei Ihnen</h4>
+      <p>Gespräche und Einstellungen liegen bei Ihrem Betrieb.</p>
+    </div>
+  </div>
+</article>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="shj-codeblock" data-snippet="card-profile"><code>&lt;article class="shj-card" aria-labelledby="beispiel-profil-titel"&gt;
+  &lt;div class="shj-media" aria-hidden="true"&gt;&lt;span class="shj-media__initials"&gt;EF&lt;/span&gt;&lt;/div&gt;
+  &lt;div class="shj-card__body"&gt;
+    &lt;h3 class="shj-card__title" id="beispiel-profil-titel"&gt;Filiale E &lt;span class="shj-card__suffix"&gt;„Zusatz“&lt;/span&gt;&lt;/h3&gt;
+    &lt;p class="shj-card__meta"&gt;Kampagne Servicekraft (m/w/d)&lt;/p&gt;
+    &lt;p class="shj-card__facts"&gt;&lt;span&gt;Kennung:&lt;/span&gt; &lt;code class="shj-code"&gt;kampagne-e&lt;/code&gt;&lt;/p&gt;
+    &lt;p&gt;[PLATZHALTER: Kurzbeschreibung der Kampagne]&lt;/p&gt;
+    &lt;div&gt;
+      &lt;h4 class="shj-card__label"&gt;Leistungen&lt;/h4&gt;
+      &lt;ul class="shj-list"&gt;
+        &lt;li&gt;Anzeigenproduktion&lt;/li&gt;
+        &lt;li&gt;Aktive Social-Media-Ausspielung&lt;/li&gt;
+        &lt;li&gt;Weiterleitung eingehender Bewerbungen per E-Mail&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;div class="shj-card__footer shj-note"&gt;
+      &lt;h4 class="shj-note__title"&gt;Bei Ihnen&lt;/h4&gt;
+      &lt;p&gt;Gespräche und Einstellungen liegen bei Ihrem Betrieb.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-media" aria-labelledby="b-media-t">
+  <h3 class="shj-h3" id="b-media-t">Bildflächen</h3>
+  <p>Ohne Foto flache Petrol-Fläche, wahlweise mit Initialen.</p>
+<div class="shj-grid shj-grid--2">
+<div class="shj-section shj-section--dark shj-section--compact">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Near Black</p>
+    <div>
+<div class="shj-grid shj-grid--2">
+  <div class="shj-media" aria-hidden="true"></div>
+  <div class="shj-media" aria-hidden="true"><span class="shj-media__initials">AB</span></div>
+  <div class="shj-media shj-media--wide" aria-hidden="true"></div>
+  <div class="shj-media shj-media--square" aria-hidden="true"></div>
+</div>
+    </div>
+  </div>
+</div>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<div class="shj-grid shj-grid--2">
+  <div class="shj-media" aria-hidden="true"></div>
+  <div class="shj-media" aria-hidden="true"><span class="shj-media__initials">AB</span></div>
+  <div class="shj-media shj-media--wide" aria-hidden="true"></div>
+  <div class="shj-media shj-media--square" aria-hidden="true"></div>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="shj-codeblock" data-snippet="media"><code>&lt;div class="shj-grid shj-grid--2"&gt;
+  &lt;div class="shj-media" aria-hidden="true"&gt;&lt;/div&gt;
+  &lt;div class="shj-media" aria-hidden="true"&gt;&lt;span class="shj-media__initials"&gt;AB&lt;/span&gt;&lt;/div&gt;
+  &lt;div class="shj-media shj-media--wide" aria-hidden="true"&gt;&lt;/div&gt;
+  &lt;div class="shj-media shj-media--square" aria-hidden="true"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-media-img" aria-labelledby="b-media-img-t">
+  <h3 class="shj-h3" id="b-media-img-t">Bildfläche mit Foto</h3>
+  <p>Das Foto füllt die Fläche. Nur als Code gezeigt.</p>
+  <pre class="shj-codeblock" data-snippet="media-img"><code>&lt;div class="shj-media"&gt;
+  &lt;img src="bilder/beispiel.webp" alt="[PLATZHALTER: Bildbeschreibung]" width="1536" height="1024" loading="lazy" decoding="async"&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-media-ki" aria-labelledby="b-media-ki-t">
+  <h3 class="shj-h3" id="b-media-ki-t">KI-Bildmotiv</h3>
+  <p>Kennzeichnung im Alt-Text und in der Bildunterschrift; das EU-KI-Icon gehört zusätzlich ins Bild. Nur als Code gezeigt.</p>
+  <pre class="shj-codeblock" data-snippet="media-ki"><code>&lt;figure class="shj-stack"&gt;
+  &lt;div class="shj-media"&gt;
+    &lt;img src="bilder/beispiel-ki.webp" alt="[PLATZHALTER: Bildbeschreibung]. KI-Bildmotiv." width="1536" height="1024" loading="lazy" decoding="async"&gt;
+  &lt;/div&gt;
+  &lt;figcaption class="shj-small"&gt;KI-Bildmotiv&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-avatar" aria-labelledby="b-avatar-t">
+  <h3 class="shj-h3" id="b-avatar-t">Avatare</h3>
+  <p>Slate mit weißen Initialen oder Personenfoto.</p>
+<div class="shj-grid shj-grid--2">
+<div class="shj-section shj-section--dark shj-section--compact">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Near Black</p>
+    <div>
+<div class="shj-cluster">
+  <span class="shj-avatar shj-avatar--sm" aria-hidden="true">AB</span>
+  <span class="shj-avatar" aria-hidden="true">AB</span>
+  <span class="shj-avatar shj-avatar--lg" aria-hidden="true">AB</span>
+</div>
+    </div>
+  </div>
+</div>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<div class="shj-cluster">
+  <span class="shj-avatar shj-avatar--sm" aria-hidden="true">AB</span>
+  <span class="shj-avatar" aria-hidden="true">AB</span>
+  <span class="shj-avatar shj-avatar--lg" aria-hidden="true">AB</span>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="shj-codeblock" data-snippet="avatar"><code>&lt;div class="shj-cluster"&gt;
+  &lt;span class="shj-avatar shj-avatar--sm" aria-hidden="true"&gt;AB&lt;/span&gt;
+  &lt;span class="shj-avatar" aria-hidden="true"&gt;AB&lt;/span&gt;
+  &lt;span class="shj-avatar shj-avatar--lg" aria-hidden="true"&gt;AB&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-ring" aria-labelledby="b-ring-t">
+  <h3 class="shj-h3" id="b-ring-t">Ring</h3>
+  <p>Nummer oder Icon im Petrol-Ring.</p>
+<div class="shj-grid shj-grid--2">
+<div class="shj-section shj-section--dark shj-section--compact">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Near Black</p>
+    <div>
+<div class="shj-cluster">
+  <span class="shj-ring" aria-hidden="true">1</span>
+  <span class="shj-ring shj-ring--sm" aria-hidden="true"><span class="shj-icon shj-icon--check"></span></span>
+</div>
+    </div>
+  </div>
+</div>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<div class="shj-cluster">
+  <span class="shj-ring" aria-hidden="true">1</span>
+  <span class="shj-ring shj-ring--sm" aria-hidden="true"><span class="shj-icon shj-icon--check"></span></span>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="shj-codeblock" data-snippet="ring"><code>&lt;div class="shj-cluster"&gt;
+  &lt;span class="shj-ring" aria-hidden="true"&gt;1&lt;/span&gt;
+  &lt;span class="shj-ring shj-ring--sm" aria-hidden="true"&gt;&lt;span class="shj-icon shj-icon--check"&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-steps" aria-labelledby="b-steps-t">
+  <h3 class="shj-h3" id="b-steps-t">Schritte</h3>
+  <p>Ablauf in drei Schritten, immer als ol.</p>
+<div class="shj-grid shj-grid--2">
+<div class="shj-section shj-section--dark shj-section--compact">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Near Black</p>
+    <div>
+<ol class="shj-steps">
+  <li class="shj-steps__item">
+    <span class="shj-ring" aria-hidden="true">1</span>
+    <h3 class="shj-steps__title">Erster Schritt.</h3>
+    <p class="shj-steps__text">Kurze Beschreibung des Schritts.</p>
+  </li>
+  <li class="shj-steps__item">
+    <span class="shj-ring" aria-hidden="true">2</span>
+    <h3 class="shj-steps__title">Zweiter Schritt.</h3>
+    <p class="shj-steps__text">Kurze Beschreibung des Schritts.</p>
+  </li>
+  <li class="shj-steps__item">
+    <span class="shj-ring" aria-hidden="true">3</span>
+    <h3 class="shj-steps__title">Dritter Schritt.</h3>
+    <p class="shj-steps__text">Kurze Beschreibung des Schritts.</p>
+  </li>
+</ol>
+    </div>
+  </div>
+</div>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<ol class="shj-steps">
+  <li class="shj-steps__item">
+    <span class="shj-ring" aria-hidden="true">1</span>
+    <h3 class="shj-steps__title">Erster Schritt.</h3>
+    <p class="shj-steps__text">Kurze Beschreibung des Schritts.</p>
+  </li>
+  <li class="shj-steps__item">
+    <span class="shj-ring" aria-hidden="true">2</span>
+    <h3 class="shj-steps__title">Zweiter Schritt.</h3>
+    <p class="shj-steps__text">Kurze Beschreibung des Schritts.</p>
+  </li>
+  <li class="shj-steps__item">
+    <span class="shj-ring" aria-hidden="true">3</span>
+    <h3 class="shj-steps__title">Dritter Schritt.</h3>
+    <p class="shj-steps__text">Kurze Beschreibung des Schritts.</p>
+  </li>
+</ol>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="shj-codeblock" data-snippet="steps"><code>&lt;ol class="shj-steps"&gt;
+  &lt;li class="shj-steps__item"&gt;
+    &lt;span class="shj-ring" aria-hidden="true"&gt;1&lt;/span&gt;
+    &lt;h3 class="shj-steps__title"&gt;Erster Schritt.&lt;/h3&gt;
+    &lt;p class="shj-steps__text"&gt;Kurze Beschreibung des Schritts.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li class="shj-steps__item"&gt;
+    &lt;span class="shj-ring" aria-hidden="true"&gt;2&lt;/span&gt;
+    &lt;h3 class="shj-steps__title"&gt;Zweiter Schritt.&lt;/h3&gt;
+    &lt;p class="shj-steps__text"&gt;Kurze Beschreibung des Schritts.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li class="shj-steps__item"&gt;
+    &lt;span class="shj-ring" aria-hidden="true"&gt;3&lt;/span&gt;
+    &lt;h3 class="shj-steps__title"&gt;Dritter Schritt.&lt;/h3&gt;
+    &lt;p class="shj-steps__text"&gt;Kurze Beschreibung des Schritts.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-note" aria-labelledby="b-note-t">
+  <h3 class="shj-h3" id="b-note-t">Hinweisbox</h3>
+  <p>Orange Randlinie: braucht Aufmerksamkeit. Petrol: neutral.</p>
+<div class="shj-grid shj-grid--2">
+<div class="shj-section shj-section--dark shj-section--compact">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Near Black</p>
+    <div>
+<div class="shj-stack">
+  <div class="shj-note">
+    <p class="shj-note__title">Achtung</p>
+    <p>Hinweis, der Aufmerksamkeit braucht.</p>
+  </div>
+  <div class="shj-note shj-note--info">
+    <p class="shj-note__title">Info</p>
+    <p>Neutraler Hinweis.</p>
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<div class="shj-stack">
+  <div class="shj-note">
+    <p class="shj-note__title">Achtung</p>
+    <p>Hinweis, der Aufmerksamkeit braucht.</p>
+  </div>
+  <div class="shj-note shj-note--info">
+    <p class="shj-note__title">Info</p>
+    <p>Neutraler Hinweis.</p>
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="shj-codeblock" data-snippet="note"><code>&lt;div class="shj-stack"&gt;
+  &lt;div class="shj-note"&gt;
+    &lt;p class="shj-note__title"&gt;Achtung&lt;/p&gt;
+    &lt;p&gt;Hinweis, der Aufmerksamkeit braucht.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="shj-note shj-note--info"&gt;
+    &lt;p class="shj-note__title"&gt;Info&lt;/p&gt;
+    &lt;p&gt;Neutraler Hinweis.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Formulare ================= -->
+    <section class="shj-section shj-section--white" id="formulare" aria-labelledby="t-formulare">
+      <div class="shj-container">
+        <div class="shj-section-head">
+          <h2 class="shj-section-head__title" id="t-formulare">Formulare.</h2>
+          <p class="shj-section-head__subtitle">Eingaben, Fehlerzustand ohne Rot, Auswahl.</p>
+        </div>
+        <div class="shj-grid">
+<article class="shj-stack" id="b-field" aria-labelledby="b-field-t">
+  <h3 class="shj-h3" id="b-field-t">Eingabefeld</h3>
+  <p>Label über dem Feld, Hilfetext darunter und per <code class="shj-code">aria-describedby</code> verknüpft.</p>
+<div class="shj-grid shj-grid--2">
+<div class="shj-section shj-section--dark shj-section--compact">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Near Black</p>
+    <div>
+<div class="shj-field">
+  <label class="shj-label" for="beispiel-name">Name</label>
+  <input class="shj-input" id="beispiel-name" name="name" type="text" autocomplete="name" aria-describedby="beispiel-name-hilfe">
+  <p class="shj-field__hint" id="beispiel-name-hilfe">Vor- und Nachname.</p>
+</div>
+    </div>
+  </div>
+</div>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<div class="shj-field">
+  <label class="shj-label" for="beispiel-name-hell">Name</label>
+  <input class="shj-input" id="beispiel-name-hell" name="name-hell" type="text" autocomplete="name" aria-describedby="beispiel-name-hilfe-hell">
+  <p class="shj-field__hint" id="beispiel-name-hilfe-hell">Vor- und Nachname.</p>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="shj-codeblock" data-snippet="field"><code>&lt;div class="shj-field"&gt;
+  &lt;label class="shj-label" for="beispiel-name"&gt;Name&lt;/label&gt;
+  &lt;input class="shj-input" id="beispiel-name" name="name" type="text" autocomplete="name" aria-describedby="beispiel-name-hilfe"&gt;
+  &lt;p class="shj-field__hint" id="beispiel-name-hilfe"&gt;Vor- und Nachname.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-field-error" aria-labelledby="b-field-error-t">
+  <h3 class="shj-h3" id="b-field-error-t">Fehlerzustand</h3>
+  <p>Dickerer Rand, orange Randlinie innen, Warnzeichen und fetter Text. Kein Rot.</p>
+<div class="shj-grid shj-grid--2">
+<div class="shj-section shj-section--dark shj-section--compact">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Near Black</p>
+    <div>
+<div class="shj-field">
+  <label class="shj-label" for="beispiel-mail">E-Mail (Pflichtfeld)</label>
+  <input class="shj-input" id="beispiel-mail" name="email" type="email" autocomplete="email" required aria-invalid="true" aria-describedby="beispiel-mail-fehler" value="name@beispiel">
+  <p class="shj-field__error" id="beispiel-mail-fehler">Bitte eine vollständige E-Mail-Adresse eingeben, z. B. name@beispiel.de.</p>
+</div>
+    </div>
+  </div>
+</div>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<div class="shj-field">
+  <label class="shj-label" for="beispiel-mail-hell">E-Mail (Pflichtfeld)</label>
+  <input class="shj-input" id="beispiel-mail-hell" name="email-hell" type="email" autocomplete="email" required aria-invalid="true" aria-describedby="beispiel-mail-fehler-hell" value="name@beispiel">
+  <p class="shj-field__error" id="beispiel-mail-fehler-hell">Bitte eine vollständige E-Mail-Adresse eingeben, z. B. name@beispiel.de.</p>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="shj-codeblock" data-snippet="field-error"><code>&lt;div class="shj-field"&gt;
+  &lt;label class="shj-label" for="beispiel-mail"&gt;E-Mail (Pflichtfeld)&lt;/label&gt;
+  &lt;input class="shj-input" id="beispiel-mail" name="email" type="email" autocomplete="email" required aria-invalid="true" aria-describedby="beispiel-mail-fehler" value="name@beispiel"&gt;
+  &lt;p class="shj-field__error" id="beispiel-mail-fehler"&gt;Bitte eine vollständige E-Mail-Adresse eingeben, z. B. name@beispiel.de.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-textarea" aria-labelledby="b-textarea-t">
+  <h3 class="shj-h3" id="b-textarea-t">Mehrzeilig</h3>
+  <p>Textfeld mit Platzhalter.</p>
+<div class="shj-grid shj-grid--2">
+<div class="shj-section shj-section--dark shj-section--compact">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Near Black</p>
+    <div>
+<div class="shj-field">
+  <label class="shj-label" for="beispiel-nachricht">Nachricht</label>
+  <textarea class="shj-input" id="beispiel-nachricht" name="nachricht" rows="4" placeholder="Worum geht es?"></textarea>
+</div>
+    </div>
+  </div>
+</div>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<div class="shj-field">
+  <label class="shj-label" for="beispiel-nachricht-hell">Nachricht</label>
+  <textarea class="shj-input" id="beispiel-nachricht-hell" name="nachricht-hell" rows="4" placeholder="Worum geht es?"></textarea>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="shj-codeblock" data-snippet="textarea"><code>&lt;div class="shj-field"&gt;
+  &lt;label class="shj-label" for="beispiel-nachricht"&gt;Nachricht&lt;/label&gt;
+  &lt;textarea class="shj-input" id="beispiel-nachricht" name="nachricht" rows="4" placeholder="Worum geht es?"&gt;&lt;/textarea&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-select" aria-labelledby="b-select-t">
+  <h3 class="shj-h3" id="b-select-t">Auswahlliste</h3>
+  <p>Select im Wrapper für den Pfeil.</p>
+<div class="shj-grid shj-grid--2">
+<div class="shj-section shj-section--dark shj-section--compact">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Near Black</p>
+    <div>
+<div class="shj-field">
+  <label class="shj-label" for="beispiel-thema">Thema</label>
+  <span class="shj-select">
+    <select class="shj-input" id="beispiel-thema" name="thema">
+      <option>Bitte wählen</option>
+      <option>Option A</option>
+      <option>Option B</option>
+    </select>
+  </span>
+</div>
+    </div>
+  </div>
+</div>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<div class="shj-field">
+  <label class="shj-label" for="beispiel-thema-hell">Thema</label>
+  <span class="shj-select">
+    <select class="shj-input" id="beispiel-thema-hell" name="thema-hell">
+      <option>Bitte wählen</option>
+      <option>Option A</option>
+      <option>Option B</option>
+    </select>
+  </span>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="shj-codeblock" data-snippet="select"><code>&lt;div class="shj-field"&gt;
+  &lt;label class="shj-label" for="beispiel-thema"&gt;Thema&lt;/label&gt;
+  &lt;span class="shj-select"&gt;
+    &lt;select class="shj-input" id="beispiel-thema" name="thema"&gt;
+      &lt;option&gt;Bitte wählen&lt;/option&gt;
+      &lt;option&gt;Option A&lt;/option&gt;
+      &lt;option&gt;Option B&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/span&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-checks" aria-labelledby="b-checks-t">
+  <h3 class="shj-h3" id="b-checks-t">Checkboxen und Radios</h3>
+  <p>Gruppen in fieldset mit legend.</p>
+<div class="shj-grid shj-grid--2">
+<div class="shj-section shj-section--dark shj-section--compact">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Near Black</p>
+    <div>
+<div class="shj-stack">
+  <fieldset class="shj-fieldset">
+    <legend>Mehrfachauswahl</legend>
+    <label class="shj-check"><input type="checkbox" name="auswahl" value="a" checked> Erste Option</label>
+    <label class="shj-check"><input type="checkbox" name="auswahl" value="b"> Zweite Option</label>
+  </fieldset>
+  <fieldset class="shj-fieldset">
+    <legend>Einfachauswahl</legend>
+    <label class="shj-check"><input type="radio" name="weg" value="mail" checked> Per E-Mail</label>
+    <label class="shj-check"><input type="radio" name="weg" value="telefon"> Per Telefon</label>
+  </fieldset>
+</div>
+    </div>
+  </div>
+</div>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<div class="shj-stack">
+  <fieldset class="shj-fieldset">
+    <legend>Mehrfachauswahl</legend>
+    <label class="shj-check"><input type="checkbox" name="auswahl-hell" value="a" checked> Erste Option</label>
+    <label class="shj-check"><input type="checkbox" name="auswahl-hell" value="b"> Zweite Option</label>
+  </fieldset>
+  <fieldset class="shj-fieldset">
+    <legend>Einfachauswahl</legend>
+    <label class="shj-check"><input type="radio" name="weg-hell" value="mail" checked> Per E-Mail</label>
+    <label class="shj-check"><input type="radio" name="weg-hell" value="telefon"> Per Telefon</label>
+  </fieldset>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="shj-codeblock" data-snippet="checks"><code>&lt;div class="shj-stack"&gt;
+  &lt;fieldset class="shj-fieldset"&gt;
+    &lt;legend&gt;Mehrfachauswahl&lt;/legend&gt;
+    &lt;label class="shj-check"&gt;&lt;input type="checkbox" name="auswahl" value="a" checked&gt; Erste Option&lt;/label&gt;
+    &lt;label class="shj-check"&gt;&lt;input type="checkbox" name="auswahl" value="b"&gt; Zweite Option&lt;/label&gt;
+  &lt;/fieldset&gt;
+  &lt;fieldset class="shj-fieldset"&gt;
+    &lt;legend&gt;Einfachauswahl&lt;/legend&gt;
+    &lt;label class="shj-check"&gt;&lt;input type="radio" name="weg" value="mail" checked&gt; Per E-Mail&lt;/label&gt;
+    &lt;label class="shj-check"&gt;&lt;input type="radio" name="weg" value="telefon"&gt; Per Telefon&lt;/label&gt;
+  &lt;/fieldset&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-form" aria-labelledby="b-form-t">
+  <h3 class="shj-h3" id="b-form-t">Anfrageformular</h3>
+  <p>Formular, das eine Anfrage an Spielhallen-Jobs.de auslöst: Einwilligung und Haupt-CTA mit Text aus der CTA-Liste.</p>
+<div class="shj-grid shj-grid--2">
+<div class="shj-section shj-section--dark shj-section--compact">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Near Black</p>
+    <div>
+<form class="shj-form" action="#">
+  <div class="shj-field">
+    <label class="shj-label" for="beispiel-firma">Firma</label>
+    <input class="shj-input" id="beispiel-firma" name="firma" type="text" autocomplete="organization">
+  </div>
+  <label class="shj-check"><input type="checkbox" name="einwilligung" required> <span>Ich bin einverstanden, dass meine übermittelten Daten elektronisch weiterverarbeitet und innerhalb der zwei&amp;40 Unternehmensgruppe zur Kontaktaufnahme verwendet werden. Näheres unter „<a href="https://spielhallen-jobs.de/datenschutz/">Datenschutz</a>“. (Pflichtfeld)</span></label>
+  <div class="shj-cluster">
+    <button class="shj-btn shj-btn--accent shj-btn--arrow" type="submit">Beratung anfragen</button>
+    <button class="shj-btn" type="reset">Zurücksetzen</button>
+  </div>
+</form>
+    </div>
+  </div>
+</div>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<form class="shj-form" action="#">
+  <div class="shj-field">
+    <label class="shj-label" for="beispiel-firma-hell">Firma</label>
+    <input class="shj-input" id="beispiel-firma-hell" name="firma-hell" type="text" autocomplete="organization">
+  </div>
+  <label class="shj-check"><input type="checkbox" name="einwilligung-hell" required> <span>Ich bin einverstanden, dass meine übermittelten Daten elektronisch weiterverarbeitet und innerhalb der zwei&amp;40 Unternehmensgruppe zur Kontaktaufnahme verwendet werden. Näheres unter „<a href="https://spielhallen-jobs.de/datenschutz/">Datenschutz</a>“. (Pflichtfeld)</span></label>
+  <div class="shj-cluster">
+    <button class="shj-btn shj-btn--accent shj-btn--arrow" type="submit">Beratung anfragen</button>
+    <button class="shj-btn" type="reset">Zurücksetzen</button>
+  </div>
+</form>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="shj-codeblock" data-snippet="form"><code>&lt;form class="shj-form" action="#"&gt;
+  &lt;div class="shj-field"&gt;
+    &lt;label class="shj-label" for="beispiel-firma"&gt;Firma&lt;/label&gt;
+    &lt;input class="shj-input" id="beispiel-firma" name="firma" type="text" autocomplete="organization"&gt;
+  &lt;/div&gt;
+  &lt;label class="shj-check"&gt;&lt;input type="checkbox" name="einwilligung" required&gt; &lt;span&gt;Ich bin einverstanden, dass meine übermittelten Daten elektronisch weiterverarbeitet und innerhalb der zwei&amp;amp;40 Unternehmensgruppe zur Kontaktaufnahme verwendet werden. Näheres unter „&lt;a href="https://spielhallen-jobs.de/datenschutz/"&gt;Datenschutz&lt;/a&gt;“. (Pflichtfeld)&lt;/span&gt;&lt;/label&gt;
+  &lt;div class="shj-cluster"&gt;
+    &lt;button class="shj-btn shj-btn--accent shj-btn--arrow" type="submit"&gt;Beratung anfragen&lt;/button&gt;
+    &lt;button class="shj-btn" type="reset"&gt;Zurücksetzen&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-divi" aria-labelledby="b-divi-t">
+  <h3 class="shj-h3" id="b-divi-t">Divi: Code-Modul</h3>
+  <p>Inhalt eines Divi-Code-Moduls. Der Wrapper .shj ist Pflicht. Nur als Code gezeigt.</p>
+  <pre class="shj-codeblock" data-snippet="divi"><code>&lt;div class="shj"&gt;
+  &lt;div class="shj-on-light"&gt;
+    &lt;a class="shj-btn shj-btn--accent shj-btn--arrow" href="#"&gt;Aktion&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Portal-Stil: Seitenaufbau ================= -->
+    <section class="shj-section shj-section--dark" id="portal-aufbau" aria-labelledby="t-portal-aufbau">
+      <div class="shj-container">
+        <div class="shj-section-head">
+          <h2 class="shj-section-head__title" id="t-portal-aufbau">Portal-Stil: Seitenaufbau.</h2>
+          <p class="shj-section-head__subtitle">Ab 1.1.0: Bausteine öffentlicher Seiten wie im Jobportal. Bühnen-Kopf, Suchkarte, schräge Übergänge, Sektion Orange, großes Proof-Band, Seitenfuß Petrol.</p>
+        </div>
+        <div class="shj-grid">
+<article class="shj-stack" id="b-section-tilt" aria-labelledby="b-section-tilt-t">
+  <h3 class="shj-h3" id="b-section-tilt-t">Schräge Übergänge</h3>
+  <p>Die untere Sektion setzt einen Keil in ihrer Farbe in den Innenabstand der oberen. Gleiche Farben trennt ein Orange-Streifen.</p>
+<div>
+<section class="shj-section shj-section--white">
+  <div class="shj-container"><p>Weiß.</p></div>
+</section>
+<section class="shj-section shj-section--dark shj-section--tilt">
+  <div class="shj-container"><p>Near Black mit schräger Kante, steigt nach rechts an.</p></div>
+</section>
+<section class="shj-section shj-section--white shj-section--tilt-rev">
+  <div class="shj-container"><p>Weiß mit schräger Kante, steigt nach links an.</p></div>
+</section>
+<section class="shj-section shj-section--petrol shj-section--tilt">
+  <div class="shj-container"><p>Petrol mit schräger Kante.</p></div>
+</section>
+<section class="shj-section shj-section--petrol shj-section--tilt-stripe">
+  <div class="shj-container"><p>Petrol nach Petrol: Orange-Streifen.</p></div>
+</section>
+</div>
+  <pre class="shj-codeblock" data-snippet="section-tilt"><code>&lt;section class="shj-section shj-section--white"&gt;
+  &lt;div class="shj-container"&gt;&lt;p&gt;Weiß.&lt;/p&gt;&lt;/div&gt;
+&lt;/section&gt;
+&lt;section class="shj-section shj-section--dark shj-section--tilt"&gt;
+  &lt;div class="shj-container"&gt;&lt;p&gt;Near Black mit schräger Kante, steigt nach rechts an.&lt;/p&gt;&lt;/div&gt;
+&lt;/section&gt;
+&lt;section class="shj-section shj-section--white shj-section--tilt-rev"&gt;
+  &lt;div class="shj-container"&gt;&lt;p&gt;Weiß mit schräger Kante, steigt nach links an.&lt;/p&gt;&lt;/div&gt;
+&lt;/section&gt;
+&lt;section class="shj-section shj-section--petrol shj-section--tilt"&gt;
+  &lt;div class="shj-container"&gt;&lt;p&gt;Petrol mit schräger Kante.&lt;/p&gt;&lt;/div&gt;
+&lt;/section&gt;
+&lt;section class="shj-section shj-section--petrol shj-section--tilt-stripe"&gt;
+  &lt;div class="shj-container"&gt;&lt;p&gt;Petrol nach Petrol: Orange-Streifen.&lt;/p&gt;&lt;/div&gt;
+&lt;/section&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-section-orange" aria-labelledby="b-section-orange-t">
+  <h3 class="shj-h3" id="b-section-orange-t">Sektion Orange</h3>
+  <p>Störer-Fläche, einmal pro Seite. Schrift Near Black, Störer-Balken Near Black mit weißer Schrift, Button gefüllt Near Black.</p>
+<div>
+<div class="shj-section shj-section--white shj-section--compact" aria-hidden="true"></div>
+<section class="shj-section shj-section--orange shj-section--tilt" aria-labelledby="orange-titel">
+  <div class="shj-container shj-stack shj-stack--loose shj-stack--center">
+    <h2 class="shj-section-head__title" id="orange-titel">Kein Team. <span class="shj-slant">Kein Betrieb.</span></h2>
+    <a class="shj-btn shj-btn--primary shj-btn--arrow" href="https://spielhallen-jobs.de/">Beratung anfragen</a>
+  </div>
+</section>
+</div>
+  <pre class="shj-codeblock" data-snippet="section-orange"><code>&lt;section class="shj-section shj-section--orange shj-section--tilt" aria-labelledby="orange-titel"&gt;
+  &lt;div class="shj-container shj-stack shj-stack--loose shj-stack--center"&gt;
+    &lt;h2 class="shj-section-head__title" id="orange-titel"&gt;Kein Team. &lt;span class="shj-slant"&gt;Kein Betrieb.&lt;/span&gt;&lt;/h2&gt;
+    &lt;a class="shj-btn shj-btn--primary shj-btn--arrow" href="https://spielhallen-jobs.de/"&gt;Beratung anfragen&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-hero-stage" aria-labelledby="b-hero-stage-t">
+  <h3 class="shj-h3" id="b-hero-stage-t">Bühnen-Kopf Petrol mit Suchkarte</h3>
+  <p>Text links, Bild im Rahmen rechts (ab 56 rem) vor dem dunklen Bühnenkeil. Kein Störer-Balken auf Petrol.</p>
+<div>
+<section class="shj-hero shj-hero--petrol shj-hero--stage" aria-labelledby="buehne-titel">
+  <div class="shj-container shj-hero__grid">
+    <div>
+      <h1 class="shj-hero__title" id="buehne-titel">Personal gesucht? Wir liefern.</h1>
+      <p class="shj-hero__lead">Kurze Einleitung in ein bis zwei Sätzen.</p>
+      <div class="shj-search-card">
+        <form class="shj-search-form shj-search-form--3" action="#" method="get" role="search" aria-label="Suche">
+          <div class="shj-field">
+            <label class="shj-label" for="buehne-was">Position</label>
+            <input class="shj-input" id="buehne-was" name="q" type="search" placeholder="z. B. Servicekraft">
+          </div>
+          <div class="shj-field">
+            <label class="shj-label" for="buehne-wo">Ort oder PLZ</label>
+            <input class="shj-input" id="buehne-wo" name="ort" type="text" autocomplete="postal-code">
+          </div>
+          <div class="shj-field">
+            <label class="shj-label" for="buehne-umkreis">Umkreis</label>
+            <span class="shj-select">
+              <select class="shj-input" id="buehne-umkreis" name="umkreis">
+                <option>25 km</option>
+                <option>50 km</option>
+              </select>
+            </span>
+          </div>
+          <button class="shj-btn shj-btn--primary" type="submit">Suchen</button>
+        </form>
+      </div>
+    </div>
+    <div class="shj-hero__media">
+      <div class="shj-frame">
+        <div class="shj-media shj-media--placeholder" aria-hidden="true"><span class="shj-media__mark"></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+  <pre class="shj-codeblock" data-snippet="hero-stage"><code>&lt;section class="shj-hero shj-hero--petrol shj-hero--stage" aria-labelledby="buehne-titel"&gt;
+  &lt;div class="shj-container shj-hero__grid"&gt;
+    &lt;div&gt;
+      &lt;h1 class="shj-hero__title" id="buehne-titel"&gt;Personal gesucht? Wir liefern.&lt;/h1&gt;
+      &lt;p class="shj-hero__lead"&gt;Kurze Einleitung in ein bis zwei Sätzen.&lt;/p&gt;
+      &lt;div class="shj-search-card"&gt;
+        &lt;form class="shj-search-form shj-search-form--3" action="#" method="get" role="search" aria-label="Suche"&gt;
+          &lt;div class="shj-field"&gt;
+            &lt;label class="shj-label" for="buehne-was"&gt;Position&lt;/label&gt;
+            &lt;input class="shj-input" id="buehne-was" name="q" type="search" placeholder="z. B. Servicekraft"&gt;
+          &lt;/div&gt;
+          &lt;div class="shj-field"&gt;
+            &lt;label class="shj-label" for="buehne-wo"&gt;Ort oder PLZ&lt;/label&gt;
+            &lt;input class="shj-input" id="buehne-wo" name="ort" type="text" autocomplete="postal-code"&gt;
+          &lt;/div&gt;
+          &lt;div class="shj-field"&gt;
+            &lt;label class="shj-label" for="buehne-umkreis"&gt;Umkreis&lt;/label&gt;
+            &lt;span class="shj-select"&gt;
+              &lt;select class="shj-input" id="buehne-umkreis" name="umkreis"&gt;
+                &lt;option&gt;25 km&lt;/option&gt;
+                &lt;option&gt;50 km&lt;/option&gt;
+              &lt;/select&gt;
+            &lt;/span&gt;
+          &lt;/div&gt;
+          &lt;button class="shj-btn shj-btn--primary" type="submit"&gt;Suchen&lt;/button&gt;
+        &lt;/form&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="shj-hero__media"&gt;
+      &lt;div class="shj-frame"&gt;
+        &lt;div class="shj-media shj-media--placeholder" aria-hidden="true"&gt;&lt;span class="shj-media__mark"&gt;&lt;/span&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-hero-stage-dark" aria-labelledby="b-hero-stage-dark-t">
+  <h3 class="shj-h3" id="b-hero-stage-dark-t">Bühnen-Kopf Near Black (B2B)</h3>
+  <p>Kampagnenzeile mit Störer-Balken, darunter die H1 kleiner, Einleitung, Haupt-CTA in Orange. Bühnenkeil Petrol. Kein Logo auf Near Black.</p>
+<div>
+<section class="shj-hero shj-hero--dark shj-hero--stage" aria-labelledby="b2b-titel">
+  <div class="shj-container shj-hero__grid">
+    <div>
+      <p class="shj-hero__title">Kein Team. <span class="shj-slant">Kein Betrieb.</span></p>
+      <h1 class="shj-h2" id="b2b-titel">Recruiting-Partner für Spielhallen und Wettbüros</h1>
+      <p class="shj-hero__lead">Aktive Bewerbersuche per Social Recruiting. Die Bewerbungen gehen direkt an Ihren Betrieb.</p>
+      <div class="shj-hero__actions">
+        <a class="shj-btn shj-btn--accent shj-btn--arrow" href="https://spielhallen-jobs.de/">Recruiting starten</a>
+        <a class="shj-btn" href="#">Beratung anfragen</a>
+      </div>
+    </div>
+    <div class="shj-hero__media">
+      <div class="shj-frame">
+        <div class="shj-media shj-media--placeholder" aria-hidden="true"><span class="shj-media__mark"></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+  <pre class="shj-codeblock" data-snippet="hero-stage-dark"><code>&lt;section class="shj-hero shj-hero--dark shj-hero--stage" aria-labelledby="b2b-titel"&gt;
+  &lt;div class="shj-container shj-hero__grid"&gt;
+    &lt;div&gt;
+      &lt;p class="shj-hero__title"&gt;Kein Team. &lt;span class="shj-slant"&gt;Kein Betrieb.&lt;/span&gt;&lt;/p&gt;
+      &lt;h1 class="shj-h2" id="b2b-titel"&gt;Recruiting-Partner für Spielhallen und Wettbüros&lt;/h1&gt;
+      &lt;p class="shj-hero__lead"&gt;Aktive Bewerbersuche per Social Recruiting. Die Bewerbungen gehen direkt an Ihren Betrieb.&lt;/p&gt;
+      &lt;div class="shj-hero__actions"&gt;
+        &lt;a class="shj-btn shj-btn--accent shj-btn--arrow" href="https://spielhallen-jobs.de/"&gt;Recruiting starten&lt;/a&gt;
+        &lt;a class="shj-btn" href="#"&gt;Beratung anfragen&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="shj-hero__media"&gt;
+      &lt;div class="shj-frame"&gt;
+        &lt;div class="shj-media shj-media--placeholder" aria-hidden="true"&gt;&lt;span class="shj-media__mark"&gt;&lt;/span&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-hero-compact" aria-labelledby="b-hero-compact-t">
+  <h3 class="shj-h3" id="b-hero-compact-t">Kopf kompakt</h3>
+  <p>Für Ergebnis- und Unterseiten: kleinere Kampagnenzeile, Einleitung 19 px, Suche ohne langes Scrollen.</p>
+<div>
+<section class="shj-hero shj-hero--petrol shj-hero--compact" aria-labelledby="kompakt-titel">
+  <div class="shj-container">
+    <h1 class="shj-hero__title" id="kompakt-titel">Seitentitel der Unterseite.</h1>
+    <p class="shj-hero__lead">Einleitung höchstens in einem Satz.</p>
+    <div class="shj-search-card">
+      <form class="shj-search-form" action="#" method="get" role="search" aria-label="Suche auf der Unterseite">
+        <div class="shj-field">
+          <label class="shj-label" for="kompakt-was">Position</label>
+          <input class="shj-input" id="kompakt-was" name="q" type="search">
+        </div>
+        <div class="shj-field">
+          <label class="shj-label" for="kompakt-wo">Ort oder PLZ</label>
+          <input class="shj-input" id="kompakt-wo" name="ort" type="text" autocomplete="postal-code">
+        </div>
+        <button class="shj-btn shj-btn--primary" type="submit">Suchen</button>
+      </form>
+    </div>
+  </div>
+</section>
+</div>
+  <pre class="shj-codeblock" data-snippet="hero-compact"><code>&lt;section class="shj-hero shj-hero--petrol shj-hero--compact" aria-labelledby="kompakt-titel"&gt;
+  &lt;div class="shj-container"&gt;
+    &lt;h1 class="shj-hero__title" id="kompakt-titel"&gt;Seitentitel der Unterseite.&lt;/h1&gt;
+    &lt;p class="shj-hero__lead"&gt;Einleitung höchstens in einem Satz.&lt;/p&gt;
+    &lt;div class="shj-search-card"&gt;
+      &lt;form class="shj-search-form" action="#" method="get" role="search" aria-label="Suche auf der Unterseite"&gt;
+        &lt;div class="shj-field"&gt;
+          &lt;label class="shj-label" for="kompakt-was"&gt;Position&lt;/label&gt;
+          &lt;input class="shj-input" id="kompakt-was" name="q" type="search"&gt;
+        &lt;/div&gt;
+        &lt;div class="shj-field"&gt;
+          &lt;label class="shj-label" for="kompakt-wo"&gt;Ort oder PLZ&lt;/label&gt;
+          &lt;input class="shj-input" id="kompakt-wo" name="ort" type="text" autocomplete="postal-code"&gt;
+        &lt;/div&gt;
+        &lt;button class="shj-btn shj-btn--primary" type="submit"&gt;Suchen&lt;/button&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-hero-form" aria-labelledby="b-hero-form-t">
+  <h3 class="shj-h3" id="b-hero-form-t">Kopf Formularseite</h3>
+  <p>Titel in H2-Größe statt Kampagnenzeile, Einleitung 19 px statt bis zu 24 px.</p>
+<div>
+<section class="shj-hero shj-hero--petrol shj-hero--form" aria-labelledby="formular-titel">
+  <div class="shj-container">
+    <h1 class="shj-hero__title" id="formular-titel">Beratung anfragen.</h1>
+    <p class="shj-hero__lead">Einleitung einer Formularseite: 19 px statt bis zu 24 px.</p>
+  </div>
+</section>
+</div>
+  <pre class="shj-codeblock" data-snippet="hero-form"><code>&lt;section class="shj-hero shj-hero--petrol shj-hero--form" aria-labelledby="formular-titel"&gt;
+  &lt;div class="shj-container"&gt;
+    &lt;h1 class="shj-hero__title" id="formular-titel"&gt;Beratung anfragen.&lt;/h1&gt;
+    &lt;p class="shj-hero__lead"&gt;Einleitung einer Formularseite: 19 px statt bis zu 24 px.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-search-form" aria-labelledby="b-search-form-t">
+  <h3 class="shj-h3" id="b-search-form-t">Suchkarte mit Filtern</h3>
+  <p>Immer hell, Orange-Kante oben. Raster mit vielen Feldern: ab 44 rem zwei, ab 68 rem drei Spalten. Neutrale Buttons.</p>
+<div class="shj-section shj-section--petrol shj-section--compact">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Petrol</p>
+    <div>
+<div class="shj-search-card">
+  <form class="shj-search-form shj-search-form--filters" action="#" method="get" role="search" aria-label="Suche mit Filtern">
+    <div class="shj-field">
+      <label class="shj-label" for="filter-was">Position</label>
+      <input class="shj-input" id="filter-was" name="q" type="search">
+    </div>
+    <div class="shj-field">
+      <label class="shj-label" for="filter-wo">Ort oder PLZ</label>
+      <input class="shj-input" id="filter-wo" name="ort" type="text" autocomplete="postal-code">
+    </div>
+    <div class="shj-field">
+      <label class="shj-label" for="filter-land">Bundesland</label>
+      <span class="shj-select">
+        <select class="shj-input" id="filter-land" name="land">
+          <option>Alle</option>
+        </select>
+      </span>
+    </div>
+    <div class="shj-cluster">
+      <button class="shj-btn shj-btn--primary" type="submit">Filter anwenden</button>
+      <a class="shj-btn" href="#">Filter zurücksetzen</a>
+    </div>
+  </form>
+</div>
+    </div>
+  </div>
+</div>
+  <pre class="shj-codeblock" data-snippet="search-form"><code>&lt;div class="shj-search-card"&gt;
+  &lt;form class="shj-search-form shj-search-form--filters" action="#" method="get" role="search" aria-label="Suche mit Filtern"&gt;
+    &lt;div class="shj-field"&gt;
+      &lt;label class="shj-label" for="filter-was"&gt;Position&lt;/label&gt;
+      &lt;input class="shj-input" id="filter-was" name="q" type="search"&gt;
+    &lt;/div&gt;
+    &lt;div class="shj-field"&gt;
+      &lt;label class="shj-label" for="filter-wo"&gt;Ort oder PLZ&lt;/label&gt;
+      &lt;input class="shj-input" id="filter-wo" name="ort" type="text" autocomplete="postal-code"&gt;
+    &lt;/div&gt;
+    &lt;div class="shj-field"&gt;
+      &lt;label class="shj-label" for="filter-land"&gt;Bundesland&lt;/label&gt;
+      &lt;span class="shj-select"&gt;
+        &lt;select class="shj-input" id="filter-land" name="land"&gt;
+          &lt;option&gt;Alle&lt;/option&gt;
+        &lt;/select&gt;
+      &lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="shj-cluster"&gt;
+      &lt;button class="shj-btn shj-btn--primary" type="submit"&gt;Filter anwenden&lt;/button&gt;
+      &lt;a class="shj-btn" href="#"&gt;Filter zurücksetzen&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/form&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-frame" aria-labelledby="b-frame-t">
+  <h3 class="shj-h3" id="b-frame-t">Rahmen und Bild-Platzhalter</h3>
+  <p>Weißer Rahmen mit versetzter Orange-Fläche, darin der gestaltete Platzhalter für ein fehlendes Motiv.</p>
+<div class="shj-grid shj-grid--2">
+<div class="shj-section shj-section--dark shj-section--compact">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Near Black</p>
+    <div>
+<div class="shj-frame">
+  <div class="shj-media shj-media--placeholder" aria-hidden="true"><span class="shj-media__mark"></span></div>
+</div>
+    </div>
+  </div>
+</div>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<div class="shj-frame">
+  <div class="shj-media shj-media--placeholder" aria-hidden="true"><span class="shj-media__mark"></span></div>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="shj-codeblock" data-snippet="frame"><code>&lt;div class="shj-frame"&gt;
+  &lt;div class="shj-media shj-media--placeholder" aria-hidden="true"&gt;&lt;span class="shj-media__mark"&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-ai-notice" aria-labelledby="b-ai-notice-t">
+  <h3 class="shj-h3" id="b-ai-notice-t">KI-Hinweis</h3>
+  <p>EU-KI-Icon rechts unten im Bild und als Hinweis darunter. Icon und Foto sind nicht im Paket: Die Musterseite zeigt gestrichelte Platzhalter.</p>
+<div class="shj-grid shj-grid--2">
+<div class="shj-section shj-section--dark shj-section--compact">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Near Black</p>
+    <div>
+<figure class="shj-stack">
+  <div class="shj-media">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect x='1' y='1' width='398' height='298' fill='white' stroke='black' stroke-width='2' stroke-dasharray='6 4'/%3E%3Ctext x='50%25' y='55%25' font-family='sans-serif' font-size='28' text-anchor='middle'%3EFoto%3C/text%3E%3C/svg%3E" alt="[PLATZHALTER: Bildbeschreibung]. KI-Bildmotiv." width="1536" height="1024" loading="lazy" decoding="async">
+    <img class="shj-media__ai" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Crect x='1' y='1' width='58' height='58' fill='white' stroke='black' stroke-width='2' stroke-dasharray='6 4'/%3E%3Ctext x='50%25' y='55%25' font-family='sans-serif' font-size='13' text-anchor='middle'%3EIcon%3C/text%3E%3C/svg%3E" alt="" width="2363" height="2364">
+  </div>
+  <figcaption class="shj-ai-notice">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Crect x='1' y='1' width='58' height='58' fill='white' stroke='black' stroke-width='2' stroke-dasharray='6 4'/%3E%3Ctext x='50%25' y='55%25' font-family='sans-serif' font-size='13' text-anchor='middle'%3EIcon%3C/text%3E%3C/svg%3E" alt="" width="2363" height="2364">
+    <span>KI-Bildmotiv</span>
+  </figcaption>
+</figure>
+    </div>
+  </div>
+</div>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<figure class="shj-stack">
+  <div class="shj-media">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect x='1' y='1' width='398' height='298' fill='white' stroke='black' stroke-width='2' stroke-dasharray='6 4'/%3E%3Ctext x='50%25' y='55%25' font-family='sans-serif' font-size='28' text-anchor='middle'%3EFoto%3C/text%3E%3C/svg%3E" alt="[PLATZHALTER: Bildbeschreibung]. KI-Bildmotiv." width="1536" height="1024" loading="lazy" decoding="async">
+    <img class="shj-media__ai" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Crect x='1' y='1' width='58' height='58' fill='white' stroke='black' stroke-width='2' stroke-dasharray='6 4'/%3E%3Ctext x='50%25' y='55%25' font-family='sans-serif' font-size='13' text-anchor='middle'%3EIcon%3C/text%3E%3C/svg%3E" alt="" width="2363" height="2364">
+  </div>
+  <figcaption class="shj-ai-notice">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Crect x='1' y='1' width='58' height='58' fill='white' stroke='black' stroke-width='2' stroke-dasharray='6 4'/%3E%3Ctext x='50%25' y='55%25' font-family='sans-serif' font-size='13' text-anchor='middle'%3EIcon%3C/text%3E%3C/svg%3E" alt="" width="2363" height="2364">
+    <span>KI-Bildmotiv</span>
+  </figcaption>
+</figure>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="shj-codeblock" data-snippet="ai-notice"><code>&lt;figure class="shj-stack"&gt;
+  &lt;div class="shj-media"&gt;
+    &lt;img src="bilder/beispiel-ki.webp" alt="[PLATZHALTER: Bildbeschreibung]. KI-Bildmotiv." width="1536" height="1024" loading="lazy" decoding="async"&gt;
+    &lt;img class="shj-media__ai" src="bilder/eu-ki-label-ai.png" alt="" width="2363" height="2364"&gt;
+  &lt;/div&gt;
+  &lt;figcaption class="shj-ai-notice"&gt;
+    &lt;img src="bilder/eu-ki-label-ai.png" alt="" width="2363" height="2364"&gt;
+    &lt;span&gt;KI-Bildmotiv&lt;/span&gt;
+  &lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-proof-big" aria-labelledby="b-proof-big-t">
+  <h3 class="shj-h3" id="b-proof-big-t">Großes Proof-Band</h3>
+  <p>Die freigegebenen Kennzahlen sehr groß, Bezeichnung darunter.</p>
+<div>
+<section class="shj-section shj-section--petrol shj-section--compact" aria-labelledby="proof-gross-titel">
+  <div class="shj-container">
+    <div class="shj-proof shj-proof--big">
+      <p class="shj-proof__title" id="proof-gross-titel">Bisher für unsere Kunden</p>
+      <dl class="shj-proof__list">
+        <div class="shj-proof__item">
+          <dt class="shj-proof__label">Stellen besetzt</dt>
+          <dd class="shj-proof__value">4.200+</dd>
+        </div>
+        <div class="shj-proof__item">
+          <dt class="shj-proof__label">Bewerber gefunden</dt>
+          <dd class="shj-proof__value">38.500+</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>
+</div>
+  <pre class="shj-codeblock" data-snippet="proof-big"><code>&lt;section class="shj-section shj-section--petrol shj-section--compact" aria-labelledby="proof-gross-titel"&gt;
+  &lt;div class="shj-container"&gt;
+    &lt;div class="shj-proof shj-proof--big"&gt;
+      &lt;p class="shj-proof__title" id="proof-gross-titel"&gt;Bisher für unsere Kunden&lt;/p&gt;
+      &lt;dl class="shj-proof__list"&gt;
+        &lt;div class="shj-proof__item"&gt;
+          &lt;dt class="shj-proof__label"&gt;Stellen besetzt&lt;/dt&gt;
+          &lt;dd class="shj-proof__value"&gt;4.200+&lt;/dd&gt;
+        &lt;/div&gt;
+        &lt;div class="shj-proof__item"&gt;
+          &lt;dt class="shj-proof__label"&gt;Bewerber gefunden&lt;/dt&gt;
+          &lt;dd class="shj-proof__value"&gt;38.500+&lt;/dd&gt;
+        &lt;/div&gt;
+      &lt;/dl&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-site-footer" aria-labelledby="b-site-footer-t">
+  <h3 class="shj-h3" id="b-site-footer-t">Seitenfuß Petrol</h3>
+  <p>Standard für Webseiten: getöntes Petrol mit schräger Oberkante und Orange-Streifen, Spalten, optionale Login-Kachel, Leiste Near Black.</p>
+<div>
+<footer class="shj-site-footer">
+  <div class="shj-container">
+    <div class="shj-site-footer__grid">
+      <div class="shj-site-footer__col shj-site-footer__brand">
+        <img class="shj-logo" src="assets/logo/spielhallen-jobs-logo-schwarz-weiss.png" alt="Logo Spielhallen-Jobs.de" width="1920" height="768" loading="lazy">
+        <address class="shj-site-footer__contact">
+          <p>zwei&amp;40 GmbH<br>Annenheider Str. 257<br>27755 Delmenhorst</p>
+          <p>Telefon <a href="tel:+494221998950">04221 99895-0</a></p>
+          <p><a href="mailto:info@zweiund40.com">info@zweiund40.com</a></p>
+        </address>
+      </div>
+      <nav class="shj-site-footer__col" aria-label="Für Unternehmen">
+        <h2 class="shj-site-footer__title">Für Unternehmen</h2>
+        <ul class="shj-site-footer__list">
+          <li><a href="#">Paket ansehen</a></li>
+          <li><a href="#">Beratung anfragen</a></li>
+        </ul>
+      </nav>
+      <nav class="shj-site-footer__col" aria-label="Bereiche">
+        <h2 class="shj-site-footer__title">Bereiche</h2>
+        <ul class="shj-site-footer__list">
+          <li><a href="#">Bereich 1</a></li>
+          <li><a href="#">Bereich 2</a></li>
+          <li><a href="#">Bereich 3</a></li>
+        </ul>
+      </nav>
+      <nav class="shj-site-footer__col shj-site-footer__login" aria-label="Login">
+        <h2 class="shj-site-footer__title">Login</h2>
+        <ul class="shj-site-footer__logins">
+          <li><a class="shj-btn shj-btn--accent shj-btn--arrow" href="#">Login für Unternehmen</a></li>
+          <li><a class="shj-btn shj-btn--arrow" href="#">Login für Bewerbende</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="shj-site-footer__bar">
+    <div class="shj-container shj-site-footer__bottom">
+      <p>© 2026 zwei&amp;40 GmbH</p>
+      <ul class="shj-site-footer__legal">
+        <li><a href="https://spielhallen-jobs.de/impressum">Impressum</a></li>
+        <li><a href="https://spielhallen-jobs.de/datenschutz/">Datenschutz</a></li>
+      </ul>
+      <p class="shj-site-footer__note">[PLATZHALTER: optionaler Hinweis, z. B. Quellenangabe]</p>
+    </div>
+  </div>
+</footer>
+</div>
+  <pre class="shj-codeblock" data-snippet="site-footer"><code>&lt;footer class="shj-site-footer"&gt;
+  &lt;div class="shj-container"&gt;
+    &lt;div class="shj-site-footer__grid"&gt;
+      &lt;div class="shj-site-footer__col shj-site-footer__brand"&gt;
+        &lt;img class="shj-logo" src="assets/logo/spielhallen-jobs-logo-schwarz-weiss.png" alt="Logo Spielhallen-Jobs.de" width="1920" height="768" loading="lazy"&gt;
+        &lt;address class="shj-site-footer__contact"&gt;
+          &lt;p&gt;zwei&amp;amp;40 GmbH&lt;br&gt;Annenheider Str. 257&lt;br&gt;27755 Delmenhorst&lt;/p&gt;
+          &lt;p&gt;Telefon &lt;a href="tel:+494221998950"&gt;04221 99895-0&lt;/a&gt;&lt;/p&gt;
+          &lt;p&gt;&lt;a href="mailto:info@zweiund40.com"&gt;info@zweiund40.com&lt;/a&gt;&lt;/p&gt;
+        &lt;/address&gt;
+      &lt;/div&gt;
+      &lt;nav class="shj-site-footer__col" aria-label="Für Unternehmen"&gt;
+        &lt;h2 class="shj-site-footer__title"&gt;Für Unternehmen&lt;/h2&gt;
+        &lt;ul class="shj-site-footer__list"&gt;
+          &lt;li&gt;&lt;a href="#"&gt;Paket ansehen&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;Beratung anfragen&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/nav&gt;
+      &lt;nav class="shj-site-footer__col" aria-label="Bereiche"&gt;
+        &lt;h2 class="shj-site-footer__title"&gt;Bereiche&lt;/h2&gt;
+        &lt;ul class="shj-site-footer__list"&gt;
+          &lt;li&gt;&lt;a href="#"&gt;Bereich 1&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;Bereich 2&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;Bereich 3&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/nav&gt;
+      &lt;nav class="shj-site-footer__col shj-site-footer__login" aria-label="Login"&gt;
+        &lt;h2 class="shj-site-footer__title"&gt;Login&lt;/h2&gt;
+        &lt;ul class="shj-site-footer__logins"&gt;
+          &lt;li&gt;&lt;a class="shj-btn shj-btn--accent shj-btn--arrow" href="#"&gt;Login für Unternehmen&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a class="shj-btn shj-btn--arrow" href="#"&gt;Login für Bewerbende&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/nav&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="shj-site-footer__bar"&gt;
+    &lt;div class="shj-container shj-site-footer__bottom"&gt;
+      &lt;p&gt;© 2026 zwei&amp;amp;40 GmbH&lt;/p&gt;
+      &lt;ul class="shj-site-footer__legal"&gt;
+        &lt;li&gt;&lt;a href="https://spielhallen-jobs.de/impressum"&gt;Impressum&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="https://spielhallen-jobs.de/datenschutz/"&gt;Datenschutz&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;p class="shj-site-footer__note"&gt;[PLATZHALTER: optionaler Hinweis, z. B. Quellenangabe]&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/footer&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-main" aria-labelledby="b-main-t">
+  <h3 class="shj-h3" id="b-main-t">Seitenrahmen</h3>
+  <p>Hauptbereich: Sektionen randlos, alles andere mit Inhaltsbreite. Diese Musterseite nutzt ihn selbst. Nur als Code gezeigt.</p>
+  <pre class="shj-codeblock" data-snippet="main"><code>&lt;main class="shj-main" id="inhalt"&gt;
+  &lt;section class="shj-section shj-section--white" aria-labelledby="rahmen-titel"&gt;
+    &lt;div class="shj-container"&gt;
+      &lt;h2 class="shj-section-head__title" id="rahmen-titel"&gt;Sektion: volle Breite.&lt;/h2&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+  &lt;div class="shj-page"&gt;
+    &lt;section class="shj-section shj-section--dark"&gt;
+      &lt;div class="shj-container"&gt;&lt;p&gt;Hülle aus Sektionen: läuft ebenfalls randlos.&lt;/p&gt;&lt;/div&gt;
+    &lt;/section&gt;
+  &lt;/div&gt;
+  &lt;div class="shj-stack"&gt;
+    &lt;p&gt;Jedes andere direkte Kind bekommt Inhaltsbreite und Innenabstand.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/main&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-rezept-portal" aria-labelledby="b-rezept-portal-t">
+  <h3 class="shj-h3" id="b-rezept-portal-t">Rezept: Webseite im Portal-Stil</h3>
+  <p>Aufbau einer ganzen Seite, verkürzt (README 9.3). Nur als Code gezeigt.</p>
+  <pre class="shj-codeblock" data-snippet="rezept-portal"><code>&lt;body class="shj"&gt;
+  &lt;a class="shj-skip-link" href="#inhalt"&gt;Zum Inhalt springen&lt;/a&gt;
+  &lt;header class="shj-hero shj-hero--compact"&gt;
+    &lt;div class="shj-container"&gt;
+      &lt;img class="shj-logo" src="assets/logo/spielhallen-jobs-logo-schwarz-petrol.png" alt="Spielhallen-Jobs.de – Startseite" width="1920" height="768"&gt;
+    &lt;/div&gt;
+  &lt;/header&gt;
+  &lt;main class="shj-main" id="inhalt"&gt;
+    &lt;section class="shj-hero shj-hero--dark shj-hero--stage" aria-labelledby="seite-titel"&gt;
+      &lt;div class="shj-container shj-hero__grid"&gt;
+        &lt;div&gt;
+          &lt;p class="shj-hero__title"&gt;Kein Team. &lt;span class="shj-slant"&gt;Kein Betrieb.&lt;/span&gt;&lt;/p&gt;
+          &lt;h1 class="shj-h2" id="seite-titel"&gt;Recruiting-Partner für Spielhallen und Wettbüros&lt;/h1&gt;
+          &lt;p class="shj-hero__lead"&gt;[PLATZHALTER: Einleitung in ein bis zwei Sätzen, Sie]&lt;/p&gt;
+          &lt;div class="shj-hero__actions"&gt;
+            &lt;a class="shj-btn shj-btn--accent shj-btn--arrow" href="https://spielhallen-jobs.de/"&gt;Recruiting starten&lt;/a&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="shj-hero__media"&gt;
+          &lt;div class="shj-frame"&gt;
+            &lt;div class="shj-media shj-media--placeholder" aria-hidden="true"&gt;&lt;span class="shj-media__mark"&gt;&lt;/span&gt;&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+    &lt;section class="shj-section shj-section--petrol shj-section--compact shj-section--tilt" aria-labelledby="zahlen-titel"&gt;
+      &lt;div class="shj-container"&gt;
+        &lt;div class="shj-proof shj-proof--big"&gt;
+          &lt;p class="shj-proof__title" id="zahlen-titel"&gt;Bisher für unsere Kunden&lt;/p&gt;
+          &lt;dl class="shj-proof__list"&gt;
+            &lt;div class="shj-proof__item"&gt;&lt;dt class="shj-proof__label"&gt;Stellen besetzt&lt;/dt&gt;&lt;dd class="shj-proof__value"&gt;4.200+&lt;/dd&gt;&lt;/div&gt;
+            &lt;div class="shj-proof__item"&gt;&lt;dt class="shj-proof__label"&gt;Bewerber gefunden&lt;/dt&gt;&lt;dd class="shj-proof__value"&gt;38.500+&lt;/dd&gt;&lt;/div&gt;
+          &lt;/dl&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+    &lt;section class="shj-section shj-section--white" aria-labelledby="nutzen-titel"&gt;
+      &lt;div class="shj-container"&gt;
+        &lt;div class="shj-section-head"&gt;&lt;h2 class="shj-section-head__title" id="nutzen-titel"&gt;[PLATZHALTER: Nutzen-Headline]&lt;/h2&gt;&lt;/div&gt;
+        &lt;ul class="shj-features shj-features--3"&gt;
+          &lt;li class="shj-feature"&gt;&lt;strong&gt;Anzeigenproduktion&lt;/strong&gt; &lt;span&gt;[PLATZHALTER: Erklärung]&lt;/span&gt;&lt;/li&gt;
+          &lt;li class="shj-feature"&gt;&lt;strong&gt;Aktive Social-Media-Ausspielung&lt;/strong&gt; &lt;span&gt;[PLATZHALTER: Erklärung]&lt;/span&gt;&lt;/li&gt;
+          &lt;li class="shj-feature"&gt;&lt;strong&gt;Weiterleitung eingehender Bewerbungen per E-Mail&lt;/strong&gt; &lt;span&gt;[PLATZHALTER: Erklärung]&lt;/span&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+    &lt;section class="shj-section shj-section--dark shj-section--tilt" aria-labelledby="ablauf-titel"&gt;
+      &lt;div class="shj-container"&gt;
+        &lt;div class="shj-section-head"&gt;&lt;h2 class="shj-section-head__title" id="ablauf-titel"&gt;[PLATZHALTER: Ablauf-Headline]&lt;/h2&gt;&lt;/div&gt;
+        &lt;ol class="shj-steps shj-steps--cards"&gt;
+          &lt;li class="shj-steps__item"&gt;&lt;span class="shj-ring" aria-hidden="true"&gt;1&lt;/span&gt;&lt;h3 class="shj-steps__title"&gt;Briefing&lt;/h3&gt;&lt;p class="shj-steps__text"&gt;[PLATZHALTER: Schritt]&lt;/p&gt;&lt;/li&gt;
+          &lt;li class="shj-steps__item"&gt;&lt;span class="shj-ring" aria-hidden="true"&gt;2&lt;/span&gt;&lt;h3 class="shj-steps__title"&gt;Kampagne&lt;/h3&gt;&lt;p class="shj-steps__text"&gt;[PLATZHALTER: Schritt]&lt;/p&gt;&lt;/li&gt;
+          &lt;li class="shj-steps__item"&gt;&lt;span class="shj-ring" aria-hidden="true"&gt;3&lt;/span&gt;&lt;h3 class="shj-steps__title"&gt;Auswertung&lt;/h3&gt;&lt;p class="shj-steps__text"&gt;[PLATZHALTER: Schritt]&lt;/p&gt;&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+    &lt;section class="shj-section shj-section--white shj-section--tilt-rev" aria-labelledby="faq-titel"&gt;
+      &lt;div class="shj-container"&gt;
+        &lt;div class="shj-section-head"&gt;&lt;h2 class="shj-section-head__title" id="faq-titel"&gt;Häufige Fragen.&lt;/h2&gt;&lt;/div&gt;
+        &lt;div class="shj-faq"&gt;
+          &lt;div class="shj-faq__item"&gt;&lt;h3&gt;[PLATZHALTER: Frage]&lt;/h3&gt;&lt;p&gt;[PLATZHALTER: Antwort]&lt;/p&gt;&lt;/div&gt;
+          &lt;div class="shj-faq__item"&gt;&lt;h3&gt;[PLATZHALTER: Frage]&lt;/h3&gt;&lt;p&gt;[PLATZHALTER: Antwort]&lt;/p&gt;&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+    &lt;section class="shj-section shj-section--orange shj-section--tilt" aria-labelledby="abschluss-titel"&gt;
+      &lt;div class="shj-container shj-stack shj-stack--loose shj-stack--center"&gt;
+        &lt;h2 class="shj-section-head__title" id="abschluss-titel"&gt;Kein Team. &lt;span class="shj-slant"&gt;Kein Betrieb.&lt;/span&gt;&lt;/h2&gt;
+        &lt;a class="shj-btn shj-btn--primary shj-btn--arrow" href="https://spielhallen-jobs.de/"&gt;Beratung anfragen&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+  &lt;/main&gt;
+  &lt;footer class="shj-site-footer"&gt;
+    &lt;div class="shj-container"&gt;
+      &lt;div class="shj-site-footer__grid"&gt;
+        &lt;div class="shj-site-footer__col shj-site-footer__brand"&gt;
+          &lt;img class="shj-logo" src="assets/logo/spielhallen-jobs-logo-schwarz-weiss.png" alt="Logo Spielhallen-Jobs.de" width="1920" height="768" loading="lazy"&gt;
+          &lt;address class="shj-site-footer__contact"&gt;
+            &lt;p&gt;zwei&amp;amp;40 GmbH&lt;br&gt;Annenheider Str. 257&lt;br&gt;27755 Delmenhorst&lt;/p&gt;
+            &lt;p&gt;Telefon &lt;a href="tel:+494221998950"&gt;04221 99895-0&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt;&lt;a href="mailto:info@zweiund40.com"&gt;info@zweiund40.com&lt;/a&gt;&lt;/p&gt;
+          &lt;/address&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="shj-site-footer__bar"&gt;
+      &lt;div class="shj-container shj-site-footer__bottom"&gt;
+        &lt;p&gt;© 2026 zwei&amp;amp;40 GmbH&lt;/p&gt;
+        &lt;ul class="shj-site-footer__legal"&gt;
+          &lt;li&gt;&lt;a href="https://spielhallen-jobs.de/impressum"&gt;Impressum&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="https://spielhallen-jobs.de/datenschutz/"&gt;Datenschutz&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;</code></pre>
+</article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Portal-Stil: Inhalte ================= -->
+    <section class="shj-section shj-section--white" id="portal-inhalte" aria-labelledby="t-portal-inhalte">
+      <div class="shj-container">
+        <div class="shj-section-head">
+          <h2 class="shj-section-head__title" id="t-portal-inhalte">Portal-Stil: Inhalte.</h2>
+          <p class="shj-section-head__subtitle">Ab 1.1.0: Karten und Formularbausteine öffentlicher Seiten.</p>
+        </div>
+        <div class="shj-grid">
+<article class="shj-stack" id="b-features" aria-labelledby="b-features-t">
+  <h3 class="shj-h3" id="b-features-t">Merkmal-Kacheln</h3>
+  <p>Nummerierte Kacheln, ab 68 rem dreispaltig.</p>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<ul class="shj-features shj-features--3">
+  <li class="shj-feature"><strong>Anzeigenproduktion</strong> <span>Kurzer Erklärungstext.</span></li>
+  <li class="shj-feature"><strong>Aktive Social-Media-Ausspielung</strong> <span>Kurzer Erklärungstext.</span></li>
+  <li class="shj-feature"><strong>Weiterleitung eingehender Bewerbungen per E-Mail</strong> <span>Kurzer Erklärungstext.</span></li>
+</ul>
+    </div>
+  </div>
+</div>
+  <pre class="shj-codeblock" data-snippet="features"><code>&lt;ul class="shj-features shj-features--3"&gt;
+  &lt;li class="shj-feature"&gt;&lt;strong&gt;Anzeigenproduktion&lt;/strong&gt; &lt;span&gt;Kurzer Erklärungstext.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="shj-feature"&gt;&lt;strong&gt;Aktive Social-Media-Ausspielung&lt;/strong&gt; &lt;span&gt;Kurzer Erklärungstext.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="shj-feature"&gt;&lt;strong&gt;Weiterleitung eingehender Bewerbungen per E-Mail&lt;/strong&gt; &lt;span&gt;Kurzer Erklärungstext.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-steps-cards" aria-labelledby="b-steps-cards-t">
+  <h3 class="shj-h3" id="b-steps-cards-t">Schritte als Karten</h3>
+  <p>Gefüllte Orange-Ziffer, ab 44 rem zwei, ab 68 rem drei Spalten.</p>
+<div class="shj-section shj-section--dark shj-section--compact">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Near Black</p>
+    <div>
+<ol class="shj-steps shj-steps--cards">
+  <li class="shj-steps__item">
+    <span class="shj-ring" aria-hidden="true">1</span>
+    <h3 class="shj-steps__title">Briefing</h3>
+    <p class="shj-steps__text">Kurze Beschreibung des Schritts.</p>
+  </li>
+  <li class="shj-steps__item">
+    <span class="shj-ring" aria-hidden="true">2</span>
+    <h3 class="shj-steps__title">Kampagne</h3>
+    <p class="shj-steps__text">Kurze Beschreibung des Schritts.</p>
+  </li>
+  <li class="shj-steps__item">
+    <span class="shj-ring" aria-hidden="true">3</span>
+    <h3 class="shj-steps__title">Auswertung</h3>
+    <p class="shj-steps__text">Kurze Beschreibung des Schritts.</p>
+  </li>
+</ol>
+    </div>
+  </div>
+</div>
+  <pre class="shj-codeblock" data-snippet="steps-cards"><code>&lt;ol class="shj-steps shj-steps--cards"&gt;
+  &lt;li class="shj-steps__item"&gt;
+    &lt;span class="shj-ring" aria-hidden="true"&gt;1&lt;/span&gt;
+    &lt;h3 class="shj-steps__title"&gt;Briefing&lt;/h3&gt;
+    &lt;p class="shj-steps__text"&gt;Kurze Beschreibung des Schritts.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li class="shj-steps__item"&gt;
+    &lt;span class="shj-ring" aria-hidden="true"&gt;2&lt;/span&gt;
+    &lt;h3 class="shj-steps__title"&gt;Kampagne&lt;/h3&gt;
+    &lt;p class="shj-steps__text"&gt;Kurze Beschreibung des Schritts.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li class="shj-steps__item"&gt;
+    &lt;span class="shj-ring" aria-hidden="true"&gt;3&lt;/span&gt;
+    &lt;h3 class="shj-steps__title"&gt;Auswertung&lt;/h3&gt;
+    &lt;p class="shj-steps__text"&gt;Kurze Beschreibung des Schritts.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-faq" aria-labelledby="b-faq-t">
+  <h3 class="shj-h3" id="b-faq-t">Fragen und Antworten</h3>
+  <p>Alle Antworten offen, ab 56 rem zweispaltig.</p>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<div class="shj-faq">
+  <div class="shj-faq__item">
+    <h3>Frage in normaler Schreibweise?</h3>
+    <p>Antwort in ein bis drei Sätzen.</p>
+  </div>
+  <div class="shj-faq__item">
+    <h3>Zweite Frage?</h3>
+    <p>Antwort in ein bis drei Sätzen.</p>
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+  <pre class="shj-codeblock" data-snippet="faq"><code>&lt;div class="shj-faq"&gt;
+  &lt;div class="shj-faq__item"&gt;
+    &lt;h3&gt;Frage in normaler Schreibweise?&lt;/h3&gt;
+    &lt;p&gt;Antwort in ein bis drei Sätzen.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="shj-faq__item"&gt;
+    &lt;h3&gt;Zweite Frage?&lt;/h3&gt;
+    &lt;p&gt;Antwort in ein bis drei Sätzen.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-pakete" aria-labelledby="b-pakete-t">
+  <h3 class="shj-h3" id="b-pakete-t">Paket-Karten</h3>
+  <p>Preise nur mit Freigabe, sonst Platzhalter.</p>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<ul class="shj-pakete-cards" aria-label="Pakete">
+  <li class="shj-pakete-card">
+    <h3 class="shj-pakete-card__name">Paket A</h3>
+    <p class="shj-pakete-card__price"><span class="shj-sr-only">Preis: </span>[PLATZHALTER: Preis]</p>
+    <dl class="shj-pakete-card__facts">
+      <div><dt>Anzeigenproduktion</dt><dd><span class="shj-icon shj-icon--check" aria-hidden="true"></span><span class="shj-sr-only">ja</span></dd></div>
+      <div><dt>Aktive Social-Media-Ausspielung</dt><dd>[PLATZHALTER: Dauer]</dd></div>
+    </dl>
+    <a class="shj-btn shj-btn--primary shj-btn--arrow" href="#">Paket ansehen</a>
+  </li>
+  <li class="shj-pakete-card">
+    <h3 class="shj-pakete-card__name">Paket B</h3>
+    <p class="shj-pakete-card__price"><span class="shj-sr-only">Preis: </span>[PLATZHALTER: Preis]</p>
+    <dl class="shj-pakete-card__facts">
+      <div><dt>Anzeigenproduktion</dt><dd><span class="shj-icon shj-icon--check" aria-hidden="true"></span><span class="shj-sr-only">ja</span></dd></div>
+      <div><dt>Aktive Social-Media-Ausspielung</dt><dd>[PLATZHALTER: Dauer]</dd></div>
+    </dl>
+    <a class="shj-btn shj-btn--primary shj-btn--arrow" href="#">Paket ansehen</a>
+  </li>
+</ul>
+    </div>
+  </div>
+</div>
+  <pre class="shj-codeblock" data-snippet="pakete"><code>&lt;ul class="shj-pakete-cards" aria-label="Pakete"&gt;
+  &lt;li class="shj-pakete-card"&gt;
+    &lt;h3 class="shj-pakete-card__name"&gt;Paket A&lt;/h3&gt;
+    &lt;p class="shj-pakete-card__price"&gt;&lt;span class="shj-sr-only"&gt;Preis: &lt;/span&gt;[PLATZHALTER: Preis]&lt;/p&gt;
+    &lt;dl class="shj-pakete-card__facts"&gt;
+      &lt;div&gt;&lt;dt&gt;Anzeigenproduktion&lt;/dt&gt;&lt;dd&gt;&lt;span class="shj-icon shj-icon--check" aria-hidden="true"&gt;&lt;/span&gt;&lt;span class="shj-sr-only"&gt;ja&lt;/span&gt;&lt;/dd&gt;&lt;/div&gt;
+      &lt;div&gt;&lt;dt&gt;Aktive Social-Media-Ausspielung&lt;/dt&gt;&lt;dd&gt;[PLATZHALTER: Dauer]&lt;/dd&gt;&lt;/div&gt;
+    &lt;/dl&gt;
+    &lt;a class="shj-btn shj-btn--primary shj-btn--arrow" href="#"&gt;Paket ansehen&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class="shj-pakete-card"&gt;
+    &lt;h3 class="shj-pakete-card__name"&gt;Paket B&lt;/h3&gt;
+    &lt;p class="shj-pakete-card__price"&gt;&lt;span class="shj-sr-only"&gt;Preis: &lt;/span&gt;[PLATZHALTER: Preis]&lt;/p&gt;
+    &lt;dl class="shj-pakete-card__facts"&gt;
+      &lt;div&gt;&lt;dt&gt;Anzeigenproduktion&lt;/dt&gt;&lt;dd&gt;&lt;span class="shj-icon shj-icon--check" aria-hidden="true"&gt;&lt;/span&gt;&lt;span class="shj-sr-only"&gt;ja&lt;/span&gt;&lt;/dd&gt;&lt;/div&gt;
+      &lt;div&gt;&lt;dt&gt;Aktive Social-Media-Ausspielung&lt;/dt&gt;&lt;dd&gt;[PLATZHALTER: Dauer]&lt;/dd&gt;&lt;/div&gt;
+    &lt;/dl&gt;
+    &lt;a class="shj-btn shj-btn--primary shj-btn--arrow" href="#"&gt;Paket ansehen&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-jobcard" aria-labelledby="b-jobcard-t">
+  <h3 class="shj-h3" id="b-jobcard-t">Job-Karte</h3>
+  <p>Eintrag einer Stellenliste, immer hell, ganze Karte klickbar. Ohne Bild neutraler Platzhalter.</p>
+<div class="shj-grid shj-grid--2">
+<div class="shj-section shj-section--dark shj-section--compact">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Near Black</p>
+    <div>
+<article class="shj-card shj-jobcard" aria-labelledby="stelle-1">
+  <div class="shj-jobcard__thumb" aria-hidden="true"></div>
+  <div class="shj-card__body">
+    <h3 class="shj-card__title" id="stelle-1"><a class="shj-card__link" href="#">Servicekraft (m/w/d)</a></h3>
+    <p class="shj-card__meta">[PLATZHALTER: Betrieb]</p>
+    <p class="shj-jobcard__where"><span class="shj-icon shj-icon--pin" aria-hidden="true"></span><span>[PLATZHALTER: PLZ Ort, Bundesland]</span></p>
+    <ul class="shj-chips" aria-label="Merkmale">
+      <li class="shj-chip"><span class="shj-icon shj-icon--briefcase" aria-hidden="true"></span>Service</li>
+      <li class="shj-chip"><span class="shj-icon shj-icon--clock" aria-hidden="true"></span>[PLATZHALTER: Umfang]</li>
+    </ul>
+    <p class="shj-card__footer shj-small shj-muted">online seit [PLATZHALTER: Datum]</p>
+  </div>
+</article>
+    </div>
+  </div>
+</div>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<article class="shj-card shj-jobcard" aria-labelledby="stelle-1-hell">
+  <div class="shj-jobcard__thumb" aria-hidden="true"></div>
+  <div class="shj-card__body">
+    <h3 class="shj-card__title" id="stelle-1-hell"><a class="shj-card__link" href="#">Servicekraft (m/w/d)</a></h3>
+    <p class="shj-card__meta">[PLATZHALTER: Betrieb]</p>
+    <p class="shj-jobcard__where"><span class="shj-icon shj-icon--pin" aria-hidden="true"></span><span>[PLATZHALTER: PLZ Ort, Bundesland]</span></p>
+    <ul class="shj-chips" aria-label="Merkmale">
+      <li class="shj-chip"><span class="shj-icon shj-icon--briefcase" aria-hidden="true"></span>Service</li>
+      <li class="shj-chip"><span class="shj-icon shj-icon--clock" aria-hidden="true"></span>[PLATZHALTER: Umfang]</li>
+    </ul>
+    <p class="shj-card__footer shj-small shj-muted">online seit [PLATZHALTER: Datum]</p>
+  </div>
+</article>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="shj-codeblock" data-snippet="jobcard"><code>&lt;article class="shj-card shj-jobcard" aria-labelledby="stelle-1"&gt;
+  &lt;div class="shj-jobcard__thumb" aria-hidden="true"&gt;&lt;/div&gt;
+  &lt;div class="shj-card__body"&gt;
+    &lt;h3 class="shj-card__title" id="stelle-1"&gt;&lt;a class="shj-card__link" href="#"&gt;Servicekraft (m/w/d)&lt;/a&gt;&lt;/h3&gt;
+    &lt;p class="shj-card__meta"&gt;[PLATZHALTER: Betrieb]&lt;/p&gt;
+    &lt;p class="shj-jobcard__where"&gt;&lt;span class="shj-icon shj-icon--pin" aria-hidden="true"&gt;&lt;/span&gt;&lt;span&gt;[PLATZHALTER: PLZ Ort, Bundesland]&lt;/span&gt;&lt;/p&gt;
+    &lt;ul class="shj-chips" aria-label="Merkmale"&gt;
+      &lt;li class="shj-chip"&gt;&lt;span class="shj-icon shj-icon--briefcase" aria-hidden="true"&gt;&lt;/span&gt;Service&lt;/li&gt;
+      &lt;li class="shj-chip"&gt;&lt;span class="shj-icon shj-icon--clock" aria-hidden="true"&gt;&lt;/span&gt;[PLATZHALTER: Umfang]&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p class="shj-card__footer shj-small shj-muted"&gt;online seit [PLATZHALTER: Datum]&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-jobcard-img" aria-labelledby="b-jobcard-img-t">
+  <h3 class="shj-h3" id="b-jobcard-img-t">Job-Karte mit Stellenbild</h3>
+  <p>Vorschau 4 : 5 mit EU-KI-Icon rechts unten. Foto und Icon sind nicht im Paket: gestrichelte Platzhalter.</p>
+<div class="shj-grid shj-grid--2">
+<div class="shj-section shj-section--dark shj-section--compact">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Near Black</p>
+    <div>
+<article class="shj-card shj-jobcard" aria-labelledby="stelle-2">
+  <div class="shj-jobcard__thumb">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 200'%3E%3Crect x='1' y='1' width='158' height='198' fill='white' stroke='black' stroke-width='2' stroke-dasharray='6 4'/%3E%3Ctext x='50%25' y='55%25' font-family='sans-serif' font-size='28' text-anchor='middle'%3EFoto%3C/text%3E%3C/svg%3E" alt="[PLATZHALTER: Bildbeschreibung]. KI-Bildmotiv." width="1080" height="1350" loading="lazy" decoding="async">
+    <img class="shj-jobcard__ai" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Crect x='1' y='1' width='58' height='58' fill='white' stroke='black' stroke-width='2' stroke-dasharray='6 4'/%3E%3Ctext x='50%25' y='55%25' font-family='sans-serif' font-size='13' text-anchor='middle'%3EIcon%3C/text%3E%3C/svg%3E" alt="" width="2363" height="2364">
+  </div>
+  <div class="shj-card__body">
+    <h3 class="shj-card__title" id="stelle-2"><a class="shj-card__link" href="#">Technik (m/w/d)</a></h3>
+    <p class="shj-card__meta">[PLATZHALTER: Betrieb]</p>
+    <p class="shj-jobcard__where"><span class="shj-icon shj-icon--pin" aria-hidden="true"></span><span>[PLATZHALTER: PLZ Ort, Bundesland]</span></p>
+  </div>
+</article>
+    </div>
+  </div>
+</div>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<article class="shj-card shj-jobcard" aria-labelledby="stelle-2-hell">
+  <div class="shj-jobcard__thumb">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 200'%3E%3Crect x='1' y='1' width='158' height='198' fill='white' stroke='black' stroke-width='2' stroke-dasharray='6 4'/%3E%3Ctext x='50%25' y='55%25' font-family='sans-serif' font-size='28' text-anchor='middle'%3EFoto%3C/text%3E%3C/svg%3E" alt="[PLATZHALTER: Bildbeschreibung]. KI-Bildmotiv." width="1080" height="1350" loading="lazy" decoding="async">
+    <img class="shj-jobcard__ai" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Crect x='1' y='1' width='58' height='58' fill='white' stroke='black' stroke-width='2' stroke-dasharray='6 4'/%3E%3Ctext x='50%25' y='55%25' font-family='sans-serif' font-size='13' text-anchor='middle'%3EIcon%3C/text%3E%3C/svg%3E" alt="" width="2363" height="2364">
+  </div>
+  <div class="shj-card__body">
+    <h3 class="shj-card__title" id="stelle-2-hell"><a class="shj-card__link" href="#">Technik (m/w/d)</a></h3>
+    <p class="shj-card__meta">[PLATZHALTER: Betrieb]</p>
+    <p class="shj-jobcard__where"><span class="shj-icon shj-icon--pin" aria-hidden="true"></span><span>[PLATZHALTER: PLZ Ort, Bundesland]</span></p>
+  </div>
+</article>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="shj-codeblock" data-snippet="jobcard-img"><code>&lt;article class="shj-card shj-jobcard" aria-labelledby="stelle-2"&gt;
+  &lt;div class="shj-jobcard__thumb"&gt;
+    &lt;img src="bilder/stelle-beispiel.webp" alt="[PLATZHALTER: Bildbeschreibung]. KI-Bildmotiv." width="1080" height="1350" loading="lazy" decoding="async"&gt;
+    &lt;img class="shj-jobcard__ai" src="bilder/eu-ki-label-ai.png" alt="" width="2363" height="2364"&gt;
+  &lt;/div&gt;
+  &lt;div class="shj-card__body"&gt;
+    &lt;h3 class="shj-card__title" id="stelle-2"&gt;&lt;a class="shj-card__link" href="#"&gt;Technik (m/w/d)&lt;/a&gt;&lt;/h3&gt;
+    &lt;p class="shj-card__meta"&gt;[PLATZHALTER: Betrieb]&lt;/p&gt;
+    &lt;p class="shj-jobcard__where"&gt;&lt;span class="shj-icon shj-icon--pin" aria-hidden="true"&gt;&lt;/span&gt;&lt;span&gt;[PLATZHALTER: PLZ Ort, Bundesland]&lt;/span&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-facts" aria-labelledby="b-facts-t">
+  <h3 class="shj-h3" id="b-facts-t">Faktenliste</h3>
+  <p>Bezeichnung und Wert, ab 30 rem nebeneinander.</p>
+<div class="shj-grid shj-grid--2">
+<div class="shj-section shj-section--dark shj-section--compact">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Near Black</p>
+    <div>
+<dl class="shj-facts">
+  <div class="shj-facts__row"><dt>Filiale</dt><dd>Filiale E</dd></div>
+  <div class="shj-facts__row"><dt>Kampagne</dt><dd>Servicekraft (m/w/d)</dd></div>
+  <div class="shj-facts__row"><dt>Kennung</dt><dd><code class="shj-code">kampagne-e</code></dd></div>
+</dl>
+    </div>
+  </div>
+</div>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<dl class="shj-facts">
+  <div class="shj-facts__row"><dt>Filiale</dt><dd>Filiale E</dd></div>
+  <div class="shj-facts__row"><dt>Kampagne</dt><dd>Servicekraft (m/w/d)</dd></div>
+  <div class="shj-facts__row"><dt>Kennung</dt><dd><code class="shj-code">kampagne-e</code></dd></div>
+</dl>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="shj-codeblock" data-snippet="facts"><code>&lt;dl class="shj-facts"&gt;
+  &lt;div class="shj-facts__row"&gt;&lt;dt&gt;Filiale&lt;/dt&gt;&lt;dd&gt;Filiale E&lt;/dd&gt;&lt;/div&gt;
+  &lt;div class="shj-facts__row"&gt;&lt;dt&gt;Kampagne&lt;/dt&gt;&lt;dd&gt;Servicekraft (m/w/d)&lt;/dd&gt;&lt;/div&gt;
+  &lt;div class="shj-facts__row"&gt;&lt;dt&gt;Kennung&lt;/dt&gt;&lt;dd&gt;&lt;code class="shj-code"&gt;kampagne-e&lt;/code&gt;&lt;/dd&gt;&lt;/div&gt;
+&lt;/dl&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-toc" aria-labelledby="b-toc-t">
+  <h3 class="shj-h3" id="b-toc-t">Inhaltsübersicht</h3>
+  <p>Karte mit Kante oben für lange Seiten.</p>
+<div class="shj-grid shj-grid--2">
+<div class="shj-section shj-section--dark shj-section--compact">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Near Black</p>
+    <div>
+<nav class="shj-card shj-card--static shj-toc" aria-labelledby="inhalt-titel">
+  <p class="shj-toc__title" id="inhalt-titel">Inhalt</p>
+  <ol class="shj-list shj-toc__list">
+    <li><a href="#">Erster Abschnitt</a></li>
+    <li><a href="#">Zweiter Abschnitt</a></li>
+    <li><a href="#">Dritter Abschnitt</a></li>
+  </ol>
+</nav>
+    </div>
+  </div>
+</div>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<nav class="shj-card shj-card--static shj-toc" aria-labelledby="inhalt-titel-hell">
+  <p class="shj-toc__title" id="inhalt-titel-hell">Inhalt</p>
+  <ol class="shj-list shj-toc__list">
+    <li><a href="#">Erster Abschnitt</a></li>
+    <li><a href="#">Zweiter Abschnitt</a></li>
+    <li><a href="#">Dritter Abschnitt</a></li>
+  </ol>
+</nav>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="shj-codeblock" data-snippet="toc"><code>&lt;nav class="shj-card shj-card--static shj-toc" aria-labelledby="inhalt-titel"&gt;
+  &lt;p class="shj-toc__title" id="inhalt-titel"&gt;Inhalt&lt;/p&gt;
+  &lt;ol class="shj-list shj-toc__list"&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Erster Abschnitt&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Zweiter Abschnitt&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Dritter Abschnitt&lt;/a&gt;&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/nav&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-toc-details" aria-labelledby="b-toc-details-t">
+  <h3 class="shj-h3" id="b-toc-details-t">Inhaltsübersicht aufklappbar</h3>
+  <p>Als details, ohne JavaScript bedienbar.</p>
+<div class="shj-grid shj-grid--2">
+<div class="shj-section shj-section--dark shj-section--compact">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Near Black</p>
+    <div>
+<details class="shj-card shj-card--static shj-toc">
+  <summary class="shj-toc__summary shj-toc__title">Inhalt</summary>
+  <ol class="shj-list shj-toc__list">
+    <li><a href="#">Erster Abschnitt</a></li>
+    <li><a href="#">Zweiter Abschnitt</a></li>
+  </ol>
+</details>
+    </div>
+  </div>
+</div>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<details class="shj-card shj-card--static shj-toc">
+  <summary class="shj-toc__summary shj-toc__title">Inhalt</summary>
+  <ol class="shj-list shj-toc__list">
+    <li><a href="#">Erster Abschnitt</a></li>
+    <li><a href="#">Zweiter Abschnitt</a></li>
+  </ol>
+</details>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="shj-codeblock" data-snippet="toc-details"><code>&lt;details class="shj-card shj-card--static shj-toc"&gt;
+  &lt;summary class="shj-toc__summary shj-toc__title"&gt;Inhalt&lt;/summary&gt;
+  &lt;ol class="shj-list shj-toc__list"&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Erster Abschnitt&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Zweiter Abschnitt&lt;/a&gt;&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/details&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-card-split" aria-labelledby="b-card-split-t">
+  <h3 class="shj-h3" id="b-card-split-t">Karten-Fuß mit Button</h3>
+  <p>Trennlinie, links eine Angabe, rechts ein Button (in der klickbaren Karte nur Optik).</p>
+<div class="shj-grid shj-grid--2">
+<div class="shj-section shj-section--dark shj-section--compact">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Near Black</p>
+    <div>
+<article class="shj-card" aria-labelledby="artikel-titel">
+  <div class="shj-card__body">
+    <h3 class="shj-card__title" id="artikel-titel"><a class="shj-card__link" href="#">Titel des Artikels</a></h3>
+    <p>Kurzer Anrisstext.</p>
+    <p class="shj-card__footer shj-card__footer--split">
+      <span class="shj-small shj-muted">Stand [PLATZHALTER: Monat Jahr]</span>
+      <span class="shj-btn shj-btn--primary shj-btn--arrow shj-btn--sm">Weiterlesen</span>
+    </p>
+  </div>
+</article>
+    </div>
+  </div>
+</div>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<article class="shj-card" aria-labelledby="artikel-titel-hell">
+  <div class="shj-card__body">
+    <h3 class="shj-card__title" id="artikel-titel-hell"><a class="shj-card__link" href="#">Titel des Artikels</a></h3>
+    <p>Kurzer Anrisstext.</p>
+    <p class="shj-card__footer shj-card__footer--split">
+      <span class="shj-small shj-muted">Stand [PLATZHALTER: Monat Jahr]</span>
+      <span class="shj-btn shj-btn--primary shj-btn--arrow shj-btn--sm">Weiterlesen</span>
+    </p>
+  </div>
+</article>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="shj-codeblock" data-snippet="card-split"><code>&lt;article class="shj-card" aria-labelledby="artikel-titel"&gt;
+  &lt;div class="shj-card__body"&gt;
+    &lt;h3 class="shj-card__title" id="artikel-titel"&gt;&lt;a class="shj-card__link" href="#"&gt;Titel des Artikels&lt;/a&gt;&lt;/h3&gt;
+    &lt;p&gt;Kurzer Anrisstext.&lt;/p&gt;
+    &lt;p class="shj-card__footer shj-card__footer--split"&gt;
+      &lt;span class="shj-small shj-muted"&gt;Stand [PLATZHALTER: Monat Jahr]&lt;/span&gt;
+      &lt;span class="shj-btn shj-btn--primary shj-btn--arrow shj-btn--sm"&gt;Weiterlesen&lt;/span&gt;
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-choices" aria-labelledby="b-choices-t">
+  <h3 class="shj-h3" id="b-choices-t">Auswahl als Kacheln</h3>
+  <p>Radios oder Checkboxen als Kacheln, ab 44 rem zweispaltig.</p>
+<div class="shj-grid shj-grid--2">
+<div class="shj-section shj-section--dark shj-section--compact">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Near Black</p>
+    <div>
+<fieldset class="shj-fieldset">
+  <legend>Paket</legend>
+  <div class="shj-choices shj-choices--tiles">
+    <label class="shj-check"><input type="radio" name="paket" value="a" checked> <span>Paket A</span></label>
+    <label class="shj-check"><input type="radio" name="paket" value="b"> <span>Paket B</span></label>
+  </div>
+</fieldset>
+    </div>
+  </div>
+</div>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<fieldset class="shj-fieldset">
+  <legend>Paket</legend>
+  <div class="shj-choices shj-choices--tiles">
+    <label class="shj-check"><input type="radio" name="paket-hell" value="a" checked> <span>Paket A</span></label>
+    <label class="shj-check"><input type="radio" name="paket-hell" value="b"> <span>Paket B</span></label>
+  </div>
+</fieldset>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="shj-codeblock" data-snippet="choices"><code>&lt;fieldset class="shj-fieldset"&gt;
+  &lt;legend&gt;Paket&lt;/legend&gt;
+  &lt;div class="shj-choices shj-choices--tiles"&gt;
+    &lt;label class="shj-check"&gt;&lt;input type="radio" name="paket" value="a" checked&gt; &lt;span&gt;Paket A&lt;/span&gt;&lt;/label&gt;
+    &lt;label class="shj-check"&gt;&lt;input type="radio" name="paket" value="b"&gt; &lt;span&gt;Paket B&lt;/span&gt;&lt;/label&gt;
+  &lt;/div&gt;
+&lt;/fieldset&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-progress" aria-labelledby="b-progress-t">
+  <h3 class="shj-h3" id="b-progress-t">Fortschritt</h3>
+  <p>Formularstrecke als Ablauf-Kette ab 56 rem; die Textzeile gilt auf allen Breiten.</p>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<div class="shj-stack">
+  <p class="shj-eyebrow" aria-live="polite">Schritt 2 von 3</p>
+  <ol class="shj-progress" aria-hidden="true">
+    <li class="shj-chain__step"><span class="shj-chain__who"><span class="shj-ring shj-ring--sm"><span class="shj-icon shj-icon--check"></span></span><span class="shj-chain__name">Briefing</span></span></li>
+    <li class="shj-chain__step shj-chain__step--current"><span class="shj-chain__who"><span class="shj-ring shj-ring--sm">2</span><span class="shj-chain__name">Kampagne</span></span></li>
+    <li class="shj-chain__step shj-chain__step--pending"><span class="shj-chain__who"><span class="shj-ring shj-ring--sm">3</span><span class="shj-chain__name">Auswertung</span></span></li>
+  </ol>
+</div>
+    </div>
+  </div>
+</div>
+  <pre class="shj-codeblock" data-snippet="progress"><code>&lt;div class="shj-stack"&gt;
+  &lt;p class="shj-eyebrow" aria-live="polite"&gt;Schritt 2 von 3&lt;/p&gt;
+  &lt;ol class="shj-progress" aria-hidden="true"&gt;
+    &lt;li class="shj-chain__step"&gt;&lt;span class="shj-chain__who"&gt;&lt;span class="shj-ring shj-ring--sm"&gt;&lt;span class="shj-icon shj-icon--check"&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="shj-chain__name"&gt;Briefing&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li class="shj-chain__step shj-chain__step--current"&gt;&lt;span class="shj-chain__who"&gt;&lt;span class="shj-ring shj-ring--sm"&gt;2&lt;/span&gt;&lt;span class="shj-chain__name"&gt;Kampagne&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li class="shj-chain__step shj-chain__step--pending"&gt;&lt;span class="shj-chain__who"&gt;&lt;span class="shj-ring shj-ring--sm"&gt;3&lt;/span&gt;&lt;span class="shj-chain__name"&gt;Auswertung&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-copy" aria-labelledby="b-copy-t">
+  <h3 class="shj-h3" id="b-copy-t">Kopierfeld</h3>
+  <p>Schreibgeschütztes Textfeld mit Kopier-Button.</p>
+<div class="shj-grid shj-grid--2">
+<div class="shj-section shj-section--dark shj-section--compact">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Near Black</p>
+    <div>
+<div class="shj-field shj-copy">
+  <label class="shj-label" for="kopie-text">Text</label>
+  <textarea class="shj-input" id="kopie-text" readonly rows="6">Text zum Kopieren.</textarea>
+  <div class="shj-cluster">
+    <button class="shj-btn shj-btn--primary shj-btn--sm" type="button">Text kopieren</button>
+    <span class="shj-small" aria-live="polite"></span>
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<div class="shj-field shj-copy">
+  <label class="shj-label" for="kopie-text-hell">Text</label>
+  <textarea class="shj-input" id="kopie-text-hell" readonly rows="6">Text zum Kopieren.</textarea>
+  <div class="shj-cluster">
+    <button class="shj-btn shj-btn--primary shj-btn--sm" type="button">Text kopieren</button>
+    <span class="shj-small" aria-live="polite"></span>
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="shj-codeblock" data-snippet="copy"><code>&lt;div class="shj-field shj-copy"&gt;
+  &lt;label class="shj-label" for="kopie-text"&gt;Text&lt;/label&gt;
+  &lt;textarea class="shj-input" id="kopie-text" readonly rows="6"&gt;Text zum Kopieren.&lt;/textarea&gt;
+  &lt;div class="shj-cluster"&gt;
+    &lt;button class="shj-btn shj-btn--primary shj-btn--sm" type="button"&gt;Text kopieren&lt;/button&gt;
+    &lt;span class="shj-small" aria-live="polite"&gt;&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-viewswitch" aria-labelledby="b-viewswitch-t">
+  <h3 class="shj-h3" id="b-viewswitch-t">Ansichtsschalter</h3>
+  <p>Ein Schalter, ein Symbol je Ansicht, aktive Ansicht gefüllt.</p>
+<div class="shj-grid shj-grid--2">
+<div class="shj-section shj-section--dark shj-section--compact">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Near Black</p>
+    <div>
+<nav class="shj-viewswitch" aria-label="Ansicht">
+  <a class="shj-viewswitch__option" href="#" title="Liste" aria-current="page"><span class="shj-viewswitch__icon shj-viewswitch__icon--list" aria-hidden="true"></span><span class="shj-sr-only">Liste</span></a>
+  <a class="shj-viewswitch__option" href="#" title="Kacheln"><span class="shj-viewswitch__icon shj-viewswitch__icon--tiles" aria-hidden="true"></span><span class="shj-sr-only">Kacheln</span></a>
+</nav>
+    </div>
+  </div>
+</div>
+<div class="shj-section shj-section--white shj-section--compact shj-section--keyline">
+  <div class="shj-container shj-stack">
+    <p class="shj-eyebrow">Auf Weiß</p>
+    <div>
+<nav class="shj-viewswitch" aria-label="Ansicht">
+  <a class="shj-viewswitch__option" href="#" title="Liste" aria-current="page"><span class="shj-viewswitch__icon shj-viewswitch__icon--list" aria-hidden="true"></span><span class="shj-sr-only">Liste</span></a>
+  <a class="shj-viewswitch__option" href="#" title="Kacheln"><span class="shj-viewswitch__icon shj-viewswitch__icon--tiles" aria-hidden="true"></span><span class="shj-sr-only">Kacheln</span></a>
+</nav>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="shj-codeblock" data-snippet="viewswitch"><code>&lt;nav class="shj-viewswitch" aria-label="Ansicht"&gt;
+  &lt;a class="shj-viewswitch__option" href="#" title="Liste" aria-current="page"&gt;&lt;span class="shj-viewswitch__icon shj-viewswitch__icon--list" aria-hidden="true"&gt;&lt;/span&gt;&lt;span class="shj-sr-only"&gt;Liste&lt;/span&gt;&lt;/a&gt;
+  &lt;a class="shj-viewswitch__option" href="#" title="Kacheln"&gt;&lt;span class="shj-viewswitch__icon shj-viewswitch__icon--tiles" aria-hidden="true"&gt;&lt;/span&gt;&lt;span class="shj-sr-only"&gt;Kacheln&lt;/span&gt;&lt;/a&gt;
+&lt;/nav&gt;</code></pre>
+</article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= App-Bausteine: diese Fläche ist selbst ein App-Rahmen ================= -->
+    <div class="shj-app shj-page" id="app">
+      <div class="shj-app__main">
+
+        <section class="shj-section shj-section--white shj-section--keyline" aria-labelledby="t-app">
+          <div class="shj-container">
+            <div class="shj-section-head">
+              <h2 class="shj-section-head__title" id="t-app">App-Bausteine.</h2>
+              <p class="shj-section-head__subtitle">Apps sind immer hell. Diese Bausteine gibt es für weiße Flächen.</p>
+            </div>
+            <div class="shj-grid">
+<article class="shj-stack" id="b-app-shell" aria-labelledby="b-app-shell-t">
+  <h3 class="shj-h3" id="b-app-shell-t">App-Rahmen</h3>
+  <p>Grundgerüst jeder Web-App: hell, volle Höhe, Footer unten. Nur als Code gezeigt; diese Musterseite selbst ist der Rahmen für die App-Beispiele.</p>
+  <pre class="shj-codeblock" data-snippet="app-shell"><code>&lt;body class="shj"&gt;
+  &lt;a class="shj-skip-link" href="#inhalt"&gt;Zum Inhalt springen&lt;/a&gt;
+  &lt;div class="shj-app"&gt;
+    &lt;header class="shj-app-header"&gt;…&lt;/header&gt;
+    &lt;main class="shj-app__main" id="inhalt"&gt;
+      &lt;section class="shj-section"&gt;…&lt;/section&gt;
+    &lt;/main&gt;
+    &lt;footer class="shj-footer"&gt;…&lt;/footer&gt;
+  &lt;/div&gt;
+&lt;/body&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-app-header" aria-labelledby="b-app-header-t">
+  <h3 class="shj-h3" id="b-app-header-t">App-Kopf</h3>
+  <p>Petrol mit Logo Weiß/Schwarz. Ab 56 rem Logo, Titel und Aktionen in einer Zeile, darunter die Kennzahlen auf weißen Kacheln.</p>
+<div>
+<header class="shj-app-header">
+  <div class="shj-container">
+    <div class="shj-app-header__bar">
+      <img class="shj-logo" src="assets/logo/spielhallen-jobs-logo-schwarz-weiss.png" alt="Logo Spielhallen-Jobs.de" width="1920" height="768">
+      <div>
+        <p class="shj-eyebrow">Spielhallen-Jobs.de · App</p>
+        <h1 class="shj-app-header__title">Kampagnen.</h1>
+        <p class="shj-app-header__lead">Ihre Kampagnen und eingegangenen Bewerbungen auf einen Blick.</p>
+      </div>
+      <div class="shj-app-header__aside">
+        <span class="shj-badge shj-badge--accent">Beispieldaten</span>
+        <a class="shj-btn shj-btn--sm" href="#">Zur Übersicht</a>
+        <p class="shj-app-header__updated">Zuletzt aktualisiert: <span class="shj-num">10:24</span></p>
+      </div>
+    </div>
+    <dl class="shj-kpis">
+      <div class="shj-kpi">
+        <dt class="shj-kpi__label">Laufende Kampagnen</dt>
+        <dd class="shj-kpi__value">3</dd>
+      </div>
+      <div class="shj-kpi shj-kpi--attention">
+        <dt class="shj-kpi__label">Entwurf wartet auf Ihre Freigabe</dt>
+        <dd class="shj-kpi__value">1</dd>
+      </div>
+    </dl>
+  </div>
+</header>
+</div>
+  <pre class="shj-codeblock" data-snippet="app-header"><code>&lt;header class="shj-app-header"&gt;
+  &lt;div class="shj-container"&gt;
+    &lt;div class="shj-app-header__bar"&gt;
+      &lt;img class="shj-logo" src="assets/logo/spielhallen-jobs-logo-schwarz-weiss.png" alt="Logo Spielhallen-Jobs.de" width="1920" height="768"&gt;
+      &lt;div&gt;
+        &lt;p class="shj-eyebrow"&gt;Spielhallen-Jobs.de · App&lt;/p&gt;
+        &lt;h1 class="shj-app-header__title"&gt;Kampagnen.&lt;/h1&gt;
+        &lt;p class="shj-app-header__lead"&gt;Ihre Kampagnen und eingegangenen Bewerbungen auf einen Blick.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class="shj-app-header__aside"&gt;
+        &lt;span class="shj-badge shj-badge--accent"&gt;Beispieldaten&lt;/span&gt;
+        &lt;a class="shj-btn shj-btn--sm" href="#"&gt;Zur Übersicht&lt;/a&gt;
+        &lt;p class="shj-app-header__updated"&gt;Zuletzt aktualisiert: &lt;span class="shj-num"&gt;10:24&lt;/span&gt;&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;dl class="shj-kpis"&gt;
+      &lt;div class="shj-kpi"&gt;
+        &lt;dt class="shj-kpi__label"&gt;Laufende Kampagnen&lt;/dt&gt;
+        &lt;dd class="shj-kpi__value"&gt;3&lt;/dd&gt;
+      &lt;/div&gt;
+      &lt;div class="shj-kpi shj-kpi--attention"&gt;
+        &lt;dt class="shj-kpi__label"&gt;Entwurf wartet auf Ihre Freigabe&lt;/dt&gt;
+        &lt;dd class="shj-kpi__value"&gt;1&lt;/dd&gt;
+      &lt;/div&gt;
+    &lt;/dl&gt;
+  &lt;/div&gt;
+&lt;/header&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-kpi" aria-labelledby="b-kpi-t">
+  <h3 class="shj-h3" id="b-kpi-t">Kennzahl-Kacheln</h3>
+  <p>Wert in Petrol (groß), Aufmerksamkeit in Orange gefüllt.</p>
+<div>
+<dl class="shj-kpis">
+  <div class="shj-kpi">
+    <dt class="shj-kpi__label">Laufende Kampagnen</dt>
+    <dd class="shj-kpi__value">3</dd>
+  </div>
+  <div class="shj-kpi shj-kpi--attention">
+    <dt class="shj-kpi__label">Entwurf wartet auf Ihre Freigabe</dt>
+    <dd class="shj-kpi__value">1</dd>
+  </div>
+  <div class="shj-kpi">
+    <dt class="shj-kpi__label">Bewerbungen eingegangen</dt>
+    <dd class="shj-kpi__value">12</dd>
+  </div>
+  <div class="shj-kpi">
+    <dt class="shj-kpi__label">Betrag (Beispiel)</dt>
+    <dd class="shj-kpi__value">1.234&nbsp;€</dd>
+  </div>
+</dl>
+</div>
+  <pre class="shj-codeblock" data-snippet="kpi"><code>&lt;dl class="shj-kpis"&gt;
+  &lt;div class="shj-kpi"&gt;
+    &lt;dt class="shj-kpi__label"&gt;Laufende Kampagnen&lt;/dt&gt;
+    &lt;dd class="shj-kpi__value"&gt;3&lt;/dd&gt;
+  &lt;/div&gt;
+  &lt;div class="shj-kpi shj-kpi--attention"&gt;
+    &lt;dt class="shj-kpi__label"&gt;Entwurf wartet auf Ihre Freigabe&lt;/dt&gt;
+    &lt;dd class="shj-kpi__value"&gt;1&lt;/dd&gt;
+  &lt;/div&gt;
+  &lt;div class="shj-kpi"&gt;
+    &lt;dt class="shj-kpi__label"&gt;Bewerbungen eingegangen&lt;/dt&gt;
+    &lt;dd class="shj-kpi__value"&gt;12&lt;/dd&gt;
+  &lt;/div&gt;
+  &lt;div class="shj-kpi"&gt;
+    &lt;dt class="shj-kpi__label"&gt;Betrag (Beispiel)&lt;/dt&gt;
+    &lt;dd class="shj-kpi__value"&gt;1.234&amp;nbsp;€&lt;/dd&gt;
+  &lt;/div&gt;
+&lt;/dl&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-status" aria-labelledby="b-status-t">
+  <h3 class="shj-h3" id="b-status-t">Status-Pills</h3>
+  <p>Acht feste Zustände, immer Icon und Text.</p>
+<div>
+<ul class="shj-cluster" aria-label="Zustände">
+  <li><span class="shj-status shj-status--active">Aktiv</span></li>
+  <li><span class="shj-status shj-status--free">Frei</span></li>
+  <li><span class="shj-status shj-status--waiting">Wartet</span></li>
+  <li><span class="shj-status shj-status--unclear">Unklar</span></li>
+  <li><span class="shj-status shj-status--error">Fehler</span></li>
+  <li><span class="shj-status shj-status--cancelled">Abgebrochen</span></li>
+  <li><span class="shj-status shj-status--done">Erledigt</span></li>
+  <li><span class="shj-status shj-status--returning">Liefert zurück</span></li>
+</ul>
+</div>
+  <pre class="shj-codeblock" data-snippet="status"><code>&lt;ul class="shj-cluster" aria-label="Zustände"&gt;
+  &lt;li&gt;&lt;span class="shj-status shj-status--active"&gt;Aktiv&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;span class="shj-status shj-status--free"&gt;Frei&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;span class="shj-status shj-status--waiting"&gt;Wartet&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;span class="shj-status shj-status--unclear"&gt;Unklar&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;span class="shj-status shj-status--error"&gt;Fehler&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;span class="shj-status shj-status--cancelled"&gt;Abgebrochen&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;span class="shj-status shj-status--done"&gt;Erledigt&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;span class="shj-status shj-status--returning"&gt;Liefert zurück&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-tile" aria-labelledby="b-tile-t">
+  <h3 class="shj-h3" id="b-tile-t">Kacheln</h3>
+  <p>Objekt- oder Personenkarte (hier: Kampagnen je Filiale), optional als Filter-Schalter.</p>
+<div>
+<ul class="shj-grid shj-grid--3">
+  <li>
+    <div class="shj-tile shj-tile--featured">
+      <span class="shj-avatar" aria-hidden="true">ÜB</span>
+      <div class="shj-tile__body">
+        <p class="shj-tile__name">Übersicht</p>
+        <p class="shj-tile__role">Alle Kampagnen</p>
+        <span class="shj-status shj-status--active">Aktiv</span>
+        <p class="shj-tile__task">Zwei Kampagnen laufen</p>
+      </div>
+    </div>
+  </li>
+  <li>
+    <button class="shj-tile shj-tile--active" type="button" aria-pressed="true">
+      <span class="shj-avatar" aria-hidden="true">FA</span>
+      <span class="shj-tile__body">
+        <span class="shj-tile__name">Filiale A</span>
+        <span class="shj-status shj-status--active">Kampagne läuft</span>
+        <span class="shj-tile__task">Servicekraft (m/w/d)</span>
+        <span class="shj-tile__time">läuft seit 4 Tagen</span>
+      </span>
+    </button>
+  </li>
+  <li>
+    <button class="shj-tile shj-tile--attention" type="button" aria-pressed="false">
+      <span class="shj-avatar" aria-hidden="true">FB</span>
+      <span class="shj-tile__body">
+        <span class="shj-tile__name">Filiale B</span>
+        <span class="shj-status shj-status--waiting">Wartet</span>
+        <span class="shj-tile__task">Entwurf wartet auf Ihre Freigabe</span>
+      </span>
+    </button>
+  </li>
+  <li>
+    <button class="shj-tile shj-tile--muted" type="button" aria-pressed="false">
+      <span class="shj-avatar" aria-hidden="true">FC</span>
+      <span class="shj-tile__body">
+        <span class="shj-tile__name">Filiale C</span>
+        <span class="shj-status shj-status--free">Frei</span>
+        <span class="shj-tile__task">Bereit für das nächste Briefing</span>
+      </span>
+    </button>
+  </li>
+  <li>
+    <button class="shj-tile shj-tile--unclear" type="button" aria-pressed="false">
+      <span class="shj-avatar" aria-hidden="true">FD</span>
+      <span class="shj-tile__body">
+        <span class="shj-tile__name">Filiale D</span>
+        <span class="shj-status shj-status--unclear">Unklar</span>
+        <span class="shj-tile__time">Keine Rückmeldung zum Briefing seit 3 Tagen</span>
+      </span>
+    </button>
+  </li>
+</ul>
+</div>
+  <pre class="shj-codeblock" data-snippet="tile"><code>&lt;ul class="shj-grid shj-grid--3"&gt;
+  &lt;li&gt;
+    &lt;div class="shj-tile shj-tile--featured"&gt;
+      &lt;span class="shj-avatar" aria-hidden="true"&gt;ÜB&lt;/span&gt;
+      &lt;div class="shj-tile__body"&gt;
+        &lt;p class="shj-tile__name"&gt;Übersicht&lt;/p&gt;
+        &lt;p class="shj-tile__role"&gt;Alle Kampagnen&lt;/p&gt;
+        &lt;span class="shj-status shj-status--active"&gt;Aktiv&lt;/span&gt;
+        &lt;p class="shj-tile__task"&gt;Zwei Kampagnen laufen&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;button class="shj-tile shj-tile--active" type="button" aria-pressed="true"&gt;
+      &lt;span class="shj-avatar" aria-hidden="true"&gt;FA&lt;/span&gt;
+      &lt;span class="shj-tile__body"&gt;
+        &lt;span class="shj-tile__name"&gt;Filiale A&lt;/span&gt;
+        &lt;span class="shj-status shj-status--active"&gt;Kampagne läuft&lt;/span&gt;
+        &lt;span class="shj-tile__task"&gt;Servicekraft (m/w/d)&lt;/span&gt;
+        &lt;span class="shj-tile__time"&gt;läuft seit 4 Tagen&lt;/span&gt;
+      &lt;/span&gt;
+    &lt;/button&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;button class="shj-tile shj-tile--attention" type="button" aria-pressed="false"&gt;
+      &lt;span class="shj-avatar" aria-hidden="true"&gt;FB&lt;/span&gt;
+      &lt;span class="shj-tile__body"&gt;
+        &lt;span class="shj-tile__name"&gt;Filiale B&lt;/span&gt;
+        &lt;span class="shj-status shj-status--waiting"&gt;Wartet&lt;/span&gt;
+        &lt;span class="shj-tile__task"&gt;Entwurf wartet auf Ihre Freigabe&lt;/span&gt;
+      &lt;/span&gt;
+    &lt;/button&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;button class="shj-tile shj-tile--muted" type="button" aria-pressed="false"&gt;
+      &lt;span class="shj-avatar" aria-hidden="true"&gt;FC&lt;/span&gt;
+      &lt;span class="shj-tile__body"&gt;
+        &lt;span class="shj-tile__name"&gt;Filiale C&lt;/span&gt;
+        &lt;span class="shj-status shj-status--free"&gt;Frei&lt;/span&gt;
+        &lt;span class="shj-tile__task"&gt;Bereit für das nächste Briefing&lt;/span&gt;
+      &lt;/span&gt;
+    &lt;/button&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;button class="shj-tile shj-tile--unclear" type="button" aria-pressed="false"&gt;
+      &lt;span class="shj-avatar" aria-hidden="true"&gt;FD&lt;/span&gt;
+      &lt;span class="shj-tile__body"&gt;
+        &lt;span class="shj-tile__name"&gt;Filiale D&lt;/span&gt;
+        &lt;span class="shj-status shj-status--unclear"&gt;Unklar&lt;/span&gt;
+        &lt;span class="shj-tile__time"&gt;Keine Rückmeldung zum Briefing seit 3 Tagen&lt;/span&gt;
+      &lt;/span&gt;
+    &lt;/button&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-chain" aria-labelledby="b-chain-t">
+  <h3 class="shj-h3" id="b-chain-t">Ablauf-Kette</h3>
+  <p>Wo steht ein Vorgang? Hier: Briefing → Kampagne → Auswertung. Aktueller Schritt mit Petrol-Rand.</p>
+<div>
+<ol class="shj-chain" aria-label="Ablauf">
+  <li class="shj-chain__step">
+    <span class="shj-status shj-status--done">Erledigt</span>
+    <span class="shj-chain__who"><span class="shj-avatar shj-avatar--sm" aria-hidden="true">IB</span><span class="shj-chain__name">Ihr Betrieb</span></span>
+    <span class="shj-chain__text">Briefing: Daten zur Stelle geliefert</span>
+    <span class="shj-chain__time">abgeschlossen</span>
+  </li>
+  <li class="shj-chain__step shj-chain__step--current" aria-current="step">
+    <span class="shj-status shj-status--active">Läuft</span>
+    <span class="shj-chain__who"><span class="shj-avatar shj-avatar--sm" aria-hidden="true">SJ</span><span class="shj-chain__name">Spielhallen-Jobs.de</span></span>
+    <span class="shj-chain__text">Kampagne: Anzeige wird ausgespielt</span>
+    <span class="shj-chain__time">läuft seit 4 Tagen</span>
+  </li>
+  <li class="shj-chain__step shj-chain__step--pending">
+    <span class="shj-status shj-status--free">Offen</span>
+    <span class="shj-chain__who"><span class="shj-avatar shj-avatar--sm" aria-hidden="true">SJ</span><span class="shj-chain__name">Spielhallen-Jobs.de</span></span>
+    <span class="shj-chain__text">Auswertung</span>
+  </li>
+</ol>
+</div>
+  <pre class="shj-codeblock" data-snippet="chain"><code>&lt;ol class="shj-chain" aria-label="Ablauf"&gt;
+  &lt;li class="shj-chain__step"&gt;
+    &lt;span class="shj-status shj-status--done"&gt;Erledigt&lt;/span&gt;
+    &lt;span class="shj-chain__who"&gt;&lt;span class="shj-avatar shj-avatar--sm" aria-hidden="true"&gt;IB&lt;/span&gt;&lt;span class="shj-chain__name"&gt;Ihr Betrieb&lt;/span&gt;&lt;/span&gt;
+    &lt;span class="shj-chain__text"&gt;Briefing: Daten zur Stelle geliefert&lt;/span&gt;
+    &lt;span class="shj-chain__time"&gt;abgeschlossen&lt;/span&gt;
+  &lt;/li&gt;
+  &lt;li class="shj-chain__step shj-chain__step--current" aria-current="step"&gt;
+    &lt;span class="shj-status shj-status--active"&gt;Läuft&lt;/span&gt;
+    &lt;span class="shj-chain__who"&gt;&lt;span class="shj-avatar shj-avatar--sm" aria-hidden="true"&gt;SJ&lt;/span&gt;&lt;span class="shj-chain__name"&gt;Spielhallen-Jobs.de&lt;/span&gt;&lt;/span&gt;
+    &lt;span class="shj-chain__text"&gt;Kampagne: Anzeige wird ausgespielt&lt;/span&gt;
+    &lt;span class="shj-chain__time"&gt;läuft seit 4 Tagen&lt;/span&gt;
+  &lt;/li&gt;
+  &lt;li class="shj-chain__step shj-chain__step--pending"&gt;
+    &lt;span class="shj-status shj-status--free"&gt;Offen&lt;/span&gt;
+    &lt;span class="shj-chain__who"&gt;&lt;span class="shj-avatar shj-avatar--sm" aria-hidden="true"&gt;SJ&lt;/span&gt;&lt;span class="shj-chain__name"&gt;Spielhallen-Jobs.de&lt;/span&gt;&lt;/span&gt;
+    &lt;span class="shj-chain__text"&gt;Auswertung&lt;/span&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-timeline" aria-labelledby="b-timeline-t">
+  <h3 class="shj-h3" id="b-timeline-t">Zeitleiste</h3>
+  <p>Verlauf, neueste oben.</p>
+<div>
+<ol class="shj-timeline">
+  <li class="shj-timeline__item shj-timeline__item--active">
+    <div class="shj-timeline__card">
+      <time class="shj-timeline__time" datetime="2026-10-26T10:24">10:24</time>
+      <p class="shj-timeline__title">Spielhallen-Jobs.de <span class="shj-timeline__arrow" aria-hidden="true">→</span><span class="shj-sr-only">an</span> Ihr Betrieb</p>
+      <p class="shj-timeline__text">Kampagne Filiale A gestartet</p>
+      <p class="shj-timeline__meta"><span class="shj-status shj-status--active">Läuft</span></p>
+    </div>
+  </li>
+  <li class="shj-timeline__item shj-timeline__item--attention">
+    <div class="shj-timeline__card">
+      <time class="shj-timeline__time" datetime="2026-10-26T10:12">10:12</time>
+      <p class="shj-timeline__title">Spielhallen-Jobs.de <span class="shj-timeline__arrow" aria-hidden="true">→</span><span class="shj-sr-only">an</span> Ihr Betrieb</p>
+      <p class="shj-timeline__text">Briefing unvollständig: Angaben zur Stelle fehlen</p>
+      <p class="shj-timeline__meta"><span class="shj-status shj-status--error">Fehler</span></p>
+    </div>
+  </li>
+  <li class="shj-timeline__item shj-timeline__item--unclear">
+    <div class="shj-timeline__card">
+      <time class="shj-timeline__time" datetime="2026-10-26T10:05">10:05</time>
+      <p class="shj-timeline__title">Spielhallen-Jobs.de <span class="shj-timeline__arrow" aria-hidden="true">→</span><span class="shj-sr-only">an</span> Ihr Betrieb</p>
+      <p class="shj-timeline__text">Entwurf zur Freigabe gesendet, noch keine Rückmeldung</p>
+      <p class="shj-timeline__meta"><span class="shj-status shj-status--unclear">Unklar</span></p>
+    </div>
+  </li>
+  <li class="shj-timeline__item shj-timeline__item--highlight">
+    <div class="shj-timeline__card">
+      <time class="shj-timeline__time" datetime="2026-10-26T09:58">09:58</time>
+      <p class="shj-timeline__title">Spielhallen-Jobs.de <span class="shj-timeline__arrow" aria-hidden="true">→</span><span class="shj-sr-only">an</span> Ihr Betrieb</p>
+      <p class="shj-timeline__text">Bewerbung per E-Mail weitergeleitet</p>
+      <p class="shj-timeline__meta"><span class="shj-status shj-status--done">Erledigt</span></p>
+    </div>
+  </li>
+</ol>
+</div>
+  <pre class="shj-codeblock" data-snippet="timeline"><code>&lt;ol class="shj-timeline"&gt;
+  &lt;li class="shj-timeline__item shj-timeline__item--active"&gt;
+    &lt;div class="shj-timeline__card"&gt;
+      &lt;time class="shj-timeline__time" datetime="2026-10-26T10:24"&gt;10:24&lt;/time&gt;
+      &lt;p class="shj-timeline__title"&gt;Spielhallen-Jobs.de &lt;span class="shj-timeline__arrow" aria-hidden="true"&gt;→&lt;/span&gt;&lt;span class="shj-sr-only"&gt;an&lt;/span&gt; Ihr Betrieb&lt;/p&gt;
+      &lt;p class="shj-timeline__text"&gt;Kampagne Filiale A gestartet&lt;/p&gt;
+      &lt;p class="shj-timeline__meta"&gt;&lt;span class="shj-status shj-status--active"&gt;Läuft&lt;/span&gt;&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class="shj-timeline__item shj-timeline__item--attention"&gt;
+    &lt;div class="shj-timeline__card"&gt;
+      &lt;time class="shj-timeline__time" datetime="2026-10-26T10:12"&gt;10:12&lt;/time&gt;
+      &lt;p class="shj-timeline__title"&gt;Spielhallen-Jobs.de &lt;span class="shj-timeline__arrow" aria-hidden="true"&gt;→&lt;/span&gt;&lt;span class="shj-sr-only"&gt;an&lt;/span&gt; Ihr Betrieb&lt;/p&gt;
+      &lt;p class="shj-timeline__text"&gt;Briefing unvollständig: Angaben zur Stelle fehlen&lt;/p&gt;
+      &lt;p class="shj-timeline__meta"&gt;&lt;span class="shj-status shj-status--error"&gt;Fehler&lt;/span&gt;&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class="shj-timeline__item shj-timeline__item--unclear"&gt;
+    &lt;div class="shj-timeline__card"&gt;
+      &lt;time class="shj-timeline__time" datetime="2026-10-26T10:05"&gt;10:05&lt;/time&gt;
+      &lt;p class="shj-timeline__title"&gt;Spielhallen-Jobs.de &lt;span class="shj-timeline__arrow" aria-hidden="true"&gt;→&lt;/span&gt;&lt;span class="shj-sr-only"&gt;an&lt;/span&gt; Ihr Betrieb&lt;/p&gt;
+      &lt;p class="shj-timeline__text"&gt;Entwurf zur Freigabe gesendet, noch keine Rückmeldung&lt;/p&gt;
+      &lt;p class="shj-timeline__meta"&gt;&lt;span class="shj-status shj-status--unclear"&gt;Unklar&lt;/span&gt;&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class="shj-timeline__item shj-timeline__item--highlight"&gt;
+    &lt;div class="shj-timeline__card"&gt;
+      &lt;time class="shj-timeline__time" datetime="2026-10-26T09:58"&gt;09:58&lt;/time&gt;
+      &lt;p class="shj-timeline__title"&gt;Spielhallen-Jobs.de &lt;span class="shj-timeline__arrow" aria-hidden="true"&gt;→&lt;/span&gt;&lt;span class="shj-sr-only"&gt;an&lt;/span&gt; Ihr Betrieb&lt;/p&gt;
+      &lt;p class="shj-timeline__text"&gt;Bewerbung per E-Mail weitergeleitet&lt;/p&gt;
+      &lt;p class="shj-timeline__meta"&gt;&lt;span class="shj-status shj-status--done"&gt;Erledigt&lt;/span&gt;&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-empty" aria-labelledby="b-empty-t">
+  <h3 class="shj-h3" id="b-empty-t">Leerzustand</h3>
+  <p>Ruhiger Hinweis, wenn es nichts anzuzeigen gibt.</p>
+<div>
+<p class="shj-empty" role="status">Noch keine Bewerbungen eingegangen. Sobald eine eingeht, erscheint sie hier.</p>
+</div>
+  <pre class="shj-codeblock" data-snippet="empty"><code>&lt;p class="shj-empty" role="status"&gt;Noch keine Bewerbungen eingegangen. Sobald eine eingeht, erscheint sie hier.&lt;/p&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-filterbar" aria-labelledby="b-filterbar-t">
+  <h3 class="shj-h3" id="b-filterbar-t">Filterzeile</h3>
+  <p>Zeigt einen aktiven Filter mit Aktionen.</p>
+<div>
+<div class="shj-stack shj-stack--center">
+  <div class="shj-filterbar">
+    <p role="status">Im Verlauf hervorgehoben: Kampagne Filiale A (2 Einträge)</p>
+    <div class="shj-cluster shj-cluster--center">
+      <a class="shj-btn shj-btn--sm" href="#">Zum Verlauf</a>
+      <button class="shj-btn shj-btn--sm" type="button">Filter aufheben</button>
+    </div>
+  </div>
+</div>
+</div>
+  <pre class="shj-codeblock" data-snippet="filterbar"><code>&lt;div class="shj-stack shj-stack--center"&gt;
+  &lt;div class="shj-filterbar"&gt;
+    &lt;p role="status"&gt;Im Verlauf hervorgehoben: Kampagne Filiale A (2 Einträge)&lt;/p&gt;
+    &lt;div class="shj-cluster shj-cluster--center"&gt;
+      &lt;a class="shj-btn shj-btn--sm" href="#"&gt;Zum Verlauf&lt;/a&gt;
+      &lt;button class="shj-btn shj-btn--sm" type="button"&gt;Filter aufheben&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-table" aria-labelledby="b-table-t">
+  <h3 class="shj-h3" id="b-table-t">Tabelle</h3>
+  <p>Zahlen rechtsbündig, Status als Pill.</p>
+<div>
+<div class="shj-table-wrap" role="region" aria-labelledby="beispiel-tabelle-titel" tabindex="0">
+  <table class="shj-table">
+    <caption id="beispiel-tabelle-titel">Kampagnen (Beispieldaten)</caption>
+    <thead>
+      <tr>
+        <th scope="col">Kampagne</th>
+        <th scope="col">Status</th>
+        <th scope="col" class="shj-table__num">Betrag (Beispiel)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Filiale A</td>
+        <td><span class="shj-status shj-status--done">Erledigt</span></td>
+        <td class="shj-table__num">1.234,50&nbsp;€</td>
+      </tr>
+      <tr>
+        <td>Filiale B</td>
+        <td><span class="shj-status shj-status--waiting">Wartet</span></td>
+        <td class="shj-table__num">89,00&nbsp;€</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+  <pre class="shj-codeblock" data-snippet="table"><code>&lt;div class="shj-table-wrap" role="region" aria-labelledby="beispiel-tabelle-titel" tabindex="0"&gt;
+  &lt;table class="shj-table"&gt;
+    &lt;caption id="beispiel-tabelle-titel"&gt;Kampagnen (Beispieldaten)&lt;/caption&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th scope="col"&gt;Kampagne&lt;/th&gt;
+        &lt;th scope="col"&gt;Status&lt;/th&gt;
+        &lt;th scope="col" class="shj-table__num"&gt;Betrag (Beispiel)&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Filiale A&lt;/td&gt;
+        &lt;td&gt;&lt;span class="shj-status shj-status--done"&gt;Erledigt&lt;/span&gt;&lt;/td&gt;
+        &lt;td class="shj-table__num"&gt;1.234,50&amp;nbsp;€&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Filiale B&lt;/td&gt;
+        &lt;td&gt;&lt;span class="shj-status shj-status--waiting"&gt;Wartet&lt;/span&gt;&lt;/td&gt;
+        &lt;td class="shj-table__num"&gt;89,00&amp;nbsp;€&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-tabs" aria-labelledby="b-tabs-t">
+  <h3 class="shj-h3" id="b-tabs-t">Tabs</h3>
+  <p>Ohne JavaScript als Links.</p>
+<div>
+<nav class="shj-tabs" aria-label="Ansichten">
+  <a class="shj-tabs__tab" href="#" aria-current="page">Kampagnen</a>
+  <a class="shj-tabs__tab" href="#">Bewerbungen</a>
+  <a class="shj-tabs__tab" href="#">Einstellungen</a>
+</nav>
+<div class="shj-tabs__panel">
+  <p>Inhalt der gewählten Ansicht.</p>
+</div>
+</div>
+  <pre class="shj-codeblock" data-snippet="tabs"><code>&lt;nav class="shj-tabs" aria-label="Ansichten"&gt;
+  &lt;a class="shj-tabs__tab" href="#" aria-current="page"&gt;Kampagnen&lt;/a&gt;
+  &lt;a class="shj-tabs__tab" href="#"&gt;Bewerbungen&lt;/a&gt;
+  &lt;a class="shj-tabs__tab" href="#"&gt;Einstellungen&lt;/a&gt;
+&lt;/nav&gt;
+&lt;div class="shj-tabs__panel"&gt;
+  &lt;p&gt;Inhalt der gewählten Ansicht.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-tabs-aria" aria-labelledby="b-tabs-aria-t">
+  <h3 class="shj-h3" id="b-tabs-aria-t">Tabs mit JavaScript</h3>
+  <p>ARIA-Tabs-Muster. Nur als Code gezeigt.</p>
+  <pre class="shj-codeblock" data-snippet="tabs-aria"><code>&lt;div class="shj-tabs" role="tablist" aria-label="Ansichten"&gt;
+  &lt;button class="shj-tabs__tab" type="button" role="tab" id="tab-1" aria-selected="true" aria-controls="panel-1"&gt;Kampagnen&lt;/button&gt;
+  &lt;button class="shj-tabs__tab" type="button" role="tab" id="tab-2" aria-selected="false" aria-controls="panel-2" tabindex="-1"&gt;Bewerbungen&lt;/button&gt;
+&lt;/div&gt;
+&lt;div class="shj-tabs__panel" role="tabpanel" id="panel-1" aria-labelledby="tab-1" tabindex="0"&gt;…&lt;/div&gt;
+&lt;div class="shj-tabs__panel" role="tabpanel" id="panel-2" aria-labelledby="tab-2" tabindex="0" hidden&gt;…&lt;/div&gt;</code></pre>
+</article>
+            </div>
+          </div>
+        </section>
+
+        <section class="shj-section shj-section--white shj-section--keyline" id="chat" aria-labelledby="t-chat">
+          <div class="shj-container">
+            <div class="shj-section-head">
+              <h2 class="shj-section-head__title" id="t-chat">Chat.</h2>
+              <p class="shj-section-head__subtitle">Nachrichten, Freigabe-Abfrage, Eingabeleiste.</p>
+            </div>
+            <div class="shj-grid">
+<article class="shj-stack" id="b-chat" aria-labelledby="b-chat-t">
+  <h3 class="shj-h3" id="b-chat-t">Chat</h3>
+  <p>Nachricht der Person rechts in Slate, Assistent links in Weiß, Systemhinweise mittig. Freigabe-Abfragen nutzen die Hinweisbox.</p>
+<div>
+<section class="shj-chat" aria-label="Chat">
+  <ol class="shj-chat__log" role="log">
+    <li class="shj-chat__msg shj-chat__msg--system">
+      <p>Heute · <time datetime="2026-10-26T10:20">10:20</time></p>
+    </li>
+    <li class="shj-chat__msg shj-chat__msg--user">
+      <div class="shj-chat__bubble">
+        <p class="shj-chat__author">Sie</p>
+        <p>Nachricht der Person, die den Chat bedient.</p>
+        <p class="shj-chat__meta"><time datetime="2026-10-26T10:21">10:21</time></p>
+      </div>
+    </li>
+    <li class="shj-chat__msg shj-chat__msg--assistant">
+      <span class="shj-avatar shj-avatar--sm" aria-hidden="true">KI</span>
+      <div class="shj-chat__bubble">
+        <p class="shj-chat__author">Assistent</p>
+        <p>Antwort des Assistenten. Längere Antworten brechen sauber um.</p>
+        <p class="shj-chat__meta"><time datetime="2026-10-26T10:21">10:21</time></p>
+      </div>
+    </li>
+    <li class="shj-chat__msg shj-chat__msg--system">
+      <div class="shj-note">
+        <p class="shj-note__title">Freigabe erforderlich</p>
+        <p>Der Assistent möchte eine Aktion ausführen, die Ihre Zustimmung braucht.</p>
+        <div class="shj-cluster">
+          <button class="shj-btn shj-btn--accent shj-btn--sm" type="button">Freigeben</button>
+          <button class="shj-btn shj-btn--sm" type="button">Ablehnen</button>
+        </div>
+      </div>
+    </li>
+    <li class="shj-chat__msg shj-chat__msg--assistant">
+      <p class="shj-chat__typing">Assistent schreibt</p>
+    </li>
+  </ol>
+</section>
+</div>
+  <pre class="shj-codeblock" data-snippet="chat"><code>&lt;section class="shj-chat" aria-label="Chat"&gt;
+  &lt;ol class="shj-chat__log" role="log"&gt;
+    &lt;li class="shj-chat__msg shj-chat__msg--system"&gt;
+      &lt;p&gt;Heute · &lt;time datetime="2026-10-26T10:20"&gt;10:20&lt;/time&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li class="shj-chat__msg shj-chat__msg--user"&gt;
+      &lt;div class="shj-chat__bubble"&gt;
+        &lt;p class="shj-chat__author"&gt;Sie&lt;/p&gt;
+        &lt;p&gt;Nachricht der Person, die den Chat bedient.&lt;/p&gt;
+        &lt;p class="shj-chat__meta"&gt;&lt;time datetime="2026-10-26T10:21"&gt;10:21&lt;/time&gt;&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li class="shj-chat__msg shj-chat__msg--assistant"&gt;
+      &lt;span class="shj-avatar shj-avatar--sm" aria-hidden="true"&gt;KI&lt;/span&gt;
+      &lt;div class="shj-chat__bubble"&gt;
+        &lt;p class="shj-chat__author"&gt;Assistent&lt;/p&gt;
+        &lt;p&gt;Antwort des Assistenten. Längere Antworten brechen sauber um.&lt;/p&gt;
+        &lt;p class="shj-chat__meta"&gt;&lt;time datetime="2026-10-26T10:21"&gt;10:21&lt;/time&gt;&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li class="shj-chat__msg shj-chat__msg--system"&gt;
+      &lt;div class="shj-note"&gt;
+        &lt;p class="shj-note__title"&gt;Freigabe erforderlich&lt;/p&gt;
+        &lt;p&gt;Der Assistent möchte eine Aktion ausführen, die Ihre Zustimmung braucht.&lt;/p&gt;
+        &lt;div class="shj-cluster"&gt;
+          &lt;button class="shj-btn shj-btn--accent shj-btn--sm" type="button"&gt;Freigeben&lt;/button&gt;
+          &lt;button class="shj-btn shj-btn--sm" type="button"&gt;Ablehnen&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li class="shj-chat__msg shj-chat__msg--assistant"&gt;
+      &lt;p class="shj-chat__typing"&gt;Assistent schreibt&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/section&gt;</code></pre>
+</article>
+<article class="shj-stack" id="b-composer" aria-labelledby="b-composer-t">
+  <h3 class="shj-h3" id="b-composer-t">Eingabeleiste</h3>
+  <p>Anhang, Eingabe, Senden.</p>
+<div>
+<form class="shj-composer" action="#">
+  <button class="shj-btn shj-btn--icon" type="button">
+    <span class="shj-icon shj-icon--attach" aria-hidden="true"></span>
+    <span class="shj-sr-only">Datei anhängen</span>
+  </button>
+  <label class="shj-sr-only" for="beispiel-chat-eingabe">Nachricht</label>
+  <textarea class="shj-composer__input" id="beispiel-chat-eingabe" name="nachricht" rows="1" placeholder="Nachricht schreiben …"></textarea>
+  <button class="shj-btn shj-btn--primary shj-btn--icon" type="submit">
+    <span class="shj-icon shj-icon--send" aria-hidden="true"></span>
+    <span class="shj-sr-only">Senden</span>
+  </button>
+</form>
+</div>
+  <pre class="shj-codeblock" data-snippet="composer"><code>&lt;form class="shj-composer" action="#"&gt;
+  &lt;button class="shj-btn shj-btn--icon" type="button"&gt;
+    &lt;span class="shj-icon shj-icon--attach" aria-hidden="true"&gt;&lt;/span&gt;
+    &lt;span class="shj-sr-only"&gt;Datei anhängen&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;label class="shj-sr-only" for="beispiel-chat-eingabe"&gt;Nachricht&lt;/label&gt;
+  &lt;textarea class="shj-composer__input" id="beispiel-chat-eingabe" name="nachricht" rows="1" placeholder="Nachricht schreiben …"&gt;&lt;/textarea&gt;
+  &lt;button class="shj-btn shj-btn--primary shj-btn--icon" type="submit"&gt;
+    &lt;span class="shj-icon shj-icon--send" aria-hidden="true"&gt;&lt;/span&gt;
+    &lt;span class="shj-sr-only"&gt;Senden&lt;/span&gt;
+  &lt;/button&gt;
+&lt;/form&gt;</code></pre>
+</article>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="shj-footer">
+    <div class="shj-container">
+      <img class="shj-logo" src="assets/logo/spielhallen-jobs-logo-schwarz-petrol.png" alt="Logo Spielhallen-Jobs.de" width="1920" height="768">
+      <p>Spielhallen-Jobs.de · Web-Template 1.1.0 · Stand 10.11.2026</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Brands – Agenten-Team – zwei&amp;40</title>
+
+  <!--
+    Brands-Übersicht des Agenten-Teams · Marke zwei&40 (Skill marke-zwei40, Abschnitte 7a und 7b)
+    Daten kommen ausschließlich aus zwei Dateien in _Wissen/Brand Packs/ (Pflege: Assistenz Anja):
+    brands-daten.js (eigene Brands, window.PORTAL_BRANDS) und brands-kunden.js (Kunden-Brands,
+    window.PORTAL_BRANDS_KUNDEN). Keine Brand steht fest im HTML.
+    Pfade in der Datendatei sind relativ zu „Dev PW“; die Seite stellt "../" voran und kodiert jedes
+    Pfadsegment mit encodeURIComponent (läuft per Doppelklick über file:// und über einen lokalen
+    Server mit Wurzel „Dev PW“).
+    Gestaltung: Web-Template zwei&40 (css/z40.css, relativ eingebunden). Klassen: Web-Template/README.md.
+    Vorführmodus (portal/vorfuehrung.js): brands-kunden.js wird gar nicht erst geladen, die Sektion
+    „Kunden-Brands.“ wird aus dem DOM entfernt. Steht versehentlich ein Eintrag mit gruppe "kunde" in
+    brands-daten.js, wird auch er nicht gerendert.
+    Keine externen Requests, kein Framework. Schrift: Nunito Sans aus dem Template (selbst gehostet).
+  -->
+
+  <link rel="stylesheet" href="../_Wissen/Brand%20Packs/zwei%2640/Web-Template/css/z40.css">
+
+  <!-- Vorführmodus: früh und ohne defer laden, damit geschützte Inhalte nicht aufblitzen (setzt eine Klasse auf <html>) -->
+  <script src="portal/vorfuehrung.js"></script>
+
+  <style>
+    /* Seitenblock Portal-Navigation (auf allen Portalseiten identisch): Abstand zwischen der
+       Navigation oben im Kopf und dem Inhalt darunter. Kandidat fürs Web-Template. */
+    .z40 .portal-nav { margin-bottom: var(--z40-space-6); }
+    /* Der App-Kopf (Kommandozentrale) hat oben weniger Innenabstand als der Seitenkopf:
+       ausgleichen, damit die Navigation auf allen Seiten an derselben Stelle steht. */
+    .z40 .z40-app-header .portal-nav { margin-top: calc(var(--z40-space-7) - var(--z40-space-6)); }
+    @media (min-width: 44rem) {
+      .z40 .z40-app-header .portal-nav { margin-top: calc(var(--z40-space-8) - var(--z40-space-6)); }
+    }
+
+    /* Seitenblock Vorführmodus (auf allen Portalseiten identisch, Logik in portal/vorfuehrung.js):
+       Anzeige „Vorführmodus an“ in der Navigation senkrecht mittig zu den Pills. Geschützte Bereiche
+       (data-vorfuehrung="entfernen") bleiben bis zu ihrem Entfernen aus dem DOM unsichtbar, damit
+       nichts aufblitzt. Kandidat fürs Web-Template (Zustandsanzeige neben z40-nav). */
+    .z40 .portal-nav__anzeige { display: flex; align-items: center; }
+    .portal-vorfuehrung-an [data-vorfuehrung="entfernen"] { display: none !important; }
+
+    /* Seitenblock Logo-Fläche der Brand-Boxen: Fremdlogos stehen unverändert (nicht verzerrt, nicht
+       beschnitten, ohne Schatten und Filter) auf Weiß oder Anthrazit, je nach logoGrund in der
+       Datendatei. z40-media passt nicht: Petrol-Grund und object-fit: cover würden Logos beschneiden.
+       Kandidat fürs Web-Template. */
+    .z40 .brand-logo {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      min-height: calc(var(--z40-logo) + 2 * var(--z40-space-5));
+      margin-bottom: var(--z40-space-5);
+      border: 1px solid var(--z40-line-muted);
+      border-radius: var(--z40-radius-media);
+      background: var(--z40-white);
+    }
+
+    .z40 .brand-logo--dunkel { background: var(--z40-anthracite); }
+
+    .z40 .brand-logo > img {
+      position: absolute;
+      inset: var(--z40-space-5);
+      width: calc(100% - 2 * var(--z40-space-5));
+      height: calc(100% - 2 * var(--z40-space-5));
+      max-width: none;
+      object-fit: contain;
+      filter: none;
+    }
+
+    /* Logo-Datei nicht gefunden (z. B. im Web-Template umbenannt): sichtbarer Hinweis statt kaputtem Bild */
+    .z40 .brand-logo__fehlt {
+      position: absolute;
+      inset: var(--z40-space-5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--z40-anthracite);
+      font-size: var(--z40-fs-sm);
+      font-weight: var(--z40-fw-semibold);
+    }
+
+    .z40 .brand-logo--dunkel .brand-logo__fehlt { color: var(--z40-white); }
+  </style>
+</head>
+
+<body class="z40">
+
+  <a class="z40-skip-link" href="#inhalt">Zum Inhalt springen</a>
+
+  <header class="z40-hero">
+    <div class="z40-container">
+      <!-- Portal-Navigation: auf allen Seiten identisch, nur aria-current wechselt -->
+      <nav class="portal-nav" aria-label="Portal">
+        <ul class="z40-nav">
+          <li><a class="z40-btn z40-btn--sm" href="index.html">Start</a></li>
+          <li><a class="z40-btn z40-btn--sm" href="agenten-team.html">Team</a></li>
+          <li><a class="z40-btn z40-btn--sm" href="leitstand.html">Kommandozentrale</a></li>
+          <li><a class="z40-btn z40-btn--sm" href="brands.html" aria-current="page">Brands</a></li>
+          <li><a class="z40-btn z40-btn--sm" href="design-generator.html">Design-Generator</a></li>
+          <li><button class="z40-btn z40-btn--sm" type="button" aria-pressed="false" data-vorfuehrung-schalter><span class="z40-icon z40-icon--circle" aria-hidden="true"></span>Vorführmodus</button></li>
+          <li class="portal-nav__anzeige" data-vorfuehrung-anzeige hidden><span class="z40-badge z40-badge--outline">Vorführmodus an</span></li>
+        </ul>
+      </nav>
+
+      <!-- Logo: Weiß-Variante für dunklen Hintergrund, Original aus dem Brand Pack (relativer Pfad, URL-kodiert) -->
+      <img class="z40-logo"
+           src="../_Wissen/Brand%20Packs/zwei%2640/Logo/zweiund40_Logo_wei%C3%9F_500x500.png"
+           alt="Logo zwei&amp;40" width="496" height="496">
+      <p class="z40-eyebrow">zwei&amp;40 · intern</p>
+      <h1 class="z40-hero__title">Unsere Brands.</h1>
+      <p class="z40-hero__lead">Alle Marken mit Web-Template auf einen Blick. Ein Klick auf eine Box öffnet die Musterseite in einem neuen Tab.</p>
+    </div>
+  </header>
+
+  <main id="inhalt">
+
+    <!-- ================= Eigene Brands (gruppe: "eigen") ================= -->
+    <section class="z40-section z40-section--dark" aria-labelledby="titel-eigen">
+      <div class="z40-container">
+        <div class="z40-section-head">
+          <h2 class="z40-section-head__title" id="titel-eigen">Eigene Brands.</h2>
+        </div>
+        <p class="z40-empty" id="daten-fehler" hidden>Die Datendatei brands-daten.js wurde nicht gefunden oder enthält keine Liste.</p>
+        <ul class="z40-grid z40-grid--3" id="liste-eigen" hidden></ul>
+        <p class="z40-empty" id="leer-eigen" hidden>Noch keine eigenen Brands angelegt.</p>
+      </div>
+    </section>
+
+    <!-- ================= Kunden-Brands (gruppe: "kunde"), entfällt im Vorführmodus ================= -->
+    <section class="z40-section z40-section--light" id="sektion-kunde" aria-labelledby="titel-kunde" data-vorfuehrung="entfernen">
+      <div class="z40-container">
+        <div class="z40-section-head">
+          <h2 class="z40-section-head__title" id="titel-kunde">Kunden-Brands.</h2>
+        </div>
+        <ul class="z40-grid z40-grid--3" id="liste-kunde" hidden></ul>
+        <p class="z40-empty" id="leer-kunde" hidden>Noch keine Kunden-Brands angelegt.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="z40-footer">
+    <div class="z40-container">
+      <p>zwei&amp;40 GmbH · Agenten-Team · Interne Übersicht</p>
+    </div>
+  </footer>
+
+  <!-- Daten: eigene Brands. Die Kunden-Brands (brands-kunden.js) lädt das Skript unten nur außerhalb
+       des Vorführmodus nach. Beide Dateien liegen bewusst außerhalb von Git. -->
+  <script src="../_Wissen/Brand%20Packs/brands-daten.js"></script>
+
+  <script>
+  "use strict";
+
+  (function () {
+    var brands = Array.isArray(window.PORTAL_BRANDS) ? window.PORTAL_BRANDS : null;
+    var vorfuehrung = Boolean(window.PortalVorfuehrung && window.PortalVorfuehrung.an);
+
+    /* Vorführmodus: Kunden-Sektion entfernen, versehentliche Kunden-Einträge aus der eigenen Datei verwerfen */
+    if (vorfuehrung) {
+      var kundenSektion = document.getElementById("sektion-kunde");
+      if (kundenSektion) kundenSektion.remove();
+      if (brands) {
+        brands = brands.filter(function (b) { return b && b.gruppe === "eigen"; });
+        window.PORTAL_BRANDS = brands;
+      }
+    }
+
+    if (!brands) {
+      document.getElementById("daten-fehler").hidden = false;
+      return;
+    }
+
+    /* Pfad relativ zu „Dev PW“ → Pfad relativ zu dieser Seite, jedes Segment kodiert */
+    function pfad(p) {
+      return "../" + String(p).split("/").map(encodeURIComponent).join("/");
+    }
+
+    function element(tag, klasse, text) {
+      var e = document.createElement(tag);
+      if (klasse) e.className = klasse;
+      if (text !== undefined && text !== null) e.textContent = String(text);
+      return e;
+    }
+
+    function box(b, titelId) {
+      var hatMuster = typeof b.muster === "string" && b.muster !== "";
+
+      var li = document.createElement("li");
+      var karte = element("article", hatMuster ? "z40-card" : "z40-card z40-card--static");
+      karte.setAttribute("aria-labelledby", titelId);
+
+      /* Logo-Fläche: Hintergrund nach logoGrund (nur "dunkel" ergibt Anthrazit, sonst Weiß) */
+      if (typeof b.logo === "string" && b.logo !== "") {
+        var flaeche = element("div", b.logoGrund === "dunkel" ? "brand-logo brand-logo--dunkel" : "brand-logo");
+        var bild = document.createElement("img");
+        bild.src = pfad(b.logo);
+        bild.alt = b.logoAlt ? String(b.logoAlt) : "";
+        bild.decoding = "async";
+        bild.onerror = function () {
+          bild.remove();
+          flaeche.appendChild(element("p", "brand-logo__fehlt",
+            "Logo nicht gefunden – Pfad in den Brands-Daten prüfen (portal/brands-pruefen.py)"));
+        };
+        flaeche.appendChild(bild);
+        karte.appendChild(flaeche);
+      }
+
+      var inhalt = element("div", "z40-card__body");
+
+      var titel = element("h3", "z40-card__title", b.name);
+      titel.id = titelId;
+      inhalt.appendChild(titel);
+
+      if (b.hinweis) inhalt.appendChild(element("p", null, b.hinweis));
+
+      if (Array.isArray(b.merkmale) && b.merkmale.length) {
+        var merkmale = element("ul", "z40-cluster");
+        merkmale.setAttribute("aria-label", "Merkmale");
+        b.merkmale.forEach(function (m) {
+          var punkt = document.createElement("li");
+          punkt.appendChild(element("span", "z40-badge", m));
+          merkmale.appendChild(punkt);
+        });
+        inhalt.appendChild(merkmale);
+      }
+
+      if (b.stand) inhalt.appendChild(element("p", "z40-small z40-muted", "Web-Template " + b.stand));
+
+      if (hatMuster) {
+        var fuss = element("p", "z40-card__footer");
+        var link = element("a", "z40-card__link", "Musterseite öffnen");
+        link.href = pfad(b.muster);
+        link.target = "_blank";
+        link.rel = "noopener";
+        link.appendChild(element("span", "z40-sr-only", ": " + b.name + " (öffnet in neuem Tab)"));
+        fuss.appendChild(link);
+        inhalt.appendChild(fuss);
+      } else {
+        inhalt.appendChild(element("p", "z40-card__footer z40-muted", "Noch kein Web-Template"));
+      }
+
+      karte.appendChild(inhalt);
+      li.appendChild(karte);
+      return li;
+    }
+
+    function fuelle(gruppe, eintraege) {
+      var liste = document.getElementById("liste-" + gruppe);
+      var leer = document.getElementById("leer-" + gruppe);
+
+      eintraege.forEach(function (b, i) {
+        liste.appendChild(box(b, "brand-" + gruppe + "-" + i));
+      });
+
+      liste.hidden = eintraege.length === 0;
+      leer.hidden = eintraege.length !== 0;
+    }
+
+    fuelle("eigen", brands.filter(function (b) { return b && b.gruppe === "eigen"; }));
+
+    /* Kunden-Brands nur außerhalb des Vorführmodus nachladen; fehlt die Datei, bleibt die Sektion leer */
+    if (!vorfuehrung) {
+      var kundenDaten = document.createElement("script");
+      kundenDaten.src = "../_Wissen/Brand%20Packs/brands-kunden.js";
+      kundenDaten.onload = kundenDaten.onerror = function () {
+        var kunden = Array.isArray(window.PORTAL_BRANDS_KUNDEN) ? window.PORTAL_BRANDS_KUNDEN : [];
+        var alteEintraege = brands.filter(function (b) { return b && b.gruppe === "kunde"; });
+        fuelle("kunde", alteEintraege.concat(kunden.filter(function (b) { return b; })));
+      };
+      document.body.appendChild(kundenDaten);
+    }
+  })();
+  </script>
+
+</body>
+</html>
