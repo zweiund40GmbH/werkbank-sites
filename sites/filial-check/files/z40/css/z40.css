@@ -1,0 +1,2355 @@
+/*!
+ * z40.css · Web-Template zwei&40 · Version 1.0.0 · Stand 26.10.2026
+ * Herausgeber: zwei&40 GmbH · zweiund40.com
+ *
+ * Die eine Quelle für Webseiten und Web-Apps von zwei&40.
+ * Seiten kombinieren nur Klassen. Farben, Abstände, Schriftgrößen, Radien und Schatten
+ * kommen ausschließlich aus den Tokens in Abschnitt 1. Anleitung: README.md.
+ *
+ * Grundregeln
+ * - Alles, was diese Datei gestaltet, steht innerhalb eines Elements mit der Klasse "z40"
+ *   (eigenständige Seite: <body class="z40">; WordPress/Divi: <div class="z40"> um den Baustein).
+ * - Alle Selektoren beginnen mit ".z40 " (Spezifität 0,2,0). Kein @layer, kein !important
+ *   (Ausnahme: [hidden]). Begründung in README.md, Abschnitt 10.
+ * - Varianten setzen nur Tokens (Custom Properties). Bausteine lesen die Tokens ihres Kontexts.
+ * - Hex- und rgba-Werte stehen nur zwischen @tokens-start und @tokens-end
+ *   (wird von werkzeuge/klassen-check.py geprüft).
+ * - Ableitungen kommen aus der Palette. Ausnahme: Die geometrischen Flächen (--z40-pattern-*) und die
+ *   Schatten (--z40-shadow-*, --z40-drop-logo) nutzen Schwarz bzw. Weiß mit geringer Deckkraft.
+ *   Diese Überlagerungen gehören zum freigegebenen Look und sind keine neuen Farben.
+ *
+ * Inhalt
+ *  1. Tokens            1a Palette · 1b Ableitungen mit Deckkraft · 1c Flächen und Verläufe
+ *                       1d Schatten und Glow · 1e Schrift · 1f Maße · 1g Bewegung · 1h Icons
+ *  2. Schrift           @font-face Nunito Sans (selbst gehostet, SIL OFL 1.1)
+ *  3. Basis             Root .z40 · Kontexte hell/dunkel/anthrazit/petrol · Elemente
+ *  4. Grundbausteine    Layout · Typografie · Links · Icons · Sektionen · Kopf · Sektionskopf · Buttons · Navigation
+ *                       Badges · Listen · Karten · Bildflächen · Avatare · Ringe/Schritte · Hinweise
+ *                       Formulare · Footer
+ *  5. App-Bausteine     App-Rahmen · App-Kopf · Kennzahlen · Status · Kacheln · Ablauf-Kette
+ *                       Zeitleiste · Leerzustand · Filterzeile · Tabelle · Tabs · Chat
+ *  6. Hilfsklassen
+ *  7. Bewegung          nur bei prefers-reduced-motion: no-preference
+ *  8. Sondermodi        forced-colors · print
+ *
+ * Breakpoints (Media Queries können keine Tokens lesen): 30rem · 44rem · 56rem · 68rem
+ */
+
+/* =========================================================================================
+   1. Tokens
+   ========================================================================================= */
+
+/* @tokens-start */
+:root {
+  /* 1a Palette (verbindlich, Markenregeln zwei&40) */
+  --z40-petrol: #00939D;            /* Primärfarbe: Flächen, Linien, große Headlines. Weiße Schrift nur groß (3,71 : 1) */
+  --z40-petrol-dark: #007A83;       /* Flächen und Buttons mit weißem Fließtext (5,11 : 1) */
+  --z40-petrol-deep: #016068;       /* Schrift auf Hell (7,31 : 1), dunkle Flächen */
+  --z40-turquoise: #0CD0D3;         /* Türkis hell: Glow, Linien, Akzente. Schrift nur auf Dunkel, nie weiße Schrift darauf */
+  --z40-orange: #FF914D;            /* Akzent sparsam. Schrift darauf immer --z40-ink */
+  --z40-ink: #1A1A1A;               /* Schrift auf Orange (7,80 : 1) */
+  --z40-anthracite: #222222;        /* dunkelste Fläche: Kopf, Footer, Apps */
+  --z40-graphite: #444444;          /* dunkle Sektionen und Fließtext auf Hell */
+  --z40-light: #F2F2F2;             /* Hellgrau: ruhige Wechselflächen */
+  --z40-white: #FFFFFF;
+
+  --z40-glow-rgb: 12, 208, 211;     /* Türkis hell als RGB, nur für Schatten in diesem Block */
+  --z40-orange-rgb: 255, 145, 77;
+
+  /* 1b Ableitungen mit Deckkraft (nur aus der Palette) */
+  --z40-white-04: rgba(255, 255, 255, 0.04);
+  --z40-white-08: rgba(255, 255, 255, 0.08);
+  --z40-white-12: rgba(255, 255, 255, 0.12);
+  --z40-white-20: rgba(255, 255, 255, 0.2);
+  --z40-white-32: rgba(255, 255, 255, 0.32);
+  --z40-white-40: rgba(255, 255, 255, 0.4);
+  --z40-white-50: rgba(255, 255, 255, 0.5);
+  --z40-white-82: rgba(255, 255, 255, 0.82);
+  --z40-white-85: rgba(255, 255, 255, 0.85);
+  --z40-anthracite-30: rgba(34, 34, 34, 0.3);
+  --z40-anthracite-35: rgba(34, 34, 34, 0.35);
+  --z40-anthracite-38: rgba(34, 34, 34, 0.38);
+  --z40-anthracite-50: rgba(34, 34, 34, 0.5);
+  --z40-anthracite-62: rgba(34, 34, 34, 0.62);
+  --z40-anthracite-72: rgba(34, 34, 34, 0.72);
+  --z40-anthracite-82: rgba(34, 34, 34, 0.82);
+  --z40-graphite-06: rgba(68, 68, 68, 0.06);
+  --z40-graphite-08: rgba(68, 68, 68, 0.08);
+  --z40-graphite-20: rgba(68, 68, 68, 0.2);
+  --z40-graphite-45: rgba(68, 68, 68, 0.45);
+
+  /* 1c Flächen und Verläufe (geometrische Flächen 125°/55°/305°, Deckkraft 3–85 %).
+     Schwarz- und Weiß-Überlagerungen sind Teil des freigegebenen Looks (Ausnahme von „nur aus der Palette“). */
+  --z40-pattern-hero:
+    radial-gradient(ellipse 70% 60% at 50% 115%, rgba(12, 208, 211, 0.22), transparent 70%),
+    linear-gradient(125deg, transparent 0 56%, rgba(255, 255, 255, 0.035) 56% 78%, transparent 78%),
+    linear-gradient(55deg, rgba(0, 0, 0, 0.35) 0 24%, transparent 24%),
+    linear-gradient(305deg, rgba(0, 0, 0, 0.3) 0 16%, transparent 16%);
+  --z40-pattern-anthracite:
+    linear-gradient(125deg, transparent 0 56%, rgba(255, 255, 255, 0.035) 56% 78%, transparent 78%),
+    linear-gradient(55deg, rgba(0, 0, 0, 0.35) 0 24%, transparent 24%),
+    linear-gradient(305deg, rgba(0, 0, 0, 0.3) 0 16%, transparent 16%);
+  --z40-pattern-graphite:
+    linear-gradient(125deg, transparent 0 48%, rgba(0, 0, 0, 0.1) 48% 74%, transparent 74%),
+    linear-gradient(55deg, rgba(0, 0, 0, 0.16) 0 22%, transparent 22%),
+    linear-gradient(305deg, rgba(0, 0, 0, 0.14) 0 18%, transparent 18%);
+  --z40-pattern-light:
+    linear-gradient(125deg, transparent 0 52%, rgba(255, 255, 255, 0.6) 52% 76%, transparent 76%),
+    linear-gradient(55deg, rgba(255, 255, 255, 0.55) 0 20%, transparent 20%);
+  --z40-pattern-white:
+    linear-gradient(125deg, transparent 0 52%, rgba(242, 242, 242, 0.7) 52% 76%, transparent 76%),
+    linear-gradient(55deg, rgba(242, 242, 242, 0.8) 0 20%, transparent 20%);
+  --z40-pattern-petrol:
+    linear-gradient(125deg, transparent 0 46%, rgba(1, 96, 104, 0.55) 46% 72%, transparent 72%),
+    linear-gradient(55deg, rgba(1, 96, 104, 0.7) 0 24%, transparent 24%),
+    linear-gradient(305deg, rgba(1, 96, 104, 0.6) 0 18%, transparent 18%);
+  --z40-pattern-footer:
+    linear-gradient(125deg, transparent 0 60%, rgba(255, 255, 255, 0.03) 60% 82%, transparent 82%),
+    linear-gradient(55deg, rgba(0, 0, 0, 0.35) 0 20%, transparent 20%);
+  --z40-pattern-media:
+    radial-gradient(circle at 50% 44%, rgba(12, 208, 211, 0.28), transparent 46%),
+    linear-gradient(125deg, transparent 0 50%, rgba(1, 96, 104, 0.65) 50% 78%, transparent 78%),
+    linear-gradient(55deg, rgba(1, 96, 104, 0.85) 0 30%, transparent 30%);
+  --z40-pattern-avatar:
+    linear-gradient(125deg, transparent 0 50%, rgba(1, 96, 104, 0.65) 50% 78%, transparent 78%),
+    linear-gradient(55deg, rgba(1, 96, 104, 0.85) 0 30%, transparent 30%);
+
+  /* 1d Schatten und Glow (weich, nie harte Schlagschatten; Schatten in Schwarz mit Deckkraft gehören zum Look) */
+  --z40-shadow-dark: 0 2px 18px rgba(0, 0, 0, 0.3);
+  --z40-shadow-light: 0 1px 2px rgba(1, 96, 104, 0.06), 0 10px 28px rgba(1, 96, 104, 0.1);
+  --z40-shadow-text: 0 4px 24px rgba(0, 0, 0, 0.45);
+  --z40-drop-logo: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.5));
+  --z40-glow-edge: 0 0 30px 0 rgba(var(--z40-glow-rgb), 0.75), 0 0 8px 0 rgba(var(--z40-glow-rgb), 0.9);
+  --z40-glow-edge-peak: 0 0 44px 4px rgba(var(--z40-glow-rgb), 0.9), 0 0 12px 0 rgba(var(--z40-glow-rgb), 1);
+  --z40-glow-line: 0 0 14px 0 rgba(var(--z40-glow-rgb), 0.7);
+  --z40-glow-hover: 0 0 34px -4px rgba(var(--z40-glow-rgb), 0.85);
+  --z40-glow-button: 0 0 30px -6px rgba(var(--z40-glow-rgb), 1);
+  --z40-glow-dot: 0 0 10px 1px rgba(var(--z40-glow-rgb), 0.9);
+  --z40-glow-spark: 0 0 10px 3px rgba(var(--z40-glow-rgb), 1);
+  --z40-glow-ring: 0 0 26px 0 rgba(var(--z40-glow-rgb), 0.55), inset 0 0 14px 0 rgba(var(--z40-glow-rgb), 0.25);
+  --z40-glow-active: 0 0 30px -4px rgba(var(--z40-glow-rgb), 0.85);
+  --z40-glow-active-peak: 0 0 42px 0 rgba(var(--z40-glow-rgb), 0.95);
+  --z40-glow-featured: 0 0 44px -2px rgba(var(--z40-glow-rgb), 0.7), inset 0 0 22px 0 rgba(var(--z40-glow-rgb), 0.18);
+  --z40-glow-avatar: 0 0 22px 0 rgba(var(--z40-glow-rgb), 0.6);
+  --z40-glow-connector: drop-shadow(0 0 5px rgba(var(--z40-glow-rgb), 0.9));
+  --z40-glow-orange: 0 0 26px -6px rgba(var(--z40-orange-rgb), 0.9);
+  --z40-shadow-none: 0 0 0 0 transparent;
+
+  /* 1e Schrift */
+  --z40-font: "Z40 Nunito Sans", "Nunito Sans", "Open Sans", system-ui, sans-serif;
+  --z40-font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --z40-fw-regular: 400;
+  --z40-fw-semibold: 600;
+  --z40-fw-bold: 700;
+  --z40-fw-extrabold: 800;
+  --z40-fs-xs: 0.8125rem;
+  --z40-fs-sm: 0.875rem;
+  --z40-fs-base: 1rem;
+  --z40-fs-btn: 1.0625rem;
+  --z40-fs-md: 1.125rem;
+  --z40-fs-lead: 1.1875rem;
+  --z40-fs-h4: 1.125rem;
+  --z40-fs-h3: 1.375rem;
+  --z40-fs-h2: clamp(2rem, 1.4rem + 2.4vw, 3rem);
+  --z40-fs-h1: clamp(2.5rem, 1.5rem + 4.6vw, 4.5rem);
+  --z40-fs-h1-app: clamp(1.75rem, 1rem + 4vw, 3.5rem);
+  --z40-fs-hero-lead: clamp(1.125rem, 1rem + 0.6vw, 1.375rem);
+  --z40-fs-app-lead: clamp(1.0625rem, 1rem + 0.4vw, 1.25rem);
+  --z40-fs-kpi: 2.25rem;
+  --z40-fs-ring: 2rem;
+  --z40-lh-tight: 1.05;
+  --z40-lh-heading: 1.15;
+  --z40-lh-snug: 1.35;
+  --z40-lh-base: 1.6;
+  --z40-tracking-eyebrow: 0.14em;
+  --z40-tracking-heading: -0.01em;
+
+  /* 1f Maße: Abstände, Radien, Breiten, Größen */
+  --z40-space-1: 0.25rem;
+  --z40-space-2: 0.5rem;
+  --z40-space-3: 0.75rem;
+  --z40-space-4: 1rem;
+  --z40-space-5: 1.5rem;
+  --z40-space-6: 2rem;
+  --z40-space-7: 3rem;
+  --z40-space-8: 4.5rem;
+  --z40-space-9: 6rem;
+  --z40-radius-card: 15px;
+  --z40-radius-media: 10px;
+  --z40-radius-pill: 50px;
+  --z40-radius-round: 50%;
+  --z40-width-content: 78rem;
+  --z40-width-narrow: 56rem;
+  --z40-width-text: 40rem;
+  --z40-target: 2.75rem;            /* Mindesthöhe Buttons und Eingaben (44 px) */
+  --z40-target-sm: 2.25rem;         /* kleine Buttons (36 px, über dem Minimum von 24 px) */
+  --z40-logo: 9rem;                 /* Logo im Kopf: Mindestgröße, damit der Schriftzug lesbar bleibt */
+  --z40-logo-lg: 10rem;
+  --z40-edge: 2px;                  /* Glow-Kante an Sektionen */
+  --z40-edge-footer: 4px;           /* Glow-Kante über dem Footer */
+  --z40-focus-width: 3px;
+  --z40-focus-offset: 3px;
+
+  /* 1g Bewegung */
+  --z40-duration: 0.3s;
+  --z40-duration-breathe: 5s;
+  --z40-duration-pulse: 3s;
+  --z40-lift: -6px;
+
+  /* 1h Icons (16 × 16, als Maske: Farbe kommt immer aus currentColor) */
+  --z40-icon-play: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 2.2v11.6L13.6 8z'/%3E%3C/svg%3E");
+  --z40-icon-pause: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 2.5h3.2v11H3.5zM9.3 2.5h3.2v11H9.3z'/%3E%3C/svg%3E");
+  --z40-icon-circle: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='5' fill='none' stroke='black' stroke-width='2'/%3E%3C/svg%3E");
+  --z40-icon-question: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' d='M5.2 6a2.8 2.8 0 1 1 4.3 2.4c-.9.6-1.5 1.1-1.5 2.1'/%3E%3Ccircle cx='8' cy='13.2' r='1.2'/%3E%3C/svg%3E");
+  --z40-icon-warning: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M8 1.2 15.2 14H.8L8 1.2Zm-.8 4.6v4.2h1.6V5.8H7.2Zm0 5.2v1.6h1.6V11H7.2Z'/%3E%3C/svg%3E");
+  --z40-icon-cross: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' d='M3.5 3.5l9 9M12.5 3.5l-9 9'/%3E%3C/svg%3E");
+  --z40-icon-check: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round' d='M2.5 8.5l4 4 7-8.5'/%3E%3C/svg%3E");
+  --z40-icon-send: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M1.6 1.6 15 8 1.6 14.4l1.8-5.3L9.6 8 3.4 6.9z'/%3E%3C/svg%3E");
+  --z40-icon-attach: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round' d='M13.6 7.4 8.1 12.9a3.5 3.5 0 0 1-5-5l5.8-5.8a2.3 2.3 0 0 1 3.3 3.3l-5.7 5.7a1.15 1.15 0 0 1-1.6-1.6l5.2-5.2'/%3E%3C/svg%3E");
+  --z40-icon-chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' d='m3.5 6 4.5 4.5L12.5 6'/%3E%3C/svg%3E");
+  --z40-icon-return: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' d='M7 3.5 2.5 8 7 12.5M3 8h10.5'/%3E%3C/svg%3E");
+}
+/* @tokens-end */
+
+/* =========================================================================================
+   2. Schrift: Nunito Sans, variabel (wght 200–1000, wdth 75–125 %), SIL Open Font License 1.1
+   Eigener Familienname, damit eine vom Theme geladene "Nunito Sans" nicht kollidiert.
+   ========================================================================================= */
+
+@font-face {
+  font-family: "Z40 Nunito Sans";
+  src: url("../assets/fonts/nunito-sans-variable.ttf") format("truetype");
+  font-weight: 200 1000;
+  font-stretch: 75% 125%;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Z40 Nunito Sans";
+  src: url("../assets/fonts/nunito-sans-italic-variable.ttf") format("truetype");
+  font-weight: 200 1000;
+  font-stretch: 75% 125%;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* =========================================================================================
+   3. Basis
+   ========================================================================================= */
+
+/* 3a Kontext hell: Standard unter .z40, Sektionen hell/weiß, .z40-on-light */
+.z40,
+.z40 :is(.z40-section--light, .z40-section--white, .z40-on-light) {
+  color-scheme: light;
+  --z40-surface: var(--z40-light);
+  --z40-text: var(--z40-graphite);
+  --z40-text-muted: var(--z40-graphite);
+  --z40-heading: var(--z40-petrol-deep);
+  --z40-accent-text: var(--z40-petrol-dark);
+  --z40-accent-line: var(--z40-petrol);
+  --z40-link: var(--z40-petrol-deep);
+  --z40-line: var(--z40-graphite-20);
+  --z40-line-muted: var(--z40-graphite-20);
+  --z40-divider: var(--z40-graphite-20);
+  --z40-card-bg: var(--z40-white);
+  --z40-card-shadow: var(--z40-shadow-light);
+  --z40-tint: var(--z40-graphite-06);
+  --z40-chip-bg: var(--z40-graphite-08);
+  --z40-chip-text: var(--z40-anthracite);
+  --z40-marker: var(--z40-petrol);
+  --z40-focus: var(--z40-petrol-deep);
+  --z40-btn-text: var(--z40-petrol-deep);
+  --z40-btn-line: var(--z40-petrol-deep);
+  --z40-btn-bg: transparent;
+  --z40-btn-hover-bg: var(--z40-petrol-deep);
+  --z40-btn-hover-line: var(--z40-petrol-deep);
+  --z40-btn-hover-text: var(--z40-white);
+  --z40-btn-hover-glow: var(--z40-shadow-none);
+  --z40-btn-focus: var(--z40-petrol-deep);
+  --z40-btn-primary-line: var(--z40-petrol-dark);
+  --z40-input-bg: var(--z40-white);
+  --z40-input-line: var(--z40-graphite);
+  --z40-input-text: var(--z40-graphite);
+  --z40-control-accent: var(--z40-petrol-deep);
+  --z40-error-line: var(--z40-graphite);
+  --z40-ring-glow: var(--z40-shadow-none);
+  --z40-accent-glow: var(--z40-shadow-none);
+  --z40-logo-filter: none;
+}
+
+.z40 .z40-section--white { --z40-surface: var(--z40-white); }
+
+/* 3b Kontext dunkel: Sektionen dunkel/anthrazit/petrol, Kopf, App-Kopf, Footer, App, .z40-on-dark */
+.z40 :is(.z40-section--dark, .z40-section--anthracite, .z40-section--petrol, .z40-hero, .z40-app-header, .z40-footer, .z40-app, .z40-on-dark) {
+  color-scheme: dark;
+  --z40-surface: var(--z40-graphite);
+  --z40-text: var(--z40-white);
+  --z40-text-muted: var(--z40-white-82);
+  --z40-heading: var(--z40-white);
+  --z40-accent-text: var(--z40-turquoise);
+  --z40-accent-line: var(--z40-turquoise);
+  --z40-link: var(--z40-turquoise);
+  --z40-line: var(--z40-white-85);
+  --z40-line-muted: var(--z40-white-32);
+  --z40-divider: var(--z40-white-20);
+  --z40-card-bg: var(--z40-anthracite-62);
+  --z40-card-shadow: var(--z40-shadow-dark);
+  --z40-tint: var(--z40-white-08);
+  --z40-chip-bg: var(--z40-white-12);
+  --z40-chip-text: var(--z40-white);
+  --z40-marker: var(--z40-turquoise);
+  --z40-focus: var(--z40-turquoise);
+  --z40-btn-text: var(--z40-white);
+  --z40-btn-line: var(--z40-white);
+  --z40-btn-bg: var(--z40-white-04);
+  --z40-btn-hover-bg: var(--z40-turquoise);
+  --z40-btn-hover-line: var(--z40-turquoise);
+  --z40-btn-hover-text: var(--z40-anthracite);
+  --z40-btn-hover-glow: var(--z40-glow-button);
+  --z40-btn-focus: var(--z40-white);
+  --z40-btn-primary-line: var(--z40-petrol-dark);
+  --z40-input-bg: var(--z40-anthracite-62);
+  --z40-input-line: var(--z40-white-85);
+  --z40-input-text: var(--z40-white);
+  --z40-control-accent: var(--z40-turquoise);
+  --z40-error-line: var(--z40-orange);
+  --z40-ring-glow: var(--z40-glow-ring);
+  --z40-accent-glow: var(--z40-glow-line);
+  --z40-logo-filter: var(--z40-drop-logo);
+}
+
+/* 3c Kontext anthrazit: dunkelste Fläche, Glas wird aufgehellt statt abgedunkelt */
+.z40 :is(.z40-section--anthracite, .z40-hero, .z40-app-header, .z40-footer, .z40-app) {
+  --z40-surface: var(--z40-anthracite);
+  --z40-card-bg: var(--z40-graphite-45);
+  --z40-input-bg: var(--z40-graphite-45);
+}
+
+/* 3d Kontext petrol: Petrol dunkel bis Tiefpetrol; Akzente in Weiß, weil Türkis hier nur 2,67 : 1 erreicht */
+.z40 .z40-section--petrol {
+  --z40-surface: var(--z40-petrol-dark);
+  --z40-accent-text: var(--z40-white);
+  --z40-accent-line: var(--z40-white);
+  --z40-link: var(--z40-white);
+  --z40-card-bg: var(--z40-anthracite-30);
+  --z40-tint: var(--z40-anthracite-30);
+  --z40-chip-bg: var(--z40-anthracite-35);
+  --z40-focus: var(--z40-white);
+  --z40-btn-primary-line: var(--z40-white);
+  --z40-input-bg: var(--z40-anthracite-30);
+  --z40-control-accent: var(--z40-white);
+  --z40-error-line: var(--z40-white);
+}
+
+/* 3e Root und Elemente: wirken nur innerhalb von .z40 */
+.z40 {
+  font-family: var(--z40-font);
+  font-size: var(--z40-fs-base);
+  font-weight: var(--z40-fw-regular);
+  line-height: var(--z40-lh-base);
+  color: var(--z40-text);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body.z40 {
+  margin: 0;
+  background-color: var(--z40-anthracite);
+}
+
+.z40,
+.z40 *,
+.z40 *::before,
+.z40 *::after {
+  box-sizing: border-box;
+}
+
+.z40 :is(h1, h2, h3, h4, h5, h6, p, ul, ol, dl, dd, figure, blockquote) {
+  margin: 0;
+  padding: 0;
+}
+
+/* Themes setzen oft eine eigene Schrift für Überschriften (z. B. h1–h6 { font-family }) */
+.z40 :is(h1, h2, h3, h4, h5, h6) { font-family: inherit; }
+
+.z40 :is(ul, ol) {
+  list-style: none;
+  line-height: inherit;
+}
+
+.z40 :is(img, video) {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.z40 :is(button, input, select, textarea) {
+  font: inherit;
+}
+
+.z40 :is(strong, b) { font-weight: var(--z40-fw-bold); }
+
+.z40 :focus-visible {
+  outline: var(--z40-focus-width) solid var(--z40-focus);
+  outline-offset: var(--z40-focus-offset);
+}
+
+.z40 [hidden] { display: none !important; }
+
+/* =========================================================================================
+   4. Grundbausteine
+   ========================================================================================= */
+
+/* ---------- 4.1 Layout: Inhaltsbreite und Raster ---------- */
+.z40 .z40-container {
+  width: 100%;
+  max-width: var(--z40-width-content);
+  margin-inline: auto;
+  padding-inline: var(--z40-space-4);
+}
+
+.z40 .z40-container--narrow { max-width: var(--z40-width-narrow); }
+
+.z40 .z40-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--z40-space-5);
+}
+
+/* Raster mit schmaler Gesamtbreite, zentriert (z. B. zwei Karten oder eine breite Karte in einer Sektion) */
+.z40 .z40-grid--narrow {
+  width: 100%;
+  max-width: var(--z40-width-narrow);
+  margin-inline: auto;
+}
+
+/* ---------- 4.2 Typografie ---------- */
+.z40 :is(h1, .z40-h1) {
+  font-size: var(--z40-fs-h1);
+  font-weight: var(--z40-fw-extrabold);
+  line-height: var(--z40-lh-tight);
+  letter-spacing: var(--z40-tracking-heading);
+  color: var(--z40-heading);
+}
+
+.z40 :is(h2, .z40-h2) {
+  font-size: var(--z40-fs-h2);
+  font-weight: var(--z40-fw-extrabold);
+  line-height: 1.1;
+  letter-spacing: var(--z40-tracking-heading);
+  color: var(--z40-heading);
+}
+
+.z40 :is(h3, .z40-h3) {
+  font-size: var(--z40-fs-h3);
+  font-weight: var(--z40-fw-extrabold);
+  line-height: 1.25;
+  color: var(--z40-heading);
+}
+
+.z40 :is(h4, h5, h6, .z40-h4) {
+  font-size: var(--z40-fs-h4);
+  font-weight: var(--z40-fw-extrabold);
+  line-height: 1.3;
+  color: var(--z40-heading);
+}
+
+.z40 .z40-lead {
+  font-size: var(--z40-fs-lead);
+  font-weight: var(--z40-fw-semibold);
+  line-height: 1.5;
+}
+
+.z40 .z40-small { font-size: var(--z40-fs-sm); }
+
+.z40 .z40-eyebrow {
+  font-size: var(--z40-fs-sm);
+  font-weight: var(--z40-fw-bold);
+  line-height: 1.4;
+  letter-spacing: var(--z40-tracking-eyebrow);
+  color: var(--z40-accent-text);
+}
+
+.z40 .z40-prose > * + * { margin-top: 1em; }
+.z40 .z40-prose > :is(h2, h3, h4) { margin-top: 1.6em; }
+
+.z40 .z40-prose ol {
+  padding-left: 1.5rem;
+  list-style: decimal;
+}
+
+.z40 .z40-prose ol > li + li { margin-top: var(--z40-space-2); }
+.z40 .z40-prose ol > li::marker { font-weight: var(--z40-fw-bold); color: var(--z40-accent-text); }
+
+.z40 .z40-code {
+  margin: 0;
+  font-family: var(--z40-font-mono);
+  font-size: var(--z40-fs-xs);
+  color: var(--z40-chip-text);
+  background: var(--z40-chip-bg);
+  padding: 0.125rem var(--z40-space-2);
+  border-radius: var(--z40-radius-pill);
+  overflow-wrap: anywhere;
+}
+
+.z40 .z40-codeblock {
+  margin: 0;
+  padding: var(--z40-space-4);
+  font-family: var(--z40-font-mono);
+  font-size: var(--z40-fs-xs);
+  line-height: 1.55;
+  color: var(--z40-white);
+  background: var(--z40-anthracite);
+  border: 1px solid var(--z40-line-muted);
+  border-radius: var(--z40-radius-media);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  tab-size: 2;
+}
+
+.z40 .z40-codeblock code { font: inherit; color: inherit; background: none; padding: 0; margin: 0; }
+
+/* ---------- 4.3 Links ---------- */
+.z40 :is(a, .z40-link) {
+  color: var(--z40-link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+.z40 :is(a, .z40-link):hover { text-decoration-thickness: 2px; }
+
+/* ---------- 4.4 Icons ---------- */
+.z40 .z40-icon {
+  display: inline-block;
+  flex: none;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
+  background-color: currentColor;
+  -webkit-mask: var(--z40-icon) center / contain no-repeat;
+  mask: var(--z40-icon) center / contain no-repeat;
+}
+
+.z40 .z40-icon--play { --z40-icon: var(--z40-icon-play); }
+.z40 .z40-icon--pause { --z40-icon: var(--z40-icon-pause); }
+.z40 .z40-icon--circle { --z40-icon: var(--z40-icon-circle); }
+.z40 .z40-icon--question { --z40-icon: var(--z40-icon-question); }
+.z40 .z40-icon--warning { --z40-icon: var(--z40-icon-warning); }
+.z40 .z40-icon--cross { --z40-icon: var(--z40-icon-cross); }
+.z40 .z40-icon--check { --z40-icon: var(--z40-icon-check); }
+.z40 .z40-icon--send { --z40-icon: var(--z40-icon-send); }
+.z40 .z40-icon--attach { --z40-icon: var(--z40-icon-attach); }
+.z40 .z40-icon--chevron { --z40-icon: var(--z40-icon-chevron); }
+.z40 .z40-icon--return { --z40-icon: var(--z40-icon-return); }
+
+/* ---------- 4.5 Sektionen ---------- */
+.z40 .z40-section {
+  position: relative;
+  padding-block: var(--z40-space-8);
+  color: var(--z40-text);
+  background-color: var(--z40-surface);
+  background-image: none;
+}
+
+.z40 .z40-section--light { background-image: var(--z40-pattern-light); }
+.z40 .z40-section--white { background-image: var(--z40-pattern-white); }
+.z40 .z40-section--dark { background-image: var(--z40-pattern-graphite); }
+.z40 .z40-section--anthracite { background-image: var(--z40-pattern-anthracite); }
+.z40 .z40-section--petrol { background-image: var(--z40-pattern-petrol); }
+.z40 .z40-section--flat { background-image: none; }
+.z40 .z40-section--compact { padding-block: var(--z40-space-6); }
+
+/* Glow-Kante: das wichtigste Erkennungszeichen. Oben an jeder Sektion und am Footer */
+.z40 :is(.z40-section, .z40-footer)::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: var(--z40-edge-height, var(--z40-edge));
+  background: var(--z40-turquoise);
+  box-shadow: var(--z40-glow-edge);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.z40 .z40-section--no-edge::before { display: none; }
+
+.z40 .z40-on-light,
+.z40 .z40-on-dark { color: var(--z40-text); }
+
+/* ---------- 4.6 Kopfbereich (Hero) und Logo ---------- */
+.z40 .z40-hero {
+  position: relative;
+  padding-block: var(--z40-space-7) var(--z40-space-8);
+  text-align: center;
+  color: var(--z40-text);
+  background-color: var(--z40-surface);
+  background-image: var(--z40-pattern-hero);
+}
+
+.z40 .z40-logo {
+  display: block;
+  width: var(--z40-logo);
+  height: auto;
+  aspect-ratio: 1;
+  filter: var(--z40-logo-filter);
+}
+
+.z40 .z40-hero .z40-logo { margin: 0 auto var(--z40-space-6); }
+.z40 .z40-hero .z40-eyebrow { margin-bottom: var(--z40-space-4); }
+
+.z40 .z40-hero__title {
+  font-size: var(--z40-fs-h1);
+  font-weight: var(--z40-fw-extrabold);
+  line-height: var(--z40-lh-tight);
+  letter-spacing: var(--z40-tracking-heading);
+  color: var(--z40-heading);
+  margin-bottom: var(--z40-space-5);
+  text-shadow: var(--z40-shadow-text);
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.z40 .z40-hero__lead {
+  font-size: var(--z40-fs-hero-lead);
+  font-weight: var(--z40-fw-semibold);
+  line-height: 1.5;
+  max-width: var(--z40-width-text);
+  margin-inline: auto;
+}
+
+.z40 .z40-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--z40-space-3);
+  margin-top: var(--z40-space-6);
+}
+
+/* ---------- 4.7 Sektionskopf ---------- */
+.z40 .z40-section-head {
+  text-align: center;
+  margin-bottom: var(--z40-space-7);
+}
+
+.z40 .z40-section-head::after {
+  content: "";
+  display: block;
+  width: 4.5rem;
+  height: 3px;
+  margin: var(--z40-space-5) auto 0;
+  border-radius: var(--z40-radius-pill);
+  background: var(--z40-turquoise);
+  box-shadow: var(--z40-glow-line);
+}
+
+.z40 .z40-section-head--start { text-align: left; }
+.z40 .z40-section-head--start::after { margin-left: 0; }
+
+.z40 .z40-section-head__title {
+  font-size: var(--z40-fs-h2);
+  font-weight: var(--z40-fw-extrabold);
+  line-height: 1.1;
+  letter-spacing: var(--z40-tracking-heading);
+  color: var(--z40-heading);
+}
+
+.z40 .z40-section-head__subtitle {
+  font-size: var(--z40-fs-lead);
+  font-weight: var(--z40-fw-semibold);
+  margin-top: var(--z40-space-2);
+}
+
+/* ---------- 4.8 Buttons: Varianten setzen nur Tokens ---------- */
+.z40 .z40-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--z40-space-2);
+  min-height: var(--z40-target);
+  margin: 0;
+  padding: var(--z40-space-2) var(--z40-space-5);
+  border: 1px solid var(--z40-btn-line);
+  border-radius: var(--z40-radius-pill);
+  background: var(--z40-btn-bg);
+  color: var(--z40-btn-text);
+  font: inherit;
+  font-size: var(--z40-fs-btn);
+  font-weight: var(--z40-fw-semibold);
+  font-style: normal;
+  line-height: 1.3;
+  letter-spacing: normal;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  box-shadow: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  transition: background-color var(--z40-duration) ease, border-color var(--z40-duration) ease, color var(--z40-duration) ease, box-shadow var(--z40-duration) ease;
+}
+
+.z40 .z40-btn:is(:hover, :focus-visible, [aria-current]):not(:disabled, [aria-disabled="true"]) {
+  background: var(--z40-btn-hover-bg);
+  border-color: var(--z40-btn-hover-line);
+  color: var(--z40-btn-hover-text);
+  box-shadow: var(--z40-btn-hover-glow);
+}
+
+.z40 .z40-btn:focus-visible { outline-color: var(--z40-btn-focus); }
+
+.z40 .z40-btn:is(:disabled, [aria-disabled="true"]) {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.z40 .z40-btn--primary {
+  --z40-btn-bg: var(--z40-petrol-dark);
+  --z40-btn-line: var(--z40-btn-primary-line);
+  --z40-btn-text: var(--z40-white);
+  --z40-btn-hover-bg: var(--z40-petrol-deep);
+  --z40-btn-hover-line: var(--z40-btn-primary-line);
+  --z40-btn-hover-text: var(--z40-white);
+}
+
+.z40 .z40-btn--accent {
+  --z40-btn-bg: var(--z40-orange);
+  --z40-btn-line: var(--z40-orange);
+  --z40-btn-text: var(--z40-ink);
+  --z40-btn-hover-bg: var(--z40-orange);
+  --z40-btn-hover-line: var(--z40-ink);
+  --z40-btn-hover-text: var(--z40-ink);
+  --z40-btn-hover-glow: var(--z40-glow-orange);
+}
+
+/* Hervorgehobenes Ziel (z. B. Link in eine App): Türkis-Rand mit Leuchtpunkt */
+.z40 .z40-btn--glow { --z40-btn-line: var(--z40-accent-line); }
+
+.z40 .z40-btn--glow::before {
+  content: "";
+  flex: none;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: var(--z40-radius-round);
+  background: var(--z40-accent-line);
+  box-shadow: var(--z40-glow-dot);
+}
+
+.z40 .z40-btn--glow:is(:hover, :focus-visible)::before {
+  background: currentColor;
+  box-shadow: none;
+}
+
+.z40 .z40-btn--sm {
+  min-height: var(--z40-target-sm);
+  padding: var(--z40-space-1) var(--z40-space-4);
+  font-size: var(--z40-fs-sm);
+}
+
+.z40 .z40-btn--lg {
+  min-height: 3.25rem;
+  padding: var(--z40-space-3) var(--z40-space-6);
+  font-size: var(--z40-fs-lead);
+}
+
+.z40 .z40-btn--block { display: flex; width: 100%; }
+
+.z40 .z40-btn--icon {
+  width: var(--z40-target);
+  padding: 0;
+  font-size: var(--z40-fs-md);
+}
+
+/* ---------- 4.9 Navigations-Pills ---------- */
+.z40 .z40-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--z40-space-3);
+}
+
+/* ---------- 4.10 Badges ---------- */
+.z40 .z40-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--z40-space-1);
+  padding: 0.125rem var(--z40-space-3);
+  border: 1px solid transparent;
+  border-radius: var(--z40-radius-pill);
+  background: var(--z40-chip-bg);
+  color: var(--z40-chip-text);
+  font-size: var(--z40-fs-xs);
+  font-weight: var(--z40-fw-bold);
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.z40 .z40-badge--accent {
+  background: var(--z40-orange);
+  border-color: var(--z40-orange);
+  color: var(--z40-ink);
+  box-shadow: var(--z40-glow-orange);
+}
+
+.z40 .z40-badge--outline {
+  background: transparent;
+  border-color: var(--z40-accent-line);
+  color: var(--z40-accent-text);
+}
+
+/* Großes Badge, z. B. „Beispieldaten“ im App-Kopf; Icon optional (z40-icon) */
+.z40 .z40-badge--lg {
+  gap: var(--z40-space-2);
+  padding: var(--z40-space-2) var(--z40-space-4);
+  font-size: var(--z40-fs-base);
+  font-weight: var(--z40-fw-extrabold);
+  line-height: 1.3;
+  letter-spacing: normal;
+}
+
+/* ---------- 4.11 Listen ---------- */
+.z40 :is(.z40-list, .z40-prose ul) {
+  padding: 0;
+  list-style: none;
+}
+
+.z40 :is(.z40-list, .z40-prose ul) > li {
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.z40 :is(.z40-list, .z40-prose ul) > li + li { margin-top: var(--z40-space-2); }
+
+.z40 :is(.z40-list, .z40-prose ul) > li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: var(--z40-radius-round);
+  background: var(--z40-marker);
+}
+
+.z40 .z40-list--check > li { padding-left: 1.75rem; }
+
+.z40 .z40-list--check > li::before {
+  top: 0.3em;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0;
+  -webkit-mask: var(--z40-icon-check) center / contain no-repeat;
+  mask: var(--z40-icon-check) center / contain no-repeat;
+}
+
+/* ---------- 4.12 Karten ---------- */
+.z40 .z40-card {
+  --z40-card-hover-line: var(--z40-turquoise);
+  --z40-card-hover-glow: var(--z40-glow-hover);
+  --z40-card-lift: var(--z40-lift);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: var(--z40-space-4);
+  color: var(--z40-text);
+  background: var(--z40-card-bg);
+  border: 1px solid var(--z40-line);
+  border-radius: var(--z40-radius-card);
+  box-shadow: var(--z40-card-shadow);
+  transition: border-color var(--z40-duration) ease, box-shadow var(--z40-duration) ease;
+}
+
+.z40 .z40-card:hover {
+  border-color: var(--z40-card-hover-line);
+  box-shadow: var(--z40-card-shadow), var(--z40-card-hover-glow);
+}
+
+.z40 .z40-card--static {
+  --z40-card-hover-line: var(--z40-line);
+  --z40-card-hover-glow: var(--z40-shadow-none);
+  --z40-card-lift: 0;
+}
+
+.z40 .z40-card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: var(--z40-space-4);
+}
+
+.z40 .z40-media + .z40-card__body { padding: var(--z40-space-5) var(--z40-space-2) var(--z40-space-2); }
+
+.z40 .z40-card__title {
+  font-size: var(--z40-fs-h3);
+  font-weight: var(--z40-fw-extrabold);
+  line-height: 1.2;
+  color: var(--z40-heading);
+}
+
+.z40 .z40-card__meta {
+  font-weight: var(--z40-fw-bold);
+  color: var(--z40-accent-text);
+  margin-top: calc(var(--z40-space-3) * -1);
+}
+
+.z40 .z40-card__footer { margin-top: auto; }
+
+/* Zusatz im Titel, z. B. Spitzname: kleiner und halbfett, bricht nicht um */
+.z40 .z40-card__suffix {
+  font-size: var(--z40-fs-base);
+  font-weight: var(--z40-fw-semibold);
+  color: var(--z40-text);
+  white-space: nowrap;
+}
+
+/* Steckbrief-Zeile: kurze Angaben (z. B. Kennung als Inline-Code) mit Trennlinie darunter */
+.z40 .z40-card__facts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--z40-space-1) var(--z40-space-2);
+  padding-bottom: var(--z40-space-4);
+  border-bottom: 1px solid var(--z40-divider);
+  font-size: var(--z40-fs-sm);
+}
+
+/* Kleine Zwischenüberschrift in der Karte (z. B. „Aufgaben“ über einer Liste) */
+.z40 .z40-card__label {
+  margin-bottom: var(--z40-space-2);
+  font-size: var(--z40-fs-base);
+  font-weight: var(--z40-fw-extrabold);
+  line-height: var(--z40-lh-base);
+  color: var(--z40-heading);
+}
+
+/* Ganze Karte klickbar: der Link liegt im Titel, seine Fläche wird über die Karte gespannt */
+.z40 .z40-card__link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.z40 .z40-card__link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+}
+
+.z40 .z40-card__link:hover { text-decoration: underline; }
+.z40 .z40-card__link:focus-visible { outline: none; }
+
+.z40 .z40-card:has(.z40-card__link:focus-visible) {
+  outline: var(--z40-focus-width) solid var(--z40-focus);
+  outline-offset: var(--z40-focus-offset);
+}
+
+/* ---------- 4.13 Bildflächen und Avatare ---------- */
+.z40 .z40-media {
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex: none;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: var(--z40-radius-media);
+  background-color: var(--z40-petrol-dark);
+  background-image: var(--z40-pattern-media);
+  box-shadow: var(--z40-shadow-dark);
+  color: var(--z40-white);
+}
+
+.z40 .z40-media > img {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+}
+
+.z40 .z40-media--wide { aspect-ratio: 16 / 9; }
+.z40 .z40-media--square { aspect-ratio: 1; }
+
+.z40 .z40-media__initials {
+  font-size: clamp(2.5rem, 2rem + 4vw, 4rem);
+  font-weight: var(--z40-fw-extrabold);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-shadow: var(--z40-shadow-text);
+}
+
+.z40 .z40-avatar {
+  --z40-avatar-size: 3.25rem;
+  position: relative;
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: var(--z40-avatar-size);
+  height: var(--z40-avatar-size);
+  overflow: hidden;
+  border: 2px solid var(--z40-line);
+  border-radius: var(--z40-radius-round);
+  background-color: var(--z40-petrol-dark);
+  background-image: var(--z40-pattern-avatar);
+  color: var(--z40-white);
+  font-size: calc(var(--z40-avatar-size) * 0.4);
+  font-weight: var(--z40-fw-extrabold);
+  line-height: 1;
+}
+
+.z40 .z40-avatar > img {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+}
+
+.z40 .z40-avatar--sm { --z40-avatar-size: 2.25rem; border-width: 1px; }
+.z40 .z40-avatar--lg { --z40-avatar-size: 4.5rem; }
+
+/* Avatar mit Logo-Bild (z. B. Profilbild zwei&40): ohne Rand, damit das Logo unverändert bleibt */
+.z40 .z40-avatar--logo { border: 0; }
+
+/* ---------- 4.14 Glow-Ring und Schritte ---------- */
+.z40 .z40-ring {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 4.5rem;
+  height: 4.5rem;
+  border: 2px solid var(--z40-accent-line);
+  border-radius: var(--z40-radius-round);
+  background: var(--z40-card-bg);
+  box-shadow: var(--z40-ring-glow);
+  color: var(--z40-accent-text);
+  font-size: var(--z40-fs-ring);
+  font-weight: var(--z40-fw-extrabold);
+  line-height: 1;
+}
+
+.z40 .z40-ring--sm {
+  width: var(--z40-target);
+  height: var(--z40-target);
+  font-size: var(--z40-fs-md);
+}
+
+.z40 .z40-steps {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--z40-space-7) var(--z40-space-6);
+  padding-block: var(--z40-space-7);
+  border-block: 1px solid var(--z40-accent-line);
+}
+
+.z40 .z40-steps__item { text-align: center; }
+.z40 .z40-steps__item > .z40-ring { margin: 0 auto var(--z40-space-5); }
+
+.z40 .z40-steps__title {
+  font-size: var(--z40-fs-h3);
+  font-weight: var(--z40-fw-extrabold);
+  line-height: 1.25;
+  color: var(--z40-heading);
+  margin-bottom: var(--z40-space-2);
+}
+
+.z40 .z40-steps__text {
+  max-width: 24rem;
+  margin-inline: auto;
+}
+
+/* ---------- 4.15 Hinweisbox ---------- */
+.z40 .z40-note {
+  padding: var(--z40-space-4);
+  background: var(--z40-tint);
+  border: 0;
+  border-left: 4px solid var(--z40-orange);
+  border-radius: var(--z40-radius-media);
+  color: var(--z40-text);
+}
+
+.z40 .z40-note > * + * { margin-top: var(--z40-space-2); }
+
+/* WordPress-Kern: p:not(.has-background):last-of-type { padding-bottom: 0 } hat 0,2,1.
+   Für Bausteine auf einem p gleiche Spezifität, später geladen. Gilt ebenso für .z40-empty und .z40-chat__typing. */
+.z40 p.z40-note { padding-bottom: var(--z40-space-4); }
+.z40 .z40-note--info { border-left-color: var(--z40-accent-line); }
+
+/* Größe und Zeilenhöhe fest, damit der Titel auch auf h3/h4 gleich aussieht */
+.z40 .z40-note__title {
+  font-size: var(--z40-fs-base);
+  font-weight: var(--z40-fw-extrabold);
+  line-height: var(--z40-lh-base);
+  color: var(--z40-heading);
+}
+
+/* ---------- 4.16 Formulare ---------- */
+.z40 .z40-form {
+  display: grid;
+  gap: var(--z40-space-5);
+}
+
+.z40 .z40-field {
+  display: grid;
+  gap: var(--z40-space-2);
+  min-width: 0;
+}
+
+.z40 .z40-label {
+  font-weight: var(--z40-fw-bold);
+  line-height: var(--z40-lh-snug);
+  color: var(--z40-text);
+}
+
+.z40 .z40-input {
+  display: block;
+  width: 100%;
+  min-height: var(--z40-target);
+  margin: 0;
+  padding: 0.625rem var(--z40-space-4);
+  font: inherit;
+  font-size: var(--z40-fs-base);
+  line-height: 1.5;
+  color: var(--z40-input-text);
+  background: var(--z40-input-bg);
+  border: 1px solid var(--z40-input-line);
+  border-radius: var(--z40-radius-media);
+  box-shadow: none;
+  -webkit-appearance: none;
+  appearance: none;
+  transition: border-color var(--z40-duration) ease, box-shadow var(--z40-duration) ease;
+}
+
+.z40 textarea.z40-input {
+  min-height: 8rem;
+  resize: vertical;
+}
+
+.z40 .z40-input::placeholder {
+  color: var(--z40-text-muted);
+  opacity: 0.78;
+}
+
+.z40 .z40-input:focus {
+  color: var(--z40-input-text);
+  border-color: var(--z40-input-line);
+}
+
+.z40 .z40-input:focus-visible { outline-offset: 2px; }
+
+/* Fehler ohne Rot: dickerer Rand, orange Randlinie innen, dazu immer Icon und Text (.z40-field__error) */
+.z40 .z40-input[aria-invalid="true"] {
+  border-width: 2px;
+  border-color: var(--z40-error-line);
+  padding-left: calc(var(--z40-space-4) + 4px);
+  box-shadow: inset 5px 0 0 var(--z40-orange);
+}
+
+.z40 .z40-input:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.z40 .z40-select {
+  position: relative;
+  display: block;
+}
+
+.z40 .z40-select > .z40-input {
+  padding-right: 2.75rem;
+  cursor: pointer;
+}
+
+.z40 .z40-select::after {
+  content: "";
+  position: absolute;
+  right: var(--z40-space-4);
+  top: 50%;
+  width: 1rem;
+  height: 1rem;
+  margin-top: -0.5rem;
+  background-color: var(--z40-input-text);
+  -webkit-mask: var(--z40-icon-chevron) center / contain no-repeat;
+  mask: var(--z40-icon-chevron) center / contain no-repeat;
+  pointer-events: none;
+}
+
+/* Block mit hängendem Einzug statt Flex: Text mit Link (Einwilligung) bleibt ein Fließtext
+   und bricht um, statt in nicht umbrechende Flex-Spalten zu zerfallen (Überlauf auf schmalen Bildschirmen). */
+.z40 .z40-check {
+  position: relative;
+  display: block;
+  min-width: 0;
+  min-height: 1.5rem;
+  padding-left: calc(1.25rem + var(--z40-space-3));
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.z40 .z40-check > input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0.125rem 0 0;
+  accent-color: var(--z40-control-accent);
+  -webkit-appearance: auto;
+  appearance: auto;
+  cursor: pointer;
+}
+
+.z40 .z40-check > input:focus-visible { outline-offset: 2px; }
+
+.z40 .z40-fieldset {
+  display: grid;
+  gap: var(--z40-space-3);
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.z40 .z40-fieldset > legend {
+  padding: 0;
+  margin-bottom: var(--z40-space-3);
+  font-weight: var(--z40-fw-bold);
+  color: var(--z40-text);
+}
+
+.z40 .z40-field__hint {
+  font-size: var(--z40-fs-sm);
+  color: var(--z40-text-muted);
+}
+
+.z40 .z40-field__error {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--z40-space-2);
+  font-size: var(--z40-fs-sm);
+  font-weight: var(--z40-fw-bold);
+  color: var(--z40-text);
+}
+
+/* Warnzeichen: dunkles Ausrufezeichen auf Orange (7,80 : 1), für Vorleseprogramme ausgeblendet */
+.z40 .z40-field__error::before {
+  content: "!";
+  content: "!" / "";
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.0625rem;
+  border-radius: var(--z40-radius-round);
+  background: var(--z40-orange);
+  color: var(--z40-ink);
+  font-size: var(--z40-fs-xs);
+  font-weight: var(--z40-fw-extrabold);
+  line-height: 1;
+}
+
+/* ---------- 4.17 Footer ---------- */
+.z40 .z40-footer {
+  --z40-edge-height: var(--z40-edge-footer);
+  position: relative;
+  padding-block: var(--z40-space-7);
+  text-align: center;
+  color: var(--z40-text);
+  background-color: var(--z40-surface);
+  background-image: var(--z40-pattern-footer);
+  font-size: var(--z40-fs-sm);
+  font-weight: var(--z40-fw-semibold);
+  letter-spacing: 0.02em;
+}
+
+.z40 .z40-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--z40-space-1) var(--z40-space-5);
+  margin-top: var(--z40-space-3);
+}
+
+.z40 .z40-footer__links a {
+  display: inline-block;
+  padding-block: var(--z40-space-1);
+  color: var(--z40-text);
+}
+
+/* ---------- 4.18 Sprunglink ---------- */
+.z40 .z40-skip-link {
+  position: absolute;
+  left: var(--z40-space-4);
+  top: var(--z40-space-4);
+  z-index: 100;
+  padding: var(--z40-space-2) var(--z40-space-4);
+  border-radius: var(--z40-radius-pill);
+  background: var(--z40-white);
+  color: var(--z40-anthracite);
+  font-weight: var(--z40-fw-bold);
+  text-decoration: none;
+}
+
+/* Ohne Fokus unsichtbar, aber für Tastatur und Vorleseprogramme erreichbar (unabhängig von der Position) */
+.z40 .z40-skip-link:not(:focus) {
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.z40 .z40-skip-link:focus { outline: var(--z40-focus-width) solid var(--z40-turquoise); }
+
+/* =========================================================================================
+   5. App-Bausteine (Apps sind immer dunkel)
+   ========================================================================================= */
+
+/* ---------- 5.1 App-Rahmen ---------- */
+.z40 .z40-app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+  color: var(--z40-text);
+  background-color: var(--z40-surface);
+}
+
+.z40 .z40-app__main { flex: 1; }
+
+/* ---------- 5.2 App-Kopf ---------- */
+.z40 .z40-app-header {
+  position: relative;
+  padding-block: var(--z40-space-6) var(--z40-space-7);
+  text-align: center;
+  color: var(--z40-text);
+  background-color: var(--z40-surface);
+  background-image: var(--z40-pattern-hero);
+}
+
+.z40 .z40-app-header__bar {
+  display: grid;
+  gap: var(--z40-space-5);
+  justify-items: center;
+}
+
+.z40 .z40-app-header .z40-eyebrow { margin-bottom: var(--z40-space-2); }
+
+.z40 .z40-app-header__title {
+  font-size: var(--z40-fs-h1-app);
+  font-weight: var(--z40-fw-extrabold);
+  line-height: var(--z40-lh-tight);
+  letter-spacing: var(--z40-tracking-heading);
+  color: var(--z40-heading);
+  margin-bottom: var(--z40-space-3);
+  text-shadow: var(--z40-shadow-text);
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+.z40 .z40-app-header__lead {
+  font-size: var(--z40-fs-app-lead);
+  font-weight: var(--z40-fw-semibold);
+  line-height: 1.5;
+  max-width: 34rem;
+}
+
+.z40 .z40-app-header__aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--z40-space-3);
+}
+
+.z40 .z40-app-header__updated {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--z40-space-2);
+  font-size: var(--z40-fs-sm);
+  font-weight: var(--z40-fw-semibold);
+  color: var(--z40-text-muted);
+}
+
+.z40 .z40-app-header__updated::before {
+  content: "";
+  flex: none;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: var(--z40-radius-round);
+  background: var(--z40-turquoise);
+  box-shadow: var(--z40-glow-dot);
+}
+
+.z40 .z40-app-header .z40-kpis { margin-top: var(--z40-space-6); }
+
+/* ---------- 5.3 Kennzahl-Kacheln ---------- */
+.z40 .z40-kpis {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 9rem), 1fr));
+  gap: var(--z40-space-3);
+  text-align: left;
+}
+
+.z40 .z40-kpi {
+  display: flex;
+  flex-direction: column-reverse;   /* im HTML steht die Bezeichnung (dt) vor dem Wert (dd), sichtbar steht der Wert oben */
+  justify-content: flex-end;
+  gap: var(--z40-space-1);
+  padding: var(--z40-space-4);
+  background: var(--z40-card-bg);
+  border: 1px solid var(--z40-line-muted);
+  border-left: 4px solid var(--z40-accent-line);
+  border-radius: var(--z40-radius-media);
+  box-shadow: var(--z40-card-shadow);
+}
+
+.z40 .z40-kpi__label {
+  font-size: var(--z40-fs-sm);
+  font-weight: var(--z40-fw-semibold);
+  line-height: 1.3;
+}
+
+.z40 .z40-kpi__value {
+  margin: 0;
+  font-size: var(--z40-fs-kpi);
+  font-weight: var(--z40-fw-extrabold);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  color: var(--z40-accent-text);
+}
+
+.z40 .z40-kpi--attention { border-left-color: var(--z40-orange); }
+.z40 .z40-kpi--attention .z40-kpi__value { color: var(--z40-orange); }
+
+/* ---------- 5.4 Status-Pills: feste Zustände, immer Icon + Text ---------- */
+.z40 .z40-status {
+  --z40-status-bg: var(--z40-anthracite-50);
+  --z40-status-line: var(--z40-white-32);
+  --z40-status-text: var(--z40-white);
+  --z40-status-border: solid;
+  --z40-icon: var(--z40-icon-circle);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.125rem var(--z40-space-3) 0.125rem var(--z40-space-2);
+  border: 1px var(--z40-status-border) var(--z40-status-line);
+  border-radius: var(--z40-radius-pill);
+  background: var(--z40-status-bg);
+  color: var(--z40-status-text);
+  font-size: var(--z40-fs-xs);
+  font-weight: var(--z40-fw-bold);
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.z40 .z40-status::before {
+  content: "";
+  flex: none;
+  width: 0.875rem;
+  height: 0.875rem;
+  background-color: currentColor;
+  -webkit-mask: var(--z40-icon) center / contain no-repeat;
+  mask: var(--z40-icon) center / contain no-repeat;
+}
+
+.z40 .z40-status--active {
+  --z40-status-bg: var(--z40-turquoise);
+  --z40-status-line: var(--z40-turquoise);
+  --z40-status-text: var(--z40-anthracite);
+  --z40-icon: var(--z40-icon-play);
+}
+
+.z40 .z40-status--free {
+  --z40-status-border: dashed;
+  --z40-icon: var(--z40-icon-circle);
+}
+
+.z40 .z40-status--waiting {
+  --z40-status-bg: var(--z40-orange);
+  --z40-status-line: var(--z40-orange);
+  --z40-status-text: var(--z40-ink);
+  --z40-icon: var(--z40-icon-pause);
+}
+
+.z40 .z40-status--unclear {
+  --z40-status-line: var(--z40-white-85);
+  --z40-status-border: dashed;
+  --z40-icon: var(--z40-icon-question);
+}
+
+.z40 .z40-status--error {
+  --z40-status-bg: var(--z40-orange);
+  --z40-status-line: var(--z40-orange);
+  --z40-status-text: var(--z40-ink);
+  --z40-icon: var(--z40-icon-warning);
+}
+
+.z40 .z40-status--cancelled {
+  --z40-status-bg: var(--z40-anthracite);
+  --z40-status-line: var(--z40-orange);
+  --z40-status-text: var(--z40-orange);
+  --z40-icon: var(--z40-icon-cross);
+}
+
+.z40 .z40-status--done {
+  --z40-status-line: var(--z40-white);
+  --z40-icon: var(--z40-icon-check);
+}
+
+/* Liefert zurück (z. B. Ergebnis wird zurückgegeben, Prüfrunde): Türkis als Rand und Schrift, Pfeil */
+.z40 .z40-status--returning {
+  --z40-status-bg: var(--z40-anthracite-72);
+  --z40-status-line: var(--z40-turquoise);
+  --z40-status-text: var(--z40-turquoise);
+  --z40-icon: var(--z40-icon-return);
+}
+
+/* ---------- 5.5 Kacheln (Personen-Karte) ---------- */
+.z40 .z40-tile {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--z40-space-3);
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: var(--z40-space-4);
+  text-align: left;
+  font: inherit;
+  color: var(--z40-text);
+  background: var(--z40-card-bg);
+  border: 1px solid var(--z40-line);
+  border-radius: var(--z40-radius-card);
+  box-shadow: var(--z40-card-shadow);
+  transition: border-color var(--z40-duration) ease, box-shadow var(--z40-duration) ease;
+}
+
+.z40 button.z40-tile {
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.z40 button.z40-tile:hover { border-color: var(--z40-turquoise); }
+
+.z40 .z40-tile[aria-pressed="true"] {
+  outline: var(--z40-focus-width) solid var(--z40-white);
+  outline-offset: var(--z40-focus-offset);
+}
+
+.z40 .z40-tile[aria-pressed="true"]:focus-visible { outline-color: var(--z40-turquoise); }
+
+.z40 .z40-tile__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--z40-space-1);
+  min-width: 0;
+}
+
+.z40 .z40-tile__name {
+  font-size: var(--z40-fs-md);
+  font-weight: var(--z40-fw-extrabold);
+  line-height: 1.25;
+}
+
+.z40 .z40-tile__role {
+  font-weight: var(--z40-fw-bold);
+  line-height: 1.3;
+  color: var(--z40-accent-text);
+}
+
+.z40 .z40-tile__task {
+  margin-top: var(--z40-space-1);
+  font-size: var(--z40-fs-sm);
+  font-weight: var(--z40-fw-semibold);
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.z40 .z40-tile__time {
+  font-size: var(--z40-fs-xs);
+  line-height: 1.4;
+  color: var(--z40-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.z40 .z40-tile--active {
+  border: 2px solid var(--z40-turquoise);
+  padding: calc(var(--z40-space-4) - 1px);
+  box-shadow: var(--z40-shadow-dark), var(--z40-glow-active);
+}
+
+.z40 .z40-tile--active .z40-avatar { border-color: var(--z40-turquoise); }
+
+.z40 .z40-tile--attention {
+  border-left: 5px solid var(--z40-orange);
+  padding-left: calc(var(--z40-space-4) - 4px);
+}
+
+.z40 .z40-tile--muted {
+  background: var(--z40-anthracite-38);
+  border-color: var(--z40-white-32);
+  border-style: dashed;
+  box-shadow: none;
+}
+
+.z40 .z40-tile--muted :is(.z40-tile__name, .z40-tile__task) { color: var(--z40-text-muted); }
+.z40 .z40-tile--muted .z40-tile__task { font-weight: var(--z40-fw-regular); }
+.z40 .z40-tile--muted .z40-avatar { border-color: var(--z40-white-32); }
+.z40 .z40-tile--muted .z40-avatar > img { filter: grayscale(0.85) brightness(0.8); }
+
+/* Unklar: wie gedimmt, aber Rand und Schrift bleiben hell (der Zustand braucht einen Blick) */
+.z40 .z40-tile--unclear {
+  background: var(--z40-anthracite-38);
+  border-style: dashed;
+  box-shadow: none;
+}
+
+.z40 .z40-tile--unclear .z40-avatar > img { filter: grayscale(0.85) brightness(0.8); }
+
+.z40 .z40-tile--featured {
+  align-items: center;
+  border: 2px solid var(--z40-turquoise);
+  background: var(--z40-anthracite-82);
+  box-shadow: var(--z40-shadow-dark), var(--z40-glow-featured);
+}
+
+.z40 .z40-tile--featured .z40-avatar {
+  --z40-avatar-size: 4.5rem;
+  border-color: var(--z40-turquoise);
+  box-shadow: var(--z40-glow-avatar);
+}
+
+.z40 .z40-tile--featured .z40-tile__name { font-size: var(--z40-fs-h3); }
+.z40 .z40-tile--featured .z40-tile__task { font-size: var(--z40-fs-base); }
+
+/* ---------- 5.6 Ablauf-Kette (Stepper) ---------- */
+.z40 .z40-chain {
+  --z40-chain-gap: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--z40-chain-gap);
+}
+
+.z40 .z40-chain__step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--z40-space-2);
+  padding: var(--z40-space-4);
+  background: var(--z40-anthracite-72);
+  border: 1px solid var(--z40-line);
+  border-radius: var(--z40-radius-media);
+}
+
+/* Verbindung zum vorherigen Schritt: senkrecht, ab 56rem waagerecht */
+.z40 .z40-chain__step + .z40-chain__step::before {
+  content: "";
+  position: absolute;
+  left: 2rem;
+  top: calc(var(--z40-chain-gap) * -1);
+  width: 0;
+  height: var(--z40-chain-gap);
+  border-left: 2px solid var(--z40-white);
+}
+
+.z40 .z40-chain__who {
+  display: flex;
+  align-items: center;
+  gap: var(--z40-space-2);
+  min-width: 0;
+}
+
+.z40 .z40-chain__name {
+  font-weight: var(--z40-fw-extrabold);
+  line-height: 1.25;
+}
+
+.z40 .z40-chain__text {
+  font-size: var(--z40-fs-sm);
+  line-height: 1.45;
+}
+
+.z40 .z40-chain__time {
+  margin-top: auto;
+  font-size: var(--z40-fs-xs);
+  font-weight: var(--z40-fw-semibold);
+  font-variant-numeric: tabular-nums;
+}
+
+.z40 .z40-chain__step--current {
+  border: 2px solid var(--z40-turquoise);
+  padding: calc(var(--z40-space-4) - 1px);
+  box-shadow: var(--z40-glow-active);
+}
+
+.z40 .z40-chain__step--current .z40-avatar { border-color: var(--z40-turquoise); }
+
+.z40 .z40-chain__step + .z40-chain__step--current::before {
+  border-left: 3px solid var(--z40-turquoise);
+  filter: var(--z40-glow-connector);
+}
+
+.z40 .z40-chain__step--pending {
+  background: var(--z40-anthracite-38);
+  border-color: var(--z40-line-muted);
+  border-style: dashed;
+}
+
+.z40 .z40-chain__step--pending :is(.z40-chain__name, .z40-chain__text) { color: var(--z40-text-muted); }
+.z40 .z40-chain__step--pending .z40-avatar { border-color: var(--z40-line-muted); }
+.z40 .z40-chain__step--pending .z40-avatar > img { filter: grayscale(0.85) brightness(0.8); }
+
+.z40 .z40-chain__step + .z40-chain__step--pending::before { border-left: 2px dashed var(--z40-white-50); }
+
+/* ---------- 5.7 Zeitleiste (Verlauf) ---------- */
+.z40 .z40-timeline {
+  position: relative;
+  display: grid;
+  gap: var(--z40-space-3);
+}
+
+.z40 .z40-timeline::before {
+  content: "";
+  position: absolute;
+  left: 0.4375rem;
+  top: 0.75rem;
+  bottom: 0.75rem;
+  width: 2px;
+  background: var(--z40-white-40);
+}
+
+.z40 .z40-timeline__item {
+  position: relative;
+  padding-left: var(--z40-space-6);
+}
+
+.z40 .z40-timeline__item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1.125rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: var(--z40-radius-round);
+  background: var(--z40-graphite);
+  border: 2px solid var(--z40-white);
+}
+
+.z40 .z40-timeline__item--active::before {
+  background: var(--z40-turquoise);
+  border-color: var(--z40-turquoise);
+  box-shadow: var(--z40-glow-dot);
+}
+
+.z40 .z40-timeline__item--attention::before {
+  background: var(--z40-orange);
+  border-color: var(--z40-orange);
+}
+
+.z40 .z40-timeline__item--unclear::before { border-style: dashed; }
+
+/* Hervorgehoben, z. B. Treffer eines Filters */
+.z40 .z40-timeline__item--highlight .z40-timeline__card {
+  border-color: var(--z40-turquoise);
+  box-shadow: var(--z40-glow-button);
+}
+
+.z40 .z40-timeline__card {
+  display: grid;
+  gap: var(--z40-space-1) var(--z40-space-4);
+  padding: var(--z40-space-3) var(--z40-space-4);
+  background: var(--z40-card-bg);
+  border: 1px solid var(--z40-line-muted);
+  border-radius: var(--z40-radius-media);
+}
+
+.z40 .z40-timeline__time {
+  font-weight: var(--z40-fw-extrabold);
+  font-variant-numeric: tabular-nums;
+  color: var(--z40-accent-text);
+}
+
+.z40 .z40-timeline__title {
+  font-weight: var(--z40-fw-bold);
+  line-height: var(--z40-lh-snug);
+}
+
+/* Pfeil zwischen Absender und Empfänger (dekorativ, aria-hidden) */
+.z40 .z40-timeline__arrow {
+  padding-inline: 0.125rem;
+  color: var(--z40-accent-text);
+}
+
+.z40 .z40-timeline__text {
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.z40 .z40-timeline__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--z40-space-2);
+  font-size: var(--z40-fs-sm);
+  font-weight: var(--z40-fw-semibold);
+}
+
+/* ---------- 5.8 Leer- und Hinweiszustand ---------- */
+.z40 p.z40-empty { padding-bottom: var(--z40-space-5); }
+
+.z40 .z40-empty {
+  width: 100%;                       /* auch in Stapeln und Rastern volle Breite bis zur Höchstbreite */
+  max-width: var(--z40-width-narrow);
+  margin-inline: auto;
+  padding: var(--z40-space-5);
+  text-align: center;
+  font-weight: var(--z40-fw-semibold);
+  background: var(--z40-card-bg);
+  border: 1px dashed var(--z40-line-muted);
+  border-radius: var(--z40-radius-media);
+}
+
+/* ---------- 5.9 Filterzeile ---------- */
+/* Zeigt einen aktiven Filter mit Aktionen. In einem zentrierten Stapel so breit wie ihr Inhalt */
+.z40 .z40-filterbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--z40-space-2) var(--z40-space-4);
+  padding: var(--z40-space-3) var(--z40-space-4);
+  text-align: center;
+  font-weight: var(--z40-fw-semibold);
+  background: var(--z40-anthracite-82);
+  border: 1px solid var(--z40-accent-line);
+  border-radius: var(--z40-radius-card);
+}
+
+/* ---------- 5.10 Tabelle ---------- */
+.z40 .z40-table-wrap {
+  max-width: 100%;
+  overflow-x: auto;
+  background: var(--z40-card-bg);
+  border: 1px solid var(--z40-line-muted);
+  border-radius: var(--z40-radius-card);
+}
+
+.z40 table.z40-table {
+  width: 100%;
+  margin: 0;
+  border: 0;
+  border-collapse: collapse;
+  font-size: var(--z40-fs-sm);
+  text-align: left;
+}
+
+.z40 .z40-table caption {
+  caption-side: top;
+  padding: var(--z40-space-3) var(--z40-space-4);
+  text-align: left;
+  font-size: var(--z40-fs-base);
+  font-weight: var(--z40-fw-extrabold);
+  color: var(--z40-heading);
+}
+
+.z40 .z40-table :is(th, td) {
+  padding: var(--z40-space-3) var(--z40-space-4);
+  text-align: left;
+  vertical-align: top;
+  border: 0;
+  border-bottom: 1px solid var(--z40-divider);
+}
+
+.z40 .z40-table thead th {
+  font-weight: var(--z40-fw-bold);
+  color: var(--z40-accent-text);
+  border-bottom-color: var(--z40-line-muted);
+}
+
+.z40 .z40-table tbody tr:last-child > * { border-bottom: 0; }
+.z40 .z40-table tbody tr:hover { background: var(--z40-tint); }
+
+.z40 .z40-table :is(th, td).z40-table__num {
+  text-align: right;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- 5.11 Tabs ---------- */
+.z40 .z40-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--z40-space-1) var(--z40-space-2);
+  border-bottom: 1px solid var(--z40-divider);
+}
+
+.z40 .z40-tabs__tab {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--z40-target);
+  margin: 0;
+  padding: var(--z40-space-2) var(--z40-space-4);
+  border: 0;
+  border-radius: var(--z40-radius-media) var(--z40-radius-media) 0 0;
+  background: transparent;
+  color: var(--z40-text-muted);
+  font: inherit;
+  font-weight: var(--z40-fw-semibold);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.z40 .z40-tabs__tab::after {
+  content: "";
+  position: absolute;
+  left: var(--z40-space-2);
+  right: var(--z40-space-2);
+  bottom: -1px;
+  height: 3px;
+  border-radius: var(--z40-radius-pill);
+  background: transparent;
+}
+
+.z40 .z40-tabs__tab:hover {
+  color: var(--z40-text);
+  background: var(--z40-tint);
+}
+
+.z40 .z40-tabs__tab:is([aria-current="page"], [aria-selected="true"]) {
+  color: var(--z40-heading);
+  font-weight: var(--z40-fw-extrabold);
+}
+
+.z40 .z40-tabs__tab:is([aria-current="page"], [aria-selected="true"])::after {
+  background: var(--z40-accent-line);
+  box-shadow: var(--z40-accent-glow);
+}
+
+.z40 .z40-tabs__panel { padding-top: var(--z40-space-5); }
+
+/* ---------- 5.12 Chat ---------- */
+.z40 .z40-chat {
+  display: grid;
+  gap: var(--z40-space-4);
+}
+
+.z40 .z40-chat__log {
+  display: flex;
+  flex-direction: column;
+  gap: var(--z40-space-4);
+}
+
+.z40 .z40-chat__msg {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--z40-space-2);
+  max-width: min(42rem, 100%);
+}
+
+.z40 .z40-chat__msg--assistant { align-self: flex-start; }
+
+.z40 .z40-chat__msg--user { align-self: flex-end; }
+
+.z40 .z40-chat__msg--system {
+  align-self: center;
+  flex-direction: column;
+  align-items: stretch;
+  max-width: 100%;
+  text-align: center;
+  font-size: var(--z40-fs-sm);
+  color: var(--z40-text-muted);
+}
+
+.z40 .z40-chat__msg--system .z40-note {
+  text-align: left;
+  font-size: var(--z40-fs-base);
+}
+
+.z40 .z40-chat__bubble {
+  min-width: 0;
+  padding: var(--z40-space-3) var(--z40-space-4);
+  background: var(--z40-card-bg);
+  border: 1px solid var(--z40-line);
+  border-radius: var(--z40-radius-card);
+  border-bottom-left-radius: var(--z40-space-1);
+  box-shadow: var(--z40-card-shadow);
+  overflow-wrap: anywhere;
+}
+
+.z40 .z40-chat__bubble > * + * { margin-top: var(--z40-space-2); }
+
+.z40 .z40-chat__msg--user .z40-chat__bubble {
+  background: var(--z40-petrol-dark);
+  border-color: var(--z40-petrol-dark);
+  color: var(--z40-white);
+  border-bottom-left-radius: var(--z40-radius-card);
+  border-bottom-right-radius: var(--z40-space-1);
+}
+
+.z40 .z40-chat__author {
+  font-size: var(--z40-fs-xs);
+  font-weight: var(--z40-fw-extrabold);
+  letter-spacing: 0.04em;
+  color: var(--z40-accent-text);
+}
+
+.z40 .z40-chat__msg--user :is(.z40-chat__author, .z40-chat__meta) { color: var(--z40-white); }
+
+.z40 .z40-chat__meta {
+  font-size: var(--z40-fs-xs);
+  color: var(--z40-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.z40 .z40-chat__typing {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--z40-space-2);
+  padding: var(--z40-space-2) var(--z40-space-4);
+  font-size: var(--z40-fs-sm);
+  font-weight: var(--z40-fw-semibold);
+  color: var(--z40-text-muted);
+  background: var(--z40-card-bg);
+  border: 1px dashed var(--z40-line-muted);
+  border-radius: var(--z40-radius-pill);
+}
+
+.z40 p.z40-chat__typing { padding-bottom: var(--z40-space-2); }
+
+.z40 .z40-chat__typing::before {
+  content: "";
+  flex: none;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: var(--z40-radius-round);
+  background: var(--z40-turquoise);
+  box-shadow: var(--z40-glow-dot);
+}
+
+.z40 .z40-composer {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--z40-space-2);
+  padding: var(--z40-space-2);
+  background: var(--z40-card-bg);
+  border: 1px solid var(--z40-line);
+  border-radius: var(--z40-radius-card);
+  box-shadow: var(--z40-card-shadow);
+}
+
+.z40 .z40-composer:has(.z40-composer__input:focus-visible) {
+  border-color: var(--z40-accent-line);
+  outline: var(--z40-focus-width) solid var(--z40-focus);
+  outline-offset: 2px;
+}
+
+.z40 .z40-composer__input {
+  flex: 1;
+  min-width: 0;
+  min-height: var(--z40-target);
+  max-height: 12rem;
+  margin: 0;
+  padding: var(--z40-space-2) var(--z40-space-3);
+  border: 0;
+  background: transparent;
+  color: var(--z40-text);
+  font: inherit;
+  line-height: 1.5;
+  resize: none;
+  field-sizing: content;
+}
+
+.z40 .z40-composer__input::placeholder {
+  color: var(--z40-text-muted);
+  opacity: 0.78;
+}
+
+.z40 .z40-composer__input:focus-visible { outline: none; }
+
+/* =========================================================================================
+   6. Hilfsklassen (bewusst wenige)
+   ========================================================================================= */
+
+.z40 .z40-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--z40-space-4);
+}
+
+/* Stapel mit großem Abstand zwischen Blöcken */
+.z40 .z40-stack--loose { gap: var(--z40-space-7); }
+
+/* Stapel zentriert: Kinder so breit wie ihr Inhalt, Text mittig */
+.z40 .z40-stack--center {
+  align-items: center;
+  text-align: center;
+}
+
+.z40 .z40-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--z40-space-3);
+}
+
+.z40 .z40-cluster--center { justify-content: center; }
+
+.z40 .z40-muted { color: var(--z40-text-muted); }
+
+.z40 .z40-num { font-variant-numeric: tabular-nums; }
+
+.z40 .z40-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* =========================================================================================
+   Breiten
+   ========================================================================================= */
+
+@media (min-width: 30rem) {
+  .z40 .z40-container { padding-inline: var(--z40-space-5); }
+  .z40 .z40-card { padding: var(--z40-space-5); }
+  .z40 .z40-grid--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 44rem) {
+  .z40 .z40-section { padding-block: var(--z40-space-9); }
+  .z40 .z40-section--compact { padding-block: var(--z40-space-6); }
+  .z40 .z40-hero { padding-block: var(--z40-space-8) var(--z40-space-9); }
+  .z40 .z40-hero .z40-logo { width: var(--z40-logo-lg); }
+
+  .z40 :is(.z40-grid--2, .z40-grid--3) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  .z40 .z40-card--horizontal {
+    flex-direction: row;
+    gap: var(--z40-space-5);
+  }
+
+  .z40 .z40-card--horizontal > .z40-media {
+    width: 46%;
+    align-self: flex-start;
+  }
+
+  .z40 .z40-card--horizontal > .z40-media + .z40-card__body { padding: var(--z40-space-2) var(--z40-space-2) var(--z40-space-2) 0; }
+
+  .z40 .z40-timeline__card {
+    grid-template-columns: 3.5rem minmax(0, 1fr) auto;
+    align-items: baseline;
+  }
+
+  .z40 .z40-timeline__time { grid-row: 1 / span 2; }
+  .z40 .z40-timeline__title,
+  .z40 .z40-timeline__text { grid-column: 2; }
+
+  .z40 .z40-timeline__meta {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    align-self: center;
+    justify-content: flex-end;
+  }
+}
+
+/* Raster --3 mit --span-last: Solange zwei Spalten stehen, läuft ein einzelnes letztes Element über die volle Breite.
+   Eine Karte darin steht dann quer (Bildfläche links, 38 %, mindestens 20 rem hoch). */
+@media (min-width: 44rem) and (max-width: 67.99rem) {
+  .z40 .z40-grid--span-last > :last-child:nth-child(odd) { grid-column: 1 / -1; }
+
+  .z40 .z40-grid--span-last > .z40-card:last-child:nth-child(odd),
+  .z40 .z40-grid--span-last > :last-child:nth-child(odd) > .z40-card {
+    flex-direction: row;
+    gap: var(--z40-space-5);
+  }
+
+  .z40 .z40-grid--span-last > :last-child:nth-child(odd) .z40-card > .z40-media,
+  .z40 .z40-grid--span-last > .z40-card:last-child:nth-child(odd) > .z40-media {
+    width: 38%;
+    min-height: 20rem;
+    aspect-ratio: auto;
+  }
+
+  .z40 .z40-grid--span-last > :last-child:nth-child(odd) .z40-card > .z40-media + .z40-card__body,
+  .z40 .z40-grid--span-last > .z40-card:last-child:nth-child(odd) > .z40-media + .z40-card__body {
+    padding: var(--z40-space-2) var(--z40-space-2) var(--z40-space-2) 0;
+  }
+}
+
+@media (min-width: 56rem) {
+  .z40 .z40-grid--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .z40 .z40-steps { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+  .z40 .z40-app-header {
+    text-align: left;
+    padding-block: var(--z40-space-6);
+  }
+
+  .z40 .z40-app-header__bar {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    justify-items: start;
+    gap: var(--z40-space-6);
+  }
+
+  .z40 .z40-app-header__aside { align-items: flex-end; }
+
+  .z40 .z40-tile--featured {
+    flex-direction: column;
+    text-align: center;
+    padding: var(--z40-space-5);
+  }
+
+  .z40 .z40-tile--featured .z40-tile__body { align-items: center; }
+  .z40 .z40-tile--featured .z40-avatar { --z40-avatar-size: 6rem; }
+
+  .z40 .z40-chain {
+    --z40-chain-gap: 2.75rem;
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .z40 .z40-chain__step {
+    flex: 0 1 17rem;
+    min-width: 0;
+  }
+
+  .z40 .z40-chain__step + .z40-chain__step::before {
+    left: calc(var(--z40-chain-gap) * -1);
+    top: 2.25rem;
+    width: var(--z40-chain-gap);
+    height: 0;
+    border-left: 0;
+    border-top: 2px solid var(--z40-white);
+  }
+
+  .z40 .z40-chain__step + .z40-chain__step--current::before {
+    border-left: 0;
+    border-top: 3px solid var(--z40-turquoise);
+  }
+
+  .z40 .z40-chain__step + .z40-chain__step--pending::before {
+    border-left: 0;
+    border-top: 2px dashed var(--z40-white-50);
+  }
+}
+
+@media (min-width: 68rem) {
+  .z40 .z40-grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* =========================================================================================
+   7. Bewegung: nur, wenn die Person keine reduzierte Bewegung eingestellt hat
+   ========================================================================================= */
+
+@media (prefers-reduced-motion: no-preference) {
+  html:has(> body.z40) { scroll-behavior: smooth; }
+
+  .z40 .z40-card {
+    transition: border-color var(--z40-duration) ease, box-shadow var(--z40-duration) ease, transform var(--z40-duration) ease;
+  }
+
+  /* Hover-Bewegung nur mit Maus/Trackpad: auf Touch-Geräten bliebe sie nach dem Antippen hängen */
+  @media (hover: hover) and (pointer: fine) {
+    .z40 .z40-card:hover { transform: translateY(var(--z40-card-lift)); }
+  }
+
+  /* Glow-Kanten atmen ganz ruhig */
+  .z40 :is(.z40-section, .z40-footer)::before {
+    animation: z40-edge-breathe var(--z40-duration-breathe) ease-in-out infinite;
+  }
+
+  /* Aktive Kacheln und Schritte atmen */
+  .z40 :is(.z40-tile--active, .z40-chain__step--current) {
+    animation: z40-active-breathe var(--z40-duration-pulse) ease-in-out infinite;
+  }
+
+  .z40 :is(.z40-app-header__updated, .z40-chat__typing)::before {
+    animation: z40-pulse 2s ease-in-out infinite;
+  }
+
+  /* Lichtpunkt auf der Verbindung zum aktuellen Schritt */
+  .z40 .z40-chain__step + .z40-chain__step--current::after {
+    content: "";
+    position: absolute;
+    left: 2rem;
+    top: calc(var(--z40-chain-gap) * -1);
+    width: 0.5rem;
+    height: 0.5rem;
+    margin: -0.25rem 0 0 -0.1875rem;
+    border-radius: var(--z40-radius-round);
+    background: var(--z40-white);
+    box-shadow: var(--z40-glow-spark);
+    animation: z40-run-down 1.8s linear infinite;
+  }
+
+  @keyframes z40-edge-breathe {
+    0%, 100% { box-shadow: var(--z40-glow-edge); }
+    50% { box-shadow: var(--z40-glow-edge-peak); }
+  }
+
+  @keyframes z40-active-breathe {
+    0%, 100% { box-shadow: var(--z40-shadow-dark), var(--z40-glow-active); }
+    50% { box-shadow: var(--z40-shadow-dark), var(--z40-glow-active-peak); }
+  }
+
+  @keyframes z40-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.35; }
+  }
+
+  @keyframes z40-run-down {
+    from { transform: translateY(0); opacity: 0; }
+    15% { opacity: 1; }
+    85% { opacity: 1; }
+    to { transform: translateY(var(--z40-chain-gap)); opacity: 0; }
+  }
+
+  @keyframes z40-run-right {
+    from { transform: translateX(0); opacity: 0; }
+    15% { opacity: 1; }
+    85% { opacity: 1; }
+    to { transform: translateX(var(--z40-chain-gap)); opacity: 0; }
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) and (min-width: 56rem) {
+  .z40 .z40-chain__step + .z40-chain__step--current::after {
+    left: calc(var(--z40-chain-gap) * -1);
+    top: 2.25rem;
+    margin: -0.1875rem 0 0 -0.25rem;
+    animation-name: z40-run-right;
+  }
+}
+
+/* =========================================================================================
+   8. Sondermodi
+   ========================================================================================= */
+
+/* Hoher Kontrast (Windows): Masken-Icons in Systemfarbe, damit sie nicht verschwinden */
+@media (forced-colors: active) {
+  .z40 .z40-icon,
+  .z40 .z40-status::before,
+  .z40 .z40-select::after,
+  .z40 .z40-list--check > li::before {
+    forced-color-adjust: none;
+    background-color: CanvasText;
+  }
+}
+
+@media print {
+  .z40 :is(.z40-card, .z40-tile, .z40-media) { box-shadow: none; }
+  .z40 :is(.z40-card, .z40-chain__step, .z40-timeline__item) { break-inside: avoid; }
+  .z40 :is(.z40-nav, .z40-skip-link, .z40-composer) { display: none; }
+}
